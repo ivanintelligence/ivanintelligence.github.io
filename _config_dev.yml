@@ -9,18 +9,14 @@ cover: https://ivanintelligence.github.io/img/og.png
 logo: https://ivanintelligence.github.io/img/emojis/technologist.png
 resume: https://ivanintelligence.github.io/JohnIvanDiaz_Resume.pdf
 social:
+  - title: linkedin
+    url: https://www.linkedin.com/in/diazjohnivantuyor
+  - title: github
+    url: https://github.com/ivanintelligence
   - title: email
     url: mailto:brittany.chiang@gmail.com
-  - title: twitter
-    url: https://twitter.com/bchiang7
-  - title: instagram
-    url: https://instagram.com/bchiang7
-  - title: codepen
-    url: http://codepen.io/bchiang7
-  - title: github
-    url: https://github.com/bchiang7
-  - title: linkedin
-    url: https://www.linkedin.com/in/bchiang7
+  - title: phone
+    url: tel:+639927693173
 
 # Build settings
 markdown: kramdown
