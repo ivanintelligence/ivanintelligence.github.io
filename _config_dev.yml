@@ -34,6 +34,7 @@ exclude:
   - 'build'
   - 'gulpfile.js'
   - 'package.json'
+  - 'vendor'
 
 keep_files:
   - 'CNAME'
