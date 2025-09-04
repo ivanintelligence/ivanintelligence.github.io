@@ -10,7 +10,7 @@ headshot: https://ivanintelligence.github.io/img/headshot.jpg
 
 resume: https://ivanintelligence.github.io/JohnIvanDiaz_Resume.pdf
 linkedin: https://www.linkedin.com/in/diazjohnivantuyor
-email: diazjohnivantuyor@gmail.com
+email: mailto:diazjohnivantuyor@gmail.com
 
 social:
   - title: resume
@@ -20,7 +20,7 @@ social:
   - title: github
     url: https://github.com/ivanintelligence
   - title: email
-    url: diazjohnivantuyor@gmail.com
+    url: mailto:diazjohnivantuyor@gmail.com
 
 # Build settings
 markdown: kramdown
