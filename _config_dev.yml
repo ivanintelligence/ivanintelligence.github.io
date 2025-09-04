@@ -5,8 +5,6 @@ description: Design-minded front-end software engineer focused on building beaut
 url: https://ivanintelligence.github.io/
 baseurl: ''
 email: diazjohnivantuyor@gmail.com
-cover: https://ivanintelligence.github.io/img/og.png
-logo: https://ivanintelligence.github.io/img/emojis/technologist.png
 resume: https://ivanintelligence.github.io/JohnIvanDiaz_Resume.pdf
 social:
   - title: linkedin
@@ -17,6 +15,9 @@ social:
     url: diazjohnivantuyor@gmail.com
   - title: phone
     url: tel:+639927693173
+cover: https://ivanintelligence.github.io/img/og.png
+logo: https://ivanintelligence.github.io/img/emojis/technologist.png
+headshot: https://ivanintelligence.github.io/img/headshot.png
 
 # Build settings
 markdown: kramdown
