@@ -27,3 +27,61 @@
   .intro__cta .intro__contact {
     margin: 0;                 /* kill the default <h3> margin */
   }
+
+  /* === Intro: two-column layout with circular headshot === */
+
+/* Tweakable variables */
+.intro {
+  --intro-gap: 32px;           /* space between text block and photo (adjust this) */
+  --intro-block-gap: 24px;     /* vertical spacing inside the text block (Hello ↔ Tagline ↔ CTA) */
+  --intro-photo-size: clamp(180px, 30vw, 360px);  /* photo size scales; right edge stays fixed */
+}
+
+/* Inner row: two columns */
+.intro .intro__row {
+  display: grid;
+  grid-template-columns: minmax(0, 700px) auto;  /* left column maxes at 700px (your current width) */
+  align-items: center;
+  column-gap: var(--intro-gap);
+}
+
+/* Keep your left text block exactly sized, with clean internal spacing */
+.intro .intro__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--intro-block-gap);
+}
+
+/* Remove default heading margins so gap controls spacing precisely */
+.intro h1, .intro h2, .intro h3 { margin: 0; }
+
+/* Right photo: circle, right edge anchored */
+.intro .intro__media {
+  justify-self: end; /* anchors the photo's right edge; gap grows/shrinks on the left side of the photo */
+}
+
+.intro .intro__photo {
+  width: var(--intro-photo-size);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Keep your previous intro link size matching Experience */
+.intro .arrow-link { font-size: 1.25rem; }
+.intro .arrow-link:after { width: 20px; height: 20px; }
+
+/* Tighten the two lines inside CTA (resume above, connect below) */
+.intro__cta .arrow-link { display: inline-block; margin: 0 0 4px; }
+.intro__cta .intro__contact { margin: 0; }
+
+/* Responsive: stack image on top, with the same gap as Hello ↔ Tagline */
+@media screen and (max-width: 768px) {
+  .intro .intro__row { grid-template-columns: 1fr; }
+  .intro .intro__media {
+    order: -1;                /* image first on mobile */
+    justify-self: center;
+    margin-bottom: var(--intro-block-gap); /* equals Hello ↔ Tagline spacing */
+  }
+}
