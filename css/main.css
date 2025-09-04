@@ -43,7 +43,7 @@
 /* Tweakable variables */
 .intro {
   --intro-gap: 32px;           /* space between text block and photo (adjust this) */
-  --intro-block-gap: 24px;     /* vertical spacing inside the text block (Hello ↔ Tagline ↔ CTA) */
+  --intro-block-gap: 88px;     /* vertical spacing inside the text block (Hello ↔ Tagline ↔ CTA) */
   --intro-photo-size: clamp(180px, 30vw, 360px);  /* photo size scales; right edge stays fixed */
 }
 
