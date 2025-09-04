@@ -3,3 +3,27 @@
 /* Make Intro resume link match Experience size */
 .intro .arrow-link{font-size:1.25rem}
 .intro .arrow-link:after{width:20px;height:20px}
+
+/* === Intro: equal gaps between the 3 blocks, tight spacing inside CTA === */
+
+/* Center the 3 blocks in the viewport and control the between-gaps explicitly */
+.intro {
+    justify-content: center;   /* keep content centered vertically in 100vh */
+    gap: 80px;                 /* <- this is the space between Hello ↔ Tagline ↔ CTA */
+  }
+  
+  /* Remove default margins so 'gap' is the only spacing between the 3 blocks */
+  .intro h1,
+  .intro h2,
+  .intro h3 {
+    margin: 0;
+  }
+  
+  /* Inside the CTA block: make the two lines sit very close (like pressing Enter) */
+  .intro__cta .arrow-link {
+    display: inline-block;
+    margin: 0 0 4px;           /* tiny gap above "Let's connect" */
+  }
+  .intro__cta .intro__contact {
+    margin: 0;                 /* kill the default <h3> margin */
+  }
