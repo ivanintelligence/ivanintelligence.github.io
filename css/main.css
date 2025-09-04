@@ -87,11 +87,20 @@
 .intro__cta .intro__contact { margin: 0; }
 
 /* Responsive: stack image on top, with the same gap as Hello ↔ Tagline */
+/* Force the headshot above the text on mobile */
 @media screen and (max-width: 768px) {
-  .intro .intro__row { grid-template-columns: 1fr; }
+  .intro .intro__row {
+    display: grid;             /* ensure it's still a grid */
+    grid-template-columns: 1fr;/* stack into a single column */
+  }
+
   .intro .intro__media {
-    order: -1;                /* image first on mobile */
-    justify-self: center;
-    margin-bottom: var(--intro-block-gap); /* equals Hello ↔ Tagline spacing */
+    order: -1;                 /* move image above */
+    justify-self: center;      /* center the circle image */
+    margin-bottom: 24px;       /* gap between image and "Hello" block */
+  }
+
+  .intro .intro__text {
+    gap: 32px; /* or 24px for tighter spacing */
   }
 }
