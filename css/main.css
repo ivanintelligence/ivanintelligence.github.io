@@ -151,3 +151,48 @@
     margin: 0;                      /* let space-evenly handle spacing */
   }
 }
+
+/* === Mobile portrait: evenly spaced stack with left-aligned text === */
+@media screen and (max-width: 768px) {
+
+  /* Make the whole intro fill the viewport height */
+  .intro {
+    min-height: 100svh;           /* more reliable on mobile than 100vh */
+    padding-top: 48px;            /* your top/bottom gutters — tweak if you like */
+    padding-bottom: 48px;
+  }
+
+  /* Stack: headshot, Hello, Tagline, CTA — spaced evenly including top/bottom */
+  .intro .intro__row {
+    display: grid;
+    grid-template-columns: 1fr;              /* single column */
+    grid-template-rows: repeat(4, max-content);
+    align-content: space-evenly;             /* <-- equal space above/between/below */
+    justify-items: start;                    /* keep items left-aligned */
+    row-gap: 0;                              /* gaps are handled by space-evenly */
+  }
+
+  /* Ensure order: headshot first, then the text block pieces */
+  .intro .intro__media {
+    order: -1;                 /* image goes above */
+    justify-self: center;      /* image centered horizontally */
+    margin: 0;                 /* no extra margins that would break even spacing */
+  }
+
+  /* Inside the text block, remove margins so spacing is controlled by the grid */
+  .intro .intro__text {
+    display: contents;         /* flatten children so rows are: h1, h2, CTA */
+  }
+
+  .intro h1,
+  .intro h2,
+  .intro .intro__cta {
+    margin: 0;                 /* kill default margins */
+    text-align: left;          /* prevent unexpected centering */
+    width: 100%;
+  }
+
+  /* Keep CTA tight internally (resume line above, connect line below) */
+  .intro__cta .arrow-link { display: inline-block; margin: 0 0 4px; }
+  .intro__cta .intro__contact { margin: 0; }
+}
