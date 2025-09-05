@@ -1,7 +1,37 @@
-<!-- _includes/professional-certificates.html -->
-<section id="professional-certificates" class="section professional-certificates">
-    <div class="section__title">Professional Certificates</div>
-    <div class="section__content">
-      <p class="placeholder">Coming soon.</p>
-    </div>
-  </section>
+<section class="section professional-certificates featured-projects">
+  <div class="section__title">Professional Certificates</div>
+
+  <div class="section__content">
+    {% assign pcerts = site.data.6_professional_certificates | default: empty %}
+    {% for cert in pcerts %}
+
+      <div class="project {% if cert.slug %}{{ cert.slug }}{% endif %}">
+        <figure class="project__pic {% if cert.images and cert.images.size > 1 %}phones{% endif %}">
+          {% assign is_external = cert.url contains '://' %}
+          <a
+            href="{% if is_external %}{{ cert.url }}{% else %}{{ cert.url | relative_url }}{% endif %}"
+            {% if is_external %}target="_blank" rel="noopener"{% endif %}
+          >
+            {% if cert.images and cert.images.size > 1 %}
+              {% for img in cert.images %}
+                <div class="phone">
+                  <img src="{{ img.src }}" alt="{{ img.alt | default: cert.name }}">
+                </div>
+              {% endfor %}
+            {% else %}
+              <img src="{{ cert.image | default: cert.images[0].src }}" alt="{{ cert.name }}">
+            {% endif %}
+          </a>
+        </figure>
+
+        <figcaption class="project__caption">
+          <div class="project__name">
+            {% include smart-link.html href=cert.url class="arrow-link" text=cert.name %}
+          </div>
+          <p>{{ cert.description }}</p>
+        </figcaption>
+      </div>
+
+    {% endfor %}
+  </div>
+</section>

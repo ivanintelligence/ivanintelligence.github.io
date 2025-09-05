@@ -42,20 +42,29 @@ layout: default
     {% endif %}
 
     {%- comment -%}
-      Repository link (standardized). If repository_url is external (has ://),
-      don’t run it through relative_url.
+      Versatile links list:
+      Use in front matter:
+      links:
+        - text: "Conference website"
+          url: "https://example.com"
+        - text: "Slides"
+          url: "/assets/slides.pdf"   # internal → same tab
     {%- endcomment -%}
-    {% if page.repository_url %}
-      {% assign repo_is_external = page.repository_url contains '://' %}
-      <p class="project-detail__repo">
-        <a
-          href="{% if repo_is_external %}{{ page.repository_url }}{% else %}{{ page.repository_url | relative_url }}{% endif %}"
-          {% if repo_is_external %}target="_blank" rel="noopener"{% endif %}
-          class="arrow-link"
-        >
-          {{ page.repository_text | default: "View repository" }}
-        </a>
-      </p>
+    {% if page.links %}
+      <div class="project-detail__links">
+        {% for l in page.links %}
+          {% assign l_ext = l.url contains '://' %}
+          <p class="project-detail__link">
+            <a
+              href="{% if l_ext %}{{ l.url }}{% else %}{{ l.url | relative_url }}{% endif %}"
+              {% if l_ext %}target="_blank" rel="noopener"{% endif %}
+              class="arrow-link"
+            >
+              {{ l.text }}
+            </a>
+          </p>
+        {% endfor %}
+      </div>
     {% endif %}
 
     <div class="project-detail__body">

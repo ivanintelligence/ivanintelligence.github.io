@@ -1,0 +1,11 @@
+- image: https://picsum.photos/300/200
+  url: /conferences/icngc2024/
+  name: Conference 1
+  description: 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
+
+- image: https://picsum.photos/300/200
+  url: /conferences/urc2025/
+  name: Conference 2
+  description: 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.

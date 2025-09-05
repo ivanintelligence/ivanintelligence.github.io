@@ -1,0 +1,17 @@
+- name: Professional Certificate 1
+  url: https://aws.amazon.com/certification/certified-machine-learning-specialty/
+  description:
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
+  image: https://picsum.photos/300/200
+
+- name: Professional Certificate 2
+  url: https://aws.amazon.com/certification/certified-machine-learning-specialty/
+  description:
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
+  image: https://picsum.photos/300/200
+
+- name: Professional Certificate 3
+  url: https://aws.amazon.com/certification/certified-machine-learning-specialty/
+  description:
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
+  image: https://picsum.photos/300/200

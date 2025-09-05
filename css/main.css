@@ -203,6 +203,30 @@
   --intro-photo-size: clamp(240px, 25vw, 400px);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - Sections after intro - - - - - */
+
 /* - - - - - Sections after intro - - - - - */
 
 /* Project images */
@@ -215,7 +239,7 @@
   max-width: 100%;             /* never exceed the container width */
   width: 520px;                /* default size on desktop */
   height: auto;
-  border-radius: 32px;          /* optional: rounded corners */
+  border-radius: 32px;         /* optional: rounded corners */
 }
 
 /* Responsive: make image shrink to fit mobile width */
@@ -226,84 +250,55 @@
   }
 }
 
-/* === Certifications featured layout: caption fixed, image fills the middle === */
+/* === Certifications & Professional Certificates featured layout
+      caption fixed, image fills the middle === */
 
-.certifications.featured-projects .project {
+.certifications.featured-projects .project,
+.professional-certificates.featured-projects .project {
   display: flex;
   align-items: flex-start;
   width: 100%;
-  margin-left: 0;        /* cancel theme's bleed */
+  margin-left: 0;        /* cancel theme's bleed by default (see bleed section below) */
 }
 
 /* Middle column (image) = fills all space between left title and right caption */
-.certifications.featured-projects .project__pic {
+.certifications.featured-projects .project__pic,
+.professional-certificates.featured-projects .project__pic {
   flex: 1 1 auto;        /* take remaining space */
   max-width: none;       /* remove theme cap */
   min-width: 0;          /* allow flex shrink when needed */
   margin: 0;             /* keep tight to columns */
 }
 
-.certifications.featured-projects .project__pic img {
+.certifications.featured-projects .project__pic img,
+.professional-certificates.featured-projects .project__pic img {
   display: block;
   width: 100%;           /* upscale to fill column (even if low-res) */
   height: auto;          /* no cropping; preserve aspect ratio */
+  border-radius: 32px;   /* match projects rounding */
 }
 
 /* Right column (caption) = fixed width so its right edge stays on page gutter */
-.certifications.featured-projects .project__caption {
+.certifications.featured-projects .project__caption,
+.professional-certificates.featured-projects .project__caption {
   flex: 0 0 125px;       /* EXACTLY like the original theme */
   width: 125px;          /* explicit for safety */
   max-width: 125px;
   margin-left: 30px;     /* gap between image and caption */
-}
-
-/* Optional: keep the original wider image bleed OFF for this section */
-.certifications.featured-projects .project.screentime,
-.certifications.featured-projects .project {
-  width: 100%;
-}
-
-/* Mobile: stack like the theme */
-@media (max-width: 768px) {
-  .certifications.featured-projects .project {
-    display: block;
-  }
-  .certifications.featured-projects .project__caption {
-    width: auto;
-    max-width: none;
-    margin-left: 0;
-    margin-top: 25px;
-  }
-}
-
-/* Show the same arrow as "Other Projects" inside Certifications */
-.certifications.featured-projects .project__name .arrow-link:after {
-  display: inline-block !important; /* override the theme's featured-projects rule */
-}
-
-/* Match the rounded corners used in Projects for certification images */
-.certifications.featured-projects .project__pic img {
-  border-radius: 32px;
-}
-
-/* Certifications caption defaults (desktop / landscape) */
-.certifications.featured-projects .project__caption {
-  flex: 0 0 125px;     /* fixed width like the original theme */
-  width: 125px;
-  max-width: 125px;
-  margin-left: 30px;
   /* let text wrap naturally; DON'T clip */
   overflow: visible;
   text-overflow: clip;
   white-space: normal;
 }
 
-.certifications.featured-projects .project__name { 
-  display: block; 
+.certifications.featured-projects .project__name,
+.professional-certificates.featured-projects .project__name {
+  display: block;
 }
 
 /* Make the title + arrow wrap instead of overflowing */
-.certifications.featured-projects .project__name .arrow-link {
+.certifications.featured-projects .project__name .arrow-link,
+.professional-certificates.featured-projects .project__name .arrow-link {
   display: inline;               /* keep arrow inline with text */
   white-space: normal;           /* allow wrapping */
   overflow-wrap: anywhere;       /* break long words if needed */
@@ -311,41 +306,32 @@
   line-height: 1.3;
 }
 
-/* Mobile / portrait: stack and let the caption reflow full-width */
+/* Show the same arrow as "Other Projects" inside Certifications/Prof Certs */
+.certifications.featured-projects .project__name .arrow-link:after,
+.professional-certificates.featured-projects .project__name .arrow-link:after {
+  display: inline-block !important; /* override the theme's featured-projects rule */
+}
+
+/* Optional: keep the original wider image bleed OFF for this section
+   (width reset to 100%) */
+.certifications.featured-projects .project.screentime,
+.certifications.featured-projects .project,
+.professional-certificates.featured-projects .project {
+  width: 100%;
+}
+
+/* Mobile: stack like the theme */
 @media (max-width: 768px) {
-  /* Stack image above caption, like the original theme */
-  .certifications.featured-projects .project {
+  .certifications.featured-projects .project,
+  .professional-certificates.featured-projects .project {
     display: block;
-    width: 100%;
   }
-
-  .certifications.featured-projects .project__pic {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;             /* keep it flush */
-  }
-
-  /* CRITICAL: remove the 125px constraint so wrapping recalculates */
-  .certifications.featured-projects .project__caption {
-    flex: none !important;
-    width: auto !important;
-    max-width: none !important;
-    margin-left: 0 !important;
+  .certifications.featured-projects .project__caption,
+  .professional-certificates.featured-projects .project__caption {
+    width: auto;
+    max-width: none;
+    margin-left: 0;
     margin-top: 25px;
-    overflow: visible;
-    text-overflow: clip;
-    white-space: normal;
-  }
-
-  /* Keep title + arrow inline and wrap naturally */
-  .certifications.featured-projects .project__name { display: block; }
-
-  .certifications.featured-projects .project__name .arrow-link {
-    display: inline;
-    white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    line-height: 1.3;
   }
 }
 
@@ -395,19 +381,23 @@
   }
 }
 
-/* Make Certifications match Featured Projects layout exactly (same bleed) */
-.certifications.featured-projects .project {
+/* Make Certifications & Professional Certificates match Featured Projects layout exactly (same bleed) */
+.certifications.featured-projects .project,
+.professional-certificates.featured-projects .project {
   margin-left: -5% !important;
   width: 125% !important;
 }
 @media screen and (max-width: 1280px) {
-  .certifications.featured-projects .project { width: 115% !important; }
+  .certifications.featured-projects .project,
+  .professional-certificates.featured-projects .project { width: 115% !important; }
 }
 @media screen and (max-width: 1024px) {
-  .certifications.featured-projects .project { width: 105% !important; }
+  .certifications.featured-projects .project,
+  .professional-certificates.featured-projects .project { width: 105% !important; }
 }
 @media screen and (max-width: 768px) {
-  .certifications.featured-projects .project {
+  .certifications.featured-projects .project,
+  .professional-certificates.featured-projects .project {
     width: 100% !important;
     margin-left: 0 !important;
     display: block; /* stack like the theme */
@@ -421,6 +411,64 @@
 }
 
 .project-detail .project__pic img { border-radius: 32px; }
+
+/* === Skills: equal column widths + equal gaps === */
+.skills .skillz {
+  display: grid;                          /* replace flex */
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 equal columns */
+  gap: 32px;                               /* uniform space between columns & rows */
+  align-items: start;
+}
+
+/* kill old flex-era widths/margins on categories */
+.skills .skillz__category {
+  width: auto !important;
+  margin: 0;                               /* spacing now handled by grid gap */
+}
+
+/* Responsive steps (tweak if you like) */
+@media (max-width: 1024px) {
+  .skills .skillz { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .skills .skillz { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .skills .skillz { grid-template-columns: 1fr; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* - - - - - Sub-pages - - - - - */
 
@@ -596,3 +644,6 @@
 .project-detail__body {
   margin-top: 48px; /* tweak to taste (e.g., 24–40px) */
 }
+
+.project-detail__links { margin: 12px 0 18px; }
+.project-detail__link  { margin: 6px 0; }
