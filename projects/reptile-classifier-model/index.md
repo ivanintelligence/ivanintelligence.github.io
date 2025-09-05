@@ -1,14 +1,12 @@
 ---
-
 layout: project
 
 hero: https://picsum.photos/1600/900
-title: Reptile Classifier Model
-tags: [Python, TensorFlow, Computer Vision]
-summary: Fast CNN classifier for reptiles across 42 species.
-repository_text: View repository
+title: Project
+tags: [Skill 1, Skill 2, Skill 3, Skill 4, Skill 5]
+summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum rutrum varius. In hac habitasse platea dictumst.
+repository_text: View source code
 repository_url: https://github.com/ivanintelligence/reptile-classifier
-
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum rutrum varius. In hac habitasse platea dictumst. Morbi vitae tellus in nulla convallis scelerisque. Donec malesuada eros vel diam viverra, at tincidunt ante dignissim. Nam porttitor sem et purus lobortis, vel placerat sem fermentum. Fusce fermentum lectus nunc, at ornare dui molestie in. Nunc ac fringilla felis. Nunc consectetur, ex a hendrerit elementum, velit arcu tempor elit, in rutrum nisi urna sed magna. Quisque egestas, odio et scelerisque feugiat, magna odio pulvinar ex, et porttitor lacus orci et quam. Suspendisse eu arcu aliquam, sagittis diam eu, elementum tortor. Maecenas vel ornare orci. Cras feugiat ultricies cursus.

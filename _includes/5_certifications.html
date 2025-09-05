@@ -14,12 +14,16 @@
         so they sit side-by-side. Otherwise it’s a single image.
       {%- endcomment -%}
       <figure class="project__pic {% if cert.images and cert.images.size > 1 %}phones{% endif %}">
-        <a href="{{ cert.url }}" target="_blank" rel="noopener">
+        {% assign cert_is_external = cert.url contains '://' %}
+        <a
+          href="{% if cert_is_external %}{{ cert.url }}{% else %}{{ cert.url | relative_url }}{% endif %}"
+          {% if cert_is_external %}target="_blank" rel="noopener"{% endif %}
+        >
           {% if cert.images and cert.images.size > 1 %}
             {% for img in cert.images %}
-            <div class="phone">
-              <img src="{{ img.src }}" alt="{{ img.alt | default: cert.name }}">
-            </div>
+              <div class="phone">
+                <img src="{{ img.src }}" alt="{{ img.alt | default: cert.name }}">
+              </div>
             {% endfor %}
           {% else %}
             <img src="{{ cert.image | default: cert.images[0].src }}" alt="{{ cert.name }}">
@@ -29,9 +33,7 @@
 
       <figcaption class="project__caption">
         <div class="project__name">
-          <a href="{{ cert.url }}" target="_blank" rel="noopener" class="arrow-link">
-            {{ cert.name }}
-          </a>
+          {% include smart-link.html href=cert.url class="arrow-link" text=cert.name %}
         </div>
         <p>{{ cert.description }}</p>
       </figcaption>

@@ -11,14 +11,7 @@
       </div>
 
       <div class="project__name">
-        {% assign is_external = project.url contains '://' %}
-        <a
-          href="{% if is_external %}{{ project.url }}{% else %}{{ project.url | relative_url }}{% endif %}"
-          {% if is_external %}target="_blank" rel="noopener"{% endif %}
-          class="arrow-link"
-        >
-          {{ project.name }}
-        </a>
+        {% include smart-link.html href=project.url class="arrow-link" text=project.name %}
       </div>
 
       <p>{{ project.description }}</p>

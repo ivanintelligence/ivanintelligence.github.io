@@ -1,0 +1,8 @@
+{%- assign _url   = include.href -%}
+{%- assign _class = include.class | default: '' -%}
+{%- assign _attrs = include.attrs | default: '' -%}
+{%- if _url contains '://' -%}
+  <a href="{{ _url }}" class="{{ _class }}" target="_blank" rel="noopener" {{ _attrs }}>{{ include.text }}</a>
+{%- else -%}
+  <a href="{{ _url | relative_url }}" class="{{ _class }}" {{ _attrs }}>{{ include.text }}</a>
+{%- endif -%}
