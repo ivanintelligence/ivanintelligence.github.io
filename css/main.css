@@ -665,3 +665,24 @@ html.is-animating .swup-transition.is-leaving {
 html.is-animating .swup-transition.is-entering {
   animation: swupFadeIn  var(--swup-duration) var(--swup-ease) forwards;
 }
+
+/* ===== Page Transitions ===== */
+
+/* default state */
+.transition-main {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 350ms ease, transform 350ms ease;
+}
+
+/* leaving (fade out + slight slide left) */
+html.is-animating .transition-main.is-leaving {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+/* entering (fade in + slide right) */
+html.is-animating .transition-main.is-entering {
+  opacity: 0;
+  transform: translateX(20px);
+}
