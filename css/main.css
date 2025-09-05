@@ -207,7 +207,7 @@
 
 /* Project images */
 .other-projects .project__image {
-  margin-bottom: 16px;         /* space between image and title */
+  margin-bottom: 18px;         /* space between image and title */
 }
 
 .other-projects .project__image img {
@@ -215,7 +215,7 @@
   max-width: 100%;             /* never exceed the container width */
   width: 520px;                /* default size on desktop */
   height: auto;
-  border-radius: 24px;          /* optional: rounded corners */
+  border-radius: 32px;          /* optional: rounded corners */
 }
 
 /* Responsive: make image shrink to fit mobile width */

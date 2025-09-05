@@ -1,0 +1,54 @@
+- name: Project 1
+  url: https://github.com/ivanintelligence/plant-growth
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
+  used:
+    - thing: Skill 1
+    - thing: Skill 2
+    - thing: Skill 3
+    - thing: Skill 4
+    - thing: Skill 5
+  image: https://picsum.photos/300/200
+
+- name: Project 2
+  url: https://github.com/ivanintelligence/typhoon-forecast
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
+  used:
+    - thing: Skill 1
+    - thing: Skill 2
+    - thing: Skill 3
+    - thing: Skill 4
+    - thing: Skill 5
+  image: https://picsum.photos/300/200
+
+- name: Project 3
+  url: https://github.com/ivanintelligence/test3
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
+  used:
+    - thing: Skill 1
+    - thing: Skill 2
+    - thing: Skill 3
+    - thing: Skill 4
+    - thing: Skill 5
+  image: https://picsum.photos/300/200
+
+- name: Project 4
+  url: https://github.com/ivanintelligence/test4
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
+  used:
+    - thing: Skill 1
+    - thing: Skill 2
+    - thing: Skill 3
+    - thing: Skill 4
+    - thing: Skill 5
+  image: https://picsum.photos/300/200
+
+- name: Project 5
+  url: https://github.com/ivanintelligence/test5
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
+  used:
+    - thing: Skill 1
+    - thing: Skill 2
+    - thing: Skill 3
+    - thing: Skill 4
+    - thing: Skill 5
+  image: https://picsum.photos/300/200

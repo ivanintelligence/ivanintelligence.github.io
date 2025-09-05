@@ -1,33 +1,27 @@
-languages:
-  - item: JavaScript (ES6)
-  - item: TypeScript
-  - item: HTML
-  - item: CSS/Sass
-  - item: Python
-  - item: SQL
-  - item: R
+programming_languages:
+  - item: Skill 1
+  - item: Skill 2
+  - item: Skill 3
+  - item: Skill 4
+  - item: Skill 5
 
-frameworks:
-  - item: Ember & Glimmer
-  - item: React
-  - item: Jekyll
-  - item: Node
-  - item: D3
-  - item: Wordpress
-  - item: Timber
+machine_learning_tools:
+  - item: Skill 1
+  - item: Skill 2
+  - item: Skill 3
+  - item: Skill 4
+  - item: Skill 5
 
-tools:
-  - item: Bash
-  - item: Git & Github
-  - item: Gulp & Grunt
-  - item: Chrome DevTools
-  - item: Postman
-  - item: MongoDB
+data_management:
+  - item: Skill 1
+  - item: Skill 2
+  - item: Skill 3
+  - item: Skill 4
+  - item: Skill 5
 
-design:
-  - item: Sketch
-  - item: InDesign
-  - item: InVision
-  - item: Prototyping
-  - item: Wireframing
-  - item: User Testing
+additional_technologies:
+  - item: Skill 1
+  - item: Skill 2
+  - item: Skill 3
+  - item: Skill 4
+  - item: Skill 5
