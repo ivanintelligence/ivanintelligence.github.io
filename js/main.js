@@ -3,54 +3,62 @@
   function qs(sel, root = document) { return root.querySelector(sel); }
   function qsa(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
 
-  // ---- Night mode (auto + toggle) ----
-  // ---- Night mode (auto + toggle + persistence, no double-toggle) ----
-function initNightMode() {
-  const body   = document.body;
-  const input  = document.querySelector('#switch');           // the checkbox
-  const wrapper = document.querySelector('#toggle')           // optional wrapper
-                || document.querySelector('.toggle-wrapper')  // your current markup
-                || document.querySelector('.switch-wrapper'); // fallback
-
-  if (!body || !input) return;
-
-  // A) Load saved preference first (if any)
-  const saved = localStorage.getItem('theme'); // 'night' | 'day' | null
-  if (saved === 'night') {
-    input.checked = true;
-    body.classList.add('night');
-  } else if (saved === 'day') {
-    input.checked = false;
-    body.classList.remove('night');
-  } else {
-    // B) No saved preference → auto-night 7pm–7am (first load only)
-    const hours = new Date().getHours();
-    const night = hours >= 19 || hours <= 7;
-    input.checked = night;
-    body.classList.toggle('night', night);
+  // Helper: is this the homepage? (intro only exists on home)
+  function isHomePage() {
+    return !!document.querySelector('.intro');
   }
 
-  // C) Clicking the wrapper should NOT flip twice
-  if (wrapper) {
-    wrapper.addEventListener('click', (ev) => {
-      // If you clicked the checkbox itself, let the browser handle it.
-      if (ev.target && ev.target.id === 'switch') return;
+  // -------------------------------
+  // Night mode (auto + toggle + persistence, no double-toggle)
+  // -------------------------------
+  function initNightMode() {
+    const body   = document.body;
+    const input  = document.querySelector('#switch');           // the checkbox
+    const wrapper = document.querySelector('#toggle')           // optional wrapper
+                  || document.querySelector('.toggle-wrapper')  // your current markup
+                  || document.querySelector('.switch-wrapper'); // fallback
 
-      // If you clicked label/wrapper, prevent label’s native toggle and forward once.
-      ev.preventDefault();
-      input.click(); // this fires the 'change' handler below
+    if (!body || !input) return;
+
+    // Load saved preference first (if any)
+    const saved = localStorage.getItem('theme'); // 'night' | 'day' | null
+    if (saved === 'night') {
+      input.checked = true;
+      body.classList.add('night');
+    } else if (saved === 'day') {
+      input.checked = false;
+      body.classList.remove('night');
+    } else {
+      // No saved preference → auto-night 7pm–7am (first load only)
+      const hours = new Date().getHours();
+      const night = hours >= 19 || hours <= 7;
+      input.checked = night;
+      body.classList.toggle('night', night);
+    }
+
+    // Clicking the wrapper should NOT flip twice
+    if (wrapper) {
+      wrapper.addEventListener('click', (ev) => {
+        // If you clicked the checkbox itself, let the browser handle it.
+        if (ev.target && ev.target.id === 'switch') return;
+
+        // If you clicked label/wrapper, prevent label’s native toggle and forward once.
+        ev.preventDefault();
+        input.click(); // this fires the 'change' handler below
+      });
+    }
+
+    // React to checkbox changes (mouse/keyboard) and persist preference
+    input.addEventListener('change', () => {
+      const isNight = input.checked;
+      body.classList.toggle('night', isNight);
+      localStorage.setItem('theme', isNight ? 'night' : 'day');
     });
   }
 
-  // D) React to checkbox changes (mouse/keyboard) and persist preference
-  input.addEventListener('change', () => {
-    const isNight = input.checked;
-    body.classList.toggle('night', isNight);
-    localStorage.setItem('theme', isNight ? 'night' : 'day');
-  });
-}
-
-  // ---- Back-to-top button ----
+  // -------------------------------
+  // Back-to-top button
+  // -------------------------------
   function initTopButton() {
     const topButton = qs('#top-button');
     if (!topButton) return;
@@ -82,7 +90,9 @@ function initNightMode() {
     });
   }
 
-  // ---- Hand wave emoji ----
+  // -------------------------------
+  // Hand wave emoji
+  // -------------------------------
   function initWaveHand() {
     const hand = qs('.emoji.wave-hand');
     if (!hand) return;
@@ -97,7 +107,9 @@ function initNightMode() {
     hand.addEventListener('mouseout',  () => hand.classList.remove('wave'));
   }
 
-  // ---- ScrollReveal fade-ins ----
+  // -------------------------------
+  // ScrollReveal fade-ins
+  // -------------------------------
   function initScrollReveal() {
     if (!window.ScrollReveal) return;
 
@@ -117,19 +129,81 @@ function initNightMode() {
       '.featured-projects',
       '.other-projects',
       '.certifications',
-      '.project-detail', // project subpage column
-      '.project-hero'    // project subpage hero
+      '.project-detail', // project/conference subpage column
+      '.project-hero'    // project/conference subpage hero
     ].forEach(sel => {
       if (qs(sel)) sr.reveal(sel, { viewFactor: 0.1 });
     });
   }
 
-  // ---- Boot everything safely ----
+  // -------------------------------
+  // Save & restore scroll position (return to where you left on homepage)
+  // -------------------------------
+  function isExternalHref(href) {
+    return /^(?:[a-z]+:)?\/\//i.test(href);
+  }
+
+  // Save current scroll Y ONLY when leaving the homepage via an internal link
+  function enableScrollSaveOnClick() {
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href]');
+      if (!a) return;
+
+      const href = a.getAttribute('href') || '';
+      // ignore anchors and external links
+      if (!href || href.startsWith('#') || isExternalHref(href)) return;
+
+      // Only save if we're currently on the homepage
+      if (!isHomePage()) return;
+
+      try {
+        sessionStorage.setItem('returnScrollY', String(window.scrollY));
+      } catch (_) {}
+    });
+  }
+
+  // When homepage loads, restore the saved scroll and then clear it
+  function restoreScrollIfComingBackToHome() {
+    if (!isHomePage()) return;
+
+    const yStr = sessionStorage.getItem('returnScrollY');
+    if (!yStr) return;
+
+    const targetY = parseInt(yStr, 10);
+    if (Number.isNaN(targetY)) {
+      sessionStorage.removeItem('returnScrollY');
+      return;
+    }
+
+    // Try a few times to overcome image/layout shifts
+    let tries = 0;
+    function attemptScroll() {
+      window.scrollTo(0, targetY);
+      if (Math.abs(window.scrollY - targetY) > 2 && tries < 12) {
+        tries++;
+        setTimeout(attemptScroll, 60);
+      } else {
+        sessionStorage.removeItem('returnScrollY');
+      }
+    }
+
+    // Run once now and once after load for good measure
+    attemptScroll();
+    window.addEventListener('load', attemptScroll, { once: true });
+  }
+
+  // -------------------------------
+  // Boot everything safely
+  // -------------------------------
   function init() {
     try { initNightMode(); }     catch (e) { console.warn('NightMode init failed', e); }
     try { initTopButton(); }     catch (e) { console.warn('TopButton init failed', e); }
     try { initWaveHand(); }      catch (e) { console.warn('Wave init failed', e); }
     try { initScrollReveal(); }  catch (e) { console.warn('ScrollReveal init failed', e); }
+
+    // Save before leaving home, restore when back on home
+    try { enableScrollSaveOnClick(); }         catch (e) { console.warn('Scroll save hook failed', e); }
+    try { restoreScrollIfComingBackToHome(); } catch (e) { console.warn('Scroll restore failed', e); }
   }
 
   if (document.readyState === 'loading') {
