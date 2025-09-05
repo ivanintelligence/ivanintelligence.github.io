@@ -1,4 +1,4 @@
-// js/main.js (clean, with Swup scroll-restore to homepage)
+// js/main.js (clean, Swup + reliable night-mode across pages)
 (function () {
   // Shorthands
   const qs  = (sel, root = document) => root.querySelector(sel);
@@ -8,45 +8,53 @@
   const SCROLL_KEY = 'homeScrollY';
 
   // -------------------------------
-  // Night mode (auto + toggle + persistence, no double-toggle)
+  // Night mode (auto + toggle + persistence; binds only once)
   // -------------------------------
   function initNightMode() {
     const body    = document.body;
+    const html    = document.documentElement;
     const input   = qs('#switch'); // the checkbox
     const wrapper = qs('#toggle') || qs('.toggle-wrapper') || qs('.switch-wrapper');
 
-    if (!body || !input) return;
+    if (!body || !html || !input) return;
 
-    // Load saved preference first (if any)
-    const saved = localStorage.getItem('theme'); // 'night' | 'day' | null
-    if (saved === 'night') {
-      input.checked = true;
-      body.classList.add('night');
-    } else if (saved === 'day') {
-      input.checked = false;
-      body.classList.remove('night');
-    } else {
-      // No saved preference → auto-night 7pm–7am (first load only)
-      const hours = new Date().getHours();
-      const night = hours >= 19 || hours <= 7;
-      input.checked = night;
-      body.classList.toggle('night', night);
+    // Prevent duplicate listeners when Swup swaps content (toggle lives outside #swup)
+    if (!input.dataset.bound) {
+      input.dataset.bound = '1';
+      input.addEventListener('change', () => {
+        applyTheme(input.checked);
+      });
     }
-
-    // Click the wrapper (not the checkbox) to toggle once
-    if (wrapper) {
+    if (wrapper && !wrapper.dataset.bound) {
+      wrapper.dataset.bound = '1';
       wrapper.addEventListener('click', (ev) => {
-        if (ev.target && ev.target.id === 'switch') return; // let native change happen
-        ev.preventDefault();
-        input.click(); // fires 'change'
+        // Let native behavior happen if clicking the checkbox or its label
+        if (ev.target && (ev.target.id === 'switch' || ev.target.tagName === 'LABEL')) return;
+        // Otherwise, toggle once via the checkbox (fires the 'change' listener above)
+        input.checked = !input.checked;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
       });
     }
 
-    input.addEventListener('change', () => {
-      const isNight = input.checked;
-      document.body.classList.toggle('night', isNight);
-      localStorage.setItem('theme', isNight ? 'night' : 'day');
-    });
+    function applyTheme(isNight) {
+      body.classList.toggle('night', isNight);
+      html.classList.toggle('night', isNight);
+      try { localStorage.setItem('theme', isNight ? 'night' : 'day'); } catch (_) {}
+    }
+
+    // Load saved preference first; else auto 7pm–7am
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (_) {}
+    if (saved === 'night') {
+      input.checked = true;  applyTheme(true);
+    } else if (saved === 'day') {
+      input.checked = false; applyTheme(false);
+    } else {
+      const hours = new Date().getHours();
+      const night = hours >= 19 || hours <= 7;
+      input.checked = night;
+      applyTheme(night);
+    }
   }
 
   // -------------------------------
@@ -125,14 +133,13 @@
   }
 
   // -------------------------------
-  // Swup setup (handles internal nav + restore scroll to where you left on home)
+  // Swup (internal nav + restore home scroll)
   // -------------------------------
   function initSwup() {
     if (!window.Swup) return;
 
     const swup = new Swup({ containers: ['#swup'] });
 
-    // Add/remove a CSS flag if you later add page-transition CSS
     swup.hooks.before('animation:out:start', () => {
       document.documentElement.classList.add('is-animating');
     });
@@ -143,18 +150,17 @@
     // Save scroll when leaving the homepage via an internal link
     swup.hooks.on('link:click', ({ el }) => {
       const href = el && el.getAttribute && el.getAttribute('href') || '';
-      const external = isExternalHref(href);
-      if (!external && isHomePage()) {
+      if (!isExternalHref(href) && isHomePage()) {
         try { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); } catch (_) {}
       }
     });
 
-    // Re-init widgets after every swap
+    // Re-init page widgets after content swap
     swup.hooks.on('content:replace', () => {
       initWidgets();
     });
 
-    // On every page view (including browser Back), restore home scroll if saved
+    // On every page view (including Back), restore home scroll if saved
     swup.hooks.on('page:view', () => {
       if (!isHomePage()) return;
       const yStr = sessionStorage.getItem(SCROLL_KEY);
@@ -175,7 +181,7 @@
       requestAnimationFrame(attempt);
     });
 
-    // Let Swup own history scrolling
+    // Let Swup manage history scrolling
     try { history.scrollRestoration = 'manual'; } catch (_) {}
   }
 

@@ -666,23 +666,13 @@ html.is-animating .swup-transition.is-entering {
   animation: swupFadeIn  var(--swup-duration) var(--swup-ease) forwards;
 }
 
-/* ===== Page Transitions ===== */
-
-/* default state */
-.transition-main {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 350ms ease, transform 350ms ease;
+/* Ensure the toggle is always above content (including full-bleed hero) */
+.switch-wrapper {
+  position: fixed;   /* not absolute */
+  top: 20px;
+  right: 30px;
+  z-index: 2000;
 }
 
-/* leaving (fade out + slight slide left) */
-html.is-animating .transition-main.is-leaving {
-  opacity: 0;
-  transform: translateX(-20px);
-}
-
-/* entering (fade in + slide right) */
-html.is-animating .transition-main.is-entering {
-  opacity: 0;
-  transform: translateX(20px);
-}
+.project-hero { position: relative; z-index: 0; }
+#top-button   { z-index: 2000; }
