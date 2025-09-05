@@ -196,3 +196,7 @@
   .intro__cta .arrow-link { display: inline-block; margin: 0 0 4px; }
   .intro__cta .intro__contact { margin: 0; }
 }
+
+.intro {
+  --intro-photo-size: clamp(240px, 25vw, 400px);
+}
