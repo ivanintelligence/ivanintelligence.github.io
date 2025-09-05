@@ -105,44 +105,49 @@
   }
 }
 
-/* === Equal vertical spacing (landscape) + image-only first screen (portrait) === */
-
-/* Track the intro’s vertical padding so our 100vh math is exact */
-.intro { --intro-vpad: 240px; }           /* default = 120px top + 120px bottom */
-
-/* Your breakpoints set different vertical padding; mirror that in the variable */
-@media screen and (max-width: 630px) { .intro { --intro-vpad: 240px; } }  /* 120 + 120 */
-@media screen and (max-width: 550px) { .intro { --intro-vpad: 240px; } }  /* 120 + 120 */
-@media screen and (max-width: 480px) { .intro { --intro-vpad: 140px; } }  /* 70 + 70   */
-
-/* ----- Landscape / wide (side-by-side) ----- */
-/* Make the left text column fill the viewport height (minus padding)
-   and distribute the 3 blocks with equal gaps including top & bottom */
-@media screen and (min-width: 769px) {
-  .intro .intro__text {
-    min-height: calc(100vh - var(--intro-vpad));
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;  /* Top, between, and bottom gaps all equal */
-  }
+/* 1) Make the whole intro section fill the viewport and let inner grid fill it */
+.intro {
+  min-height: 100svh; /* mobile-safe viewport height */
 }
 
-/* ----- Portrait / narrow (stacked: image above text) ----- */
-/* First screen shows only the headshot, perfectly centered vertically */
-@media screen and (max-width: 768px) {
-  .intro .intro__row { display: grid; grid-template-columns: 1fr; }
+/* Ensure the inner layout stretches full height */
+.intro .intro__row {
+  height: 100%;
+}
 
-  .intro .intro__media {
-    order: -1;                                  /* image above text */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - var(--intro-vpad));/* fill viewport minus padding */
-    margin: 0;                                  /* no extra gap */
+/* 2) DESKTOP (default): equal vertical spacing inside the LEFT text column */
+.intro .intro__text {
+  height: 100%;                 /* stretch to intro height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;/* equal space above/between/below: Hello, Tagline, CTA group */
+}
+
+/* Remove default heading margins so spacing is controlled only by space-evenly */
+.intro h1, .intro h2, .intro h3 {
+  margin: 0;
+}
+
+/* 3) MOBILE: stack headshot + the three text items, all spaced evenly edge-to-edge */
+@media screen and (max-width: 768px) {
+  /* Stack the whole intro column and distribute items (image, h1, h2, cta) evenly */
+  .intro .intro__row {
+    display: flex;                  /* override your grid on mobile */
+    flex-direction: column;
+    justify-content: space-evenly;  /* equal space top/between/bottom for ALL items */
+    height: 100%;
   }
 
+  /* Make the text wrapper “transparent” so its CHILDREN join the same flex stack */
   .intro .intro__text {
-    margin-top: 24px;                           /* small spacer after the fold */
-    gap: 24px;                                  /* tighter gaps between Hello ↔ Tagline ↔ CTA on mobile */
+    display: contents;              /* h1, h2, .intro__cta become siblings with the headshot */
+    height: auto;                   /* no fixed height here */
+  }
+
+  /* Headshot first, centered */
+  .intro .intro__media {
+    order: -1;
+    align-self: center;
+    margin: 0;                      /* let space-evenly handle spacing */
   }
 }
