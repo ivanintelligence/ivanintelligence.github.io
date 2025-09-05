@@ -1,7 +1,28 @@
-<!-- _includes/publications.html -->
-<section id="publications" class="section publication">
-    <div class="section__title">Publication</div>
-    <div class="section__content">
-      <p class="placeholder">Coming soon.</p>
+<section class="section publications other-projects">
+  <div class="section__title">Publications</div>
+  <div class="section__content">
+    {% for pub in site.data.8_publications %}
+    <div class="project">
+
+      <div class="project__image">
+        <a href="{{ pub.url }}" target="_blank" rel="noopener">
+          <img 
+            src="{{ pub.image }}" 
+            alt="{{ pub.name }}" 
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://via.placeholder.com/150?text=?';">
+        </a>
+      </div>
+
+      <div class="project__name">
+        <a href="{{ pub.url }}" target="_blank" rel="noopener" class="arrow-link">
+          {{ pub.name }}
+        </a>
+      </div>
+
+      <p>{{ pub.description }}</p>
+
     </div>
-  </section>
+    {% endfor %}
+  </div>
+</section>
