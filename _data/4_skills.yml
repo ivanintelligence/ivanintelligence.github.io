@@ -1,27 +1,27 @@
 programming_languages:
-  - item: Skill 1
-  - item: Skill 2
-  - item: Skill 3
-  - item: Skill 4
-  - item: Skill 5
+  - item: Python
+  - item: Java
+  - item: C
+  - item: SQL
+  - item: MATLAB
 
 machine_learning_tools:
-  - item: Skill 1
-  - item: Skill 2
-  - item: Skill 3
-  - item: Skill 4
-  - item: Skill 5
+  - item: TensorFlow
+  - item: Keras
+  - item: Scikit-Learn
+  - item: Computer Vison
+  - item: LLM
 
 data_management:
-  - item: Skill 1
-  - item: Skill 2
-  - item: Skill 3
-  - item: Skill 4
-  - item: Skill 5
+  - item: BigQuery
+  - item: Apache Beam
+  - item: Dataflow
+  - item: Pub/Sub
+  - item: Artifact Registry
 
 additional_technologies:
-  - item: Skill 1
-  - item: Skill 2
-  - item: Skill 3
-  - item: Skill 4
-  - item: Skill 5
+  - item: GCP
+  - item: Vertex AI
+  - item: Kubernetes
+  - item: Docker
+  - item: Git/GitHub

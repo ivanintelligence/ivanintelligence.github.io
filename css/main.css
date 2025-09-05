@@ -460,6 +460,19 @@
   margin: 0;                      /* ensure no auto-centering */
 }
 
+/* Projects: let titles wrap to match the description width */
+.other-projects .project__name { 
+  max-width: 100%;
+}
+
+.other-projects .project__name .arrow-link {
+  display: inline;           /* keep arrow inline with text */
+  white-space: normal;       /* allow line wrapping */
+  overflow-wrap: anywhere;   /* break very long words/URLs if needed */
+  word-break: break-word;    /* extra safety */
+  line-height: 1.3;
+}
+
 
 
 
