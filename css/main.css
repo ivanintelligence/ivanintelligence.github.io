@@ -647,3 +647,21 @@
 
 .project-detail__links { margin: 12px 0 18px; }
 .project-detail__link  { margin: 6px 0; }
+
+:root{
+  --swup-duration: 280ms;
+  --swup-ease: cubic-bezier(.22,.61,.36,1);
+}
+
+html.is-animating .swup-transition { will-change: opacity; }
+
+@keyframes swupFadeIn { from {opacity: 0} to {opacity: 1} }
+@keyframes swupFadeOut{ from {opacity: 1} to {opacity: 0} }
+
+/* Swup v4 adds is-leaving / is-entering to the container during swaps */
+html.is-animating .swup-transition.is-leaving {
+  animation: swupFadeOut var(--swup-duration) var(--swup-ease) forwards;
+}
+html.is-animating .swup-transition.is-entering {
+  animation: swupFadeIn  var(--swup-duration) var(--swup-ease) forwards;
+}

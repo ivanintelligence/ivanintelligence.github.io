@@ -1,22 +1,19 @@
-// js/main.js (robust version that works on all pages)
+// js/main.js (clean, with Swup scroll-restore to homepage)
 (function () {
-  function qs(sel, root = document) { return root.querySelector(sel); }
-  function qsa(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
-
-  // Helper: is this the homepage? (intro only exists on home)
-  function isHomePage() {
-    return !!document.querySelector('.intro');
-  }
+  // Shorthands
+  const qs  = (sel, root = document) => root.querySelector(sel);
+  const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const isExternalHref = (href) => /^(?:[a-z]+:)?\/\//i.test(href);
+  const isHomePage = () => !!document.querySelector('.intro'); // intro exists only on home
+  const SCROLL_KEY = 'homeScrollY';
 
   // -------------------------------
   // Night mode (auto + toggle + persistence, no double-toggle)
   // -------------------------------
   function initNightMode() {
-    const body   = document.body;
-    const input  = document.querySelector('#switch');           // the checkbox
-    const wrapper = document.querySelector('#toggle')           // optional wrapper
-                  || document.querySelector('.toggle-wrapper')  // your current markup
-                  || document.querySelector('.switch-wrapper'); // fallback
+    const body    = document.body;
+    const input   = qs('#switch'); // the checkbox
+    const wrapper = qs('#toggle') || qs('.toggle-wrapper') || qs('.switch-wrapper');
 
     if (!body || !input) return;
 
@@ -36,22 +33,18 @@
       body.classList.toggle('night', night);
     }
 
-    // Clicking the wrapper should NOT flip twice
+    // Click the wrapper (not the checkbox) to toggle once
     if (wrapper) {
       wrapper.addEventListener('click', (ev) => {
-        // If you clicked the checkbox itself, let the browser handle it.
-        if (ev.target && ev.target.id === 'switch') return;
-
-        // If you clicked label/wrapper, prevent label’s native toggle and forward once.
+        if (ev.target && ev.target.id === 'switch') return; // let native change happen
         ev.preventDefault();
-        input.click(); // this fires the 'change' handler below
+        input.click(); // fires 'change'
       });
     }
 
-    // React to checkbox changes (mouse/keyboard) and persist preference
     input.addEventListener('change', () => {
       const isNight = input.checked;
-      body.classList.toggle('night', isNight);
+      document.body.classList.toggle('night', isNight);
       localStorage.setItem('theme', isNight ? 'night' : 'day');
     });
   }
@@ -63,7 +56,6 @@
     const topButton = qs('#top-button');
     if (!topButton) return;
 
-    // Determine where to start showing the button
     const intro = qs('.intro');
     const introHeight = intro ? intro.offsetHeight : 0;
 
@@ -81,12 +73,9 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    topButton.addEventListener('click', function () {
-      if (window.jQuery) {
-        jQuery('html, body').animate({ scrollTop: 0 }, 500);
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+    topButton.addEventListener('click', () => {
+      if (window.jQuery) jQuery('html, body').animate({ scrollTop: 0 }, 500);
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
@@ -121,7 +110,6 @@
       viewFactor: 0.3,
     });
 
-    // Only reveal what actually exists on the current page
     [
       '.background',
       '.skills',
@@ -129,86 +117,88 @@
       '.featured-projects',
       '.other-projects',
       '.certifications',
-      '.project-detail', // project/conference subpage column
-      '.project-hero'    // project/conference subpage hero
+      '.project-detail',
+      '.project-hero'
     ].forEach(sel => {
       if (qs(sel)) sr.reveal(sel, { viewFactor: 0.1 });
     });
   }
 
   // -------------------------------
-  // Save & restore scroll position (return to where you left on homepage)
+  // Swup setup (handles internal nav + restore scroll to where you left on home)
   // -------------------------------
-  function isExternalHref(href) {
-    return /^(?:[a-z]+:)?\/\//i.test(href);
-  }
+  function initSwup() {
+    if (!window.Swup) return;
 
-  // Save current scroll Y ONLY when leaving the homepage via an internal link
-  function enableScrollSaveOnClick() {
-    document.addEventListener('click', (e) => {
-      const a = e.target.closest('a[href]');
-      if (!a) return;
+    const swup = new Swup({ containers: ['#swup'] });
 
-      const href = a.getAttribute('href') || '';
-      // ignore anchors and external links
-      if (!href || href.startsWith('#') || isExternalHref(href)) return;
-
-      // Only save if we're currently on the homepage
-      if (!isHomePage()) return;
-
-      try {
-        sessionStorage.setItem('returnScrollY', String(window.scrollY));
-      } catch (_) {}
+    // Add/remove a CSS flag if you later add page-transition CSS
+    swup.hooks.before('animation:out:start', () => {
+      document.documentElement.classList.add('is-animating');
     });
-  }
+    swup.hooks.on('animation:in:end', () => {
+      document.documentElement.classList.remove('is-animating');
+    });
 
-  // When homepage loads, restore the saved scroll and then clear it
-  function restoreScrollIfComingBackToHome() {
-    if (!isHomePage()) return;
-
-    const yStr = sessionStorage.getItem('returnScrollY');
-    if (!yStr) return;
-
-    const targetY = parseInt(yStr, 10);
-    if (Number.isNaN(targetY)) {
-      sessionStorage.removeItem('returnScrollY');
-      return;
-    }
-
-    // Try a few times to overcome image/layout shifts
-    let tries = 0;
-    function attemptScroll() {
-      window.scrollTo(0, targetY);
-      if (Math.abs(window.scrollY - targetY) > 2 && tries < 12) {
-        tries++;
-        setTimeout(attemptScroll, 60);
-      } else {
-        sessionStorage.removeItem('returnScrollY');
+    // Save scroll when leaving the homepage via an internal link
+    swup.hooks.on('link:click', ({ el }) => {
+      const href = el && el.getAttribute && el.getAttribute('href') || '';
+      const external = isExternalHref(href);
+      if (!external && isHomePage()) {
+        try { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); } catch (_) {}
       }
-    }
+    });
 
-    // Run once now and once after load for good measure
-    attemptScroll();
-    window.addEventListener('load', attemptScroll, { once: true });
+    // Re-init widgets after every swap
+    swup.hooks.on('content:replace', () => {
+      initWidgets();
+    });
+
+    // On every page view (including browser Back), restore home scroll if saved
+    swup.hooks.on('page:view', () => {
+      if (!isHomePage()) return;
+      const yStr = sessionStorage.getItem(SCROLL_KEY);
+      if (!yStr) return;
+      const y = parseInt(yStr, 10);
+      if (Number.isNaN(y)) { sessionStorage.removeItem(SCROLL_KEY); return; }
+
+      let tries = 0;
+      const attempt = () => {
+        window.scrollTo(0, y);
+        if (Math.abs(window.scrollY - y) > 2 && tries < 8) {
+          tries++;
+          setTimeout(attempt, 60);
+        } else {
+          sessionStorage.removeItem(SCROLL_KEY);
+        }
+      };
+      requestAnimationFrame(attempt);
+    });
+
+    // Let Swup own history scrolling
+    try { history.scrollRestoration = 'manual'; } catch (_) {}
   }
 
   // -------------------------------
-  // Boot everything safely
+  // Init all widgets on the current DOM
   // -------------------------------
-  function init() {
+  function initWidgets() {
     try { initNightMode(); }     catch (e) { console.warn('NightMode init failed', e); }
     try { initTopButton(); }     catch (e) { console.warn('TopButton init failed', e); }
     try { initWaveHand(); }      catch (e) { console.warn('Wave init failed', e); }
     try { initScrollReveal(); }  catch (e) { console.warn('ScrollReveal init failed', e); }
-
-    // Save before leaving home, restore when back on home
-    try { enableScrollSaveOnClick(); }         catch (e) { console.warn('Scroll save hook failed', e); }
-    try { restoreScrollIfComingBackToHome(); } catch (e) { console.warn('Scroll restore failed', e); }
   }
 
+  // -------------------------------
+  // First load
+  // -------------------------------
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init, { once: true });
+    document.addEventListener('DOMContentLoaded', () => {
+      initWidgets();
+      initSwup();
+    }, { once: true });
   } else {
-    init();
+    initWidgets();
+    initSwup();
   }
 })();

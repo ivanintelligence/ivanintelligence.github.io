@@ -7,9 +7,12 @@ layout: compress
   {% include head.html %}
 </head>
 <body>
-  {{ content }}
 
-  <!-- Global footer -->
+  <!-- Swup swaps only this container -->
+  <main id="swup" class="swup-transition">
+    {{ content }}
+  </main>
+
   {% include footer.html %}
 
   <!-- Theme toggle -->
