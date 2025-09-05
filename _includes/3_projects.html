@@ -1,7 +1,7 @@
 <section class="section other-projects">
   <div class="section__title">Projects</div>
   <div class="section__content">
-    {% for project in site.data.projects %}
+    {% for project in site.data.3_projects %}
     <div class="project">
 
       <div class="project__image">
@@ -11,7 +11,14 @@
       </div>
 
       <div class="project__name">
-        <a href="{{ project.url }}" target="_blank" class="arrow-link">{{ project.name }}</a>
+        {% assign is_external = project.url contains '://' %}
+        <a
+          href="{% if is_external %}{{ project.url }}{% else %}{{ project.url | relative_url }}{% endif %}"
+          {% if is_external %}target="_blank" rel="noopener"{% endif %}
+          class="arrow-link"
+        >
+          {{ project.name }}
+        </a>
       </div>
 
       <p>{{ project.description }}</p>

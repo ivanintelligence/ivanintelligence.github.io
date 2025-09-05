@@ -1,7 +1,42 @@
-<!-- _includes/certifications.html -->
-<section id="certifications" class="section certification">
-    <div class="section__title">Certification</div>
-    <div class="section__content">
-      <p class="placeholder">Coming soon.</p>
+<section class="section certifications featured-projects">
+  <!-- ^ we add BOTH 'certifications' and 'featured-projects'
+       so we inherit all the existing Featured Projects CSS -->
+
+  <div class="section__title">Certifications</div>
+
+  <div class="section__content">
+    {% assign certs = site.data.5_certifications | default: empty %}
+    {% for cert in certs %}
+
+    <div class="project {% if cert.slug %}{{ cert.slug }}{% endif %}">
+      {%- comment -%}
+        If there are multiple images, we apply the 'phones' class (same as dev)
+        so they sit side-by-side. Otherwise it’s a single image.
+      {%- endcomment -%}
+      <figure class="project__pic {% if cert.images and cert.images.size > 1 %}phones{% endif %}">
+        <a href="{{ cert.url }}" target="_blank" rel="noopener">
+          {% if cert.images and cert.images.size > 1 %}
+            {% for img in cert.images %}
+            <div class="phone">
+              <img src="{{ img.src }}" alt="{{ img.alt | default: cert.name }}">
+            </div>
+            {% endfor %}
+          {% else %}
+            <img src="{{ cert.image | default: cert.images[0].src }}" alt="{{ cert.name }}">
+          {% endif %}
+        </a>
+      </figure>
+
+      <figcaption class="project__caption">
+        <div class="project__name">
+          <a href="{{ cert.url }}" target="_blank" rel="noopener" class="arrow-link">
+            {{ cert.name }}
+          </a>
+        </div>
+        <p>{{ cert.description }}</p>
+      </figcaption>
     </div>
-  </section>
+
+    {% endfor %}
+  </div>
+</section>

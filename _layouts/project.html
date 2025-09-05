@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<section class="section project-detail">
+
+  <!-- Back (keeps gutters) -->
+  <div class="project-detail__content">
+    <nav class="project-detail__nav">
+      <a href="{{ '/' | relative_url }}" class="arrow-link arrow-link--back">Back</a>
+    </nav>
+  </div>
+
+  <!-- Full-bleed hero -->
+  {% if page.hero %}
+    {% assign hero_is_external = page.hero contains '://' %}
+    <div class="project-hero">
+      <img
+        src="{% if hero_is_external %}{{ page.hero }}{% else %}{{ page.hero | relative_url }}{% endif %}"
+        alt="{{ page.title }}"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://via.placeholder.com/1600x900?text=%3F';"
+      >
+    </div>
+  {% endif %}
+
+  <!-- Content column -->
+  <div class="project-detail__content">
+
+    <h1 class="project-detail__title">{{ page.title }}</h1>
+
+    {% if page.tags %}
+      <ul class="project-detail__tags">
+        {% for t in page.tags %}
+          <li class="tag">{{ t }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if page.summary %}
+      <p class="project-detail__summary">{{ page.summary }}</p>
+    {% endif %}
+
+    {%- comment -%}
+      Repository link (standardized). If repository_url is external (has ://),
+      don’t run it through relative_url.
+    {%- endcomment -%}
+    {% if page.repository_url %}
+      {% assign repo_is_external = page.repository_url contains '://' %}
+      <p class="project-detail__repo">
+        <a
+          href="{% if repo_is_external %}{{ page.repository_url }}{% else %}{{ page.repository_url | relative_url }}{% endif %}"
+          {% if repo_is_external %}target="_blank" rel="noopener"{% endif %}
+          class="arrow-link"
+        >
+          {{ page.repository_text | default: "View repository" }}
+        </a>
+      </p>
+    {% endif %}
+
+    <div class="project-detail__body">
+      {{ content }}
+    </div>
+  </div>
+
+</section>

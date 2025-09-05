@@ -203,7 +203,7 @@
   --intro-photo-size: clamp(240px, 25vw, 400px);
 }
 
-/* - - - - - Projects section - - - - - */
+/* - - - - - Sections after intro - - - - - */
 
 /* Project images */
 .other-projects .project__image {
@@ -224,4 +224,375 @@
     width: 100%;               /* expands to edge of right margin */
     max-width: 100%;           /* respect container padding */
   }
+}
+
+/* === Certifications featured layout: caption fixed, image fills the middle === */
+
+.certifications.featured-projects .project {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-left: 0;        /* cancel theme's bleed */
+}
+
+/* Middle column (image) = fills all space between left title and right caption */
+.certifications.featured-projects .project__pic {
+  flex: 1 1 auto;        /* take remaining space */
+  max-width: none;       /* remove theme cap */
+  min-width: 0;          /* allow flex shrink when needed */
+  margin: 0;             /* keep tight to columns */
+}
+
+.certifications.featured-projects .project__pic img {
+  display: block;
+  width: 100%;           /* upscale to fill column (even if low-res) */
+  height: auto;          /* no cropping; preserve aspect ratio */
+}
+
+/* Right column (caption) = fixed width so its right edge stays on page gutter */
+.certifications.featured-projects .project__caption {
+  flex: 0 0 125px;       /* EXACTLY like the original theme */
+  width: 125px;          /* explicit for safety */
+  max-width: 125px;
+  margin-left: 30px;     /* gap between image and caption */
+}
+
+/* Optional: keep the original wider image bleed OFF for this section */
+.certifications.featured-projects .project.screentime,
+.certifications.featured-projects .project {
+  width: 100%;
+}
+
+/* Mobile: stack like the theme */
+@media (max-width: 768px) {
+  .certifications.featured-projects .project {
+    display: block;
+  }
+  .certifications.featured-projects .project__caption {
+    width: auto;
+    max-width: none;
+    margin-left: 0;
+    margin-top: 25px;
+  }
+}
+
+/* Show the same arrow as "Other Projects" inside Certifications */
+.certifications.featured-projects .project__name .arrow-link:after {
+  display: inline-block !important; /* override the theme's featured-projects rule */
+}
+
+/* Match the rounded corners used in Projects for certification images */
+.certifications.featured-projects .project__pic img {
+  border-radius: 32px;
+}
+
+/* Certifications caption defaults (desktop / landscape) */
+.certifications.featured-projects .project__caption {
+  flex: 0 0 125px;     /* fixed width like the original theme */
+  width: 125px;
+  max-width: 125px;
+  margin-left: 30px;
+  /* let text wrap naturally; DON'T clip */
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.certifications.featured-projects .project__name { 
+  display: block; 
+}
+
+/* Make the title + arrow wrap instead of overflowing */
+.certifications.featured-projects .project__name .arrow-link {
+  display: inline;               /* keep arrow inline with text */
+  white-space: normal;           /* allow wrapping */
+  overflow-wrap: anywhere;       /* break long words if needed */
+  word-break: break-word;        /* safety for very long tokens */
+  line-height: 1.3;
+}
+
+/* Mobile / portrait: stack and let the caption reflow full-width */
+@media (max-width: 768px) {
+  /* Stack image above caption, like the original theme */
+  .certifications.featured-projects .project {
+    display: block;
+    width: 100%;
+  }
+
+  .certifications.featured-projects .project__pic {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;             /* keep it flush */
+  }
+
+  /* CRITICAL: remove the 125px constraint so wrapping recalculates */
+  .certifications.featured-projects .project__caption {
+    flex: none !important;
+    width: auto !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-top: 25px;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  /* Keep title + arrow inline and wrap naturally */
+  .certifications.featured-projects .project__name { display: block; }
+
+  .certifications.featured-projects .project__name .arrow-link {
+    display: inline;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.3;
+  }
+}
+
+/* === RESTORE DEVELOPER GUTTERS & BLEED === */
+
+/* Sections: developer defaults (already declared earlier) — force them back if overridden */
+.section {
+  padding: 100px 170px !important;
+}
+@media screen and (max-width: 1280px) {
+  .section { padding: 100px !important; }
+}
+@media screen and (max-width: 1024px) {
+  .section { padding: 50px !important; }
+}
+@media screen and (max-width: 480px) {
+  .section { padding: 50px 35px !important; }
+}
+
+/* Footer: developer defaults */
+.footer {
+  padding: 50px 80px !important;
+}
+@media screen and (max-width: 1024px) {
+  .footer { padding: 50px !important; }
+}
+@media screen and (max-width: 480px) {
+  .footer { padding: 50px 30px !important; }
+}
+
+/* Featured Projects: restore developer's wider "bleed" */
+.featured-projects .project {
+  margin-left: -5% !important;
+  width: 125% !important;
+}
+@media screen and (max-width: 1280px) {
+  .featured-projects .project { width: 115% !important; }
+}
+@media screen and (max-width: 1024px) {
+  .featured-projects .project { width: 105% !important; }
+}
+@media screen and (max-width: 768px) {
+  .featured-projects .project {
+    width: 100% !important;
+    margin-left: 0 !important;
+    display: block; /* same as developer */
+  }
+}
+
+/* Make Certifications match Featured Projects layout exactly (same bleed) */
+.certifications.featured-projects .project {
+  margin-left: -5% !important;
+  width: 125% !important;
+}
+@media screen and (max-width: 1280px) {
+  .certifications.featured-projects .project { width: 115% !important; }
+}
+@media screen and (max-width: 1024px) {
+  .certifications.featured-projects .project { width: 105% !important; }
+}
+@media screen and (max-width: 768px) {
+  .certifications.featured-projects .project {
+    width: 100% !important;
+    margin-left: 0 !important;
+    display: block; /* stack like the theme */
+  }
+}
+
+/* Other Projects: keep the developer's non-bleeding layout */
+.other-projects .project {
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+
+.project-detail .project__pic img { border-radius: 32px; }
+
+/* - - - - - Sub-pages - - - - - */
+
+   .project-detail {
+    /* Keep the developer's section padding/gutters */
+    display: block;              /* ensure single column behavior */
+  }
+  
+  /* Inner content column uses the same max width as other sections */
+  .project-detail__content {
+    max-width: 650px;
+    width: 100%;
+  }
+  
+  /* ---- Global knobs (tweak these once) ---- */
+  :root {
+    /* Title + body type sizes for project pages */
+    --project-title-size: 2rem;          /* change to 2.25rem, etc. */
+    --project-body-size: 1rem;
+  
+    /* Global body image max width */
+    --project-body-img-max: 900px;       /* you can change this globally */
+  }
+  
+  /* Page title & text sizes (can be changed globally via the vars above) */
+  .project-detail__title {
+    font-size: var(--project-title-size);
+    line-height: 1.2;
+    margin: 20px 0 10px;
+  }
+  
+  .project-detail__summary,
+  .project-detail__body {
+    font-size: var(--project-body-size);
+  }
+  
+  /* Tags (simple chips) */
+  .project-detail__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0;
+    margin: 0 0 10px;
+    list-style: none;
+  }
+  .project-detail__tags .tag {
+    display: inline-block;
+    padding: 2px 7px;
+    font-family: Inconsolata, monospace;
+    font-size: .75rem;
+    font-weight: 700;
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 3px;
+  }
+  
+  /* CTA uses the site's arrow-link style */
+  .project-detail__cta { margin: 8px 0 18px; }
+  
+  /* ---- Body images (non-hero) ---- */
+  /* Centered, rounded, responsive.
+     Default max width is the global var, but can be overridden per-image. */
+  .project-detail__body img {
+    display: block;
+    margin: 18px auto;                 /* centered */
+    width: 100%;
+    height: auto;
+    max-width: min(100%, var(--img-max, var(--project-body-img-max)));
+    border-radius: 32px;               /* same 32px corner radius */
+  }
+  
+  /* Make markdown images not overflow on tiny screens */
+  @media (max-width: 480px) {
+    .project-detail__body img {
+      border-radius: 24px; /* optional, slightly smaller radius on phones */
+    }
+  }
+  
+  /* Keep the content column left-aligned on tablets/phones too */
+  @media (max-width: 768px) {
+    .project-detail__content { max-width: 650px; }
+  }
+
+/* Back link above hero — reuse the site's arrow but flip it to point left */
+.project-detail__nav { margin: 0 0 16px; }
+
+/* The default .arrow-link uses :after for a right arrow.
+   For "Back", hide :after and show a flipped :before instead. */
+.arrow-link--back:after { display: none; }
+
+.arrow-link--back {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.arrow-link--back:before {
+  content: '';
+  position: relative;
+  bottom: 2px;
+  margin-right: 15px;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../img/arrow.png) no-repeat center;
+  background-size: 100%;
+  transform: scaleX(-1);                 /* flip horizontally */
+  transition: transform .2s ease-in-out; /* match site feel */
+}
+
+/* Move the left-arrow LEFT on hover */
+.arrow-link--back:hover:before {
+  transform: scaleX(-1) translateX(7px);
+}
+
+/* ========== Project hero: full-bleed, fixed height, center-cropped ========== */
+
+/* Pull the hero out of the section gutters to span edge-to-edge */
+.project-hero {
+  /* Make the element extend to the viewport edges, regardless of parent padding */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+
+  /* Fixed height (tweak globally here) */
+  --project-hero-height: clamp(220px, 45vh, 520px);
+  height: var(--project-hero-height);
+
+  /* Optional: if you want zero rounding on the hero */
+  border-radius: 0;
+  overflow: hidden; /* hide cropped parts */
+}
+
+/* Make the image behave like a cover photo */
+.project-hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* crop to fill the box */
+  object-position: center;  /* crop from the center */
+}
+
+/* Optional: adjust hero height on very small screens */
+@media (max-width: 480px) {
+  .project-hero {
+    --project-hero-height: 220px; /* or any value you like */
+  }
+}
+
+/* Full-bleed hero image like a cover photo */
+.project-hero {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+
+  --project-hero-height: clamp(220px, 45vh, 520px);
+  height: var(--project-hero-height);
+
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.project-hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }

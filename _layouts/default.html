@@ -8,6 +8,25 @@ layout: compress
 </head>
 <body>
   {{ content }}
+
+  <!-- Global footer -->
+  {% include footer.html %}
+
+  <!-- Theme toggle -->
+  <div class="switch-wrapper">
+    <div class="sun"></div>
+    <div class="toggle-wrapper">
+      <input id="switch" type="checkbox" />
+      <label for="switch">Toggle</label>
+    </div>
+    <div class="moon"></div>
+  </div>
+
+  <!-- Back-to-top button -->
+  <button id="top-button" title="Back to top">
+    <img src="{{ site.baseurl }}/img/icons/arrow-up.svg" alt="Top" />
+  </button>
+
   {% include scripts.html %}
 </body>
 </html>

@@ -1,5 +1,5 @@
 - name: Project 1
-  url: https://github.com/ivanintelligence/plant-growth
+  url: /projects/reptile-classifier-model/
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
   used:
     - thing: Skill 1
@@ -10,7 +10,7 @@
   image: https://picsum.photos/300/200
 
 - name: Project 2
-  url: https://github.com/ivanintelligence/typhoon-forecast
+  url: /projects/plant-growth-multimodal-time-series-model/
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
   used:
     - thing: Skill 1
@@ -21,7 +21,7 @@
   image: https://picsum.photos/300/200
 
 - name: Project 3
-  url: https://github.com/ivanintelligence/test3
+  url: /projects/plant-class-segmentation-model/
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
   used:
     - thing: Skill 1
@@ -32,7 +32,7 @@
   image: https://picsum.photos/300/200
 
 - name: Project 4
-  url: https://github.com/ivanintelligence/test4
+  url: /projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
   used:
     - thing: Skill 1
@@ -43,7 +43,7 @@
   image: https://picsum.photos/300/200
 
 - name: Project 5
-  url: https://github.com/ivanintelligence/test5
+  url: /projects/typhoon-trajectory-forecaster/
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc ligula. Etiam non vehicula dolor, ac vestibulum purus. Nam eu semper magna. Praesent non finibus lacus. Suspendisse mollis tristique urna, sit amet fringilla sem fermentum at. In hac habitasse platea dictumst.
   used:
     - thing: Skill 1
