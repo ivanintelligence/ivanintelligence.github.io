@@ -437,11 +437,28 @@
   .skills .skillz { grid-template-columns: 1fr; }
 }
 
+/* Awards: image above text, left-aligned with the text container */
+.awards .award {
+  margin-bottom: 40px;            /* space between awards */
+}
 
+.awards .award__image {
+  /* make the wrapper follow the text container’s left edge */
+  width: 100%;
+  text-align: left;               /* kill any inherited centering */
+  margin: 0;                      /* no side margins */
+  padding: 0;                     /* no side padding */
+  margin-bottom: 16px;            /* space between image and text */
+}
 
-
-
-
+.awards .award__image img {
+  display: block;
+  width: 100%;                    /* responsive width of wrapper */
+  max-width: 520px;               /* same cap as project thumbnails */
+  height: auto;
+  border-radius: 32px;            /* same 32px rounding */
+  margin: 0;                      /* ensure no auto-centering */
+}
 
 
 

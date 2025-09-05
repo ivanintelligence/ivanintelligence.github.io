@@ -1,7 +1,32 @@
-<!-- _includes/awards.html -->
-<section id="awards" class="section awards">
-    <div class="section__title">Awards</div>
-    <div class="section__content">
-      <p class="placeholder">Coming soon.</p>
+<section class="section awards experience">
+  <div class="section__title">Awards</div>
+
+  <div class="section__content">
+    <div class="jobs">
+      {% assign items = site.data.11_awards | default: empty %}
+      {% for a in items %}
+      <div class="job award">
+        {% if a.image %}
+          <figure class="award__image">
+            <img
+              src="{{ a.image }}"
+              alt="{{ a.award | escape }}"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://via.placeholder.com/900x600?text=%3F';"
+            >
+          </figure>
+        {% endif %}
+
+        <div class="time-place">
+          <div class="job__company">{{ a.award }}</div>  <!-- left, bold (like company) -->
+          <div class="job__time">{{ a.date }}</div>      <!-- right-aligned date -->
+        </div>
+
+        {% if a.description %}
+          <p>{{ a.description }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
     </div>
-  </section>
+  </div>
+</section>

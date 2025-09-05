@@ -1,7 +1,23 @@
-<!-- _includes/leadership.html -->
-<section id="leadership" class="section leadership">
-    <div class="section__title">Leadership</div>
-    <div class="section__content">
-      <p class="placeholder">Coming soon.</p>
+<section class="section leadership experience">
+  <div class="section__title">Leadership</div>
+  <div class="section__content">
+    <div class="jobs">
+      {% assign leaderships = site.data.10_leadership | default: empty %}
+      {% for lead in leaderships %}
+      <div class="job">
+        <div class="time-place">
+          <div class="job__company">
+            {{ lead.position }}
+          </div>
+          <div class="job__time">
+            {{ lead.time }}
+          </div>
+        </div>
+        <div class="job__position">
+          <p>{{ lead.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
     </div>
-  </section>
+  </div>
+</section>
