@@ -58,36 +58,6 @@
   }
 
   // -------------------------------
-  // Back-to-top button
-  // -------------------------------
-  function initTopButton() {
-    const topButton = qs('#top-button');
-    if (!topButton) return;
-
-    const intro = qs('.intro');
-    const introHeight = intro ? intro.offsetHeight : 0;
-
-    function show(btn) {
-      if (window.jQuery) { jQuery(btn).fadeIn(); } else { btn.style.display = 'block'; }
-    }
-    function hide(btn) {
-      if (window.jQuery) { jQuery(btn).fadeOut(); } else { btn.style.display = 'none'; }
-    }
-
-    function onScroll() {
-      if (window.scrollY > introHeight) show(topButton);
-      else hide(topButton);
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    topButton.addEventListener('click', () => {
-      if (window.jQuery) jQuery('html, body').animate({ scrollTop: 0 }, 500);
-      else window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // -------------------------------
   // Hand wave emoji
   // -------------------------------
   function initWaveHand() {
@@ -190,7 +160,6 @@
   // -------------------------------
   function initWidgets() {
     try { initNightMode(); }     catch (e) { console.warn('NightMode init failed', e); }
-    try { initTopButton(); }     catch (e) { console.warn('TopButton init failed', e); }
     try { initWaveHand(); }      catch (e) { console.warn('Wave init failed', e); }
     try { initScrollReveal(); }  catch (e) { console.warn('ScrollReveal init failed', e); }
   }
