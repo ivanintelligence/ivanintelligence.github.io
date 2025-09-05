@@ -104,3 +104,45 @@
     gap: 32px; /* or 24px for tighter spacing */
   }
 }
+
+/* === Equal vertical spacing (landscape) + image-only first screen (portrait) === */
+
+/* Track the intro’s vertical padding so our 100vh math is exact */
+.intro { --intro-vpad: 240px; }           /* default = 120px top + 120px bottom */
+
+/* Your breakpoints set different vertical padding; mirror that in the variable */
+@media screen and (max-width: 630px) { .intro { --intro-vpad: 240px; } }  /* 120 + 120 */
+@media screen and (max-width: 550px) { .intro { --intro-vpad: 240px; } }  /* 120 + 120 */
+@media screen and (max-width: 480px) { .intro { --intro-vpad: 140px; } }  /* 70 + 70   */
+
+/* ----- Landscape / wide (side-by-side) ----- */
+/* Make the left text column fill the viewport height (minus padding)
+   and distribute the 3 blocks with equal gaps including top & bottom */
+@media screen and (min-width: 769px) {
+  .intro .intro__text {
+    min-height: calc(100vh - var(--intro-vpad));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;  /* Top, between, and bottom gaps all equal */
+  }
+}
+
+/* ----- Portrait / narrow (stacked: image above text) ----- */
+/* First screen shows only the headshot, perfectly centered vertically */
+@media screen and (max-width: 768px) {
+  .intro .intro__row { display: grid; grid-template-columns: 1fr; }
+
+  .intro .intro__media {
+    order: -1;                                  /* image above text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - var(--intro-vpad));/* fill viewport minus padding */
+    margin: 0;                                  /* no extra gap */
+  }
+
+  .intro .intro__text {
+    margin-top: 24px;                           /* small spacer after the fold */
+    gap: 24px;                                  /* tighter gaps between Hello ↔ Tagline ↔ CTA on mobile */
+  }
+}
