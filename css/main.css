@@ -555,12 +555,95 @@
   bottom: 1px;
 }
 
+/* Leadership entries */
+.leadership .job {
+  margin-bottom: 0px; /* space between different leadership entries */
+}
+
+/* Inside a single entry, keep position + description + links close */
+.leadership .job__company,
+.leadership .job__position,
+.leadership .job__links {
+  margin-bottom: 0px;   /* minimal spacing, like single line height */
+}
 
 
 
 
 
+/* Leadership: keep Position (left) + Time (right) on the SAME row on small screens */
+@media (max-width: 780px) {
+  /* make the row flex again (theme sets it to block on mobile) */
+  .leadership.experience .job .time-place {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;             /* small breathing room */
+  }
 
+  /* let the position grow and wrap; prevent it from pushing the date down */
+  .leadership.experience .job__company {
+    flex: 1 1 auto;
+    min-width: 0;          /* allow wrapping instead of forcing the date to a new line */
+  }
+
+  /* keep the date on the right, one line */
+  .leadership.experience .job__time {
+    flex: 0 0 auto;
+    white-space: nowrap;   /* stops the date from wrapping and dropping to next line */
+    text-align: right;
+  }
+
+  /* description sits below the row normally */
+  .leadership.experience .job__position {
+    width: 100%;
+    margin-top: 6px;       /* tiny gap under the position/date row (adjust to taste) */
+  }
+}
+
+/* Leadership (mobile): remove vertical gap between row (Position+Time) and Description */
+@media (max-width: 780px) {
+  .leadership.experience .job .time-place {
+    margin-bottom: 0;          /* no gap under the row */
+  }
+  .leadership.experience .job__company,
+  .leadership.experience .job__time {
+    margin: 0;                  /* ensure no margins here either */
+  }
+  .leadership.experience .job__position {
+    margin-top: 0 !important;   /* override the 6px you set earlier */
+  }
+  .leadership.experience .job__position p {
+    margin: 0;                  /* kill default p margins */
+    line-height: 1.35;          /* tidy single-line-ish spacing; tweak 1.2–1.4 to taste */
+  }
+}
+
+/* Leadership (mobile & desktop): tighten spacing under Position+Time row */
+.leadership.experience .job__position p {
+  margin-top: 0 !important;     /* no gap above description */
+  margin-bottom: 0 !important;  /* no gap below description */
+  line-height: 1.35;            /* keep readable line spacing */
+}
+
+/* Optional: if you want just a *tiny* breathing room (like half a line), use margin-top: 2px instead */
+
+/* Leadership entries: restore spacing between entries */
+.leadership .job {
+  margin-bottom: 50px;   /* same as developer’s Experience section */
+}
+
+/* Keep Position + Time row tight with Description */
+.leadership .job__position p {
+  margin-top: 0 !important;     /* no extra gap above */
+  margin-bottom: 0 !important;  /* no extra gap below */
+  line-height: 1.35;            /* readable spacing */
+}
+
+/* Add space between description and links */
+.leadership .job__links {
+  margin-top: 24px;   /* roughly like one <br>, adjust to 10–14px if needed */
+}
 
 
 
