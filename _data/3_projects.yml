@@ -1,5 +1,5 @@
 - name: Identifying Reptile Types Using CIFAR-100 Dataset and Supervised Convolutional Neural Networks (CNNs)
-  url: /projects/reptile-classifier-model/
+  url: /projects/reptile-classifier-model
   description:
     "A deep learning model trained to classify CIFAR-100 images of reptiles into five categories: crocodile, dinosaur, lizard, snake, and turtle. It uses convolutional, pooling, and fully connected layers, along with techniques such as data augmentation, dropout, and early stopping. The model achieved decent accuracy despite the challenge of limited training images."
   used:
@@ -11,7 +11,7 @@
   image: https://picsum.photos/300/200
 
 - name: Predicting Plant Growth Structures with Multimodal Data Using Convolutional Long Short-Term Memory (ConvLSTM)
-  url: /projects/plant-growth-multimodal-time-series-model/
+  url: /projects/plant-growth-multimodal-time-series-model
   description:
     "
     A multimodal deep learning model that predicts the next frame of plant growth by understanding two input modalities: growth patterns and environmental conditions. For instance, the model changes its prediction when the user adjusts pH level. Images of growth patterns pass through convolutional long short-term memory (ConvLSTM) layers, while environmental data passes through a series of layers such as time-distributed, reshape, and lambda. This produces two tensors with aligned temporal dimensions, which are concatenated to become a combined multimodal tensor. To generate the predicted frame, a 3D Convolution layer is employed.<br><br>
@@ -31,7 +31,7 @@
   image: https://picsum.photos/300/200
 
 - name: Comparing YOLOv8 and Detectron2 Architectures for Plant Class Segmentation Using Transfer Learning
-  url: /projects/plant-class-segmentation-model/
+  url: /projects/plant-class-segmentation-model
   description:
     "Two deep learning models trained on popular segmentation architectures, YOLOv8 and Detectron2, for segmenting the plant class. A dataset of plant images with diverse types and backgrounds was collected, and both models were trained using identical hyperparameters, then adjusted in parallel to compare performance, training speed, and memory consumption. Quantitative metrics such as average precision, loss, training time, RAM, and disk usage were used for evaluation. Results show that YOLOv8 trains faster and maintains consistent performance, while Detectron2 achieves higher accuracy when using larger hyperparameter settings."
   used:
@@ -43,7 +43,7 @@
   image: https://picsum.photos/300/200
 
 - name: Developing Custom Computer Vision Algorithm for Reconstructing 3D Models from Constrained 2D Stereoscopic Images Using OpenCV and Open3D
-  url: /projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/
+  url: /projects/2d-to-3d-image-reconstruction-computer-vision-algorithm
   description:
     "A computer vision algorithm that reconstructs a 3D model from constrained 2D stereoscopic images captured from the front, left, back, and right of an object. Unlike traditional photogrammetry that requires many angles, this approach is designed to address limited views. It combines standalone computer vision techniques into a unified process, leveraging OpenCV and Open3D libraries. It is useful in applications such as plant phenotyping, where capturing multiple angles may be challenging yet still sufficient for constructing 3D models for visual inspection and analysis."
   used:
@@ -55,7 +55,7 @@
   image: https://picsum.photos/300/200
 
 - name: Forecasting Typhoon Trajectory Using Interpolation and Extrapolation
-  url: /projects/typhoon-trajectory-forecaster/
+  url: /projects/typhoon-trajectory-forecaster
   description:
     "A simple desktop application that predicts the next path of a typhoon based on observed data points of its previous trajectory. Python and PyQt were used for full-stack development. Although the forecasting is limited to historical path data and does not account for other factors influencing a typhoon’s movement, the application is primarily designed to illustrate the concepts of interpolation and extrapolation."
   used:

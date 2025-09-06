@@ -1,5 +1,5 @@
-- image: https://picsum.photos/300/200
-  url: /conferences/icngc2024/
+- image: /img/conferences/icngc-2024.jpg
+  url: /conferences/icngc2024
   name: The 10th International Conference of Next Generation Computing
   description: 
     "
@@ -8,8 +8,8 @@
     Awarded with Best Paper Award in Oral Session, recognized among 80 international research presenters.
     "
 
-- image: https://picsum.photos/300/200
-  url: /conferences/urc2025/
+- image: /img/conferences/urc-2025.jpg
+  url: /conferences/urc2025
   name: The 9th University Research Conference
   description: 
     "
