@@ -6,8 +6,11 @@
 
       <div class="project__image">
         <img 
-          src="{{ project.image }}" alt="?" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=?';"
-          loading="lazy">
+          src="{{ project.image }}" 
+          alt="{{ project.name | escape }}" 
+          loading="lazy"
+          onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=?';"
+          {% if project.image_max %}style="max-width: {{ project.image_max }}px; width: 100%; height: auto;"{% endif %}>
       </div>
 
       <div class="project__name">

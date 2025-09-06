@@ -11,7 +11,8 @@
             src="{{ conf.image }}"
             alt="{{ conf.name }}"
             loading="lazy"
-            onerror="this.onerror=null; this.src='https://via.placeholder.com/520x320?text=%3F';">
+            onerror="this.onerror=null; this.src='https://via.placeholder.com/520x320?text=%3F';"
+            {% if conf.image_max %}style="max-width: {{ conf.image_max }}px; width: 100%; height: auto;"{% endif %}>
         </div>
 
         <div class="project__name">

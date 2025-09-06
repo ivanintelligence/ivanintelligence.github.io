@@ -14,13 +14,14 @@
               alt="{{ a.award | escape }}"
               loading="lazy"
               onerror="this.onerror=null;this.src='https://via.placeholder.com/900x600?text=%3F';"
+              {% if a.image_max %}style="max-width: {{ a.image_max }}px; width: 100%; height: auto;"{% endif %}
             >
           </figure>
         {% endif %}
 
         <div class="time-place">
-          <div class="job__company">{{ a.award }}</div>  <!-- left, bold (like company) -->
-          <div class="job__time">{{ a.date }}</div>      <!-- right-aligned date -->
+          <div class="job__company">{{ a.award }}</div>
+          <div class="job__time">{{ a.date }}</div>
         </div>
 
         {% if a.description %}
