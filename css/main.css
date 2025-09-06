@@ -473,6 +473,87 @@
   line-height: 1.3;
 }
 
+/* Leadership: 2-column layout (details + time), stacked position/description */
+.leadership .time-place {
+  display: grid;
+  grid-template-columns: 1fr auto;  /* details take space, time fixed */
+  column-gap: 30px;
+  align-items: start;
+}
+
+.leadership .job__company {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.leadership .job__desc {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.leadership .job__time {
+  font-size: 0.9rem;
+  font-family: Inconsolata, monospace;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  .leadership .time-place {
+    grid-template-columns: 1fr;
+  }
+  .leadership .job__time {
+    text-align: left;
+    margin-top: 8px;
+  }
+}
+
+/* Leadership/Experience job rows */
+.experience .job .time-place {
+  display: flex;
+  justify-content: space-between;
+  gap: 70px; /* adjust this value until spacing looks equal */
+}
+
+/* Leadership: scale down arrow-link to match description text */
+.leadership .job__links .arrow-link {
+  font-size: 1rem;        /* same as description */
+  line-height: 1.5;       /* keep vertical rhythm */
+  font-weight: 400;       /* normal weight like description */
+}
+
+.leadership .job__links .arrow-link:after {
+  width: 12px;            /* smaller arrow */
+  height: 12px;           /* keep proportions */
+  margin-left: 8px;       /* tighter gap between text and arrow */
+  bottom: 1px;            /* align baseline with text */
+}
+
+/* Leadership: links stacked tightly like text lines */
+.leadership .job__links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;        /* spacing above the FIRST link only */
+}
+
+.leadership .job__links p {
+  margin: 0;              /* kill default paragraph spacing */
+}
+
+.leadership .job__links .arrow-link {
+  font-size: 1rem;        /* match description size */
+  line-height: 1.4;       /* normal text rhythm */
+  font-weight: 400;
+  margin: 0;              /* no extra gap between links */
+}
+
+.leadership .job__links .arrow-link:after {
+  width: 12px;            /* smaller arrow */
+  height: 12px;
+  margin-left: 8px;
+  bottom: 1px;
+}
 
 
 

@@ -13,8 +13,25 @@
             {{ lead.time }}
           </div>
         </div>
+
         <div class="job__position">
           <p>{{ lead.description }}</p>
+
+          {% if lead.links %}
+          <div class="job__links">
+            {% for link in lead.links %}
+              {% assign l_ext = link.url contains '://' %}
+              <p class="job__link">
+                <a 
+                  href="{% if l_ext %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}" 
+                  {% if l_ext %}target="_blank" rel="noopener"{% endif %}
+                  class="arrow-link">
+                  {{ link.name }}
+                </a>
+              </p>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
