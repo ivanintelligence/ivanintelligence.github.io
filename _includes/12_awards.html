@@ -8,8 +8,9 @@
       <div class="job award">
         {% if a.image %}
           <figure class="award__image">
+            {% assign img_is_external = a.image contains '://' %}
             <img
-              src="{{ a.image }}"
+              src="{% if img_is_external %}{{ a.image }}{% else %}{{ a.image | relative_url }}{% endif %}"
               alt="{{ a.award | escape }}"
               loading="lazy"
               onerror="this.onerror=null;this.src='https://via.placeholder.com/900x600?text=%3F';"

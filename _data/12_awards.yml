@@ -86,7 +86,7 @@
 
 - award: Saint Joseph Freinademetz
   date: Mar 2019
-  image: "{{ site.baseurl }}/img/awards/saint-arnold-janssen-2015.jpg"
+  image: /img/awards/saint-joseph-freinademetz-2019.jpg
   description: 
     "
     Awarded with Saint Joseph Freinademetz Award, the highest award given upon a graduate of Holy Spirit School of Tagbilaran, for embodying holistic excellence exemplified by the life and ideals of Saint Joseph Freinademetz. This honor reflects a balanced integration of intellect, heart, and soul, that aligns with the school’s mission to develop well-rounded individuals dedicated to making a positive impact in the world.<br><br>
