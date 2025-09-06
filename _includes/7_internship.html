@@ -1,0 +1,46 @@
+<section class="section internship experience">
+    <div class="section__title">Internship</div>
+    <div class="section__content">
+      <div class="jobs">
+        {% assign internships = site.data.7_internship | default: empty %}
+        {% for intern in internships %}
+        <div class="job">
+          <div class="time-place">
+            <div class="job__company">
+              {{ intern.position }}
+            </div>
+            <div class="job__time">
+              {{ intern.time }}
+            </div>
+          </div>
+  
+          {% if intern.company %}
+          <div class="job__school">
+            {{ intern.company }}
+          </div>
+          {% endif %}
+  
+          <div class="job__position">
+            {{ intern.description | markdownify }}
+  
+            {% if intern.links %}
+            <div class="job__links">
+              {% for link in intern.links %}
+                {% assign l_ext = link.url contains '://' %}
+                <p class="job__link">
+                  <a 
+                    href="{% if l_ext %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}" 
+                    {% if l_ext %}target="_blank" rel="noopener"{% endif %}
+                    class="arrow-link">
+                    {{ link.name }}
+                  </a>
+                </p>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>

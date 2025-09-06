@@ -645,6 +645,17 @@
   margin-top: 24px;   /* roughly like one <br>, adjust to 10–14px if needed */
 }
 
+/* Restore bullets only for Internship descriptions */
+.internship .job__position ul {
+  list-style: disc;       /* show bullets */
+  margin-left: 20px;      /* indent bullets a bit */
+  padding-left: 10px;
+}
+
+.internship .job__position li {
+  margin-bottom: 6px;     /* spacing between bullet points */
+}
+
 
 
 
