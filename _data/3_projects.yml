@@ -8,7 +8,7 @@
     - thing: Data Preparation
     - thing: Classification
     - thing: TensorFlow
-  image: https://picsum.photos/300/200
+  image: /img/projects/reptile-classifier-model.jpeg
 
 - name: Predicting Plant Growth Structures with Multimodal Data Using Convolutional Long Short-Term Memory (ConvLSTM)
   url: /projects/plant-growth-multimodal-time-series-model
@@ -28,7 +28,7 @@
     - thing: Backpropagation
     - thing: Neural Networks
     - thing: Model Validation
-  image: https://picsum.photos/300/200
+  image: /img/projects/plant-growth-multimodal-time-series-model.jpeg
 
 - name: Comparing YOLOv8 and Detectron2 Architectures for Plant Class Segmentation Using Transfer Learning
   url: /projects/plant-class-segmentation-model
@@ -40,7 +40,7 @@
     - thing: TensorFlow
     - thing: Model Validation
     - thing: Hyperparameter Tuning
-  image: https://picsum.photos/300/200
+  image: /img/projects/plant-class-segmentation-model.jpeg
 
 - name: Developing Custom Computer Vision Algorithm for Reconstructing 3D Models from Constrained 2D Stereoscopic Images Using OpenCV and Open3D
   url: /projects/2d-to-3d-image-reconstruction-computer-vision-algorithm
@@ -52,7 +52,7 @@
     - thing: Point Clouds
     - thing: OpenCV
     - thing: Python
-  image: https://picsum.photos/300/200
+  image: /img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm.jpeg
 
 - name: Forecasting Typhoon Trajectory Using Interpolation and Extrapolation
   url: /projects/typhoon-trajectory-forecaster
@@ -64,4 +64,4 @@
     - thing: Data Visualization
     - thing: Software Development
     - thing: Data Preprocessing
-  image: https://picsum.photos/300/200
+  image: /img/projects/typhoon-trajectory-forecaster.jpeg
