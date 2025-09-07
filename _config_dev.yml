@@ -5,16 +5,16 @@ description: A passionate Machine Learning Engineer who loves building intellige
 url: https://ivanintelligence.github.io
 baseurl: ''
 
-logo: https://ivanintelligence.github.io/img/headshot.jpg
-headshot: https://ivanintelligence.github.io/img/headshot.jpg
+logo: /img/headshot.jpg
+headshot: /img/headshot.jpg
 
-resume: https://ivanintelligence.github.io/JohnIvanDiaz_Resume.pdf
+resume: /JohnIvanDiaz_Resume.pdf
 linkedin: https://www.linkedin.com/in/diazjohnivantuyor
 email: mailto:diazjohnivantuyor@gmail.com
 
 social:
   - title: resume
-    url: https://ivanintelligence.github.io/JohnIvanDiaz_Resume.pdf
+    url: /JohnIvanDiaz_Resume.pdf
   - title: linkedin
     url: https://www.linkedin.com/in/diazjohnivantuyor
   - title: github
