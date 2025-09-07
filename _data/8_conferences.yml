@@ -1,5 +1,4 @@
 - image: /img/conferences/icngc-2024.jpg
-  url: /conferences/icngc2024
   name: The 10th International Conference of Next Generation Computing
   description: 
     "
@@ -9,7 +8,6 @@
     "
 
 - image: /img/conferences/urc-2025.jpg
-  url: /conferences/urc2025
   name: The 9th University Research Conference
   description: 
     "
