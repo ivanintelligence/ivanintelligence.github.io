@@ -2,10 +2,4 @@
   url: 
   description:
     Google
-  image: https://picsum.photos/300/200
-
-- name: TensorFlow Developer Professional Certificate
-  url: 
-  description:
-    DeepLearning.AI
-  image: https://picsum.photos/300/200
+  image: /img/professional-certificates/machine-learning-engineer-professional-certificate.jpg
