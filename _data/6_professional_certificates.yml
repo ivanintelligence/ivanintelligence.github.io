@@ -1,11 +1,17 @@
-- name: Machine Learning Engineer Professional Certificate
-  url: 
-  description:
-    Google
-  image: https://picsum.photos/300/200
-
 - name: TensorFlow Developer Professional Certificate
   url: 
   description:
     DeepLearning.AI
-  image: https://picsum.photos/300/200
+  image: /img/professional-certificates/tensorflow-developer-professional-certificate.jpg
+
+- name: Machine Learning Engineer Professional Certificate
+  url: 
+  description:
+    Google
+  image: /img/professional-certificates/machine-learning-engineer-professional-certificate.jpg
+
+- name: Machine Learning On Google Cloud Specialization
+  url: 
+  description:
+    Google
+  image: /img/professional-certificates/machine-learning-on-google-cloud-specialization.jpg
