@@ -7,15 +7,10 @@
       <div class="job">
 
         {% if e.image %}
-        <figure class="job__image">
+        <figure class="job__image" {% if e.image_max %}style="--img-max: {{ e.image_max }}px"{% endif %}>
           {% assign img_is_external = e.image contains '://' %}
-          <img
-            src="{% if img_is_external %}{{ e.image }}{% else %}{{ e.image | relative_url }}{% endif %}"
-            alt="{{ e.degree | escape }}"
-            loading="lazy"
-            onerror="this.onerror=null;this.src='https://via.placeholder.com/900x600?text=%3F';"
-            {% if e.image_max %}style="width: {{ e.image_max }}px; max-width: 100%; height: auto;"{% endif %}
-          >
+          <img src="{% if img_is_external %}{{ e.image }}{% else %}{{ e.image | relative_url }}{% endif %}"
+               alt="{{ e.degree | escape }}" loading="lazy">
         </figure>
         {% endif %}
 

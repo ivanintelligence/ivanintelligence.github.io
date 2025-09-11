@@ -4,7 +4,7 @@
     <br>
     <a href="https://www.coursera.org/account/accomplishments/specialization/RQGYVYF6MOT5" target="_blank" rel="noopener" class="arrow-link">See credential</a>
   image: /img/professional-certificates/tensorflow-developer-professional-certificate.jpg
-  image_max: 630
+  image_max: 640
 
 - name: Machine Learning Engineer Professional Certificate
   description:
@@ -12,7 +12,7 @@
     <br>
     <a href="https://www.coursera.org/account/accomplishments/specialization/YI0ER3YVYMWF" target="_blank" rel="noopener" class="arrow-link">See credential</a>
   image: /img/professional-certificates/machine-learning-engineer-professional-certificate.jpg
-  image_max: 630
+  image_max: 640
 
 - name: Machine Learning On Google Cloud Specialization
   description:
@@ -20,4 +20,4 @@
     <br>
     <a href="https://www.coursera.org/account/accomplishments/specialization/IOC9QVUN7QPZ" target="_blank" rel="noopener" class="arrow-link">See credential</a>
   image: /img/professional-certificates/machine-learning-on-google-cloud-specialization.jpg
-  image_max: 630
+  image_max: 640

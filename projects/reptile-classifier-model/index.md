@@ -2,7 +2,7 @@
 layout: subpage
 
 hero: https://picsum.photos/1600/900
-title: Project
+title: Identifying Reptile Types Using CIFAR-100 Dataset and Supervised Convolutional Neural Networks (CNNs)
 tags: [Skill 1, Skill 2, Skill 3, Skill 4, Skill 5]
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum rutrum varius. In hac habitasse platea dictumst.
 links:

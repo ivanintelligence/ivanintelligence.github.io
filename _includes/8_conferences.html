@@ -6,13 +6,8 @@
     {% for conf in confs %}
       <div class="project">
 
-        <div class="project__image">
-          <img
-            src="{{ conf.image }}"
-            alt="{{ conf.name }}"
-            loading="lazy"
-            onerror="this.onerror=null; this.src='https://via.placeholder.com/520x320?text=%3F';"
-            {% if conf.image_max %}style="width: {{ conf.image_max }}px; max-width: 100%; height: auto;"{% endif %}>
+        <div class="project__image" {% if conf.image_max %}style="--img-max: {{ conf.image_max }}px"{% endif %}>
+          <img src="{{ conf.image | relative_url }}" alt="{{ conf.name | escape }}" loading="lazy">
         </div>
 
         <div class="project__name">

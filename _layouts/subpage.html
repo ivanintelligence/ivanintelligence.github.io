@@ -59,9 +59,7 @@ layout: default
               href="{% if l_ext %}{{ l.url }}{% else %}{{ l.url | relative_url }}{% endif %}"
               {% if l_ext %}target="_blank" rel="noopener"{% endif %}
               class="arrow-link"
-            >
-              {{ l.text }}
-            </a>
+            >{{ l.text }}</a>
           </p>
         {% endfor %}
       </div>

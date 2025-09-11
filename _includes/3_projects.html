@@ -4,13 +4,8 @@
     {% for project in site.data.3_projects %}
     <div class="project">
 
-      <div class="project__image">
-        <img 
-          src="{{ project.image }}" 
-          alt="{{ project.name | escape }}" 
-          loading="lazy"
-          onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=?';"
-          {% if project.image_max %}style="width: {{ project.image_max }}px; max-width: 100%; height: auto;"{% endif %}>
+      <div class="project__image" {% if project.image_max %}style="--img-max: {{ project.image_max }}px"{% endif %}>
+        <img src="{{ project.image | relative_url }}" alt="{{ project.name | escape }}" loading="lazy">
       </div>
 
       <div class="project__name">

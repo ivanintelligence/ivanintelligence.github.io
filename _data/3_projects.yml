@@ -9,6 +9,7 @@
     - thing: Classification
     - thing: TensorFlow
   image: /img/projects/reptile-classifier-model.jpeg
+  image_max: 480
 
 - name: Predicting Plant Growth Structures with Multimodal Data Using Convolutional Long Short-Term Memory (ConvLSTM)
   description: >
@@ -27,6 +28,7 @@
     - thing: Neural Networks
     - thing: Model Validation
   image: /img/projects/plant-growth-multimodal-time-series-model.jpeg
+  image_max: 480
 
 - name: Comparing YOLOv8 and Detectron2 Architectures for Plant Class Segmentation Using Transfer Learning
   description: >
@@ -39,6 +41,7 @@
     - thing: Model Validation
     - thing: Hyperparameter Tuning
   image: /img/projects/plant-class-segmentation-model.jpeg
+  image_max: 480
 
 - name: Developing Custom Computer Vision Algorithm for Reconstructing 3D Models from Constrained 2D Stereoscopic Images Using OpenCV and Open3D
   description: >
@@ -51,6 +54,7 @@
     - thing: OpenCV
     - thing: Python
   image: /img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm.jpeg
+  image_max: 480
 
 - name: Forecasting Typhoon Trajectory Using Interpolation and Extrapolation
   description: >
@@ -63,3 +67,4 @@
     - thing: Software Development
     - thing: Data Preprocessing
   image: /img/projects/typhoon-trajectory-forecaster.jpeg
+  image_max: 480

@@ -1,20 +1,19 @@
 # Site settings
 name: John Ivan Diaz
 title: John Ivan Diaz
-description: A passionate Machine Learning Engineer who loves building intelligent systems
+description: Artificial Intelligence / Machine Learning (AI/ML) Engineer
 url: https://ivanintelligence.github.io
 baseurl: ''
 
-logo: https://ivanintelligence.github.io/img/headshot.jpg
-headshot: https://ivanintelligence.github.io/img/headshot.jpg
-
-resume: https://ivanintelligence.github.io/JohnIvanDiaz_Resume.pdf
+logo: /img/headshot/headshot.jpg
+headshot: /img/headshot/headshot.jpg
 linkedin: https://www.linkedin.com/in/diazjohnivantuyor
 email: mailto:diazjohnivantuyor@gmail.com
+resume: /resume/JohnIvanDiaz_Resume.pdf
 
 social:
   - title: resume
-    url: https://ivanintelligence.github.io/JohnIvanDiaz_Resume.pdf
+    url: /resume/JohnIvanDiaz_Resume.pdf
   - title: linkedin
     url: https://www.linkedin.com/in/diazjohnivantuyor
   - title: github

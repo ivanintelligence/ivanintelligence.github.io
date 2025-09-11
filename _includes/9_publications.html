@@ -4,13 +4,8 @@
     {% for pub in site.data.9_publications %}
     <div class="project">
 
-      <div class="project__image">
-        <img 
-          src="{{ pub.image }}" 
-          alt="{{ pub.name }}" 
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://via.placeholder.com/150?text=?';"
-          {% if pub.image_max %}style="width: {{ pub.image_max }}px; max-width: 100%; height: auto;"{% endif %}>
+      <div class="project__image" {% if pub.image_max %}style="--img-max: {{ pub.image_max }}px"{% endif %}>
+        <img src="{{ pub.image | relative_url }}" alt="{{ pub.name | escape }}" loading="lazy">
       </div>
 
       <div class="project__name">

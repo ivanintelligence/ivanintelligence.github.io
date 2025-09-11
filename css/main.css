@@ -1213,8 +1213,6 @@ html, body,
   letter-spacing: normal !important;
 }
 
-/* ...existing code... */
-
 /* Consistent gap between image and caption (tweak once) */
 :root { --pcap-gap: 30px; }
 
@@ -1248,7 +1246,217 @@ html, body,
     margin-left: 0;
   }
 }
-/* ...existing code... */
+
+
+
+/* Responsive image wrappers: use --img-max from templates; shrink on narrow viewports */
+.other-projects .project__image,
+.conferences .project__image,
+.publications .project__image,
+.awards .award__image,
+.experience .job__image,
+.certifications.featured-projects .project__pic,
+.professional-certificates.featured-projects .project__pic,
+.project-detail .project__pic {
+  width: 100%;
+  max-width: min(100%, var(--img-max, 520px)) !important; /* cap at image_max, else default 520 */
+  flex: 0 1 var(--img-max, 520px); /* in flex layouts, base on image_max but allow shrinking */
+}
+
+/* Images always fill their wrapper proportionally */
+.other-projects .project__image img,
+.conferences .project__image img,
+.publications .project__image img,
+.awards .award__image img,
+.experience .job__image img,
+.certifications.featured-projects .project__pic img,
+.professional-certificates.featured-projects .project__pic img,
+.project-detail .project__pic img {
+  display: block;
+  width: 100% !important;
+  height: auto;
+}
+
+/* 1) Prevent images from entering the title column on featured sections */
+.certifications.featured-projects .section__content,
+.professional-certificates.featured-projects .section__content {
+  position: relative;
+  overflow: hidden; /* clip any left-bleed so it can’t overlap the title */
+}
+
+/* 2) Disable the wide left-bleed earlier to protect the title column */
+@media (max-width: 1280px) {
+  .certifications.featured-projects .project,
+  .professional-certificates.featured-projects .project {
+    width: 115% !important;
+  }
+}
+@media (max-width: 1180px) {
+  .certifications.featured-projects .project,
+  .professional-certificates.featured-projects .project {
+    margin-left: 0 !important;
+    width: 100% !important; /* no bleed when space gets tight */
+  }
+}
+
+/* 3) If the viewport can’t fit Title column + gap + min image, wrap to stacked layout */
+@media (max-width: 1100px) {
+  .section {
+    flex-wrap: wrap; /* title on line 1, content below — before true “mobile” */
+  }
+  .section .section__title {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-right: 0 !important;
+    text-align: left !important; /* left-align once wrapped */
+  }
+  .section .section__content {
+    width: 100%;
+  }
+}
+
+/* 4) Keep non-hyphenated, word-boundary wrapping for section titles (safety) */
+.section__title {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+
+
+/* 1) Do not clip the featured sections’ content */
+.certifications.featured-projects .section__content,
+.professional-certificates.featured-projects .section__content {
+  overflow: visible !important;
+}
+
+/* 2) Remove the wide bleed that pushes rows outside the content column */
+.certifications.featured-projects .project,
+.professional-certificates.featured-projects .project {
+  margin-left: 0 !important;
+  width: 100% !important;
+}
+
+/* 3) Image column: size by --img-max, but allow shrinking as viewport narrows */
+.certifications.featured-projects .project__pic,
+.professional-certificates.featured-projects .project__pic {
+  flex: 0 1 var(--img-max, 520px) !important;
+  max-width: min(100%, var(--img-max, 520px)) !important;
+}
+
+/* 4) Text (name + description): fill remaining space, never clipped */
+.certifications.featured-projects .project__caption,
+.professional-certificates.featured-projects .project__caption {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;   /* allow proper wrapping */
+  max-width: none !important;
+  margin-left: var(--pcap-gap, 30px) !important;
+  overflow: visible !important;
+}
+
+
+
+/* Featured sections: consistent image width and alignment */
+:root{
+  --feat-caption: 125px;  /* fixed caption column width (theme default) */
+  --pcap-gap: 30px;       /* gap between image and caption */
+}
+
+/* Kill bleed and lock both sections to identical row layout */
+.certifications.featured-projects .project,
+.professional-certificates.featured-projects .project {
+  display: flex !important;
+  align-items: flex-start;
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+
+/* Caption: fixed width so image gets the same remaining space in both sections */
+.certifications.featured-projects .project__caption,
+.professional-certificates.featured-projects .project__caption {
+  flex: 0 0 var(--feat-caption) !important;
+  width: var(--feat-caption) !important;
+  max-width: var(--feat-caption) !important;
+  margin-left: var(--pcap-gap) !important;
+  min-width: 0;
+}
+
+/* Image wrapper: take remaining space but cap at image_max; shrink on narrow viewports */
+.certifications.featured-projects .project__pic,
+.professional-certificates.featured-projects .project__pic {
+  flex: 1 1 auto !important;
+  width: min(var(--img-max, 520px), calc(100% - var(--feat-caption) - var(--pcap-gap))) !important;
+  max-width: min(var(--img-max, 520px), calc(100% - var(--feat-caption) - var(--pcap-gap))) !important;
+}
+
+/* Images fill their wrapper */
+.certifications.featured-projects .project__pic img,
+.professional-certificates.featured-projects .project__pic img {
+  display: block;
+  width: 100% !important;
+  height: auto;
+}
+
+/* Stack on mobile (unchanged behavior) */
+@media (max-width: 768px) {
+  .certifications.featured-projects .project,
+  .professional-certificates.featured-projects .project { display: block !important; }
+  .certifications.featured-projects .project__caption,
+  .professional-certificates.featured-projects .project__caption {
+    width: auto !important; max-width: none !important; margin-left: 0 !important;
+  }
+  .certifications.featured-projects .project__pic,
+  .professional-certificates.featured-projects .project__pic {
+    width: 100% !important; max-width: min(100%, var(--img-max, 520px)) !important;
+  }
+}
+
+
+
+/* Conferences/Certs/Prof Certs — same responsive image behavior via --img-max */
+.other-projects .project__image {
+  width: 100%;
+  max-width: min(100%, var(--img-max, 520px)) !important;
+}
+.other-projects .project__image img {
+  display: block;
+  width: 100% !important;
+  height: auto;
+  border-radius: var(--img-radius, 32px);
+}
+
+
+
+/* Shared gap between “name” and description across sections */
+:root { --name-desc-gap: 10px; }
+
+/* Certifications (other-projects): name → description gap */
+.other-projects .project__name {
+  margin-bottom: var(--name-desc-gap) !important;
+}
+
+/* Awards (experience): award/date row → description gap */
+.awards .time-place {
+  margin-bottom: var(--name-desc-gap) !important;
+}
+
+
+
+/* Arrow asset swap (light/dark) */
+:root {
+  --arrow-img: url("../img/arrow/arrow-light.png");
+}
+html.night {
+  --arrow-img: url("../img/arrow/arrow-dark.png");
+}
+
+/* Point all arrow UI to the new assets */
+.section .arrow-link:after,
+.arrow-link--back:before {
+  background-image: var(--arrow-img) !important; /* keeps size/pos/repeat from earlier rules */
+}
 
 
 
@@ -1668,8 +1876,399 @@ html.night {
 
 
 
+/* === Education (light mode) === */
+html:not(.night) {
+  /* Degree (e.degree → .job__company) */
+  --edu-degree-family: "New York", Georgia, "Times New Roman", serif;
+  --edu-degree-size: 1.4rem;
+  --edu-degree-weight: 400;     /* 400=regular, 600=semibold, 700=bold */
+  --edu-degree-style: normal;
+  --edu-degree-color: #222325;
+
+  /* Time (e.time → .job__time) */
+  --edu-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --edu-time-size: 1rem;
+  --edu-time-weight: 400;
+  --edu-time-style: normal;
+  --edu-time-color: #727376;
+
+  /* Description (e.description → .job__description) */
+  --edu-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --edu-desc-size: 1rem;
+  --edu-desc-weight: 400;
+  --edu-desc-style: normal;
+  --edu-desc-color: #727376;
+}
+
+/* === Education (dark mode) === */
+html.night {
+  --edu-degree-family: "New York", Georgia, "Times New Roman", serif;
+  --edu-degree-size: 1.4rem;
+  --edu-degree-weight: 400;
+  --edu-degree-style: normal;
+  --edu-degree-color: #F6F5F7;
+
+  --edu-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --edu-time-size: 1rem;
+  --edu-time-weight: 400;
+  --edu-time-style: normal;
+  --edu-time-color: #A9A9AB;
+
+  --edu-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --edu-desc-size: 1rem;
+  --edu-desc-weight: 400;
+  --edu-desc-style: normal;
+  --edu-desc-color: #A9A9AB;
+}
+
+/* Apply to Education */
+.education .job__company {
+  font-family: var(--edu-degree-family) !important;
+  font-size: var(--edu-degree-size) !important;
+  font-weight: var(--edu-degree-weight) !important;
+  font-style: var(--edu-degree-style) !important;
+  color: var(--edu-degree-color) !important;
+}
+
+.education .job__time {
+  font-family: var(--edu-time-family) !important;
+  font-size: var(--edu-time-size) !important;
+  font-weight: var(--edu-time-weight) !important;
+  font-style: var(--edu-time-style) !important;
+  color: var(--edu-time-color) !important;
+}
+
+.education .job__description,
+.education .job__description p {
+  font-family: var(--edu-desc-family) !important;
+  font-size: var(--edu-desc-size) !important;
+  font-weight: var(--edu-desc-weight) !important;
+  font-style: var(--edu-desc-style) !important;
+  color: var(--edu-desc-color) !important;
+}
 
 
+
+/* === Leadership (light mode) === */
+html:not(.night) {
+  /* Position (lead.position → .job__company) */
+  --lead-pos-family: "New York", Georgia, "Times New Roman", serif;
+  --lead-pos-size: 1.4rem;
+  --lead-pos-weight: 400;     /* 400=regular, 600=semibold, 700=bold */
+  --lead-pos-style: normal;
+  --lead-pos-color: #222325;
+
+  /* Time (lead.time → .job__time) */
+  --lead-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --lead-time-size: 1rem;
+  --lead-time-weight: 400;
+  --lead-time-style: normal;
+  --lead-time-color: #727376;
+
+  /* Description (lead.description → .job__position p) */
+  --lead-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --lead-desc-size: 1rem;
+  --lead-desc-weight: 400;
+  --lead-desc-style: normal;
+  --lead-desc-color: #727376;
+
+  /* Links INSIDE description */
+  --lead-link-weight: 700;
+  --lead-link-style: normal;
+  --lead-link-color: #222325;
+}
+
+/* === Leadership (dark mode) === */
+html.night {
+  --lead-pos-family: "New York", Georgia, "Times New Roman", serif;
+  --lead-pos-size: 1.4rem;
+  --lead-pos-weight: 400;
+  --lead-pos-style: normal;
+  --lead-pos-color: #F6F5F7;
+
+  --lead-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --lead-time-size: 1rem;
+  --lead-time-weight: 400;
+  --lead-time-style: normal;
+  --lead-time-color: #A9A9AB;
+
+  --lead-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --lead-desc-size: 1rem;
+  --lead-desc-weight: 400;
+  --lead-desc-style: normal;
+  --lead-desc-color: #A9A9AB;
+
+  --lead-link-weight: 700;
+  --lead-link-style: normal;
+  --lead-link-color: #F6F5F7;
+}
+
+/* Apply to Leadership */
+.leadership .job__company {
+  font-family: var(--lead-pos-family) !important;
+  font-size: var(--lead-pos-size) !important;
+  font-weight: var(--lead-pos-weight) !important;
+  font-style: var(--lead-pos-style) !important;
+  color: var(--lead-pos-color) !important;
+}
+
+.leadership .job__time {
+  font-family: var(--lead-time-family) !important;
+  font-size: var(--lead-time-size) !important;
+  font-weight: var(--lead-time-weight) !important;
+  font-style: var(--lead-time-style) !important;
+  color: var(--lead-time-color) !important;
+}
+
+.leadership .job__position,
+.leadership .job__position p {
+  font-family: var(--lead-desc-family) !important;
+  font-size: var(--lead-desc-size) !important;
+  font-weight: var(--lead-desc-weight) !important;
+  font-style: var(--lead-desc-style) !important;
+  color: var(--lead-desc-color) !important;
+}
+
+/* Links inside the description block */
+.leadership .job__position .arrow-link,
+.leadership .job__position a {
+  font-size: inherit !important;
+  font-weight: var(--lead-link-weight) !important;
+  font-style: var(--lead-link-style) !important;
+  color: var(--lead-link-color) !important;
+}
+
+
+
+/* === Awards (light mode) === */
+html:not(.night) {
+  --awards-name-family: "New York", Georgia, "Times New Roman", serif;
+  --awards-name-size: 1.4rem;
+  --awards-name-weight: 400;
+  --awards-name-style: normal;
+  --awards-name-color: #222325;
+
+  --awards-date-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --awards-date-size: 1rem;
+  --awards-date-weight: 400;
+  --awards-date-style: normal;
+  --awards-date-color: #727376;
+
+  --awards-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --awards-desc-size: 1rem;
+  --awards-desc-weight: 400;
+  --awards-desc-style: normal;
+  --awards-desc-color: #727376;
+
+  --awards-link-weight: 700;
+  --awards-link-style: normal;
+  --awards-link-color: #222325;
+}
+
+/* === Awards (dark mode) === */
+html.night {
+  --awards-name-family: "New York", Georgia, "Times New Roman", serif;
+  --awards-name-size: 1.4rem;
+  --awards-name-weight: 400;
+  --awards-name-style: normal;
+  --awards-name-color: #F6F5F7;
+
+  --awards-date-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --awards-date-size: 1rem;
+  --awards-date-weight: 400;
+  --awards-date-style: normal;
+  --awards-date-color: #A9A9AB;
+
+  --awards-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --awards-desc-size: 1rem;
+  --awards-desc-weight: 400;
+  --awards-desc-style: normal;
+  --awards-desc-color: #A9A9AB;
+
+  --awards-link-weight: 700;
+  --awards-link-style: normal;
+  --awards-link-color: #F6F5F7;
+}
+
+/* Apply: award (name), date, description, and links */
+.awards .job__company {
+  font-family: var(--awards-name-family) !important;
+  font-size: var(--awards-name-size) !important;
+  font-weight: var(--awards-name-weight) !important;
+  font-style: var(--awards-name-style) !important;
+  color: var(--awards-name-color) !important;
+}
+
+.awards .job__time {
+  font-family: var(--awards-date-family) !important;
+  font-size: var(--awards-date-size) !important;
+  font-weight: var(--awards-date-weight) !important;
+  font-style: var(--awards-date-style) !important;
+  color: var(--awards-date-color) !important;
+}
+
+.awards .job p,
+.awards .job__description,
+.awards .job__description p {
+  font-family: var(--awards-desc-family) !important;
+  font-size: var(--awards-desc-size) !important;
+  font-weight: var(--awards-desc-weight) !important;
+  font-style: var(--awards-desc-style) !important;
+  color: var(--awards-desc-color) !important;
+}
+
+/* Links inside Awards description */
+.awards .job p a,
+.awards .job__description .arrow-link,
+.awards .job__description a {
+  font-size: inherit !important;
+  font-weight: var(--awards-link-weight) !important;
+  font-style: var(--awards-link-style) !important;
+  color: var(--awards-link-color) !important;
+}
+
+
+
+/* === Internship (light mode) === */
+html:not(.night) {
+  /* Position (intern.position → .job__company) */
+  --intern-pos-family: "New York", Georgia, "Times New Roman", serif;
+  --intern-pos-size: 1.4rem;
+  --intern-pos-weight: 400;     /* 400|600|700 */
+  --intern-pos-style: normal;
+  --intern-pos-color: #222325;
+
+  /* Time (intern.time → .job__time) */
+  --intern-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --intern-time-size: 1rem;
+  --intern-time-weight: 400;
+  --intern-time-style: normal;
+  --intern-time-color: #727376;
+
+  /* Description (intern.description → .job__position) */
+  --intern-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --intern-desc-size: 1rem;
+  --intern-desc-weight: 400;
+  --intern-desc-style: normal;
+  --intern-desc-color: #727376;
+
+  /* Links inside description */
+  --intern-link-weight: 700;
+  --intern-link-style: normal;
+  --intern-link-color: #222325;
+}
+
+/* === Internship (dark mode) === */
+html.night {
+  --intern-pos-family: "New York", Georgia, "Times New Roman", serif;
+  --intern-pos-size: 1.4rem;
+  --intern-pos-weight: 400;
+  --intern-pos-style: normal;
+  --intern-pos-color: #F6F5F7;
+
+  --intern-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --intern-time-size: 1rem;
+  --intern-time-weight: 400;
+  --intern-time-style: normal;
+  --intern-time-color: #A9A9AB;
+
+  --intern-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --intern-desc-size: 1rem;
+  --intern-desc-weight: 400;
+  --intern-desc-style: normal;
+  --intern-desc-color: #A9A9AB;
+
+  --intern-link-weight: 700;
+  --intern-link-style: normal;
+  --intern-link-color: #F6F5F7;
+}
+
+/* Apply: Internship */
+.internship .job__company {
+  font-family: var(--intern-pos-family) !important;
+  font-size: var(--intern-pos-size) !important;
+  font-weight: var(--intern-pos-weight) !important;
+  font-style: var(--intern-pos-style) !important;
+  color: var(--intern-pos-color) !important;
+}
+
+.internship .job__time {
+  font-family: var(--intern-time-family) !important;
+  font-size: var(--intern-time-size) !important;
+  font-weight: var(--intern-time-weight) !important;
+  font-style: var(--intern-time-style) !important;
+  color: var(--intern-time-color) !important;
+}
+
+.internship .job__position,
+.internship .job__position p {
+  font-family: var(--intern-desc-family) !important;
+  font-size: var(--intern-desc-size) !important;
+  font-weight: var(--intern-desc-weight) !important;
+  font-style: var(--intern-desc-style) !important;
+  color: var(--intern-desc-color) !important;
+}
+
+/* Links inside Internship description */
+.internship .job__position .arrow-link,
+.internship .job__position a {
+  font-size: inherit !important;
+  font-weight: var(--intern-link-weight) !important;
+  font-style: var(--intern-link-style) !important;
+  color: var(--intern-link-color) !important;
+}
+
+
+
+/* === Footer typography knobs === */
+html:not(.night) {
+  /* copyright lines */
+  --footer-copy-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --footer-copy-size: 1rem;
+  --footer-copy-weight: 400;
+  --footer-copy-style: normal;
+  --footer-copy-color: #222325;
+
+  /* link names (Resume, LinkedIn, GitHub, Email) */
+  --footer-link-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --footer-link-size: 1rem;
+  --footer-link-weight: 700;   /* override theme if you like */
+  --footer-link-style: normal;
+  --footer-link-color: #2F6DE1; /* or #222325 */
+}
+
+html.night {
+  --footer-copy-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --footer-copy-size: 1rem;
+  --footer-copy-weight: 400;
+  --footer-copy-style: normal;
+  --footer-copy-color: #F6F5F7;
+
+  --footer-link-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --footer-link-size: 1rem;
+  --footer-link-weight: 700;
+  --footer-link-style: normal;
+  --footer-link-color: #4B7AF7; /* readable blue on dark */
+}
+
+/* Apply to footer texts */
+.footer__copyright {
+  font-family: var(--footer-copy-family) !important;
+  font-size: var(--footer-copy-size) !important;
+  font-weight: var(--footer-copy-weight) !important;
+  font-style: var(--footer-copy-style) !important;
+  color: var(--footer-copy-color) !important;
+}
+
+/* Apply to link labels (span.text) */
+.footer__links a .text {
+  font-family: var(--footer-link-family) !important;
+  font-size: var(--footer-link-size) !important;
+  font-weight: var(--footer-link-weight) !important;
+  font-style: var(--footer-link-style) !important;
+  color: var(--footer-link-color) !important;
+  letter-spacing: normal; /* optional */
+}
 
 
 
@@ -1903,3 +2502,197 @@ html.is-animating .swup-transition.is-entering {
 }
 
 .project-hero { position: relative; z-index: 0; }
+
+/* Subpage content: center the column below the hero */
+:root {
+  --subpage-max-width: 700px; /* tweak to your preferred column width */
+}
+
+.project-detail__content {
+  max-width: var(--subpage-max-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; /* keep text left-aligned while the column is centered */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - Sub-pages typography - - - - - */
+
+
+
+/* === Subpage "Back" link typography === */
+html:not(.night) {
+  --back-font-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --back-font-size: 1rem;      /* tweak */
+  --back-font-weight: 700;     /* 400|700 */
+  --back-font-style: normal;   /* normal|italic */
+  --back-font-color: #222325;
+}
+html.night {
+  --back-font-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --back-font-size: 1rem;
+  --back-font-weight: 700;
+  --back-font-style: normal;
+  --back-font-color: #F6F5F7;
+}
+
+/* Apply to the Back link under the hero */
+.project-detail__nav .arrow-link--back {
+  font-family: var(--back-font-family) !important;
+  font-size:   var(--back-font-size)   !important;
+  font-weight: var(--back-font-weight) !important;
+  font-style:  var(--back-font-style)  !important;
+  color:       var(--back-font-color)  !important;
+}
+
+/* Use the same global arrow sizing/gap as the rest of the site */
+.project-detail__nav .arrow-link--back:before {
+  margin-right: var(--arrow-gap, 10px) !important; /* same gap as .section .arrow-link */
+  width:        var(--arrow-size, 15px) !important;
+  height:       var(--arrow-size, 15px) !important;
+  bottom:       var(--arrow-baseline, 0.1em) !important;
+  background-image: var(--arrow-img) !important;   /* light/dark asset already set */
+}
+
+
+
+/* === Subpage (light mode) — hero, title, tags, summary, links, body === */
+html:not(.night) {
+  /* Hero */
+  --sub-hero-height: clamp(240px, 45vh, 520px);
+
+  /* Title */
+  --sub-title-family: "New York", Georgia, "Times New Roman", serif;
+  --sub-title-size: 2.8rem;
+  --sub-title-weight: 400;
+  --sub-title-style: normal;
+  --sub-title-color: #222325;
+
+  /* Tags (chips) */
+  --sub-tag-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-tag-size: 0.8rem;
+  --sub-tag-weight: 700;
+  --sub-tag-style: normal;
+  --sub-tag-color: #2F6DE1;
+
+  /* Summary */
+  --sub-summary-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-summary-size: 1rem;
+  --sub-summary-weight: 400;
+  --sub-summary-style: normal;
+  --sub-summary-color: #727376;
+
+  /* Links */
+  --sub-link-weight: 700;
+  --sub-link-style: normal;
+  --sub-link-color: #222325;
+
+  /* Body text */
+  --sub-body-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-body-size: 1rem;
+  --sub-body-line: 1.55;
+  --sub-body-weight: 400;
+  --sub-body-style: normal;
+  --sub-body-color: #727376;
+}
+
+/* === Subpage (dark mode) === */
+html.night {
+  --sub-hero-height: clamp(240px, 45vh, 520px);
+
+  --sub-title-family: "New York", Georgia, "Times New Roman", serif;
+  --sub-title-size: 2.8rem;
+  --sub-title-weight: 400;
+  --sub-title-style: normal;
+  --sub-title-color: #F6F5F7;
+
+  --sub-tag-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-tag-size: 0.8rem;
+  --sub-tag-weight: 700;
+  --sub-tag-style: normal;
+  --sub-tag-color: #4B7AF7;
+
+  --sub-summary-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-summary-size: 1rem;
+  --sub-summary-weight: 400;
+  --sub-summary-style: normal;
+  --sub-summary-color: #A9A9AB;
+
+  --sub-link-weight: 700;
+  --sub-link-style: normal;
+  --sub-link-color: #F6F5F7;
+
+  --sub-body-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-body-size: 1rem;
+  --sub-body-line: 1.55;
+  --sub-body-weight: 400;
+  --sub-body-style: normal;
+  --sub-body-color: #A9A9AB;
+}
+
+/* Apply hero height on subpages */
+.project-detail { --project-hero-height: var(--sub-hero-height); }
+
+/* Apply title/tags/summary/links/body styles */
+.project-detail__title {
+  font-family: var(--sub-title-family);
+  font-size: var(--sub-title-size);
+  font-weight: var(--sub-title-weight);
+  font-style: var(--sub-title-style);
+  color: var(--sub-title-color);
+}
+
+.project-detail__tags .tag {
+  font-family: var(--sub-tag-family);
+  font-size: var(--sub-tag-size);
+  font-weight: var(--sub-tag-weight);
+  font-style: var(--sub-tag-style);
+  color: var(--sub-tag-color);
+}
+
+.project-detail__summary {
+  font-family: var(--sub-summary-family);
+  font-size: var(--sub-summary-size);
+  font-weight: var(--sub-summary-weight);
+  font-style: var(--sub-summary-style);
+  color: var(--sub-summary-color);
+}
+
+.project-detail .arrow-link {
+  font-size: inherit;
+  font-weight: var(--sub-link-weight);
+  font-style: var(--sub-link-style);
+  color: var(--sub-link-color);
+}
+
+.project-detail__content,
+.project-detail__body,
+.project-detail__body p {
+  font-family: var(--sub-body-family);
+  font-size: var(--sub-body-size);
+  line-height: var(--sub-body-line);
+  font-weight: var(--sub-body-weight);
+  font-style: var(--sub-body-style);
+  color: var(--sub-body-color);
+}

@@ -7,15 +7,10 @@
       {% for a in items %}
       <div class="job award">
         {% if a.image %}
-          <figure class="award__image">
+          <figure class="award__image" {% if a.image_max %}style="--img-max: {{ a.image_max }}px"{% endif %}>
             {% assign img_is_external = a.image contains '://' %}
-            <img
-              src="{% if img_is_external %}{{ a.image }}{% else %}{{ a.image | relative_url }}{% endif %}"
-              alt="{{ a.award | escape }}"
-              loading="lazy"
-              onerror="this.onerror=null;this.src='https://via.placeholder.com/900x600?text=%3F';"
-              {% if a.image_max %}style="width: {{ a.image_max }}px; max-width: 100%; height: auto;"{% endif %}
-            >
+            <img src="{% if img_is_external %}{{ a.image }}{% else %}{{ a.image | relative_url }}{% endif %}"
+                 alt="{{ a.award | escape }}" loading="lazy">
           </figure>
         {% endif %}
 
