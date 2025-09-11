@@ -18,6 +18,13 @@
 
     if (!body || !html || !input) return;
 
+    function updateFooterIcons(isNight) {
+      document.querySelectorAll('.footer__links img.social-icon').forEach(img => {
+        const next = isNight ? img.dataset.dark : img.dataset.light;
+        if (next) img.setAttribute('src', next);
+      });
+    }
+
     // Prevent duplicate listeners when Swup swaps content (toggle lives outside #swup)
     if (!input.dataset.bound) {
       input.dataset.bound = '1';
@@ -28,9 +35,7 @@
     if (wrapper && !wrapper.dataset.bound) {
       wrapper.dataset.bound = '1';
       wrapper.addEventListener('click', (ev) => {
-        // Let native behavior happen if clicking the checkbox or its label
         if (ev.target && (ev.target.id === 'switch' || ev.target.tagName === 'LABEL')) return;
-        // Otherwise, toggle once via the checkbox (fires the 'change' listener above)
         input.checked = !input.checked;
         input.dispatchEvent(new Event('change', { bubbles: true }));
       });
@@ -39,6 +44,7 @@
     function applyTheme(isNight) {
       body.classList.toggle('night', isNight);
       html.classList.toggle('night', isNight);
+      updateFooterIcons(isNight);
       try { localStorage.setItem('theme', isNight ? 'night' : 'day'); } catch (_) {}
     }
 

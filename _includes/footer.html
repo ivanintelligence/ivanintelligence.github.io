@@ -9,9 +9,18 @@
   </div>
   <div class="footer__links">
     {% for link in site.social %}
-    <a href="{{link.url}}" target="_blank" title="{{link.title}}">
-      <span class="text">{{link.title}}</span>
-      <img src="{{site.baseurl}}/img/social/{{link.title}}.png" alt="{{link.title}}">
+    {% assign key = link.title %}
+    {% capture icon_light %}/img/social/{{ key }}-dark.png{% endcapture %}
+    {% capture icon_dark  %}/img/social/{{ key }}-light.png{% endcapture %}
+    <a href="{{link.url}}" target="_blank" title="{{key}}">
+      <span class="text">{{key}}</span>
+      <img
+        class="social-icon"
+        alt="{{key}}"
+        src="{{ icon_light | relative_url }}"
+        data-light="{{ icon_light | relative_url }}"
+        data-dark="{{ icon_dark  | relative_url }}"
+      >
     </a>
     {% endfor %}
   </div>
