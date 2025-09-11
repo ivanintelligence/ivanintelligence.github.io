@@ -5,6 +5,20 @@
       {% assign edu = site.data.10_education | default: empty %}
       {% for e in edu %}
       <div class="job">
+
+        {% if e.image %}
+        <figure class="job__image">
+          {% assign img_is_external = e.image contains '://' %}
+          <img
+            src="{% if img_is_external %}{{ e.image }}{% else %}{{ e.image | relative_url }}{% endif %}"
+            alt="{{ e.degree | escape }}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://via.placeholder.com/900x600?text=%3F';"
+            {% if e.image_max %}style="width: {{ e.image_max }}px; max-width: 100%; height: auto;"{% endif %}
+          >
+        </figure>
+        {% endif %}
+
         <div class="time-place">
           <div class="job__company">{{ e.degree }}</div>
           <div class="job__time">{{ e.time }}</div>

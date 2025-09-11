@@ -1,3 +1,4 @@
+<!-- Internship (optional image support) -->
 <section class="section internship experience">
     <div class="section__title">Internship</div>
     <div class="section__content">
@@ -5,6 +6,20 @@
         {% assign internships = site.data.7_internship | default: empty %}
         {% for intern in internships %}
         <div class="job">
+
+          {% if intern.image %}
+          <figure class="job__image">
+            {% assign img_is_external = intern.image contains '://' %}
+            <img
+              src="{% if img_is_external %}{{ intern.image }}{% else %}{{ intern.image | relative_url }}{% endif %}"
+              alt="{{ intern.position | escape }}"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://via.placeholder.com/900x600?text=%3F';"
+              {% if intern.image_max %}style="width: {{ intern.image_max }}px; max-width: 100%; height: auto;"{% endif %}
+            >
+          </figure>
+          {% endif %}
+
           <div class="time-place">
             <div class="job__company">{{ intern.position }}</div>
             <div class="job__time">{{ intern.time }}</div>

@@ -1,5 +1,5 @@
 <section class="section professional-certificates featured-projects">
-  <div class="section__title">Professional Certificates</div>
+  <div class="section__title">Professional<br>Certificates</div>
 
   <div class="section__content">
     {% assign pcerts = site.data.6_professional_certificates | default: empty %}
@@ -10,11 +10,24 @@
           {% if cert.images and cert.images.size > 1 %}
             {% for img in cert.images %}
               <div class="phone">
-                <img src="{{ img.src }}" alt="{{ img.alt | default: cert.name }}">
+                <img
+                  src="{{ img.src }}"
+                  alt="{{ img.alt | default: cert.name }}"
+                  loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/520x320?text=%3F';"
+                  {% if cert.image_max %}style="width: {{ cert.image_max }}px; max-width: 100%; height: auto;"{% endif %}
+                >
               </div>
             {% endfor %}
           {% else %}
-            <img src="{{ cert.image | default: cert.images[0].src }}" alt="{{ cert.name }}">
+            {% assign img_is_external = cert.image contains '://' %}
+            <img
+              src="{% if img_is_external %}{{ cert.image }}{% else %}{{ cert.image | relative_url }}{% endif %}"
+              alt="{{ cert.name }}"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://via.placeholder.com/520x320?text=%3F';"
+              {% if cert.image_max %}style="width: {{ cert.image_max }}px; max-width: 100%; height: auto;"{% endif %}
+            >
           {% endif %}
         </figure>
 

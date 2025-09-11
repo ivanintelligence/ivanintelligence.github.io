@@ -971,6 +971,710 @@ html.night, body.night {
 
 
 
+/* === SF Pro Text (Regular, Italic, Bold) === */
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../fonts/sf-pro/SF-Pro-Text-Regular.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../fonts/sf-pro/SF-Pro-Text-RegularItalic.otf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../fonts/sf-pro/SF-Pro-Text-Bold.otf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Make SF Pro Text the site-wide default */
+html, body {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* === New York (serif) — core weights/styles === */
+/* Pick the optical size you want (Small/Medium/Large/ExtraLarge). 
+   Small works well for normal UI sizes; Large for big headings. */
+
+/* Regular (400) */
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkSmall-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Italic (400 italic) */
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkSmall-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+/* Bold (700) */
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkSmall-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Bold Italic (700 italic) */
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkSmall-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Optional: Semibold (600) for big titles (uses Large optical size) */
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkLarge-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkLarge-SemiboldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Use New York for section titles (light + dark) */
+html:not(.night) {
+  --section-title-family: "New York", Georgia, "Times New Roman", serif;
+}
+html.night {
+  --section-title-family: "New York", Georgia, "Times New Roman", serif;
+}
+
+/* Use New York for project titles and subpage titles */
+html:not(.night) .other-projects .project__name-text,
+html.night        .other-projects .project__name-text {
+  font-family: "New York", Georgia, "Times New Roman", serif;
+}
+
+/* Subpage big title */
+.project-detail__title {
+  font-family: "New York", Georgia, "Times New Roman", serif;
+}
+
+/* Utility (use on any element if needed) */
+.ny { font-family: "New York", Georgia, "Times New Roman", serif !important; }
+
+
+
+/* Global typography spacing: keep letters natural (no compressed/divergent spacing) */
+html, body,
+.section, .project-detail, .intro, .footer,
+.experience, .skills, .other-projects, .featured-projects,
+.publications, .conferences, .leadership, .education,
+.awards, .profile, .internship {
+  letter-spacing: normal;     /* auto tracking */
+  word-spacing: normal;       /* natural word gaps */
+  font-kerning: normal;       /* enable kerning pairs */
+  font-variant-ligatures: normal;
+  text-rendering: optimizeLegibility;
+  font-stretch: 100%;         /* avoid condensed/expanded */
+}
+
+/* Ensure links inside descriptions inherit the natural spacing */
+.section .arrow-link { letter-spacing: inherit; word-spacing: inherit; }
+
+
+
+/* Keep the first line on one line and let the block size to its content */
+.footer__copyright {
+  width: auto !important;
+  flex: 0 0 auto;         /* don’t shrink */
+}
+.footer__copyright .top {
+  white-space: nowrap;    /* “Copyright 2025 John Ivan.” stays on one line */
+}
+
+
+
+/* Match date typography to description in Education, Leadership, Awards */
+.education.experience .job__time,
+.leadership.experience .job__time,
+.awards.experience .job__time {
+  font-size: var(--desc-size);
+  line-height: var(--desc-line);
+  font-weight: var(--desc-weight);
+  font-family: inherit;    /* remove monospace */
+  font-style: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  color: inherit;
+}
+
+
+
+/* Global image corner radius */
+:root{
+  --img-radius: 36px;          /* desktop/tablet */
+  --img-radius-mobile: 20px;   /* small phones */
+  --hero-radius: 0px;          /* full-bleed hero; keep 0 unless you want rounded */
+}
+
+/* Section thumbnails and images */
+.other-projects .project__image img,
+.certifications.featured-projects .project__pic img,
+.professional-certificates.featured-projects .project__pic img,
+.conferences .project__image img,
+.publications .project__image img,
+.awards .award__image img,
+.project-detail .project__pic img,   /* subpage cover inside content column */
+.project-detail__body img {          /* markdown/body images on subpages */
+  border-radius: var(--img-radius) !important;
+}
+
+/* Optional: smaller radius on tiny screens */
+@media (max-width: 480px) {
+  .other-projects .project__image img,
+  .certifications.featured-projects .project__pic img,
+  .professional-certificates.featured-projects .project__pic img,
+  .conferences .project__image img,
+  .publications .project__image img,
+  .awards .award__image img,
+  .project-detail .project__pic img,
+  .project-detail__body img {
+    border-radius: var(--img-radius-mobile) !important;
+  }
+}
+
+/* Subpage hero (full-bleed) */
+.project-hero {
+  border-radius: var(--hero-radius) !important;
+  overflow: hidden; /* keep corners clean if you add rounding */
+}
+
+
+
+/* Use SF Pro for the project "used/thing" chips */
+.other-projects .project__used__item {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-kerning: normal;
+}
+
+
+
+.project-detail__tags .tag {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+
+
+/* --- Section titles: right-align on landscape, left-align on mobile --- */
+/* Tunable “column width” for titles and the gap to content */
+:root {
+  --section-title-col: clamp(200px, 18vw, 320px); /* title column width (right-aligned) */
+  --section-gap: clamp(24px, 4vw, 70px);          /* space between title and content */
+}
+
+/* Landscape/desktop: right-aligned, fixed column, wraps without overlapping */
+.section__title {
+  text-align: right !important;
+  width: var(--section-title-col) !important;
+  flex: 0 0 var(--section-title-col) !important;  /* fixes the column width */
+  margin-right: var(--section-gap) !important;    /* consistent distance to content */
+  overflow-wrap: anywhere;                         /* wrap long words */
+  word-break: break-word;                          /* extra safety */
+  hyphens: auto;                                   /* nicer breaks if available */
+}
+
+/* Mobile/portrait: left-aligned, no fixed column, content stacks below */
+@media (max-width: 768px) {
+  .section__title {
+    text-align: left !important;
+    width: auto !important;
+    flex: 0 1 auto !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Skills: keep category headers in normal case */
+.skills .skillz__category__label {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+/* ...existing code... */
+
+/* Consistent gap between image and caption (tweak once) */
+:root { --pcap-gap: 30px; }
+
+/* Image column: size to its intrinsic width or image_max (no flex-grow) */
+.certifications.featured-projects .project__pic,
+.professional-certificates.featured-projects .project__pic {
+  flex: 0 0 auto;       /* don't steal space from caption */
+  width: auto;
+  max-width: none;
+}
+
+/* Caption column: fill remaining space; right edge pinned to section gutter */
+.certifications.featured-projects .project__caption,
+.professional-certificates.featured-projects .project__caption {
+  flex: 1 1 auto;       /* expand/shrink as image changes */
+  min-width: 0;         /* allow proper wrapping instead of overflow */
+  width: auto;
+  max-width: none;
+  margin-left: var(--pcap-gap);  /* constant gap to image */
+}
+
+/* Mobile: stack as usual (no special handling needed, but keep safe) */
+@media (max-width: 768px) {
+  .certifications.featured-projects .project__pic,
+  .professional-certificates.featured-projects .project__pic {
+    width: 100%;
+  }
+  .certifications.featured-projects .project__caption,
+  .professional-certificates.featured-projects .project__caption {
+    width: auto;
+    margin-left: 0;
+  }
+}
+/* ...existing code... */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - Typography - - - - - */
+
+
+
+/* === Section titles (light & dark) — easy knobs === */
+html:not(.night) {
+  --section-title-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --section-title-size: 2rem;   /* edit size */
+  --section-title-weight: 400;      /* 400|500|700 */
+  --section-title-style: normal;    /* normal|italic */
+  --section-title-color: #222325;   /* light mode color */
+  --section-title-tracking: 2px;    /* optional letter-spacing */
+}
+
+html.night {
+  --section-title-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --section-title-size: 2rem;
+  --section-title-weight: 400;
+  --section-title-style: normal;
+  --section-title-color: #F6F5F7;   /* dark mode color */
+  --section-title-tracking: 2px;
+}
+
+/* Apply to all section names (PROJECTS, SKILLS, CERTIFICATIONS, etc.) */
+.section__title {
+  font-family: var(--section-title-family) !important;
+  font-size: var(--section-title-size) !important;
+  font-weight: var(--section-title-weight) !important;
+  font-style: var(--section-title-style) !important;
+  color: var(--section-title-color) !important;
+  letter-spacing: var(--section-title-tracking);
+  text-transform: uppercase; /* keep caps; remove if you want mixed case */
+}
+
+
+
+/* === Profile paragraphs (light mode) === */
+html:not(.night) {
+  --profile-p-size: 1rem;
+  --profile-p-weight: 400;      /* 400=regular, 700=bold */
+  --profile-p-style: normal;    /* normal | italic */
+  --profile-p-color: #727376;
+
+  /* links inside profile paragraphs */
+  --profile-link-weight: 700;
+  --profile-link-style: normal;
+  --profile-link-color: #222325;
+}
+
+/* === Profile paragraphs (dark mode) === */
+html.night {
+  --profile-p-size: 1rem;
+  --profile-p-weight: 400;
+  --profile-p-style: normal;
+  --profile-p-color: #A9A9AB;
+
+  --profile-link-weight: 700;
+  --profile-link-style: normal;
+  --profile-link-color: #F6F5F7;
+}
+
+/* Apply to Profile section paragraphs */
+.profile .section__content p {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--profile-p-size);
+  font-weight: var(--profile-p-weight);
+  font-style: var(--profile-p-style);
+  color: var(--profile-p-color);
+}
+
+/* Links inside Profile paragraphs (e.g., arrow-link or normal anchors) */
+.profile .section__content .arrow-link,
+.profile .section__content a {
+  font-size: inherit;
+  font-weight: var(--profile-link-weight);
+  font-style: var(--profile-link-style);
+  color: var(--profile-link-color);
+}
+
+
+
+/* === Projects (light mode only) typography and colors ===
+   Edit the values below to change the look of Name, Description, Used, and Read more */
+html:not(.night) {
+  /* Name (title) */
+  --proj-name-size: 1.4rem;
+  --proj-name-weight: 400;      /* 400=regular, 700=bold */
+  --proj-name-style: normal;    /* normal | italic */
+  --proj-name-color: #222325;   /* dark gray */
+
+  /* Description */
+  --proj-desc-size: 1rem;
+  --proj-desc-weight: 400;      /* 300=light, 400=regular */
+  --proj-desc-style: normal;    /* normal | italic */
+  --proj-desc-color: #727376;   /* body color */
+
+  /* "Read more" (arrow-link inside description) */
+  --proj-link-size: var(--proj-desc-size);  /* or 0.95rem */
+  --proj-link-weight: 700;                  /* 400=regular, 700=bold */
+  --proj-link-style: normal;                /* normal | italic */
+  --proj-link-color: #222325;               /* link blue */
+
+  /* Used (chips) */
+  --proj-used-size: 0.8rem;
+  --proj-used-weight: 700;      /* chip text usually bold */
+  --proj-used-style: normal;    /* normal | italic */
+  --proj-used-color: #2F6DE1;   /* chip border/text color */
+}
+
+/* Name (title) */
+html:not(.night) .other-projects .project__name-text {
+  font-family: "New York", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-name-size);
+  font-weight: var(--proj-name-weight);
+  font-style: var(--proj-name-style);
+  color: var(--proj-name-color);
+}
+
+/* Description */
+html:not(.night) .other-projects .project p {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-desc-size);
+  font-weight: var(--proj-desc-weight);
+  font-style: var(--proj-desc-style);
+  color: var(--proj-desc-color);
+}
+
+/* "Read more" link inside description */
+html:not(.night) .other-projects .project p .arrow-link {
+  font-size: var(--proj-link-size);
+  font-weight: var(--proj-link-weight);
+  font-style: var(--proj-link-style);
+  color: var(--proj-link-color);
+}
+
+/* Used (chips) */
+html:not(.night) .other-projects .project__used__item {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-used-size);
+  font-weight: var(--proj-used-weight);
+  font-style: var(--proj-used-style);
+  color: var(--proj-used-color);
+  border-color: var(--proj-used-color);
+}
+
+
+
+/* === Projects (dark mode only) typography and colors === */
+html.night {
+  /* Name (title) */
+  --proj-name-size: 1.4rem;
+  --proj-name-weight: 400;
+  --proj-name-style: normal;
+  --proj-name-color: #F6F5F7;   /* off-white */
+
+  /* Description */
+  --proj-desc-size: 1rem;
+  --proj-desc-weight: 400;
+  --proj-desc-style: normal;
+  --proj-desc-color: #A9A9AB;   /* slate */
+
+  /* "Read more" (arrow-link inside description) */
+  --proj-link-size: var(--proj-desc-size);
+  --proj-link-weight: 700;
+  --proj-link-style: normal;
+  --proj-link-color: #F6F5F7;   /* link blue for dark */
+
+  /* Used (chips) */
+  --proj-used-size: 0.8rem;
+  --proj-used-weight: 700;
+  --proj-used-style: normal;
+  --proj-used-color: #4B7AF7;   /* chip border/text */
+}
+
+/* Name (title) */
+html.night .other-projects .project__name-text {
+  font-family: "New York", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-name-size);
+  font-weight: var(--proj-name-weight);
+  font-style: var(--proj-name-style);
+  color: var(--proj-name-color);
+}
+
+/* Description */
+html.night .other-projects .project p {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-desc-size);
+  font-weight: var(--proj-desc-weight);
+  font-style: var(--proj-desc-style);
+  color: var(--proj-desc-color);
+}
+
+/* "Read more" link inside description */
+html.night .other-projects .project p .arrow-link {
+  font-size: var(--proj-link-size);
+  font-weight: var(--proj-link-weight);
+  font-style: var(--proj-link-style);
+  color: var(--proj-link-color);
+}
+
+/* Used (chips) */
+html.night .other-projects .project__used__item {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-used-size);
+  font-weight: var(--proj-used-weight);
+  font-style: var(--proj-used-style);
+  color: var(--proj-used-color);
+  border-color: var(--proj-used-color);
+}
+
+
+
+/* === Skills (light mode) === */
+html:not(.night) {
+  --skills-h-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --skills-h-size: 1.4rem;
+  --skills-h-weight: 400;    /* 400|500|700 */
+  --skills-h-style: normal;  /* normal|italic */
+  --skills-h-color: #222325;
+
+  --skills-i-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --skills-i-size: 1rem;
+  --skills-i-weight: 400;    /* 400 regular */
+  --skills-i-style: normal;  /* normal|italic */
+  --skills-i-color: #727376;
+}
+
+/* === Skills (dark mode) === */
+html.night {
+  --skills-h-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --skills-h-size: 1.4rem;
+  --skills-h-weight: 400;
+  --skills-h-style: normal;
+  --skills-h-color: #F6F5F7;
+
+  --skills-i-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --skills-i-size: 1rem;
+  --skills-i-weight: 400;
+  --skills-i-style: normal;
+  --skills-i-color: #A9A9AB;
+}
+
+/* Apply to Skills headers and items */
+.skills .skillz__category__label {
+  font-family: var(--skills-h-family) !important;
+  font-size: var(--skills-h-size) !important;
+  font-weight: var(--skills-h-weight) !important;
+  font-style: var(--skills-h-style) !important;
+  color: var(--skills-h-color) !important;
+  /* keeps existing uppercase/letter-spacing from theme */
+}
+
+.skills .skillz__category__item {
+  font-family: var(--skills-i-family) !important;
+  font-size: var(--skills-i-size) !important;
+  font-weight: var(--skills-i-weight) !important;
+  font-style: var(--skills-i-style) !important;
+  color: var(--skills-i-color) !important;
+}
+
+
+
+/* === Certifications & Professional Certificates (light mode) === */
+html:not(.night) {
+  /* Certifications */
+  --certs-name-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, serif;
+  --certs-name-size: 1.4rem;
+  --certs-name-weight: 400;
+  --certs-name-style: normal;
+  --certs-name-color: #222325;
+
+  --certs-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --certs-desc-size: 1rem;
+  --certs-desc-weight: 400;
+  --certs-desc-style: normal;
+  --certs-desc-color: #727376;
+
+  --certs-link-weight: 700;
+  --certs-link-style: normal;
+  --certs-link-color: #222325;
+
+  /* Professional Certificates */
+  --pcerts-name-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, serif;
+  --pcerts-name-size: 1.4rem;
+  --pcerts-name-weight: 400;
+  --pcerts-name-style: normal;
+  --pcerts-name-color: #222325;
+
+  --pcerts-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --pcerts-desc-size: 1rem;
+  --pcerts-desc-weight: 400;
+  --pcerts-desc-style: normal;
+  --pcerts-desc-color: #727376;
+
+  --pcerts-link-weight: 700;
+  --pcerts-link-style: normal;
+  --pcerts-link-color: #222325;
+}
+
+/* === Certifications & Professional Certificates (dark mode) === */
+html.night {
+  /* Certifications */
+  --certs-name-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, serif;
+  --certs-name-size: 1.4rem;
+  --certs-name-weight: 400;
+  --certs-name-style: normal;
+  --certs-name-color: #F6F5F7;
+
+  --certs-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --certs-desc-size: 1rem;
+  --certs-desc-weight: 400;
+  --certs-desc-style: normal;
+  --certs-desc-color: #A9A9AB;
+
+  --certs-link-weight: 700;
+  --certs-link-style: normal;
+  --certs-link-color: #F6F5F7;
+
+  /* Professional Certificates */
+  --pcerts-name-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, serif;
+  --pcerts-name-size: 1.4rem;
+  --pcerts-name-weight: 400;
+  --pcerts-name-style: normal;
+  --pcerts-name-color: #F6F5F7;
+
+  --pcerts-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --pcerts-desc-size: 1rem;
+  --pcerts-desc-weight: 400;
+  --pcerts-desc-style: normal;
+  --pcerts-desc-color: #A9A9AB;
+
+  --pcerts-link-weight: 700;
+  --pcerts-link-style: normal;
+  --pcerts-link-color: #F6F5F7;
+}
+
+/* Apply: Certifications */
+.certifications.featured-projects .project__name-text {
+  font-family: var(--certs-name-family);
+  font-size: var(--certs-name-size);
+  font-weight: var(--certs-name-weight);
+  font-style: var(--certs-name-style);
+  color: var(--certs-name-color);
+}
+.certifications.featured-projects .project__caption p {
+  font-family: var(--certs-desc-family);
+  font-size: var(--certs-desc-size);
+  font-weight: var(--certs-desc-weight);
+  font-style: var(--certs-desc-style);
+  color: var(--certs-desc-color);
+}
+/* “See credential” link in description */
+.certifications.featured-projects .project__caption p .arrow-link {
+  font-size: inherit;
+  font-weight: var(--certs-link-weight);
+  font-style: var(--certs-link-style);
+  color: var(--certs-link-color);
+}
+
+/* Apply: Professional Certificates */
+.professional-certificates.featured-projects .project__name-text {
+  font-family: var(--pcerts-name-family);
+  font-size: var(--pcerts-name-size);
+  font-weight: var(--pcerts-name-weight);
+  font-style: var(--pcerts-name-style);
+  color: var(--pcerts-name-color);
+}
+.professional-certificates.featured-projects .project__caption p {
+  font-family: var(--pcerts-desc-family);
+  font-size: var(--pcerts-desc-size);
+  font-weight: var(--pcerts-desc-weight);
+  font-style: var(--pcerts-desc-style);
+  color: var(--pcerts-desc-color);
+}
+/* “See credential” link in description */
+.professional-certificates.featured-projects .project__caption p .arrow-link {
+  font-size: inherit;
+  font-weight: var(--pcerts-link-weight);
+  font-style: var(--pcerts-link-style);
+  color: var(--pcerts-link-color);
+}
+
+/* Keep arrows visible in featured captions */
+.certifications.featured-projects .project__caption .arrow-link:after,
+.professional-certificates.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

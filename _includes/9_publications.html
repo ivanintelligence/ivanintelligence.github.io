@@ -10,7 +10,7 @@
           alt="{{ pub.name }}" 
           loading="lazy"
           onerror="this.onerror=null;this.src='https://via.placeholder.com/150?text=?';"
-          {% if pub.image_max %}style="max-width: {{ pub.image_max }}px; width: 100%; height: auto;"{% endif %}>
+          {% if pub.image_max %}style="width: {{ pub.image_max }}px; max-width: 100%; height: auto;"{% endif %}>
       </div>
 
       <div class="project__name">

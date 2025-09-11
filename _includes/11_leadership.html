@@ -5,6 +5,20 @@
       {% assign leaderships = site.data.11_leadership | default: empty %}
       {% for lead in leaderships %}
       <div class="job">
+
+        {% if lead.image %}
+        <figure class="job__image">
+          {% assign img_is_external = lead.image contains '://' %}
+          <img
+            src="{% if img_is_external %}{{ lead.image }}{% else %}{{ lead.image | relative_url }}{% endif %}"
+            alt="{{ lead.position | escape }}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://via.placeholder.com/900x600?text=%3F';"
+            {% if lead.image_max %}style="width: {{ lead.image_max }}px; max-width: 100%; height: auto;"{% endif %}
+          >
+        </figure>
+        {% endif %}
+
         <div class="time-place">
           <div class="job__company">
             {{ lead.position }}
