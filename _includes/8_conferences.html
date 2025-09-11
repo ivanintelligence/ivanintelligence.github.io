@@ -16,7 +16,7 @@
         </div>
 
         <div class="project__name">
-          {% include smart-link.html href=conf.url class="arrow-link" text=conf.name %}
+          <span class="project__name-text">{{ conf.name }}</span>
         </div>
 
         {%- if conf.date or conf.location -%}

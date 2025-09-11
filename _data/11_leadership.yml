@@ -45,13 +45,10 @@
 
 - position: Founder
   time: 2017 – Present
-  description: 
-    "
+  description: >
     Ivan Studios<br><br>
-    Built Ivan Studios as a personal creative outlet alongside my Computer Engineering studies. Worked with local and international clients (e.g., United Kingdom) by sharing my talents in photography, videography, and graphic design, and delivering high quality outputs, demonstrating my ability to balance study and work, manage time efficiently, and communicate effectively.
-    "
-  links:
-    - name: Facebook Page
-      url: "https://www.facebook.com/ivanstudios"
-    - name: YouTube Channel
-      url: "https://www.youtube.com/@ivanstudiosph"
+    Built Ivan Studios as a personal creative outlet alongside my Computer Engineering studies. Worked with local and international clients (e.g., United Kingdom) by sharing my talents in photography, videography, and graphic design, and delivering high quality outputs, demonstrating my ability to balance study and work, manage time efficiently, and communicate effectively.<br>
+    <br>
+    <a href="https://www.facebook.com/ivanstudios" class="arrow-link" target="_blank" rel="noopener">See Facebook Page</a><br>
+    <br>
+    <a href="https://www.youtube.com/@ivanstudiosph" class="arrow-link" target="_blank" rel="noopener">See YouTube Channel</a>

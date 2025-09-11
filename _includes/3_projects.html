@@ -14,9 +14,8 @@
       </div>
 
       <div class="project__name">
-        {% include smart-link.html href=project.url class="arrow-link" text=project.name %}
+        <span class="project__name-text">{{ project.name }}</span>
       </div>
-
       <p>{{ project.description }}</p>
 
       <div class="project__used">

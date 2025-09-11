@@ -5,20 +5,16 @@
     <div class="project">
 
       <div class="project__image">
-        <a href="{{ pub.url }}" target="_blank" rel="noopener">
-          <img 
-            src="{{ pub.image }}" 
-            alt="{{ pub.name }}" 
-            loading="lazy"
-            onerror="this.onerror=null;this.src='https://via.placeholder.com/150?text=?';"
-            {% if pub.image_max %}style="max-width: {{ pub.image_max }}px; width: 100%; height: auto;"{% endif %}>
-        </a>
+        <img 
+          src="{{ pub.image }}" 
+          alt="{{ pub.name }}" 
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://via.placeholder.com/150?text=?';"
+          {% if pub.image_max %}style="max-width: {{ pub.image_max }}px; width: 100%; height: auto;"{% endif %}>
       </div>
 
       <div class="project__name">
-        <a href="{{ pub.url }}" target="_blank" rel="noopener" class="arrow-link">
-          {{ pub.name }}
-        </a>
+        <span class="project__name-text">{{ pub.name }}</span>
       </div>
 
       <p>{{ pub.description }}</p>

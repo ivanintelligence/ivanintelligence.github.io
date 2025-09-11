@@ -656,6 +656,325 @@
   margin-bottom: 6px;     /* spacing between bullet points */
 }
 
+.professional-certificates.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+.certifications.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+.other-projects .project__name-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.professional-certificates .project__name-text,
+.certifications .project__name-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.leadership .job__position p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+}
+
+.leadership .job__position .arrow-link {
+  font-size: 0.9rem;
+  font-weight: 700; /* bold, like other sections */
+  line-height: 1.35;
+  margin: 0;
+}
+
+.leadership .job__position .arrow-link:after {
+  width: 13px;
+  height: 13px;
+  margin-left: 8px;
+  bottom: 1px;
+}
+
+.arrow-link:after {
+  margin-left: 10px; /* consistent gap for all sections */
+}
+
+/* Education section: match description and arrow-link styles to Leadership */
+.education .job__description,
+.education .job__description p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+}
+
+.education .job__description .arrow-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.education .job__description .arrow-link:after {
+  width: 13px;
+  height: 13px;
+  margin-left: 10px;
+  bottom: 1px;
+}
+
+/* Awards section: match description and arrow-link styles to Leadership */
+.awards .job p,
+.awards .job__description,
+.awards .job__description p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+}
+
+.awards .job .arrow-link,
+.awards .job__description .arrow-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.awards .job .arrow-link:after,
+.awards .job__description .arrow-link:after {
+  width: 13px;
+  height: 13px;
+  margin-left: 10px;
+  bottom: 1px;
+}
+
+.education .job__description .edu-break {
+  display: block;
+  height: 0;
+  margin-top: 0px; /* Adjust as needed */
+}
+
+/* Internship section: match description and arrow-link styles to other sections */
+.internship .job__position,
+.internship .job__position p,
+.internship .job__position ul {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+}
+
+.internship .job__position .arrow-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.internship .job__position .arrow-link:after {
+  width: 13px;
+  height: 13px;
+  margin-left: 10px;
+  bottom: 1px;
+}
+
+/* Profile section: match description and arrow-link styles to other sections */
+.profile .section__content p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+}
+
+.profile .section__content .arrow-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.profile .section__content .arrow-link:after {
+  width: 13px;
+  height: 13px;
+  margin-left: 10px;
+  bottom: 1px;
+}
+
+
+
+/* === Global description typography ===
+   Change these vars to update ALL sections at once */
+:root{
+  --desc-size: 0.95rem;
+  --desc-line: 1.45;
+  --desc-weight: 300;
+  --desc-margin-bottom: 20px;
+
+  /* Arrow link sizing that scales with text */
+  --arrow-size: 0.9em;
+  --arrow-gap: 0.6em;
+  --arrow-baseline: 0.1em;
+}
+
+/* Apply to all section descriptions (p or wrappers that contain lists/HTML) */
+.other-projects .project p,
+.certifications.featured-projects .project__caption p,
+.professional-certificates.featured-projects .project__caption p,
+.conferences .project p,
+.publications .project p,
+.leadership .job__position p,
+.awards .job p,
+.education .job__description,
+.education .job__description p,
+.internship .job__position,
+.internship .job__position p,
+.profile .section__content p {
+  font-size: var(--desc-size);
+  line-height: var(--desc-line);
+  font-weight: var(--desc-weight);
+  margin: 0 0 var(--desc-margin-bottom) 0;
+}
+
+/* Lists inside any description use the same typography */
+.other-projects .project ul,
+.certifications.featured-projects .project__caption ul,
+.professional-certificates.featured-projects .project__caption ul,
+.conferences .project ul,
+.publications .project ul,
+.leadership .job__position ul,
+.awards .job ul,
+.education .job__description ul,
+.internship .job__position ul,
+.profile .section__content ul {
+  font: inherit;
+  line-height: inherit;
+  margin: 0 0 var(--desc-margin-bottom) 20px;
+  padding-left: 10px;
+  list-style: disc;
+}
+.other-projects .project li,
+.certifications.featured-projects .project__caption li,
+.professional-certificates.featured-projects .project__caption li,
+.conferences .project li,
+.publications .project li,
+.leadership .job__position li,
+.awards .job li,
+.education .job__description li,
+.internship .job__position li,
+.profile .section__content li {
+  margin-bottom: 6px;
+}
+
+/* Make arrow links feel like part of the description (size inherits) */
+.section .arrow-link {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 700; /* bold only */
+}
+.arrow-link:after {
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  margin-left: var(--arrow-gap);
+  bottom: var(--arrow-baseline);
+}
+
+/* Keep arrows visible in featured captions (theme hides a:after there) */
+.certifications.featured-projects .project__caption .arrow-link:after,
+.professional-certificates.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+
+
+/* Ensure arrow links render consistently everywhere (and scale with text) */
+.section .arrow-link {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 700;
+}
+.section .arrow-link:after {
+  content: '';
+  position: relative;
+  bottom: var(--arrow-baseline, 2px);
+  margin-left: var(--arrow-gap, 10px);
+  width: var(--arrow-size, 15px);
+  height: var(--arrow-size, 15px);
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../img/arrow.png) no-repeat center;
+  background-size: 100%;
+  transition: transform .2s ease-in-out;
+}
+.section .arrow-link:hover:after { transform: translateX(7px); }
+
+/* Re-enable arrows inside featured captions (theme hides :after globally there) */
+.certifications.featured-projects .project__caption .arrow-link:after,
+.professional-certificates.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+/* Subpage essentials */
+.project-detail { display: block; }
+.project-hero { position: relative; z-index: 0; }
+
+
+
+.project-detail .arrow-link--back:after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Keep only the left arrow before "Back" */
+.arrow-link--back {
+  display: inline-block;
+  white-space: nowrap;
+}
+.arrow-link--back:before {
+  content: '';
+  position: relative;
+  bottom: 2px;
+  margin-right: 15px;
+  width: var(--arrow-size, 15px);
+  height: var(--arrow-size, 15px);
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../img/arrow.png) no-repeat center;
+  background-size: 100%;
+  transform: scaleX(-1);
+  transition: transform .2s ease-in-out;
+}
+.arrow-link--back:hover:before {
+  transform: scaleX(-1) translateX(7px);
+}
+
+
+
+/* Site background colors (light/dark) */
+html, body {
+  background-color: #F6F5F7 !important; /* light */
+}
+
+html.night, body.night {
+  background-color: #222325 !important; /* dark */
+}
+
+
+
+
+
+
+
 
 
 

@@ -1,20 +1,20 @@
 - image: /img/conferences/icngc-2024.jpg
   url: /conferences/icngc2024
   name: The 10th International Conference of Next Generation Computing
-  description: 
-    "
+  description: >
     Presented my research titled “Innovative 3D Model Reconstruction from 2D Stereoscopic Plant Images with Investigation between YOLOv8 and Detectron2 AI Architectures for Plant Class Segmentation” as an oral presenter at The 10th International Conference on Next Generation Computing (ICNGC 2024), held at the Holy Angel University Auditorium, Angeles City, Philippines, in November 2024. The conference was organized by the Korean Institute of Next Generation Computing (KINGPC), a South Korea-based research organization dedicated to advancing research and development in emerging computing technologies.<br><br>
     The research solves a computer vision challenge of creating a 3D model of a plant from constrained stereo images for visualizing plant growth structures, that can be useful for plant phenotyping.<br><br>
-    Awarded with Best Paper Award in Oral Session, recognized among 80 international research presenters.
-    "
+    Awarded with Best Paper Award in Oral Session, recognized among 80 international research presenters.<br>
+    <br>
+    <a href="/conferences/icngc2024" class="arrow-link">Read more</a>
+    
 
 - image: /img/conferences/urc-2025.jpg
-  url: /conferences/urc2025
   name: The 9th University Research Conference
-  description: 
-    "
+  description: >
     Presented my research titled “Investigating Deep Learning and Computer Vision for Predicting and Simulating Plant Growth Structures: Laying the Groundwork for Digital Twins in Agriculture,” as an oral and poster presenter at The 9th University Research Conference (URC 2025), held at the University of San Carlos Fr. Michael Richartz Conference Center, Cebu City, Philippines, in April 2025.<br><br>
     The research lays groundwork in pursuing digital twin technology in agriculture - a digital replicas of crops in farms that mimic their behaviors and appearances from physical world to digital world, using artificial intelligence and deep learning. It aims to help farmers make informed farming decisions, and redefine farming practices to be more sustainable and efficient, promoting the United Nations Sustainable Development Goal (SDG) 2 (Zero Hunger), SDG 9 (Industry, Innovation, and Infrastructure), and SDG 12 (Responsible Consumption and Production), that overall benefits all of humanity and the planet.<br><br>
     URC is the University of San Carlos’ largest research event.<br><br>
-    Awarded with Best Poster Presenter Award, recognized among more than 50 poster presenters from various departments and colleges of the university.
-    "
+    Awarded with Best Poster Presenter Award, recognized among more than 50 poster presenters from various departments and colleges of the university.<br>
+    <br>
+    <a href="/conferences/urc2025" class="arrow-link">Read more</a>
