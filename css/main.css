@@ -1460,6 +1460,64 @@ html.night {
 
 
 
+/* Arrow assets (light/dark) */
+:root { --arrow-img: url("../img/arrow/arrow-light.png"); }
+html.night { --arrow-img: url("../img/arrow/arrow-dark.png"); }
+
+/* Global sizing for arrow icons (used site‑wide) */
+:root{
+  --arrow-size: 0.9em;
+  --arrow-gap: 0.6em;
+  --arrow-baseline: 0.1em;
+}
+
+/* Show arrow after ANY .arrow-link (not just inside .section) */
+.arrow-link {
+  font-weight: 700; /* keep consistent */
+}
+.arrow-link:after {
+  content: '' !important;
+  position: relative;
+  bottom: var(--arrow-baseline);
+  margin-left: var(--arrow-gap);
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  display: inline-block;
+  vertical-align: middle;
+  background-image: var(--arrow-img) !important;   /* new assets */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  transition: transform .2s ease-in-out;
+}
+.arrow-link:hover:after { transform: translateX(7px); }
+
+/* Back link: use left arrow in front, with the same asset */
+.arrow-link--back:before {
+  content: '' !important;
+  position: relative;
+  bottom: var(--arrow-baseline);
+  margin-right: var(--arrow-gap);
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  display: inline-block;
+  vertical-align: middle;
+  background-image: var(--arrow-img) !important;   /* new assets */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  transform: scaleX(-1);
+  transition: transform .2s ease-in-out;
+}
+.arrow-link--back:hover:before { transform: scaleX(-1) translateX(7px); }
+
+/* Ensure featured captions don’t hide arrows */
+.certifications.featured-projects .project__caption .arrow-link:after,
+.professional-certificates.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+
 
 
 
