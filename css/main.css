@@ -2271,7 +2271,7 @@ html:not(.night) {
 
   /* Time (intern.time → .job__time) */
   --intern-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --intern-time-size: 1rem;
+  --intern-time-size: 0.8rem;
   --intern-time-weight: 400;
   --intern-time-style: normal;
   --intern-time-color: #727376;
@@ -2298,7 +2298,7 @@ html.night {
   --intern-pos-color: #F6F5F7;
 
   --intern-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --intern-time-size: 1rem;
+  --intern-time-size: 0.8rem;
   --intern-time-weight: 400;
   --intern-time-style: normal;
   --intern-time-color: #A9A9AB;
@@ -3148,4 +3148,29 @@ html.night {
   font-weight: var(--sub-body-weight);
   font-style: var(--sub-body-style);
   color: var(--sub-body-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Keep the date/time on one line across sections (desktop + mobile) */
+.education .job__time,
+.internship .job__time,
+.awards .job__time,
+.leadership .job__time {
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  hyphens: none !important;
 }
