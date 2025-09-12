@@ -1,9 +1,9 @@
-<section class="section certifications other-projects">
-  <div class="section__title">Certifications</div>
+<section class="section professional-certificates other-projects">
+  <div class="section__title">Professional<br>Certificates</div>
 
   <div class="section__content">
-    {% assign certs = site.data.5_certifications | default: empty %}
-    {% for cert in certs %}
+    {% assign pcerts = site.data.professional_certificates | default: empty %}
+    {% for cert in pcerts %}
       <div class="project">
 
         <div class="project__image" {% if cert.image_max %}style="--img-max: {{ cert.image_max }}px"{% endif %}>

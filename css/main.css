@@ -1519,6 +1519,66 @@ html.night { --arrow-img: url("../img/arrow/arrow-dark.png"); }
 
 
 
+/* Set vertical gap between stacked section title and content */
+@media (max-width: 1100px) {
+  /* This targets the intermediate "tablet" size before full mobile */
+  .section .section__title {
+    margin-bottom: 36px !important; /* Add space below title when stacked */
+  }
+}
+
+/* Also ensure the mobile view has consistent spacing */
+@media (max-width: 768px) {
+  /* Full mobile view */
+  .section .section__title {
+    margin-bottom: 12px !important; /* Slightly less space on very small screens */
+  }
+}
+
+
+
+/* === Consistent section spacing === */
+:root {
+  --section-gap: 100px; /* Adjust this value to control the gap between all sections */
+}
+
+/* Reset all section padding to be consistent */
+.section {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+/* Gap between intro and the first section */
+.intro {
+  margin-bottom: 0; /* remove any existing margin */
+  padding-bottom: var(--section-gap);
+}
+
+/* Remove doubled spacing between sections */
+.section + .section {
+  padding-top: 0; /* Remove top padding when sections are adjacent */
+}
+
+/* Last section to footer gap */
+.section:last-of-type {
+  margin-bottom: var(--section-gap); /* Space before footer */
+}
+
+/* Media queries to adjust spacing on smaller screens */
+@media screen and (max-width: 768px) {
+  :root {
+    --section-gap: 70px; /* Smaller gap on tablet */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --section-gap: 50px; /* Even smaller gap on mobile */
+  }
+}
+
+
+
 
 
 
@@ -1551,7 +1611,7 @@ html.night { --arrow-img: url("../img/arrow/arrow-dark.png"); }
 /* === Section titles (light & dark) — easy knobs === */
 html:not(.night) {
   --section-title-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --section-title-size: 2rem;   /* edit size */
+  --section-title-size: 1.4rem;   /* edit size */
   --section-title-weight: 400;      /* 400|500|700 */
   --section-title-style: normal;    /* normal|italic */
   --section-title-color: #222325;   /* light mode color */
@@ -1560,7 +1620,7 @@ html:not(.night) {
 
 html.night {
   --section-title-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --section-title-size: 2rem;
+  --section-title-size: 1.4rem;
   --section-title-weight: 400;
   --section-title-style: normal;
   --section-title-color: #F6F5F7;   /* dark mode color */
@@ -2576,6 +2636,39 @@ html.is-animating .swup-transition.is-entering {
 
 
 
+/* === Consistent spacing across homepage and subpages === */
+
+/* 1. Use the same --section-gap for all vertical spacing */
+:root {
+  --section-gap: 100px; /* Main desktop spacing */
+}
+
+/* 2. Make subpage metadata → body gap match the section gaps */
+.project-detail__body {
+  margin-top: var(--section-gap) !important; /* Force consistent spacing */
+}
+
+/* 3. Add space between the subpage content and the footer */
+.project-detail.section {
+  padding-bottom: 0; /* Remove default padding */
+  margin-bottom: var(--section-gap) !important; /* Force consistent spacing */
+}
+
+/* 4. Keep responsive spacing consistent */
+@media screen and (max-width: 768px) {
+  :root {
+    --section-gap: 70px; /* Tablet spacing */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --section-gap: 50px; /* Mobile spacing */
+  }
+}
+
+
+
 
 
 
@@ -2642,7 +2735,7 @@ html:not(.night) {
 
   /* Title */
   --sub-title-family: "New York", Georgia, "Times New Roman", serif;
-  --sub-title-size: 2.8rem;
+  --sub-title-size: 2.4rem;
   --sub-title-weight: 400;
   --sub-title-style: normal;
   --sub-title-color: #222325;
@@ -2680,7 +2773,7 @@ html.night {
   --sub-hero-height: clamp(240px, 45vh, 520px);
 
   --sub-title-family: "New York", Georgia, "Times New Roman", serif;
-  --sub-title-size: 2.8rem;
+  --sub-title-size: 2.4rem;
   --sub-title-weight: 400;
   --sub-title-style: normal;
   --sub-title-color: #F6F5F7;
