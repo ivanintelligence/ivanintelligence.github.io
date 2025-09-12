@@ -1577,115 +1577,6 @@ html.night { --arrow-img: url("../img/arrow/arrow-dark.png"); }
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - Typography - - - - - */
-
-
-
-/* 1. SCOPE YOUR CSS VARIABLES */
-/* Instead of defining them at html:not(.night) level, scope them to the intro */
-.intro {
-  /* Define variables only within .intro's scope */
-  --intro-hello-family: "New York", Georgia, "Times New Roman", serif;
-  --intro-hello-size: 2.4rem;
-  --intro-hello-weight: 400;
-  --intro-hello-style: normal;
-  --intro-hello-color: #222325;
-  
-  --intro-tagline-family: "New York", Georgia, "Times New Roman", serif;
-  --intro-tagline-size: 2.4rem;
-  --intro-tagline-weight: 400;
-  --intro-tagline-style: normal;
-  --intro-tagline-color: #727376;
-  
-  --intro-cta-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
-  --intro-cta-size: 1.4rem;
-  --intro-cta-weight: 700;
-  --intro-cta-style: normal;
-  --intro-cta-color: #222325;
-
-  --intro-photo-radius: 0px; /* Add your desired border radius */
-}
-
-/* Dark mode variables within .intro */
-html.night .intro {
-  --intro-hello-color: #F6F5F7;
-  --intro-tagline-color: #A9A9AB;
-  --intro-cta-color: #F6F5F7;
-}
-
-/* 2. APPLY STYLES WITH STRONG SPECIFICITY */
-/* Target the exact elements with very specific selectors */
-.intro .intro__hello {
-  font-family: var(--intro-hello-family);
-  font-size: var(--intro-hello-size);
-  font-weight: var(--intro-hello-weight);
-  font-style: var(--intro-hello-style);
-  color: var(--intro-hello-color);
-}
-
-.intro .intro__tagline {
-  font-family: var(--intro-tagline-family);
-  font-size: var(--intro-tagline-size);
-  font-weight: var(--intro-tagline-weight);
-  font-style: var(--intro-tagline-style);
-  color: var(--intro-tagline-color);
-}
-
-.intro .intro__cta .arrow-link {
-  font-family: var(--intro-cta-family);
-  font-size: var(--intro-cta-size);
-  font-weight: var(--intro-cta-weight);
-  font-style: var(--intro-cta-style);
-  color: var(--intro-cta-color);
-}
-
-/* 3. HEADSHOT CORNER RADIUS - TARGET VERY SPECIFICALLY */
-.intro .intro__media .intro__photo {
-  border-radius: var(--intro-photo-radius);
-}
-
-/* Remove bold styling and set specific colors for name in intro */
-.intro__tagline .name {
-  font-weight: inherit; /* Remove bold styling, inherit from parent */
-}
-
-/* Light mode color for the name */
-html:not(.night) .intro__tagline .name {
-  color: #222325;
-}
-
-/* Dark mode color for the name */
-html.night .intro__tagline .name {
-  color: #F6F5F7;
-}
-
 /* Equal vertical spacing on mobile: top edge ↔ h1 ↔ h2 ↔ CTA ↔ bottom edge */
 @media (max-width: 768px) {
   .intro {
@@ -1721,35 +1612,34 @@ html.night .intro__tagline .name {
 
 
 
-/* === Section titles (light & dark) — easy knobs === */
-html:not(.night) {
-  --section-title-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --section-title-size: 1.4rem;   /* edit size */
-  --section-title-weight: 400;      /* 400|500|700 */
-  --section-title-style: normal;    /* normal|italic */
-  --section-title-color: #222325;   /* light mode color */
-  --section-title-tracking: 2px;    /* optional letter-spacing */
-}
 
-html.night {
-  --section-title-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --section-title-size: 1.4rem;
-  --section-title-weight: 400;
-  --section-title-style: normal;
-  --section-title-color: #F6F5F7;   /* dark mode color */
-  --section-title-tracking: 2px;
-}
 
-/* Apply to all section names (PROJECTS, SKILLS, CERTIFICATIONS, etc.) */
-.section__title {
-  font-family: var(--section-title-family) !important;
-  font-size: var(--section-title-size) !important;
-  font-weight: var(--section-title-weight) !important;
-  font-style: var(--section-title-style) !important;
-  color: var(--section-title-color) !important;
-  letter-spacing: var(--section-title-tracking);
-  text-transform: uppercase; /* keep caps; remove if you want mixed case */
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - Typography - - - - - */
 
 
 
@@ -2959,4 +2849,325 @@ html.night {
   font-weight: var(--sub-body-weight);
   font-style: var(--sub-body-style);
   color: var(--sub-body-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1. SCOPE YOUR CSS VARIABLES */
+/* Instead of defining them at html:not(.night) level, scope them to the intro */
+.intro {
+  /* Define variables only within .intro's scope */
+  --intro-hello-family: "New York", Georgia, "Times New Roman", serif;
+  --intro-hello-size: 2.4rem;
+  --intro-hello-weight: 400;
+  --intro-hello-style: normal;
+  --intro-hello-color: #222325;
+  
+  --intro-tagline-family: "New York", Georgia, "Times New Roman", serif;
+  --intro-tagline-size: 2.4rem;
+  --intro-tagline-weight: 400;
+  --intro-tagline-style: normal;
+  --intro-tagline-color: #727376;
+  
+  --intro-cta-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
+  --intro-cta-size: 1.4rem;
+  --intro-cta-weight: 700;
+  --intro-cta-style: normal;
+  --intro-cta-color: #222325;
+
+  --intro-photo-radius: 0px; /* Add your desired border radius */
+}
+
+/* Dark mode variables within .intro */
+html.night .intro {
+  --intro-hello-color: #F6F5F7;
+  --intro-tagline-color: #A9A9AB;
+  --intro-cta-color: #F6F5F7;
+}
+
+/* 2. APPLY STYLES WITH STRONG SPECIFICITY */
+/* Target the exact elements with very specific selectors */
+.intro .intro__hello {
+  font-family: var(--intro-hello-family);
+  font-size: var(--intro-hello-size);
+  font-weight: var(--intro-hello-weight);
+  font-style: var(--intro-hello-style);
+  color: var(--intro-hello-color);
+}
+
+.intro .intro__tagline {
+  font-family: var(--intro-tagline-family);
+  font-size: var(--intro-tagline-size);
+  font-weight: var(--intro-tagline-weight);
+  font-style: var(--intro-tagline-style);
+  color: var(--intro-tagline-color);
+}
+
+.intro .intro__cta .arrow-link {
+  font-family: var(--intro-cta-family);
+  font-size: var(--intro-cta-size);
+  font-weight: var(--intro-cta-weight);
+  font-style: var(--intro-cta-style);
+  color: var(--intro-cta-color);
+}
+
+/* 3. HEADSHOT CORNER RADIUS - TARGET VERY SPECIFICALLY */
+.intro .intro__media .intro__photo {
+  border-radius: var(--intro-photo-radius);
+}
+
+/* Remove bold styling and set specific colors for name in intro */
+.intro__tagline .name {
+  font-weight: inherit; /* Remove bold styling, inherit from parent */
+}
+
+/* Light mode color for the name */
+html:not(.night) .intro__tagline .name {
+  color: #222325;
+}
+
+/* Dark mode color for the name */
+html.night .intro__tagline .name {
+  color: #F6F5F7;
+}
+
+
+
+/* === Section titles (light & dark) — easy knobs === */
+html:not(.night) {
+  --section-title-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --section-title-size: 1.4rem;   /* edit size */
+  --section-title-weight: 400;      /* 400|500|700 */
+  --section-title-style: normal;    /* normal|italic */
+  --section-title-color: #222325;   /* light mode color */
+  --section-title-tracking: 2px;    /* optional letter-spacing */
+}
+
+html.night {
+  --section-title-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --section-title-size: 1.4rem;
+  --section-title-weight: 400;
+  --section-title-style: normal;
+  --section-title-color: #F6F5F7;   /* dark mode color */
+  --section-title-tracking: 2px;
+}
+
+/* Apply to all section names (PROJECTS, SKILLS, CERTIFICATIONS, etc.) */
+.section__title {
+  font-family: var(--section-title-family) !important;
+  font-size: var(--section-title-size) !important;
+  font-weight: var(--section-title-weight) !important;
+  font-style: var(--section-title-style) !important;
+  color: var(--section-title-color) !important;
+  letter-spacing: var(--section-title-tracking);
+  text-transform: uppercase; /* keep caps; remove if you want mixed case */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Intro CTA knobs (scoped to Intro only) */
+.intro {
+  /* icon image size */
+  --intro-icon-size: 48px;
+
+  /* horizontal space between icons */
+  --intro-icons-gap: 18px;
+
+  /* vertical gap between "Let's connect!" and the icon row */
+  --intro-icons-top-gap: 10px;
+
+  /* "Let's connect!" typography */
+  --intro-contact-family: "New York", system-ui, -apple-system, sans-serif;
+  --intro-contact-size: 2.4rem;
+  --intro-contact-weight: 400;
+  --intro-contact-style: normal;
+  --intro-contact-color: #222325;
+
+  /* Icon label (on hover) typography */
+  --intro-label-family: "New York", system-ui, -apple-system, sans-serif;
+  --intro-label-size: 2rem;
+  --intro-label-weight: 400;
+  --intro-label-style: normal;
+  --intro-label-color: #2F6DE1;
+}
+
+/* Dark mode overrides for the intro CTA */
+html.night .intro {
+  --intro-contact-color: #F6F5F7;
+  --intro-label-color: #4B7AF7;
+}
+
+/* Apply: "Let's connect!" text */
+.intro .intro__contact {
+  font-family: var(--intro-contact-family);
+  font-size: var(--intro-contact-size);
+  font-weight: var(--intro-contact-weight);
+  font-style: var(--intro-contact-style);
+  color: var(--intro-contact-color);
+  margin: 0;                   /* keep the top gap controlled by --intro-icons-top-gap */
+  align-self: flex-start;      /* align left edge with intro text */
+}
+
+/* Apply: icons row layout and gaps */
+.intro .intro__icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--intro-icons-gap);
+  margin-top: var(--intro-icons-top-gap);
+  align-self: flex-start;      /* align left with the text block */
+  padding: 0;
+}
+
+/* Apply: icon image size */
+.intro .intro__icon img.social-icon {
+  width: var(--intro-icon-size);
+  height: var(--intro-icon-size);
+  display: block;
+}
+
+/* Apply: icon label typography (revealed on hover) */
+.intro .intro__icon .label {
+  font-family: var(--intro-label-family);
+  font-size: var(--intro-label-size);
+  font-weight: var(--intro-label-weight);
+  font-style: var(--intro-label-style);
+  color: var(--intro-label-color);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+  margin-top: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Intro CTA: per-icon sizes, image-aligned gaps, label overlay (intro-only) */
+.intro {
+  /* tweak once */
+  --intro-icons-gap: 32px;        /* horizontal gap between icons */
+  --intro-icons-top-gap: 8px;    /* gap between “Let’s connect!” and icons */
+  --intro-label-offset: 8px;      /* vertical offset below image for label appearance */
+
+  /* per-icon image sizes (edit each independently) */
+  --icon-size-resume: 40px;
+  --icon-size-linkedin: 40px;
+  --icon-size-github: 40px;
+  --icon-size-email: 42px;
+}
+
+/* row layout: align to intro text left edge; gaps based on image boxes */
+.intro .intro__icons {
+  display: flex;
+  align-items: flex-start;           /* align to top of image boxes */
+  justify-content: flex-start;
+  gap: var(--intro-icons-gap);
+  margin-top: var(--intro-icons-top-gap);
+  align-self: flex-start;            /* align with left edge of intro text */
+  padding: 0;
+}
+
+/* each icon’s box = exactly the image size; label is absolutely positioned */
+.intro .intro__icon {
+  position: relative;
+  display: inline-block !important;  /* override older inline-flex */
+  width: var(--icon-size, 28px);
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* per-icon size mapping via data-icon */
+.intro .intro__icon[data-icon="resume"]   { --icon-size: var(--icon-size-resume); }
+.intro .intro__icon[data-icon="linkedin"] { --icon-size: var(--icon-size-linkedin); }
+.intro .intro__icon[data-icon="github"]   { --icon-size: var(--icon-size-github); }
+.intro .intro__icon[data-icon="email"]    { --icon-size: var(--icon-size-email); }
+
+/* image strictly uses the per-icon size */
+.intro .intro__icon img.social-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: block;
+  transition: transform .2s ease;
+}
+
+/* label does NOT affect layout width; appears below image on hover */
+.intro .intro__icon .label {
+  position: absolute;
+  left: 0;
+  top: calc(var(--icon-size) + var(--intro-label-offset));
+  white-space: nowrap;
+  font-family: var(--intro-label-family, "SF Pro Text", system-ui, -apple-system, sans-serif);
+  font-size: var(--intro-label-size, 0.85rem);
+  font-weight: var(--intro-label-weight, 700);
+  font-style: var(--intro-label-style, normal);
+  color: var(--intro-label-color, #222325);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+  margin: 0;
+}
+
+/* micro-interactions */
+.intro .intro__icon:hover img.social-icon,
+.intro .intro__icon:focus img.social-icon {
+  transform: translateY(-4px);
+}
+.intro .intro__icon:hover .label,
+.intro .intro__icon:focus .label {
+  opacity: 1;
+  transform: translateY(2px);
+}
+
+/* dark mode label color override (optional) */
+html.night .intro .intro__icon .label {
+  color: var(--intro-label-color, #F6F5F7);
 }

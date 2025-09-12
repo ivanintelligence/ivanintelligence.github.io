@@ -19,7 +19,8 @@
     if (!body || !html || !input) return;
 
     function updateFooterIcons(isNight) {
-      document.querySelectorAll('.footer__links img.social-icon').forEach(img => {
+      // Update ALL social icons (footer + intro)
+      document.querySelectorAll('img.social-icon').forEach(img => {
         const next = isNight ? img.dataset.dark : img.dataset.light;
         if (next) img.setAttribute('src', next);
       });

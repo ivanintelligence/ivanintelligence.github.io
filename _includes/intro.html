@@ -11,9 +11,36 @@
       </h2>
 
       <div class="intro__cta">
-        <a href="{{ site.linkedin }}" target="_blank" class="arrow-link">Let's connect on LinkedIn</a><br>
-        <a href="{{ site.email }}" target="_blank" class="arrow-link">Send an email</a><br>
-        <a href="{{ site.resume }}" target="_blank" class="arrow-link">Check my resume</a>
+        <h3 class="intro__contact">Let's connect!</h3>
+
+        <div class="intro__icons">
+          {% assign wanted = "resume,linkedin,github,email" | split: "," %}
+          {% for key in wanted %}
+            {% assign matches = site.social | where: "title", key %}
+            {% assign link = matches[0] %}
+            {% if link %}
+              {% assign slug = key %}
+              {% assign label = key | capitalize %}
+              {% if key == 'github' %}{% assign label = 'GitHub' %}{% endif %}
+              {% if key == 'linkedin' %}{% assign label = 'LinkedIn' %}{% endif %}
+
+              {% capture icon_light %}/img/social/{{ slug }}-dark.png{% endcapture %}
+              {% capture icon_dark  %}/img/social/{{ slug }}-light.png{% endcapture %}
+
+              <a href="{{ link.url }}" target="_blank" rel="noopener" class="intro__icon" aria-label="{{ label }}" data-icon="{{ slug }}">
+                <img
+                  class="social-icon"
+                  alt="{{ label }}"
+                  src="{{ icon_light | relative_url }}"
+                  data-light="{{ icon_light | relative_url }}"
+                  data-dark="{{ icon_dark  | relative_url }}"
+                  onerror="this.onerror=null; this.style.visibility='hidden';"
+                >
+                <span class="label">{{ label }}</span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
     </div>
     
