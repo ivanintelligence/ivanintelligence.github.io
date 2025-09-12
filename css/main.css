@@ -1608,6 +1608,86 @@ html.night { --arrow-img: url("../img/arrow/arrow-dark.png"); }
 
 
 
+/* 1. SCOPE YOUR CSS VARIABLES */
+/* Instead of defining them at html:not(.night) level, scope them to the intro */
+.intro {
+  /* Define variables only within .intro's scope */
+  --intro-hello-family: "New York", Georgia, "Times New Roman", serif;
+  --intro-hello-size: 2.4rem;
+  --intro-hello-weight: 400;
+  --intro-hello-style: normal;
+  --intro-hello-color: #222325;
+  
+  --intro-tagline-family: "New York", Georgia, "Times New Roman", serif;
+  --intro-tagline-size: 2.4rem;
+  --intro-tagline-weight: 400;
+  --intro-tagline-style: normal;
+  --intro-tagline-color: #727376;
+  
+  --intro-cta-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
+  --intro-cta-size: 1.4rem;
+  --intro-cta-weight: 700;
+  --intro-cta-style: normal;
+  --intro-cta-color: #222325;
+
+  --intro-photo-radius: 0px; /* Add your desired border radius */
+}
+
+/* Dark mode variables within .intro */
+html.night .intro {
+  --intro-hello-color: #F6F5F7;
+  --intro-tagline-color: #A9A9AB;
+  --intro-cta-color: #F6F5F7;
+}
+
+/* 2. APPLY STYLES WITH STRONG SPECIFICITY */
+/* Target the exact elements with very specific selectors */
+.intro .intro__hello {
+  font-family: var(--intro-hello-family);
+  font-size: var(--intro-hello-size);
+  font-weight: var(--intro-hello-weight);
+  font-style: var(--intro-hello-style);
+  color: var(--intro-hello-color);
+}
+
+.intro .intro__tagline {
+  font-family: var(--intro-tagline-family);
+  font-size: var(--intro-tagline-size);
+  font-weight: var(--intro-tagline-weight);
+  font-style: var(--intro-tagline-style);
+  color: var(--intro-tagline-color);
+}
+
+.intro .intro__cta .arrow-link {
+  font-family: var(--intro-cta-family);
+  font-size: var(--intro-cta-size);
+  font-weight: var(--intro-cta-weight);
+  font-style: var(--intro-cta-style);
+  color: var(--intro-cta-color);
+}
+
+/* 3. HEADSHOT CORNER RADIUS - TARGET VERY SPECIFICALLY */
+.intro .intro__media .intro__photo {
+  border-radius: var(--intro-photo-radius);
+}
+
+/* Remove bold styling and set specific colors for name in intro */
+.intro__tagline .name {
+  font-weight: inherit; /* Remove bold styling, inherit from parent */
+}
+
+/* Light mode color for the name */
+html:not(.night) .intro__tagline .name {
+  color: #222325;
+}
+
+/* Dark mode color for the name */
+html.night .intro__tagline .name {
+  color: #F6F5F7;
+}
+
+
+
 /* === Section titles (light & dark) — easy knobs === */
 html:not(.night) {
   --section-title-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
