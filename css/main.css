@@ -1686,6 +1686,39 @@ html.night .intro__tagline .name {
   color: #F6F5F7;
 }
 
+/* Equal vertical spacing on mobile: top edge ↔ h1 ↔ h2 ↔ CTA ↔ bottom edge */
+@media (max-width: 768px) {
+  .intro {
+    min-height: 100svh !important;   /* reliable mobile viewport height */
+    padding-top: 0 !important;       /* remove vertical padding so edges count */
+    padding-bottom: 0 !important;
+  }
+
+  .intro .intro__row {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-evenly !important;  /* equal space above/between/below */
+    align-items: stretch !important;
+    height: 100% !important;
+    gap: 0 !important;               /* ensure gap doesn’t interfere */
+  }
+
+  /* Flatten the inner text wrapper so its children become flex items */
+  .intro .intro__text { display: contents !important; }
+
+  /* Kill default heading/CTA margins so spacing is governed only by space-evenly */
+  .intro h1,
+  .intro h2,
+  .intro .intro__cta {
+    margin: 0 !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  /* If you re-enable the headshot, place it first and center it */
+  .intro .intro__media { order: -1; align-self: center; }
+}
+
 
 
 /* === Section titles (light & dark) — easy knobs === */
