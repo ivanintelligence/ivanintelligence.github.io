@@ -1655,6 +1655,68 @@ html.night {
 
 
 
+/* Education images: control alignment and spacing */
+.education .job__image {
+  width: 100%;                   /* Full width container */
+  text-align: left;              /* Left-align image */
+  margin: 0;                     /* Remove default margins */
+  margin-bottom: var(--edu-img-gap, 20px); /* Gap between image and degree text */
+  max-width: min(100%, var(--img-max, 180px)); /* Respect image_max or default to 180px */
+}
+
+.education .job__image img {
+  display: block;                /* Block display prevents extra space */
+  width: 100%;                   /* Fill container width */
+  height: auto;                  /* Maintain aspect ratio */
+}
+
+/* Control education image gap site-wide */
+:root {
+  --edu-img-gap: 8px;           /* Default gap between image and degree */
+}
+
+/* Different gaps for different screen sizes (optional) */
+@media screen and (max-width: 768px) {
+  :root { --edu-img-gap: 8px; }
+}
+
+@media screen and (max-width: 480px) {
+  :root { --edu-img-gap: 8px; }
+}
+
+
+
+/* Internship images: control alignment and spacing (matches education) */
+.internship .job__image {
+  width: 100%;                   /* Full width container */
+  text-align: left;              /* Left-align image */
+  margin: 0;                     /* Remove default margins */
+  margin-bottom: var(--intern-img-gap, 8px); /* Gap between image and position text */
+  max-width: min(100%, var(--img-max, 180px)); /* Respect image_max or default to 180px */
+}
+
+.internship .job__image img {
+  display: block;                /* Block display prevents extra space */
+  width: 100%;                   /* Fill container width */
+  height: auto;                  /* Maintain aspect ratio */
+}
+
+/* Control internship image gap site-wide */
+:root {
+  --intern-img-gap: 8px;         /* Default gap between image and position */
+}
+
+/* Different gaps for different screen sizes (optional) */
+@media screen and (max-width: 768px) {
+  :root { --intern-img-gap: 8px; }
+}
+
+@media screen and (max-width: 480px) {
+  :root { --intern-img-gap: 8px; }
+}
+
+
+
 
 
 
