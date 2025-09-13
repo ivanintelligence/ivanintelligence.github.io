@@ -13,7 +13,7 @@ layout: default
 
   <!-- Full-bleed hero -->
   {% if page.hero %}
-    {% assign hero_is_external = page.hero contains '://' %}
+    {% if page.hero contains '://' %}{% assign hero_is_external = true %}{% else %}{% assign hero_is_external = false %}{% endif %}
     <div class="project-hero">
       <img
         src="{% if hero_is_external %}{{ page.hero }}{% else %}{{ page.hero | relative_url }}{% endif %}"
@@ -53,7 +53,7 @@ layout: default
     {% if page.links %}
       <div class="project-detail__links">
         {% for l in page.links %}
-          {% assign l_ext = l.url contains '://' %}
+          {% if l.url contains '://' %}{% assign l_ext = true %}{% else %}{% assign l_ext = false %}{% endif %}
           <p class="project-detail__link">
             <a
               href="{% if l_ext %}{{ l.url }}{% else %}{{ l.url | relative_url }}{% endif %}"
