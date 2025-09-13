@@ -110,6 +110,25 @@
   }
 
   // -------------------------------
+  // External links in new tab
+  // -------------------------------
+  function initExternalLinks() {
+    // Apply target="_blank" to all external links
+    qsa('a').forEach(link => {
+      const href = link.getAttribute('href') || '';
+      
+      // Skip links with no href or that already have target set
+      if (!href || link.hasAttribute('target')) return;
+      
+      // If external link, open in new tab
+      if (isExternalHref(href)) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener');
+      }
+    });
+  }
+
+  // -------------------------------
   // Swup (internal nav + restore home scroll)
   // -------------------------------
   function initSwup() {
@@ -166,9 +185,10 @@
   // Init all widgets on the current DOM
   // -------------------------------
   function initWidgets() {
-    try { initNightMode(); }     catch (e) { console.warn('NightMode init failed', e); }
-    try { initWaveHand(); }      catch (e) { console.warn('Wave init failed', e); }
-    try { initScrollReveal(); }  catch (e) { console.warn('ScrollReveal init failed', e); }
+    try { initNightMode(); }      catch (e) { console.warn('NightMode init failed', e); }
+    try { initWaveHand(); }       catch (e) { console.warn('Wave init failed', e); }
+    try { initScrollReveal(); }   catch (e) { console.warn('ScrollReveal init failed', e); }
+    try { initExternalLinks(); }  catch (e) { console.warn('ExternalLinks init failed', e); }
   }
 
   // -------------------------------
