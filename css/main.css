@@ -2872,7 +2872,7 @@ html:not(.night) {
 
   /* Title */
   --sub-title-family: "New York", Georgia, "Times New Roman", serif;
-  --sub-title-size: 2.4rem;
+  --sub-title-size: 2.8rem;
   --sub-title-weight: 400;
   --sub-title-style: normal;
   --sub-title-color: #222325;
@@ -2910,7 +2910,7 @@ html.night {
   --sub-hero-height: clamp(240px, 45vh, 520px);
 
   --sub-title-family: "New York", Georgia, "Times New Roman", serif;
-  --sub-title-size: 2.4rem;
+  --sub-title-size: 2.8rem;
   --sub-title-weight: 400;
   --sub-title-style: normal;
   --sub-title-color: #F6F5F7;
@@ -2983,6 +2983,83 @@ html.night {
   font-weight: var(--sub-body-weight);
   font-style: var(--sub-body-style);
   color: var(--sub-body-color);
+}
+
+
+
+/* Add to your css/main.css file */
+
+/* Headings inside project summary */
+.project-detail__body h1 {
+  font-family: "New York", Georgia, "Times New Roman", serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: #222325;
+}
+
+.project-detail__body h2 {
+  font-family: "New York", Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #222325;
+}
+
+.project-detail__body h3 {
+  font-family: "New York", Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #222325;
+}
+
+/* Dark mode variants */
+html.night .project-detail__body h1,
+html.night .project-detail__body h2,
+html.night .project-detail__body h3 {
+  color: #F6F5F7;
+}
+
+
+
+/* Add to css/main.css */
+
+/* Image figure container with caption styling */
+.project-detail__body figure {
+  margin: 24px auto;         /* centered with consistent vertical spacing */
+  width: 100%;               
+  max-width: var(--img-max, 100%); /* respects img-max variable or defaults to full width */
+  display: block;            /* ensures proper block layout */
+}
+
+/* Maintain existing image styling */
+.project-detail__body figure img {
+  margin-bottom: 12px;       /* space between image and caption */
+  margin-top: 0;             /* override the default img margins */
+  border-radius: var(--img-radius, 36px);
+}
+
+/* Caption styling */
+.project-detail__body figcaption {
+  font-family: "SF Pro Text", -apple-system, system-ui, sans-serif;
+  font-size: 0.8rem;         /* slightly smaller than body text */
+  font-weight: 400;          /* regular weight */
+  font-style: normal;        
+  color: #727376;            /* subdued gray color */
+  line-height: 1.4;
+  text-align: left;          /* left-aligned text */
+  width: 100%;               /* full width of the figure container */
+  padding: 0 4px;            /* slight inset from image edges */
+}
+
+/* Dark mode support */
+html.night .project-detail__body figcaption {
+  color: #A9A9AB;            /* lighter gray for dark mode */
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 480px) {
+  .project-detail__body figcaption {
+    font-size: 0.85rem;      /* slightly smaller on mobile */
+  }
 }
 
 
@@ -3416,4 +3493,16 @@ html.night .intro .intro__icon .label {
   overflow-wrap: normal !important;
   word-break: keep-all !important;
   hyphens: none !important;
+}
+
+
+
+
+
+
+
+
+/* This overrides both light and dark mode values */
+html.night, html:not(.night) {
+  --sub-hero-height: clamp(10px, 10vh, 10px);
 }

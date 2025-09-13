@@ -1,19 +1,41 @@
 ---
-layout: subpage
-hero: https://picsum.photos/1600/900
-title: Conference
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum rutrum varius. In hac habitasse platea dictumst.
 
-links:
-  - text: View URC 2025 official website
-    url: https://neurips.cc/Conferences/2024
+layout: subpage
+
+hero: /img/conferences/urc-2025/urc-2025.jpg
+title: The 9th University Research Conference
+summary: >
+  Presented my research titled “Investigating Deep Learning and Computer Vision for Predicting and Simulating Plant Growth Structures: Laying the Groundwork for Digital Twins in Agriculture,” as an oral and poster presenter at The 9th University Research Conference (URC 2025), held at the University of San Carlos Fr. Michael Richartz Conference Center, Cebu City, Philippines, in April 2025.<br><br>
+  The research lays groundwork in pursuing digital twin technology in agriculture - a digital replicas of crops in farms that mimic their behaviors and appearances from physical world to digital world, using artificial intelligence and deep learning. It aims to help farmers make informed farming decisions, and redefine farming practices to be more sustainable and efficient, promoting the United Nations Sustainable Development Goal (SDG) 2 (Zero Hunger), SDG 9 (Industry, Innovation, and Infrastructure), and SDG 12 (Responsible Consumption and Production), that overall benefits all of humanity and the planet.<br><br>
+  URC is the University of San Carlos’ largest research event.<br><br>
+  Awarded with Best Poster Presenter Award, recognized among more than 50 poster presenters from various departments and colleges of the university.<br><br>
+  <a href="https://usc.edu.ph/research/urc-2025" class="arrow-link">See URC 2025 official website</a>
+
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum rutrum varius. In hac habitasse platea dictumst. Morbi vitae tellus in nulla convallis scelerisque. Donec malesuada eros vel diam viverra, at tincidunt ante dignissim. Nam porttitor sem et purus lobortis, vel placerat sem fermentum. Fusce fermentum lectus nunc, at ornare dui molestie in. Nunc ac fringilla felis. Nunc consectetur, ex a hendrerit elementum, velit arcu tempor elit, in rutrum nisi urna sed magna. Quisque egestas, odio et scelerisque feugiat, magna odio pulvinar ex, et porttitor lacus orci et quam. Suspendisse eu arcu aliquam, sagittis diam eu, elementum tortor. Maecenas vel ornare orci. Cras feugiat ultricies cursus.
+<figure style="--img-max: 480px;">
+  <img src="/img/conferences/urc-2025/urc-2025-venue.jpeg">
+</figure>
 
-![Confusion matrix](https://picsum.photos/1200/800)
+<br>
 
-You can also add more links in your write-up:
-<a href="https://example.com/more-details" class="arrow-link" target="_blank" rel="noopener">
-  Read more
-</a>
+<h1>Presentation Slides</h1>
+
+<br>
+
+<h1>Poster Design</h1>
+
+<br>
+
+<h1>Poster Video</h1>
+
+<br>
+
+<h1>Best Presenter Award</h1>
+
+<figure style="--img-max: 480px;">
+  <img src="/img/conferences/urc-2025/urc-2025-award-1.jpeg">
+</figure>
+<figure>
+  <img src="/img/conferences/urc-2025/urc-2025-award-2.jpg">
+</figure>
