@@ -2941,7 +2941,7 @@ html:not(.night) {
 
   /* Title */
   --sub-title-family: "New York", Georgia, "Times New Roman", serif;
-  --sub-title-size: 2.8rem;
+  --sub-title-size: 2.4rem;
   --sub-title-weight: 400;
   --sub-title-style: normal;
   --sub-title-color: #222325;
@@ -2979,7 +2979,7 @@ html.night {
   --sub-hero-height: clamp(240px, 45vh, 520px);
 
   --sub-title-family: "New York", Georgia, "Times New Roman", serif;
-  --sub-title-size: 2.8rem;
+  --sub-title-size: 2.4rem;
   --sub-title-weight: 400;
   --sub-title-style: normal;
   --sub-title-color: #F6F5F7;
@@ -3061,14 +3061,14 @@ html.night {
 /* Headings inside project summary */
 .project-detail__body h1 {
   font-family: "New York", Georgia, "Times New Roman", serif;
-  font-size: 2.4rem;
+  font-size: 2.0rem;
   font-weight: 400;
   color: #222325;
 }
 
 .project-detail__body h2 {
   font-family: "New York", Georgia, "Times New Roman", serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 400;
   color: #222325;
 }
