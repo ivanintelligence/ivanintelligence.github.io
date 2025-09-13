@@ -5,8 +5,9 @@ description: Artificial Intelligence / Machine Learning (AI/ML) Engineer
 url: https://ivanintelligence.github.io
 baseurl: ''
 
-logo: /img/headshot/headshot.png
-headshot: /img/headshot/headshot.png
+logo: /img/headshot/headshot-light.png
+headshot-light: /img/headshot/headshot-light.png
+headshot-dark: /img/headshot/headshot-dark.png
 linkedin: https://www.linkedin.com/in/diazjohnivantuyor
 email: mailto:diazjohnivantuyor@gmail.com
 resume: /resume/JohnIvanDiaz_Resume.pdf

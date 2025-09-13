@@ -20,7 +20,7 @@
 
     function updateFooterIcons(isNight) {
       // Update ALL social icons (footer + intro)
-      document.querySelectorAll('img.social-icon').forEach(img => {
+      document.querySelectorAll('img.social-icon, .intro__photo').forEach(img => {
         const next = isNight ? img.dataset.dark : img.dataset.light;
         if (next) img.setAttribute('src', next);
       });
