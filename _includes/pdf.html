@@ -1,0 +1,24 @@
+<div class="pdf-container" style="{{ include.style }}">
+  <object
+    data="{{ include.url | relative_url }}"
+    type="application/pdf"
+    width="{{ include.width | default: '100%' }}"
+    height="{{ include.height | default: '600px' }}"
+    class="pdf-viewer">
+    <iframe
+      src="{{ include.url | relative_url }}"
+      width="{{ include.width | default: '100%' }}"
+      height="{{ include.height | default: '600px' }}"
+      class="pdf-viewer"
+      frameborder="0">
+      <p class="pdf-fallback">
+        Your browser does not support embedded PDFs. 
+        <a href="{{ include.url | relative_url }}" 
+           class="arrow-link" 
+           target="_blank">
+          View the PDF directly
+        </a>
+      </p>
+    </iframe>
+  </object>
+</div>

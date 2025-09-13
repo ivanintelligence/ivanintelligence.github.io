@@ -224,9 +224,6 @@
 
 
 
-
-/* - - - - - Sections after intro - - - - - */
-
 /* - - - - - Sections after intro - - - - - */
 
 /* Project images */
@@ -2806,6 +2803,78 @@ html.is-animating .swup-transition.is-entering {
 
 
 
+/* PDF viewer styling */
+.pdf-container {
+  width: 100%;
+  max-width: var(--img-max, 800px);
+  margin: 0 auto 24px;
+  overflow: hidden;
+  border-radius: var(--img-radius, 36px);
+}
+
+.pdf-viewer {
+  border-radius: var(--img-radius, 36px);
+  background-color: #DDDDE1;
+
+}
+
+html.night .pdf-viewer {
+  background-color: #727376;
+}
+
+@media (max-width: 480px) {
+  .pdf-container {
+    border-radius: 20px;
+  }
+  .pdf-viewer {
+    border-radius: 20px;
+    height: 450px;
+  }
+}
+
+/* PDF fallback link styling */
+.pdf-fallback {
+  font-size: 0.8rem;
+  margin-top: 8px;
+  text-align: center;
+  color: #222325;
+}
+
+html.night .pdf-fallback {
+  color: #F6F5F7;
+}
+
+
+
+/* Video container styling */
+.video-container {
+  width: 100%;
+  max-width: var(--img-max, 800px);
+  margin: 0 auto 24px;
+  overflow: hidden;
+  border-radius: var(--img-radius, 36px);
+}
+
+.video-player {
+  border-radius: var(--img-radius, 36px);
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #000;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .video-container {
+    border-radius: var(--img-radius-mobile, 20px);
+  }
+  .video-player {
+    border-radius: var(--img-radius-mobile, 20px);
+  }
+}
+
+
+
 
 
 
@@ -2831,16 +2900,16 @@ html.is-animating .swup-transition.is-entering {
 
 /* === Subpage "Back" link typography === */
 html:not(.night) {
-  --back-font-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --back-font-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --back-font-size: 1rem;      /* tweak */
-  --back-font-weight: 700;     /* 400|700 */
+  --back-font-weight: 400;     /* 400|700 */
   --back-font-style: normal;   /* normal|italic */
   --back-font-color: #222325;
 }
 html.night {
-  --back-font-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --back-font-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --back-font-size: 1rem;
-  --back-font-weight: 700;
+  --back-font-weight: 400;
   --back-font-style: normal;
   --back-font-color: #F6F5F7;
 }
@@ -3493,16 +3562,4 @@ html.night .intro .intro__icon .label {
   overflow-wrap: normal !important;
   word-break: keep-all !important;
   hyphens: none !important;
-}
-
-
-
-
-
-
-
-
-/* This overrides both light and dark mode values */
-html.night, html:not(.night) {
-  --sub-hero-height: clamp(10px, 10vh, 10px);
 }

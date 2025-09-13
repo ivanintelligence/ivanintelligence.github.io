@@ -1,0 +1,13 @@
+<div class="video-container" style="{{ include.style }}">
+    <video
+      width="{{ include.width | default: '100%' }}"
+      height="{{ include.height | default: 'auto' }}"
+      class="video-player"
+      autoplay
+      muted
+      playsinline
+      controls>
+      <source src="{{ include.url | relative_url }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+</div>

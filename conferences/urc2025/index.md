@@ -17,17 +17,36 @@ summary: >
   <img src="/img/conferences/urc-2025/urc-2025-venue.jpeg">
 </figure>
 
+<figure style="--img-max: 560px;">
+  <img src="/img/conferences/urc-2025/urc-2025-oral.jpeg">
+</figure>
+
+<figure style="--img-max: 480px;">
+  <img src="/img/conferences/urc-2025/urc-2025-poster.jpeg">
+</figure>
+
 <br>
 
 <h1>Presentation Slides</h1>
+
+{% include pdf.html 
+   url="/img/conferences/urc-2025/urc-2025-presentation-slides.pdf"
+   height="640"%}
 
 <br>
 
 <h1>Poster Design</h1>
 
+<figure>
+  <img src="/img/conferences/urc-2025/urc-2025-poster-design.pdf">
+</figure>
+
 <br>
 
 <h1>Poster Video</h1>
+
+{% include video.html 
+   url="/img/conferences/urc-2025/urc-2025-poster-video.mp4"%}
 
 <br>
 
@@ -36,6 +55,7 @@ summary: >
 <figure style="--img-max: 480px;">
   <img src="/img/conferences/urc-2025/urc-2025-award-1.jpeg">
 </figure>
+
 <figure>
   <img src="/img/conferences/urc-2025/urc-2025-award-2.jpg">
 </figure>
