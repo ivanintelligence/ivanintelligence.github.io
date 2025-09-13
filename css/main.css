@@ -1623,6 +1623,38 @@ html.night .u-ld-contrast { color: #F6F5F7 !important; }  /* dark mode */
 
 
 
+/* Hover underline colors for links */
+:root {
+  /* Light mode underline colors */
+  --hover-line-color: #2F6DE1; /* Change this to any color you want */
+  --hover-line-size: 2px;      /* Thickness of the underline */
+}
+
+html.night {
+  /* Dark mode underline colors */
+  --hover-line-color: #4B7AF7; /* Change this to any color you want */
+}
+
+/* Footer links underline on hover */
+.footer__links a:after {
+  background: var(--hover-line-color) !important;
+  height: var(--hover-line-size);
+}
+
+/* Section content links underline on hover */
+.section__content .underline-link:after {
+  background: var(--hover-line-color) !important;
+  height: var(--hover-line-size);
+}
+
+/* 404 page links underline on hover */
+.not-found a:after {
+  background: var(--hover-line-color) !important;
+  height: var(--hover-line-size);
+}
+
+
+
 
 
 
@@ -3323,16 +3355,3 @@ html.night .intro .intro__icon .label {
   word-break: keep-all !important;
   hyphens: none !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
