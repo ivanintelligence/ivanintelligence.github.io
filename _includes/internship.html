@@ -1,0 +1,30 @@
+<!-- Internship (optional image support) -->
+<section class="section internship experience">
+    <div class="section__title">Internship</div>
+    <div class="section__content">
+      <div class="jobs">
+        {% assign internships = site.data.internship | default: empty %}
+        {% for intern in internships %}
+        <div class="job">
+
+          {% if intern.image %}
+          <figure class="job__image" {% if intern.image_max %}style="--img-max: {{ intern.image_max }}px"{% endif %}>
+            {% assign img_is_external = intern.image contains '://' %}
+            <img src="{% if img_is_external %}{{ intern.image }}{% else %}{{ intern.image | relative_url }}{% endif %}"
+                 alt="{{ intern.position | escape }}" loading="lazy">
+          </figure>
+          {% endif %}
+
+          <div class="time-place">
+            <div class="job__company">{{ intern.position }}</div>
+            <div class="job__time">{{ intern.time }}</div>
+          </div>
+
+          <div class="job__position">
+            {{ intern.description }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+<section class="section professional-certificates other-projects">
+  <div class="section__title">Professional<br>Certificates</div>
+
+  <div class="section__content">
+    {% assign pcerts = site.data.professional_certificates | default: empty %}
+    {% for cert in pcerts %}
+      <div class="project">
+
+        <div class="project__image" {% if cert.image_max %}style="--img-max: {{ cert.image_max }}px"{% endif %}>
+          {% assign img_is_external = cert.image contains '://' %}
+          <img
+            src="{% if img_is_external %}{{ cert.image }}{% else %}{{ cert.image | relative_url }}{% endif %}"
+            alt="{{ cert.name | escape }}"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="project__name">
+          <span class="project__name-text">{{ cert.name }}</span>
+        </div>
+
+        <p>{{ cert.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>

@@ -656,6 +656,1881 @@
   margin-bottom: 6px;     /* spacing between bullet points */
 }
 
+.professional-certificates.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+.certifications.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+.other-projects .project__name-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.professional-certificates .project__name-text,
+.certifications .project__name-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.leadership .job__position p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+}
+
+.leadership .job__position .arrow-link {
+  font-size: 0.9rem;
+  font-weight: 700; /* bold, like other sections */
+  line-height: 1.35;
+  margin: 0;
+}
+
+.leadership .job__position .arrow-link:after {
+  width: 13px;
+  height: 13px;
+  margin-left: 8px;
+  bottom: 1px;
+}
+
+.arrow-link:after {
+  margin-left: 10px; /* consistent gap for all sections */
+}
+
+/* Education section: match description and arrow-link styles to Leadership */
+.education .job__description,
+.education .job__description p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+}
+
+.education .job__description .arrow-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.education .job__description .arrow-link:after {
+  width: 13px;
+  height: 13px;
+  margin-left: 10px;
+  bottom: 1px;
+}
+
+/* Awards section: match description and arrow-link styles to Leadership */
+.awards .job p,
+.awards .job__description,
+.awards .job__description p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+}
+
+.awards .job .arrow-link,
+.awards .job__description .arrow-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.awards .job .arrow-link:after,
+.awards .job__description .arrow-link:after {
+  width: 13px;
+  height: 13px;
+  margin-left: 10px;
+  bottom: 1px;
+}
+
+.education .job__description .edu-break {
+  display: block;
+  height: 0;
+  margin-top: 0px; /* Adjust as needed */
+}
+
+/* Internship section: match description and arrow-link styles to other sections */
+.internship .job__position,
+.internship .job__position p,
+.internship .job__position ul {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+}
+
+.internship .job__position .arrow-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.internship .job__position .arrow-link:after {
+  width: 13px;
+  height: 13px;
+  margin-left: 10px;
+  bottom: 1px;
+}
+
+/* Profile section: match description and arrow-link styles to other sections */
+.profile .section__content p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+}
+
+.profile .section__content .arrow-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.profile .section__content .arrow-link:after {
+  width: 13px;
+  height: 13px;
+  margin-left: 10px;
+  bottom: 1px;
+}
+
+
+
+/* === Global description typography ===
+   Change these vars to update ALL sections at once */
+:root{
+  --desc-size: 0.95rem;
+  --desc-line: 1.45;
+  --desc-weight: 300;
+  --desc-margin-bottom: 20px;
+
+  /* Arrow link sizing that scales with text */
+  --arrow-size: 0.9em;
+  --arrow-gap: 0.6em;
+  --arrow-baseline: 0.1em;
+}
+
+/* Apply to all section descriptions (p or wrappers that contain lists/HTML) */
+.other-projects .project p,
+.certifications.featured-projects .project__caption p,
+.professional-certificates.featured-projects .project__caption p,
+.conferences .project p,
+.publications .project p,
+.leadership .job__position p,
+.awards .job p,
+.education .job__description,
+.education .job__description p,
+.internship .job__position,
+.internship .job__position p,
+.profile .section__content p {
+  font-size: var(--desc-size);
+  line-height: var(--desc-line);
+  font-weight: var(--desc-weight);
+  margin: 0 0 var(--desc-margin-bottom) 0;
+}
+
+/* Lists inside any description use the same typography */
+.other-projects .project ul,
+.certifications.featured-projects .project__caption ul,
+.professional-certificates.featured-projects .project__caption ul,
+.conferences .project ul,
+.publications .project ul,
+.leadership .job__position ul,
+.awards .job ul,
+.education .job__description ul,
+.internship .job__position ul,
+.profile .section__content ul {
+  font: inherit;
+  line-height: inherit;
+  margin: 0 0 var(--desc-margin-bottom) 20px;
+  padding-left: 10px;
+  list-style: disc;
+}
+.other-projects .project li,
+.certifications.featured-projects .project__caption li,
+.professional-certificates.featured-projects .project__caption li,
+.conferences .project li,
+.publications .project li,
+.leadership .job__position li,
+.awards .job li,
+.education .job__description li,
+.internship .job__position li,
+.profile .section__content li {
+  margin-bottom: 6px;
+}
+
+/* Make arrow links feel like part of the description (size inherits) */
+.section .arrow-link {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 700; /* bold only */
+}
+.arrow-link:after {
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  margin-left: var(--arrow-gap);
+  bottom: var(--arrow-baseline);
+}
+
+/* Keep arrows visible in featured captions (theme hides a:after there) */
+.certifications.featured-projects .project__caption .arrow-link:after,
+.professional-certificates.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+
+
+/* Ensure arrow links render consistently everywhere (and scale with text) */
+.section .arrow-link {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 700;
+}
+.section .arrow-link:after {
+  content: '';
+  position: relative;
+  bottom: var(--arrow-baseline, 2px);
+  margin-left: var(--arrow-gap, 10px);
+  width: var(--arrow-size, 15px);
+  height: var(--arrow-size, 15px);
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../img/arrow.png) no-repeat center;
+  background-size: 100%;
+  transition: transform .2s ease-in-out;
+}
+.section .arrow-link:hover:after { transform: translateX(7px); }
+
+/* Re-enable arrows inside featured captions (theme hides :after globally there) */
+.certifications.featured-projects .project__caption .arrow-link:after,
+.professional-certificates.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+/* Subpage essentials */
+.project-detail { display: block; }
+.project-hero { position: relative; z-index: 0; }
+
+
+
+.project-detail .arrow-link--back:after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Keep only the left arrow before "Back" */
+.arrow-link--back {
+  display: inline-block;
+  white-space: nowrap;
+}
+.arrow-link--back:before {
+  content: '';
+  position: relative;
+  bottom: 2px;
+  margin-right: 15px;
+  width: var(--arrow-size, 15px);
+  height: var(--arrow-size, 15px);
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../img/arrow.png) no-repeat center;
+  background-size: 100%;
+  transform: scaleX(-1);
+  transition: transform .2s ease-in-out;
+}
+.arrow-link--back:hover:before {
+  transform: scaleX(-1) translateX(7px);
+}
+
+
+
+/* Site background colors (light/dark) */
+html, body {
+  background-color: #F6F5F7 !important; /* light */
+}
+
+html.night, body.night {
+  background-color: #222325 !important; /* dark */
+}
+
+
+
+/* === SF Pro Text (Regular, Italic, Bold) === */
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../fonts/sf-pro/SF-Pro-Text-Regular.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../fonts/sf-pro/SF-Pro-Text-RegularItalic.otf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../fonts/sf-pro/SF-Pro-Text-Bold.otf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Make SF Pro Text the site-wide default */
+html, body {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* === New York (serif) — core weights/styles === */
+/* Pick the optical size you want (Small/Medium/Large/ExtraLarge). 
+   Small works well for normal UI sizes; Large for big headings. */
+
+/* Regular (400) */
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkSmall-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Italic (400 italic) */
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkSmall-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+/* Bold (700) */
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkSmall-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Bold Italic (700 italic) */
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkSmall-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Optional: Semibold (600) for big titles (uses Large optical size) */
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkLarge-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "New York";
+  src: url("../fonts/new-york/NewYorkLarge-SemiboldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Use New York for section titles (light + dark) */
+html:not(.night) {
+  --section-title-family: "New York", Georgia, "Times New Roman", serif;
+}
+html.night {
+  --section-title-family: "New York", Georgia, "Times New Roman", serif;
+}
+
+/* Use New York for project titles and subpage titles */
+html:not(.night) .other-projects .project__name-text,
+html.night        .other-projects .project__name-text {
+  font-family: "New York", Georgia, "Times New Roman", serif;
+}
+
+/* Subpage big title */
+.project-detail__title {
+  font-family: "New York", Georgia, "Times New Roman", serif;
+}
+
+/* Utility (use on any element if needed) */
+.ny { font-family: "New York", Georgia, "Times New Roman", serif !important; }
+
+
+
+/* Global typography spacing: keep letters natural (no compressed/divergent spacing) */
+html, body,
+.section, .project-detail, .intro, .footer,
+.experience, .skills, .other-projects, .featured-projects,
+.publications, .conferences, .leadership, .education,
+.awards, .profile, .internship {
+  letter-spacing: normal;     /* auto tracking */
+  word-spacing: normal;       /* natural word gaps */
+  font-kerning: normal;       /* enable kerning pairs */
+  font-variant-ligatures: normal;
+  text-rendering: optimizeLegibility;
+  font-stretch: 100%;         /* avoid condensed/expanded */
+}
+
+/* Ensure links inside descriptions inherit the natural spacing */
+.section .arrow-link { letter-spacing: inherit; word-spacing: inherit; }
+
+
+
+/* Keep the first line on one line and let the block size to its content */
+.footer__copyright {
+  width: auto !important;
+  flex: 0 0 auto;         /* don’t shrink */
+}
+.footer__copyright .top {
+  white-space: nowrap;    /* “Copyright 2025 John Ivan.” stays on one line */
+}
+
+
+
+/* Match date typography to description in Education, Leadership, Awards */
+.education.experience .job__time,
+.leadership.experience .job__time,
+.awards.experience .job__time {
+  font-size: var(--desc-size);
+  line-height: var(--desc-line);
+  font-weight: var(--desc-weight);
+  font-family: inherit;    /* remove monospace */
+  font-style: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  color: inherit;
+}
+
+
+
+/* Global image corner radius */
+:root{
+  --img-radius: 36px;          /* desktop/tablet */
+  --img-radius-mobile: 20px;   /* small phones */
+  --hero-radius: 0px;          /* full-bleed hero; keep 0 unless you want rounded */
+}
+
+/* Section thumbnails and images */
+.other-projects .project__image img,
+.certifications.featured-projects .project__pic img,
+.professional-certificates.featured-projects .project__pic img,
+.conferences .project__image img,
+.publications .project__image img,
+.awards .award__image img,
+.project-detail .project__pic img,   /* subpage cover inside content column */
+.project-detail__body img {          /* markdown/body images on subpages */
+  border-radius: var(--img-radius) !important;
+}
+
+/* Optional: smaller radius on tiny screens */
+@media (max-width: 480px) {
+  .other-projects .project__image img,
+  .certifications.featured-projects .project__pic img,
+  .professional-certificates.featured-projects .project__pic img,
+  .conferences .project__image img,
+  .publications .project__image img,
+  .awards .award__image img,
+  .project-detail .project__pic img,
+  .project-detail__body img {
+    border-radius: var(--img-radius-mobile) !important;
+  }
+}
+
+/* Subpage hero (full-bleed) */
+.project-hero {
+  border-radius: var(--hero-radius) !important;
+  overflow: hidden; /* keep corners clean if you add rounding */
+}
+
+
+
+/* Use SF Pro for the project "used/thing" chips */
+.other-projects .project__used__item {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-kerning: normal;
+}
+
+
+
+.project-detail__tags .tag {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+
+
+/* --- Section titles: right-align on landscape, left-align on mobile --- */
+/* Tunable “column width” for titles and the gap to content */
+:root {
+  --section-title-col: clamp(200px, 18vw, 320px); /* title column width (right-aligned) */
+  --section-gap: clamp(24px, 4vw, 70px);          /* space between title and content */
+}
+
+/* Landscape/desktop: right-aligned, fixed column, wraps without overlapping */
+.section__title {
+  text-align: right !important;
+  width: var(--section-title-col) !important;
+  flex: 0 0 var(--section-title-col) !important;  /* fixes the column width */
+  margin-right: var(--section-gap) !important;    /* consistent distance to content */
+  overflow-wrap: anywhere;                         /* wrap long words */
+  word-break: break-word;                          /* extra safety */
+  hyphens: auto;                                   /* nicer breaks if available */
+}
+
+/* Mobile/portrait: left-aligned, no fixed column, content stacks below */
+@media (max-width: 768px) {
+  .section__title {
+    text-align: left !important;
+    width: auto !important;
+    flex: 0 1 auto !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Skills: keep category headers in normal case */
+.skills .skillz__category__label {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+/* Consistent gap between image and caption (tweak once) */
+:root { --pcap-gap: 30px; }
+
+/* Image column: size to its intrinsic width or image_max (no flex-grow) */
+.certifications.featured-projects .project__pic,
+.professional-certificates.featured-projects .project__pic {
+  flex: 0 0 auto;       /* don't steal space from caption */
+  width: auto;
+  max-width: none;
+}
+
+/* Caption column: fill remaining space; right edge pinned to section gutter */
+.certifications.featured-projects .project__caption,
+.professional-certificates.featured-projects .project__caption {
+  flex: 1 1 auto;       /* expand/shrink as image changes */
+  min-width: 0;         /* allow proper wrapping instead of overflow */
+  width: auto;
+  max-width: none;
+  margin-left: var(--pcap-gap);  /* constant gap to image */
+}
+
+/* Mobile: stack as usual (no special handling needed, but keep safe) */
+@media (max-width: 768px) {
+  .certifications.featured-projects .project__pic,
+  .professional-certificates.featured-projects .project__pic {
+    width: 100%;
+  }
+  .certifications.featured-projects .project__caption,
+  .professional-certificates.featured-projects .project__caption {
+    width: auto;
+    margin-left: 0;
+  }
+}
+
+
+
+/* Responsive image wrappers: use --img-max from templates; shrink on narrow viewports */
+.other-projects .project__image,
+.conferences .project__image,
+.publications .project__image,
+.awards .award__image,
+.experience .job__image,
+.certifications.featured-projects .project__pic,
+.professional-certificates.featured-projects .project__pic,
+.project-detail .project__pic {
+  width: 100%;
+  max-width: min(100%, var(--img-max, 520px)) !important; /* cap at image_max, else default 520 */
+  flex: 0 1 var(--img-max, 520px); /* in flex layouts, base on image_max but allow shrinking */
+}
+
+/* Images always fill their wrapper proportionally */
+.other-projects .project__image img,
+.conferences .project__image img,
+.publications .project__image img,
+.awards .award__image img,
+.experience .job__image img,
+.certifications.featured-projects .project__pic img,
+.professional-certificates.featured-projects .project__pic img,
+.project-detail .project__pic img {
+  display: block;
+  width: 100% !important;
+  height: auto;
+}
+
+/* 1) Prevent images from entering the title column on featured sections */
+.certifications.featured-projects .section__content,
+.professional-certificates.featured-projects .section__content {
+  position: relative;
+  overflow: hidden; /* clip any left-bleed so it can’t overlap the title */
+}
+
+/* 2) Disable the wide left-bleed earlier to protect the title column */
+@media (max-width: 1280px) {
+  .certifications.featured-projects .project,
+  .professional-certificates.featured-projects .project {
+    width: 115% !important;
+  }
+}
+@media (max-width: 1180px) {
+  .certifications.featured-projects .project,
+  .professional-certificates.featured-projects .project {
+    margin-left: 0 !important;
+    width: 100% !important; /* no bleed when space gets tight */
+  }
+}
+
+/* 3) If the viewport can’t fit Title column + gap + min image, wrap to stacked layout */
+@media (max-width: 1100px) {
+  .section {
+    flex-wrap: wrap; /* title on line 1, content below — before true “mobile” */
+  }
+  .section .section__title {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-right: 0 !important;
+    text-align: left !important; /* left-align once wrapped */
+  }
+  .section .section__content {
+    width: 100%;
+  }
+}
+
+/* 4) Keep non-hyphenated, word-boundary wrapping for section titles (safety) */
+.section__title {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+
+
+/* 1) Do not clip the featured sections’ content */
+.certifications.featured-projects .section__content,
+.professional-certificates.featured-projects .section__content {
+  overflow: visible !important;
+}
+
+/* 2) Remove the wide bleed that pushes rows outside the content column */
+.certifications.featured-projects .project,
+.professional-certificates.featured-projects .project {
+  margin-left: 0 !important;
+  width: 100% !important;
+}
+
+/* 3) Image column: size by --img-max, but allow shrinking as viewport narrows */
+.certifications.featured-projects .project__pic,
+.professional-certificates.featured-projects .project__pic {
+  flex: 0 1 var(--img-max, 520px) !important;
+  max-width: min(100%, var(--img-max, 520px)) !important;
+}
+
+/* 4) Text (name + description): fill remaining space, never clipped */
+.certifications.featured-projects .project__caption,
+.professional-certificates.featured-projects .project__caption {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;   /* allow proper wrapping */
+  max-width: none !important;
+  margin-left: var(--pcap-gap, 30px) !important;
+  overflow: visible !important;
+}
+
+
+
+/* Featured sections: consistent image width and alignment */
+:root{
+  --feat-caption: 125px;  /* fixed caption column width (theme default) */
+  --pcap-gap: 30px;       /* gap between image and caption */
+}
+
+/* Kill bleed and lock both sections to identical row layout */
+.certifications.featured-projects .project,
+.professional-certificates.featured-projects .project {
+  display: flex !important;
+  align-items: flex-start;
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+
+/* Caption: fixed width so image gets the same remaining space in both sections */
+.certifications.featured-projects .project__caption,
+.professional-certificates.featured-projects .project__caption {
+  flex: 0 0 var(--feat-caption) !important;
+  width: var(--feat-caption) !important;
+  max-width: var(--feat-caption) !important;
+  margin-left: var(--pcap-gap) !important;
+  min-width: 0;
+}
+
+/* Image wrapper: take remaining space but cap at image_max; shrink on narrow viewports */
+.certifications.featured-projects .project__pic,
+.professional-certificates.featured-projects .project__pic {
+  flex: 1 1 auto !important;
+  width: min(var(--img-max, 520px), calc(100% - var(--feat-caption) - var(--pcap-gap))) !important;
+  max-width: min(var(--img-max, 520px), calc(100% - var(--feat-caption) - var(--pcap-gap))) !important;
+}
+
+/* Images fill their wrapper */
+.certifications.featured-projects .project__pic img,
+.professional-certificates.featured-projects .project__pic img {
+  display: block;
+  width: 100% !important;
+  height: auto;
+}
+
+/* Stack on mobile (unchanged behavior) */
+@media (max-width: 768px) {
+  .certifications.featured-projects .project,
+  .professional-certificates.featured-projects .project { display: block !important; }
+  .certifications.featured-projects .project__caption,
+  .professional-certificates.featured-projects .project__caption {
+    width: auto !important; max-width: none !important; margin-left: 0 !important;
+  }
+  .certifications.featured-projects .project__pic,
+  .professional-certificates.featured-projects .project__pic {
+    width: 100% !important; max-width: min(100%, var(--img-max, 520px)) !important;
+  }
+}
+
+
+
+/* Conferences/Certs/Prof Certs — same responsive image behavior via --img-max */
+.other-projects .project__image {
+  width: 100%;
+  max-width: min(100%, var(--img-max, 520px)) !important;
+}
+.other-projects .project__image img {
+  display: block;
+  width: 100% !important;
+  height: auto;
+  border-radius: var(--img-radius, 32px);
+}
+
+
+
+/* Shared gap between “name” and description across sections */
+:root { --name-desc-gap: 10px; }
+
+/* Certifications (other-projects): name → description gap */
+.other-projects .project__name {
+  margin-bottom: var(--name-desc-gap) !important;
+}
+
+/* Awards (experience): award/date row → description gap */
+.awards .time-place {
+  margin-bottom: var(--name-desc-gap) !important;
+}
+
+
+
+/* Arrow asset swap (light/dark) */
+:root {
+  --arrow-img: url("../img/arrow/arrow-light.png");
+}
+html.night {
+  --arrow-img: url("../img/arrow/arrow-dark.png");
+}
+
+/* Point all arrow UI to the new assets */
+.section .arrow-link:after,
+.arrow-link--back:before {
+  background-image: var(--arrow-img) !important; /* keeps size/pos/repeat from earlier rules */
+}
+
+
+
+/* Arrow assets (light/dark) */
+:root { --arrow-img: url("../img/arrow/arrow-light.png"); }
+html.night { --arrow-img: url("../img/arrow/arrow-dark.png"); }
+
+/* Global sizing for arrow icons (used site‑wide) */
+:root{
+  --arrow-size: 0.9em;
+  --arrow-gap: 0.6em;
+  --arrow-baseline: 0.1em;
+}
+
+/* Show arrow after ANY .arrow-link (not just inside .section) */
+.arrow-link {
+  font-weight: 700; /* keep consistent */
+}
+.arrow-link:after {
+  content: '' !important;
+  position: relative;
+  bottom: var(--arrow-baseline);
+  margin-left: var(--arrow-gap);
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  display: inline-block;
+  vertical-align: middle;
+  background-image: var(--arrow-img) !important;   /* new assets */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  transition: transform .2s ease-in-out;
+}
+.arrow-link:hover:after { transform: translateX(7px); }
+
+/* Back link: use left arrow in front, with the same asset */
+.arrow-link--back:before {
+  content: '' !important;
+  position: relative;
+  bottom: var(--arrow-baseline);
+  margin-right: var(--arrow-gap);
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  display: inline-block;
+  vertical-align: middle;
+  background-image: var(--arrow-img) !important;   /* new assets */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  transform: scaleX(-1);
+  transition: transform .2s ease-in-out;
+}
+.arrow-link--back:hover:before { transform: scaleX(-1) translateX(7px); }
+
+/* Ensure featured captions don’t hide arrows */
+.certifications.featured-projects .project__caption .arrow-link:after,
+.professional-certificates.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+
+
+/* Set vertical gap between stacked section title and content */
+@media (max-width: 1100px) {
+  /* This targets the intermediate "tablet" size before full mobile */
+  .section .section__title {
+    margin-bottom: 36px !important; /* Add space below title when stacked */
+  }
+}
+
+/* Also ensure the mobile view has consistent spacing */
+@media (max-width: 768px) {
+  /* Full mobile view */
+  .section .section__title {
+    margin-bottom: 12px !important; /* Slightly less space on very small screens */
+  }
+}
+
+
+
+/* === Consistent section spacing === */
+:root {
+  --section-gap: 100px; /* Adjust this value to control the gap between all sections */
+}
+
+/* Reset all section padding to be consistent */
+.section {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+/* Gap between intro and the first section */
+.intro {
+  margin-bottom: 0; /* remove any existing margin */
+  padding-bottom: var(--section-gap);
+}
+
+/* Remove doubled spacing between sections */
+.section + .section {
+  padding-top: 0; /* Remove top padding when sections are adjacent */
+}
+
+/* Last section to footer gap */
+.section:last-of-type {
+  margin-bottom: var(--section-gap); /* Space before footer */
+}
+
+/* Media queries to adjust spacing on smaller screens */
+@media screen and (max-width: 768px) {
+  :root {
+    --section-gap: 70px; /* Smaller gap on tablet */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --section-gap: 50px; /* Even smaller gap on mobile */
+  }
+}
+
+/* Equal vertical spacing on mobile: top edge ↔ h1 ↔ h2 ↔ CTA ↔ bottom edge */
+@media (max-width: 768px) {
+  .intro {
+    min-height: 100svh !important;   /* reliable mobile viewport height */
+    padding-top: 0 !important;       /* remove vertical padding so edges count */
+    padding-bottom: 0 !important;
+  }
+
+  .intro .intro__row {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-evenly !important;  /* equal space above/between/below */
+    align-items: stretch !important;
+    height: 100% !important;
+    gap: 0 !important;               /* ensure gap doesn’t interfere */
+  }
+
+  /* Flatten the inner text wrapper so its children become flex items */
+  .intro .intro__text { display: contents !important; }
+
+  /* Kill default heading/CTA margins so spacing is governed only by space-evenly */
+  .intro h1,
+  .intro h2,
+  .intro .intro__cta {
+    margin: 0 !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  /* If you re-enable the headshot, place it first and center it */
+  .intro .intro__media { order: -1; align-self: center; }
+}
+
+
+
+/* Global utility: force specific text to light/dark contrast colors */
+.u-ld-contrast { color: #222325 !important; }  /* light mode */
+html.night .u-ld-contrast { color: #F6F5F7 !important; }  /* dark mode */
+
+/* Optional: a subdued variant you can use similarly */
+// .u-ld-subtle { color: #727376 !important; }
+// html.night .u-ld-subtle { color: #A9A9AB !important; }
+
+
+
+
+/* Hover underline colors for links */
+:root {
+  /* Light mode underline colors */
+  --hover-line-color: #2F6DE1; /* Change this to any color you want */
+  --hover-line-size: 2px;      /* Thickness of the underline */
+}
+
+html.night {
+  /* Dark mode underline colors */
+  --hover-line-color: #4B7AF7; /* Change this to any color you want */
+}
+
+/* Footer links underline on hover */
+.footer__links a:after {
+  background: var(--hover-line-color) !important;
+  height: var(--hover-line-size);
+}
+
+/* Section content links underline on hover */
+.section__content .underline-link:after {
+  background: var(--hover-line-color) !important;
+  height: var(--hover-line-size);
+}
+
+/* 404 page links underline on hover */
+.not-found a:after {
+  background: var(--hover-line-color) !important;
+  height: var(--hover-line-size);
+}
+
+
+
+/* Education images: control alignment and spacing */
+.education .job__image {
+  width: 100%;                   /* Full width container */
+  text-align: left;              /* Left-align image */
+  margin: 0;                     /* Remove default margins */
+  margin-bottom: var(--edu-img-gap, 20px); /* Gap between image and degree text */
+  max-width: min(100%, var(--img-max, 180px)); /* Respect image_max or default to 180px */
+}
+
+.education .job__image img {
+  display: block;                /* Block display prevents extra space */
+  width: 100%;                   /* Fill container width */
+  height: auto;                  /* Maintain aspect ratio */
+}
+
+/* Control education image gap site-wide */
+:root {
+  --edu-img-gap: 8px;           /* Default gap between image and degree */
+}
+
+/* Different gaps for different screen sizes (optional) */
+@media screen and (max-width: 768px) {
+  :root { --edu-img-gap: 8px; }
+}
+
+@media screen and (max-width: 480px) {
+  :root { --edu-img-gap: 8px; }
+}
+
+
+
+/* Internship images: control alignment and spacing (matches education) */
+.internship .job__image {
+  width: 100%;                   /* Full width container */
+  text-align: left;              /* Left-align image */
+  margin: 0;                     /* Remove default margins */
+  margin-bottom: var(--intern-img-gap, 8px); /* Gap between image and position text */
+  max-width: min(100%, var(--img-max, 180px)); /* Respect image_max or default to 180px */
+}
+
+.internship .job__image img {
+  display: block;                /* Block display prevents extra space */
+  width: 100%;                   /* Fill container width */
+  height: auto;                  /* Maintain aspect ratio */
+}
+
+/* Control internship image gap site-wide */
+:root {
+  --intern-img-gap: 8px;         /* Default gap between image and position */
+}
+
+/* Different gaps for different screen sizes (optional) */
+@media screen and (max-width: 768px) {
+  :root { --intern-img-gap: 8px; }
+}
+
+@media screen and (max-width: 480px) {
+  :root { --intern-img-gap: 8px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - Typography - - - - - */
+
+
+
+/* === Section titles (light & dark) — easy knobs === */
+html:not(.night) {
+  --section-title-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --section-title-size: 1.4rem;   /* edit size */
+  --section-title-weight: 400;      /* 400|500|700 */
+  --section-title-style: normal;    /* normal|italic */
+  --section-title-color: #222325;   /* light mode color */
+  --section-title-tracking: 2px;    /* optional letter-spacing */
+}
+
+html.night {
+  --section-title-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --section-title-size: 1.4rem;
+  --section-title-weight: 400;
+  --section-title-style: normal;
+  --section-title-color: #F6F5F7;   /* dark mode color */
+  --section-title-tracking: 2px;
+}
+
+/* Apply to all section names (PROJECTS, SKILLS, CERTIFICATIONS, etc.) */
+.section__title {
+  font-family: var(--section-title-family) !important;
+  font-size: var(--section-title-size) !important;
+  font-weight: var(--section-title-weight) !important;
+  font-style: var(--section-title-style) !important;
+  color: var(--section-title-color) !important;
+  letter-spacing: var(--section-title-tracking);
+  text-transform: uppercase; /* keep caps; remove if you want mixed case */
+}
+
+
+
+/* === Profile paragraphs (light mode) === */
+html:not(.night) {
+  --profile-p-size: 1rem;
+  --profile-p-weight: 400;      /* 400=regular, 700=bold */
+  --profile-p-style: normal;    /* normal | italic */
+  --profile-p-color: #727376;
+
+  /* links inside profile paragraphs */
+  --profile-link-weight: 700;
+  --profile-link-style: normal;
+  --profile-link-color: #222325;
+}
+
+/* === Profile paragraphs (dark mode) === */
+html.night {
+  --profile-p-size: 1rem;
+  --profile-p-weight: 400;
+  --profile-p-style: normal;
+  --profile-p-color: #A9A9AB;
+
+  --profile-link-weight: 700;
+  --profile-link-style: normal;
+  --profile-link-color: #F6F5F7;
+}
+
+/* Apply to Profile section paragraphs */
+.profile .section__content p {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--profile-p-size);
+  font-weight: var(--profile-p-weight);
+  font-style: var(--profile-p-style);
+  color: var(--profile-p-color);
+}
+
+/* Links inside Profile paragraphs (e.g., arrow-link or normal anchors) */
+.profile .section__content .arrow-link,
+.profile .section__content a {
+  font-size: inherit;
+  font-weight: var(--profile-link-weight);
+  font-style: var(--profile-link-style);
+  color: var(--profile-link-color);
+}
+
+
+
+/* === Projects (light mode only) typography and colors ===
+   Edit the values below to change the look of Name, Description, Used, and Read more */
+html:not(.night) {
+  /* Name (title) */
+  --proj-name-size: 1.4rem;
+  --proj-name-weight: 400;      /* 400=regular, 700=bold */
+  --proj-name-style: normal;    /* normal | italic */
+  --proj-name-color: #222325;   /* dark gray */
+
+  /* Description */
+  --proj-desc-size: 1rem;
+  --proj-desc-weight: 400;      /* 300=light, 400=regular */
+  --proj-desc-style: normal;    /* normal | italic */
+  --proj-desc-color: #727376;   /* body color */
+
+  /* "Read more" (arrow-link inside description) */
+  --proj-link-size: var(--proj-desc-size);  /* or 0.95rem */
+  --proj-link-weight: 700;                  /* 400=regular, 700=bold */
+  --proj-link-style: normal;                /* normal | italic */
+  --proj-link-color: #222325;               /* link blue */
+
+  /* Used (chips) */
+  --proj-used-size: 0.8rem;
+  --proj-used-weight: 700;      /* chip text usually bold */
+  --proj-used-style: normal;    /* normal | italic */
+  --proj-used-color: #2F6DE1;   /* chip border/text color */
+}
+
+/* Name (title) */
+html:not(.night) .other-projects .project__name-text {
+  font-family: "New York", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-name-size);
+  font-weight: var(--proj-name-weight);
+  font-style: var(--proj-name-style);
+  color: var(--proj-name-color);
+}
+
+/* Description */
+html:not(.night) .other-projects .project p {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-desc-size);
+  font-weight: var(--proj-desc-weight);
+  font-style: var(--proj-desc-style);
+  color: var(--proj-desc-color);
+}
+
+/* "Read more" link inside description */
+html:not(.night) .other-projects .project p .arrow-link {
+  font-size: var(--proj-link-size);
+  font-weight: var(--proj-link-weight);
+  font-style: var(--proj-link-style);
+  color: var(--proj-link-color);
+}
+
+/* Used (chips) */
+html:not(.night) .other-projects .project__used__item {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-used-size);
+  font-weight: var(--proj-used-weight);
+  font-style: var(--proj-used-style);
+  color: var(--proj-used-color);
+  border-color: var(--proj-used-color);
+}
+
+
+
+/* === Projects (dark mode only) typography and colors === */
+html.night {
+  /* Name (title) */
+  --proj-name-size: 1.4rem;
+  --proj-name-weight: 400;
+  --proj-name-style: normal;
+  --proj-name-color: #F6F5F7;   /* off-white */
+
+  /* Description */
+  --proj-desc-size: 1rem;
+  --proj-desc-weight: 400;
+  --proj-desc-style: normal;
+  --proj-desc-color: #A9A9AB;   /* slate */
+
+  /* "Read more" (arrow-link inside description) */
+  --proj-link-size: var(--proj-desc-size);
+  --proj-link-weight: 700;
+  --proj-link-style: normal;
+  --proj-link-color: #F6F5F7;   /* link blue for dark */
+
+  /* Used (chips) */
+  --proj-used-size: 0.8rem;
+  --proj-used-weight: 700;
+  --proj-used-style: normal;
+  --proj-used-color: #4B7AF7;   /* chip border/text */
+}
+
+/* Name (title) */
+html.night .other-projects .project__name-text {
+  font-family: "New York", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-name-size);
+  font-weight: var(--proj-name-weight);
+  font-style: var(--proj-name-style);
+  color: var(--proj-name-color);
+}
+
+/* Description */
+html.night .other-projects .project p {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-desc-size);
+  font-weight: var(--proj-desc-weight);
+  font-style: var(--proj-desc-style);
+  color: var(--proj-desc-color);
+}
+
+/* "Read more" link inside description */
+html.night .other-projects .project p .arrow-link {
+  font-size: var(--proj-link-size);
+  font-weight: var(--proj-link-weight);
+  font-style: var(--proj-link-style);
+  color: var(--proj-link-color);
+}
+
+/* Used (chips) */
+html.night .other-projects .project__used__item {
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--proj-used-size);
+  font-weight: var(--proj-used-weight);
+  font-style: var(--proj-used-style);
+  color: var(--proj-used-color);
+  border-color: var(--proj-used-color);
+}
+
+
+
+/* === Skills (light mode) === */
+html:not(.night) {
+  --skills-h-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --skills-h-size: 1.4rem;
+  --skills-h-weight: 400;    /* 400|500|700 */
+  --skills-h-style: normal;  /* normal|italic */
+  --skills-h-color: #222325;
+
+  --skills-i-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --skills-i-size: 1rem;
+  --skills-i-weight: 400;    /* 400 regular */
+  --skills-i-style: normal;  /* normal|italic */
+  --skills-i-color: #727376;
+}
+
+/* === Skills (dark mode) === */
+html.night {
+  --skills-h-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --skills-h-size: 1.4rem;
+  --skills-h-weight: 400;
+  --skills-h-style: normal;
+  --skills-h-color: #F6F5F7;
+
+  --skills-i-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --skills-i-size: 1rem;
+  --skills-i-weight: 400;
+  --skills-i-style: normal;
+  --skills-i-color: #A9A9AB;
+}
+
+/* Apply to Skills headers and items */
+.skills .skillz__category__label {
+  font-family: var(--skills-h-family) !important;
+  font-size: var(--skills-h-size) !important;
+  font-weight: var(--skills-h-weight) !important;
+  font-style: var(--skills-h-style) !important;
+  color: var(--skills-h-color) !important;
+  /* keeps existing uppercase/letter-spacing from theme */
+}
+
+.skills .skillz__category__item {
+  font-family: var(--skills-i-family) !important;
+  font-size: var(--skills-i-size) !important;
+  font-weight: var(--skills-i-weight) !important;
+  font-style: var(--skills-i-style) !important;
+  color: var(--skills-i-color) !important;
+}
+
+
+
+/* === Certifications & Professional Certificates (light mode) === */
+html:not(.night) {
+  /* Certifications */
+  --certs-name-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, serif;
+  --certs-name-size: 1.4rem;
+  --certs-name-weight: 400;
+  --certs-name-style: normal;
+  --certs-name-color: #222325;
+
+  --certs-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --certs-desc-size: 1rem;
+  --certs-desc-weight: 400;
+  --certs-desc-style: normal;
+  --certs-desc-color: #727376;
+
+  --certs-link-weight: 700;
+  --certs-link-style: normal;
+  --certs-link-color: #222325;
+
+  /* Professional Certificates */
+  --pcerts-name-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, serif;
+  --pcerts-name-size: 1.4rem;
+  --pcerts-name-weight: 400;
+  --pcerts-name-style: normal;
+  --pcerts-name-color: #222325;
+
+  --pcerts-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --pcerts-desc-size: 1rem;
+  --pcerts-desc-weight: 400;
+  --pcerts-desc-style: normal;
+  --pcerts-desc-color: #727376;
+
+  --pcerts-link-weight: 700;
+  --pcerts-link-style: normal;
+  --pcerts-link-color: #222325;
+}
+
+/* === Certifications & Professional Certificates (dark mode) === */
+html.night {
+  /* Certifications */
+  --certs-name-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, serif;
+  --certs-name-size: 1.4rem;
+  --certs-name-weight: 400;
+  --certs-name-style: normal;
+  --certs-name-color: #F6F5F7;
+
+  --certs-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --certs-desc-size: 1rem;
+  --certs-desc-weight: 400;
+  --certs-desc-style: normal;
+  --certs-desc-color: #A9A9AB;
+
+  --certs-link-weight: 700;
+  --certs-link-style: normal;
+  --certs-link-color: #F6F5F7;
+
+  /* Professional Certificates */
+  --pcerts-name-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, serif;
+  --pcerts-name-size: 1.4rem;
+  --pcerts-name-weight: 400;
+  --pcerts-name-style: normal;
+  --pcerts-name-color: #F6F5F7;
+
+  --pcerts-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --pcerts-desc-size: 1rem;
+  --pcerts-desc-weight: 400;
+  --pcerts-desc-style: normal;
+  --pcerts-desc-color: #A9A9AB;
+
+  --pcerts-link-weight: 700;
+  --pcerts-link-style: normal;
+  --pcerts-link-color: #F6F5F7;
+}
+
+/* Apply: Certifications */
+.certifications.featured-projects .project__name-text {
+  font-family: var(--certs-name-family);
+  font-size: var(--certs-name-size);
+  font-weight: var(--certs-name-weight);
+  font-style: var(--certs-name-style);
+  color: var(--certs-name-color);
+}
+.certifications.featured-projects .project__caption p {
+  font-family: var(--certs-desc-family);
+  font-size: var(--certs-desc-size);
+  font-weight: var(--certs-desc-weight);
+  font-style: var(--certs-desc-style);
+  color: var(--certs-desc-color);
+}
+/* “See credential” link in description */
+.certifications.featured-projects .project__caption p .arrow-link {
+  font-size: inherit;
+  font-weight: var(--certs-link-weight);
+  font-style: var(--certs-link-style);
+  color: var(--certs-link-color);
+}
+
+/* Apply: Professional Certificates */
+.professional-certificates.featured-projects .project__name-text {
+  font-family: var(--pcerts-name-family);
+  font-size: var(--pcerts-name-size);
+  font-weight: var(--pcerts-name-weight);
+  font-style: var(--pcerts-name-style);
+  color: var(--pcerts-name-color);
+}
+.professional-certificates.featured-projects .project__caption p {
+  font-family: var(--pcerts-desc-family);
+  font-size: var(--pcerts-desc-size);
+  font-weight: var(--pcerts-desc-weight);
+  font-style: var(--pcerts-desc-style);
+  color: var(--pcerts-desc-color);
+}
+/* “See credential” link in description */
+.professional-certificates.featured-projects .project__caption p .arrow-link {
+  font-size: inherit;
+  font-weight: var(--pcerts-link-weight);
+  font-style: var(--pcerts-link-style);
+  color: var(--pcerts-link-color);
+}
+
+/* Keep arrows visible in featured captions */
+.certifications.featured-projects .project__caption .arrow-link:after,
+.professional-certificates.featured-projects .project__caption .arrow-link:after {
+  display: inline-block !important;
+}
+
+
+
+/* === Education (light mode) === */
+html:not(.night) {
+  /* Degree (e.degree → .job__company) */
+  --edu-degree-family: "New York", Georgia, "Times New Roman", serif;
+  --edu-degree-size: 1.4rem;
+  --edu-degree-weight: 400;     /* 400=regular, 600=semibold, 700=bold */
+  --edu-degree-style: normal;
+  --edu-degree-color: #222325;
+
+  /* Time (e.time → .job__time) */
+  --edu-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --edu-time-size: 0.8rem;
+  --edu-time-weight: 400;
+  --edu-time-style: normal;
+  --edu-time-color: #727376;
+
+  /* Description (e.description → .job__description) */
+  --edu-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --edu-desc-size: 1rem;
+  --edu-desc-weight: 400;
+  --edu-desc-style: normal;
+  --edu-desc-color: #727376;
+}
+
+/* === Education (dark mode) === */
+html.night {
+  --edu-degree-family: "New York", Georgia, "Times New Roman", serif;
+  --edu-degree-size: 1.4rem;
+  --edu-degree-weight: 400;
+  --edu-degree-style: normal;
+  --edu-degree-color: #F6F5F7;
+
+  --edu-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --edu-time-size: 0.8rem;
+  --edu-time-weight: 400;
+  --edu-time-style: normal;
+  --edu-time-color: #A9A9AB;
+
+  --edu-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --edu-desc-size: 1rem;
+  --edu-desc-weight: 400;
+  --edu-desc-style: normal;
+  --edu-desc-color: #A9A9AB;
+}
+
+/* Apply to Education */
+.education .job__company {
+  font-family: var(--edu-degree-family) !important;
+  font-size: var(--edu-degree-size) !important;
+  font-weight: var(--edu-degree-weight) !important;
+  font-style: var(--edu-degree-style) !important;
+  color: var(--edu-degree-color) !important;
+}
+
+.education .job__time {
+  font-family: var(--edu-time-family) !important;
+  font-size: var(--edu-time-size) !important;
+  font-weight: var(--edu-time-weight) !important;
+  font-style: var(--edu-time-style) !important;
+  color: var(--edu-time-color) !important;
+}
+
+.education .job__description,
+.education .job__description p {
+  font-family: var(--edu-desc-family) !important;
+  font-size: var(--edu-desc-size) !important;
+  font-weight: var(--edu-desc-weight) !important;
+  font-style: var(--edu-desc-style) !important;
+  color: var(--edu-desc-color) !important;
+}
+
+
+
+/* === Leadership (light mode) === */
+html:not(.night) {
+  /* Position (lead.position → .job__company) */
+  --lead-pos-family: "New York", Georgia, "Times New Roman", serif;
+  --lead-pos-size: 1.4rem;
+  --lead-pos-weight: 400;     /* 400=regular, 600=semibold, 700=bold */
+  --lead-pos-style: normal;
+  --lead-pos-color: #222325;
+
+  /* Time (lead.time → .job__time) */
+  --lead-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --lead-time-size: 0.8rem;
+  --lead-time-weight: 400;
+  --lead-time-style: normal;
+  --lead-time-color: #727376;
+
+  /* Description (lead.description → .job__position p) */
+  --lead-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --lead-desc-size: 1rem;
+  --lead-desc-weight: 400;
+  --lead-desc-style: normal;
+  --lead-desc-color: #727376;
+
+  /* Links INSIDE description */
+  --lead-link-weight: 700;
+  --lead-link-style: normal;
+  --lead-link-color: #222325;
+}
+
+/* === Leadership (dark mode) === */
+html.night {
+  --lead-pos-family: "New York", Georgia, "Times New Roman", serif;
+  --lead-pos-size: 1.4rem;
+  --lead-pos-weight: 400;
+  --lead-pos-style: normal;
+  --lead-pos-color: #F6F5F7;
+
+  --lead-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --lead-time-size: 0.8rem;
+  --lead-time-weight: 400;
+  --lead-time-style: normal;
+  --lead-time-color: #A9A9AB;
+
+  --lead-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --lead-desc-size: 1rem;
+  --lead-desc-weight: 400;
+  --lead-desc-style: normal;
+  --lead-desc-color: #A9A9AB;
+
+  --lead-link-weight: 700;
+  --lead-link-style: normal;
+  --lead-link-color: #F6F5F7;
+}
+
+/* Apply to Leadership */
+.leadership .job__company {
+  font-family: var(--lead-pos-family) !important;
+  font-size: var(--lead-pos-size) !important;
+  font-weight: var(--lead-pos-weight) !important;
+  font-style: var(--lead-pos-style) !important;
+  color: var(--lead-pos-color) !important;
+}
+
+.leadership .job__time {
+  font-family: var(--lead-time-family) !important;
+  font-size: var(--lead-time-size) !important;
+  font-weight: var(--lead-time-weight) !important;
+  font-style: var(--lead-time-style) !important;
+  color: var(--lead-time-color) !important;
+}
+
+.leadership .job__position,
+.leadership .job__position p {
+  font-family: var(--lead-desc-family) !important;
+  font-size: var(--lead-desc-size) !important;
+  font-weight: var(--lead-desc-weight) !important;
+  font-style: var(--lead-desc-style) !important;
+  color: var(--lead-desc-color) !important;
+}
+
+/* Links inside the description block */
+.leadership .job__position .arrow-link,
+.leadership .job__position a {
+  font-size: inherit !important;
+  font-weight: var(--lead-link-weight) !important;
+  font-style: var(--lead-link-style) !important;
+  color: var(--lead-link-color) !important;
+}
+
+
+
+/* === Awards (light mode) === */
+html:not(.night) {
+  --awards-name-family: "New York", Georgia, "Times New Roman", serif;
+  --awards-name-size: 1.4rem;
+  --awards-name-weight: 400;
+  --awards-name-style: normal;
+  --awards-name-color: #222325;
+
+  --awards-date-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --awards-date-size: 0.8rem;
+  --awards-date-weight: 400;
+  --awards-date-style: normal;
+  --awards-date-color: #727376;
+
+  --awards-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --awards-desc-size: 1rem;
+  --awards-desc-weight: 400;
+  --awards-desc-style: normal;
+  --awards-desc-color: #727376;
+
+  --awards-link-weight: 700;
+  --awards-link-style: normal;
+  --awards-link-color: #222325;
+}
+
+/* === Awards (dark mode) === */
+html.night {
+  --awards-name-family: "New York", Georgia, "Times New Roman", serif;
+  --awards-name-size: 1.4rem;
+  --awards-name-weight: 400;
+  --awards-name-style: normal;
+  --awards-name-color: #F6F5F7;
+
+  --awards-date-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --awards-date-size: 0.8rem;
+  --awards-date-weight: 400;
+  --awards-date-style: normal;
+  --awards-date-color: #A9A9AB;
+
+  --awards-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --awards-desc-size: 1rem;
+  --awards-desc-weight: 400;
+  --awards-desc-style: normal;
+  --awards-desc-color: #A9A9AB;
+
+  --awards-link-weight: 700;
+  --awards-link-style: normal;
+  --awards-link-color: #F6F5F7;
+}
+
+/* Apply: award (name), date, description, and links */
+.awards .job__company {
+  font-family: var(--awards-name-family) !important;
+  font-size: var(--awards-name-size) !important;
+  font-weight: var(--awards-name-weight) !important;
+  font-style: var(--awards-name-style) !important;
+  color: var(--awards-name-color) !important;
+}
+
+.awards .job__time {
+  font-family: var(--awards-date-family) !important;
+  font-size: var(--awards-date-size) !important;
+  font-weight: var(--awards-date-weight) !important;
+  font-style: var(--awards-date-style) !important;
+  color: var(--awards-date-color) !important;
+}
+
+.awards .job p,
+.awards .job__description,
+.awards .job__description p {
+  font-family: var(--awards-desc-family) !important;
+  font-size: var(--awards-desc-size) !important;
+  font-weight: var(--awards-desc-weight) !important;
+  font-style: var(--awards-desc-style) !important;
+  color: var(--awards-desc-color) !important;
+}
+
+/* Links inside Awards description */
+.awards .job p a,
+.awards .job__description .arrow-link,
+.awards .job__description a {
+  font-size: inherit !important;
+  font-weight: var(--awards-link-weight) !important;
+  font-style: var(--awards-link-style) !important;
+  color: var(--awards-link-color) !important;
+}
+
+
+
+/* === Internship (light mode) === */
+html:not(.night) {
+  /* Position (intern.position → .job__company) */
+  --intern-pos-family: "New York", Georgia, "Times New Roman", serif;
+  --intern-pos-size: 1.4rem;
+  --intern-pos-weight: 400;     /* 400|600|700 */
+  --intern-pos-style: normal;
+  --intern-pos-color: #222325;
+
+  /* Time (intern.time → .job__time) */
+  --intern-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --intern-time-size: 0.8rem;
+  --intern-time-weight: 400;
+  --intern-time-style: normal;
+  --intern-time-color: #727376;
+
+  /* Description (intern.description → .job__position) */
+  --intern-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --intern-desc-size: 1rem;
+  --intern-desc-weight: 400;
+  --intern-desc-style: normal;
+  --intern-desc-color: #727376;
+
+  /* Links inside description */
+  --intern-link-weight: 700;
+  --intern-link-style: normal;
+  --intern-link-color: #222325;
+}
+
+/* === Internship (dark mode) === */
+html.night {
+  --intern-pos-family: "New York", Georgia, "Times New Roman", serif;
+  --intern-pos-size: 1.4rem;
+  --intern-pos-weight: 400;
+  --intern-pos-style: normal;
+  --intern-pos-color: #F6F5F7;
+
+  --intern-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --intern-time-size: 0.8rem;
+  --intern-time-weight: 400;
+  --intern-time-style: normal;
+  --intern-time-color: #A9A9AB;
+
+  --intern-desc-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --intern-desc-size: 1rem;
+  --intern-desc-weight: 400;
+  --intern-desc-style: normal;
+  --intern-desc-color: #A9A9AB;
+
+  --intern-link-weight: 700;
+  --intern-link-style: normal;
+  --intern-link-color: #F6F5F7;
+}
+
+/* Apply: Internship */
+.internship .job__company {
+  font-family: var(--intern-pos-family) !important;
+  font-size: var(--intern-pos-size) !important;
+  font-weight: var(--intern-pos-weight) !important;
+  font-style: var(--intern-pos-style) !important;
+  color: var(--intern-pos-color) !important;
+}
+
+.internship .job__time {
+  font-family: var(--intern-time-family) !important;
+  font-size: var(--intern-time-size) !important;
+  font-weight: var(--intern-time-weight) !important;
+  font-style: var(--intern-time-style) !important;
+  color: var(--intern-time-color) !important;
+}
+
+.internship .job__position,
+.internship .job__position p {
+  font-family: var(--intern-desc-family) !important;
+  font-size: var(--intern-desc-size) !important;
+  font-weight: var(--intern-desc-weight) !important;
+  font-style: var(--intern-desc-style) !important;
+  color: var(--intern-desc-color) !important;
+}
+
+/* Links inside Internship description */
+.internship .job__position .arrow-link,
+.internship .job__position a {
+  font-size: inherit !important;
+  font-weight: var(--intern-link-weight) !important;
+  font-style: var(--intern-link-style) !important;
+  color: var(--intern-link-color) !important;
+}
+
+
+
+/* === Footer typography knobs === */
+html:not(.night) {
+  /* copyright lines */
+  --footer-copy-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --footer-copy-size: 1rem;
+  --footer-copy-weight: 400;
+  --footer-copy-style: normal;
+  --footer-copy-color: #222325;
+
+  /* link names (Resume, LinkedIn, GitHub, Email) */
+  --footer-link-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --footer-link-size: 1rem;
+  --footer-link-weight: 700;   /* override theme if you like */
+  --footer-link-style: normal;
+  --footer-link-color: #2F6DE1; /* or #222325 */
+}
+
+html.night {
+  --footer-copy-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --footer-copy-size: 1rem;
+  --footer-copy-weight: 400;
+  --footer-copy-style: normal;
+  --footer-copy-color: #F6F5F7;
+
+  --footer-link-family: "New York", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --footer-link-size: 1rem;
+  --footer-link-weight: 700;
+  --footer-link-style: normal;
+  --footer-link-color: #4B7AF7; /* readable blue on dark */
+}
+
+/* Apply to footer texts */
+.footer__copyright {
+  font-family: var(--footer-copy-family) !important;
+  font-size: var(--footer-copy-size) !important;
+  font-weight: var(--footer-copy-weight) !important;
+  font-style: var(--footer-copy-style) !important;
+  color: var(--footer-copy-color) !important;
+}
+
+/* Apply to link labels (span.text) */
+.footer__links a .text {
+  font-family: var(--footer-link-family) !important;
+  font-size: var(--footer-link-size) !important;
+  font-weight: var(--footer-link-weight) !important;
+  font-style: var(--footer-link-style) !important;
+  color: var(--footer-link-color) !important;
+  letter-spacing: normal; /* optional */
+}
+
+
+
+
+
 
 
 
@@ -676,6 +2551,8 @@
 
 
 /* - - - - - Sub-pages - - - - - */
+
+
 
    .project-detail {
     /* Keep the developer's section padding/gutters */
@@ -880,3 +2757,663 @@ html.is-animating .swup-transition.is-entering {
 }
 
 .project-hero { position: relative; z-index: 0; }
+
+/* Subpage content: center the column below the hero */
+:root {
+  --subpage-max-width: 700px; /* tweak to your preferred column width */
+}
+
+.project-detail__content {
+  max-width: var(--subpage-max-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; /* keep text left-aligned while the column is centered */
+}
+
+
+
+/* === Consistent spacing across homepage and subpages === */
+
+/* 1. Use the same --section-gap for all vertical spacing */
+:root {
+  --section-gap: 100px; /* Main desktop spacing */
+}
+
+/* 2. Make subpage metadata → body gap match the section gaps */
+.project-detail__body {
+  margin-top: var(--section-gap) !important; /* Force consistent spacing */
+}
+
+/* 3. Add space between the subpage content and the footer */
+.project-detail.section {
+  padding-bottom: 0; /* Remove default padding */
+  margin-bottom: var(--section-gap) !important; /* Force consistent spacing */
+}
+
+/* 4. Keep responsive spacing consistent */
+@media screen and (max-width: 768px) {
+  :root {
+    --section-gap: 70px; /* Tablet spacing */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --section-gap: 50px; /* Mobile spacing */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - Sub-pages typography - - - - - */
+
+
+
+/* === Subpage "Back" link typography === */
+html:not(.night) {
+  --back-font-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --back-font-size: 1rem;      /* tweak */
+  --back-font-weight: 700;     /* 400|700 */
+  --back-font-style: normal;   /* normal|italic */
+  --back-font-color: #222325;
+}
+html.night {
+  --back-font-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --back-font-size: 1rem;
+  --back-font-weight: 700;
+  --back-font-style: normal;
+  --back-font-color: #F6F5F7;
+}
+
+/* Apply to the Back link under the hero */
+.project-detail__nav .arrow-link--back {
+  font-family: var(--back-font-family) !important;
+  font-size:   var(--back-font-size)   !important;
+  font-weight: var(--back-font-weight) !important;
+  font-style:  var(--back-font-style)  !important;
+  color:       var(--back-font-color)  !important;
+}
+
+/* Use the same global arrow sizing/gap as the rest of the site */
+.project-detail__nav .arrow-link--back:before {
+  margin-right: var(--arrow-gap, 10px) !important; /* same gap as .section .arrow-link */
+  width:        var(--arrow-size, 15px) !important;
+  height:       var(--arrow-size, 15px) !important;
+  bottom:       var(--arrow-baseline, 0.1em) !important;
+  background-image: var(--arrow-img) !important;   /* light/dark asset already set */
+}
+
+
+
+/* === Subpage (light mode) — hero, title, tags, summary, links, body === */
+html:not(.night) {
+  /* Hero */
+  --sub-hero-height: clamp(240px, 45vh, 520px);
+
+  /* Title */
+  --sub-title-family: "New York", Georgia, "Times New Roman", serif;
+  --sub-title-size: 2.4rem;
+  --sub-title-weight: 400;
+  --sub-title-style: normal;
+  --sub-title-color: #222325;
+
+  /* Tags (chips) */
+  --sub-tag-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-tag-size: 0.8rem;
+  --sub-tag-weight: 700;
+  --sub-tag-style: normal;
+  --sub-tag-color: #2F6DE1;
+
+  /* Summary */
+  --sub-summary-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-summary-size: 1rem;
+  --sub-summary-weight: 400;
+  --sub-summary-style: normal;
+  --sub-summary-color: #727376;
+
+  /* Links */
+  --sub-link-weight: 700;
+  --sub-link-style: normal;
+  --sub-link-color: #222325;
+
+  /* Body text */
+  --sub-body-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-body-size: 1rem;
+  --sub-body-line: 1.55;
+  --sub-body-weight: 400;
+  --sub-body-style: normal;
+  --sub-body-color: #727376;
+}
+
+/* === Subpage (dark mode) === */
+html.night {
+  --sub-hero-height: clamp(240px, 45vh, 520px);
+
+  --sub-title-family: "New York", Georgia, "Times New Roman", serif;
+  --sub-title-size: 2.4rem;
+  --sub-title-weight: 400;
+  --sub-title-style: normal;
+  --sub-title-color: #F6F5F7;
+
+  --sub-tag-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-tag-size: 0.8rem;
+  --sub-tag-weight: 700;
+  --sub-tag-style: normal;
+  --sub-tag-color: #4B7AF7;
+
+  --sub-summary-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-summary-size: 1rem;
+  --sub-summary-weight: 400;
+  --sub-summary-style: normal;
+  --sub-summary-color: #A9A9AB;
+
+  --sub-link-weight: 700;
+  --sub-link-style: normal;
+  --sub-link-color: #F6F5F7;
+
+  --sub-body-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sub-body-size: 1rem;
+  --sub-body-line: 1.55;
+  --sub-body-weight: 400;
+  --sub-body-style: normal;
+  --sub-body-color: #A9A9AB;
+}
+
+/* Apply hero height on subpages */
+.project-detail { --project-hero-height: var(--sub-hero-height); }
+
+/* Apply title/tags/summary/links/body styles */
+.project-detail__title {
+  font-family: var(--sub-title-family);
+  font-size: var(--sub-title-size);
+  font-weight: var(--sub-title-weight);
+  font-style: var(--sub-title-style);
+  color: var(--sub-title-color);
+}
+
+.project-detail__tags .tag {
+  font-family: var(--sub-tag-family);
+  font-size: var(--sub-tag-size);
+  font-weight: var(--sub-tag-weight);
+  font-style: var(--sub-tag-style);
+  color: var(--sub-tag-color);
+}
+
+.project-detail__summary {
+  font-family: var(--sub-summary-family);
+  font-size: var(--sub-summary-size);
+  font-weight: var(--sub-summary-weight);
+  font-style: var(--sub-summary-style);
+  color: var(--sub-summary-color);
+}
+
+.project-detail .arrow-link {
+  font-size: inherit;
+  font-weight: var(--sub-link-weight);
+  font-style: var(--sub-link-style);
+  color: var(--sub-link-color);
+}
+
+.project-detail__content,
+.project-detail__body,
+.project-detail__body p {
+  font-family: var(--sub-body-family);
+  font-size: var(--sub-body-size);
+  line-height: var(--sub-body-line);
+  font-weight: var(--sub-body-weight);
+  font-style: var(--sub-body-style);
+  color: var(--sub-body-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - Intro section - - - - - */
+
+
+
+/* 1. SCOPE YOUR CSS VARIABLES */
+/* Instead of defining them at html:not(.night) level, scope them to the intro */
+.intro {
+  /* Define variables only within .intro's scope */
+  --intro-hello-family: "New York", Georgia, "Times New Roman", serif;
+  --intro-hello-size: 2.4rem;
+  --intro-hello-weight: 400;
+  --intro-hello-style: normal;
+  --intro-hello-color: #222325;
+  
+  --intro-tagline-family: "New York", Georgia, "Times New Roman", serif;
+  --intro-tagline-size: 2.4rem;
+  --intro-tagline-weight: 400;
+  --intro-tagline-style: normal;
+  --intro-tagline-color: #727376;
+  
+  --intro-cta-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
+  --intro-cta-size: 1.4rem;
+  --intro-cta-weight: 700;
+  --intro-cta-style: normal;
+  --intro-cta-color: #222325;
+
+  --intro-photo-radius: 0px; /* Add your desired border radius */
+}
+
+/* Dark mode variables within .intro */
+html.night .intro {
+  --intro-hello-color: #F6F5F7;
+  --intro-tagline-color: #A9A9AB;
+  --intro-cta-color: #F6F5F7;
+}
+
+/* 2. APPLY STYLES WITH STRONG SPECIFICITY */
+/* Target the exact elements with very specific selectors */
+.intro .intro__hello {
+  font-family: var(--intro-hello-family);
+  font-size: var(--intro-hello-size);
+  font-weight: var(--intro-hello-weight);
+  font-style: var(--intro-hello-style);
+  color: var(--intro-hello-color);
+}
+
+.intro .intro__tagline {
+  font-family: var(--intro-tagline-family);
+  font-size: var(--intro-tagline-size);
+  font-weight: var(--intro-tagline-weight);
+  font-style: var(--intro-tagline-style);
+  color: var(--intro-tagline-color);
+}
+
+.intro .intro__cta .arrow-link {
+  font-family: var(--intro-cta-family);
+  font-size: var(--intro-cta-size);
+  font-weight: var(--intro-cta-weight);
+  font-style: var(--intro-cta-style);
+  color: var(--intro-cta-color);
+}
+
+/* 3. HEADSHOT CORNER RADIUS - TARGET VERY SPECIFICALLY */
+.intro .intro__media .intro__photo {
+  border-radius: var(--intro-photo-radius);
+}
+
+/* Remove bold styling and set specific colors for name in intro */
+.intro__tagline .name {
+  font-weight: inherit; /* Remove bold styling, inherit from parent */
+}
+
+/* Light mode color for the name */
+html:not(.night) .intro__tagline .name {
+  color: #222325;
+}
+
+/* Dark mode color for the name */
+html.night .intro__tagline .name {
+  color: #F6F5F7;
+}
+
+
+
+/* Intro CTA knobs (scoped to Intro only) */
+.intro {
+  /* icon image size */
+  --intro-icon-size: 48px;
+
+  /* horizontal space between icons */
+  --intro-icons-gap: 18px;
+
+  /* vertical gap between "Let's connect!" and the icon row */
+  --intro-icons-top-gap: 10px;
+
+  /* "Let's connect!" typography */
+  --intro-contact-family: "New York", system-ui, -apple-system, sans-serif;
+  --intro-contact-size: 2.4rem;
+  --intro-contact-weight: 400;
+  --intro-contact-style: normal;
+  --intro-contact-color: #222325;
+
+  /* Icon label (on hover) typography */
+  --intro-label-family: "New York", system-ui, -apple-system, sans-serif;
+  --intro-label-size: 1.4rem;
+  --intro-label-weight: 400;
+  --intro-label-style: normal;
+  --intro-label-color: #2F6DE1;
+}
+
+/* Dark mode overrides for the intro CTA */
+html.night .intro {
+  --intro-contact-color: #F6F5F7;
+  --intro-label-color: #4B7AF7;
+}
+
+/* Apply: "Let's connect!" text */
+.intro .intro__contact {
+  font-family: var(--intro-contact-family);
+  font-size: var(--intro-contact-size);
+  font-weight: var(--intro-contact-weight);
+  font-style: var(--intro-contact-style);
+  color: var(--intro-contact-color);
+  margin: 0;                   /* keep the top gap controlled by --intro-icons-top-gap */
+  align-self: flex-start;      /* align left edge with intro text */
+}
+
+/* Apply: icons row layout and gaps */
+.intro .intro__icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--intro-icons-gap);
+  margin-top: var(--intro-icons-top-gap);
+  align-self: flex-start;      /* align left with the text block */
+  padding: 0;
+}
+
+/* Apply: icon image size */
+.intro .intro__icon img.social-icon {
+  width: var(--intro-icon-size);
+  height: var(--intro-icon-size);
+  display: block;
+}
+
+/* Apply: icon label typography (revealed on hover) */
+.intro .intro__icon .label {
+  font-family: var(--intro-label-family);
+  font-size: var(--intro-label-size);
+  font-weight: var(--intro-label-weight);
+  font-style: var(--intro-label-style);
+  color: var(--intro-label-color);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+  margin-top: 6px;
+}
+
+
+
+/* Intro CTA: per-icon sizes, image-aligned gaps, label overlay (intro-only) */
+.intro {
+  /* tweak once */
+  --intro-icons-gap: 32px;        /* horizontal gap between icons */
+  --intro-icons-top-gap: 8px;    /* gap between “Let’s connect!” and icons */
+  --intro-label-offset: 8px;      /* vertical offset below image for label appearance */
+
+  /* per-icon image sizes (edit each independently) */
+  --icon-size-resume: 40px;
+  --icon-size-linkedin: 40px;
+  --icon-size-github: 40px;
+  --icon-size-email: 42px;
+}
+
+/* row layout: align to intro text left edge; gaps based on image boxes */
+.intro .intro__icons {
+  display: flex;
+  align-items: flex-start;           /* align to top of image boxes */
+  justify-content: flex-start;
+  gap: var(--intro-icons-gap);
+  margin-top: var(--intro-icons-top-gap);
+  align-self: flex-start;            /* align with left edge of intro text */
+  padding: 0;
+}
+
+/* each icon’s box = exactly the image size; label is absolutely positioned */
+.intro .intro__icon {
+  position: relative;
+  display: inline-block !important;  /* override older inline-flex */
+  width: var(--icon-size, 28px);
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* per-icon size mapping via data-icon */
+.intro .intro__icon[data-icon="resume"]   { --icon-size: var(--icon-size-resume); }
+.intro .intro__icon[data-icon="linkedin"] { --icon-size: var(--icon-size-linkedin); }
+.intro .intro__icon[data-icon="github"]   { --icon-size: var(--icon-size-github); }
+.intro .intro__icon[data-icon="email"]    { --icon-size: var(--icon-size-email); }
+
+/* image strictly uses the per-icon size */
+.intro .intro__icon img.social-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: block;
+  transition: transform .2s ease;
+}
+
+/* label does NOT affect layout width; appears below image on hover */
+.intro .intro__icon .label {
+  position: absolute;
+  left: 0;
+  top: calc(var(--icon-size) + var(--intro-label-offset));
+  white-space: nowrap;
+  font-family: var(--intro-label-family, "SF Pro Text", system-ui, -apple-system, sans-serif);
+  font-size: var(--intro-label-size, 0.85rem);
+  font-weight: var(--intro-label-weight, 700);
+  font-style: var(--intro-label-style, normal);
+  color: var(--intro-label-color, #222325);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+  margin: 0;
+}
+
+/* micro-interactions */
+.intro .intro__icon:hover img.social-icon,
+.intro .intro__icon:focus img.social-icon {
+  transform: translateY(-4px);
+}
+.intro .intro__icon:hover .label,
+.intro .intro__icon:focus .label {
+  opacity: 1;
+  transform: translateY(2px);
+}
+
+/* dark mode label color override (optional) */
+html.night .intro .intro__icon .label {
+  color: var(--intro-label-color, #F6F5F7);
+}
+
+
+
+/* Intro headshot size (desktop + mobile) */
+.intro { 
+  --intro-photo-size: 560px;    /* desktop/tablet size */
+}
+
+/* ===== RESPONSIVE INTRO SECTION ===== */
+/* Desktop default sizes already defined in the intro section above */
+
+/* Full desktop (large monitors) */
+@media screen and (min-width: 1280px) {
+  .intro {
+    /* Text sizes */
+    --intro-hello-size: 2.4rem;        /* H1 "Hello!" */
+    --intro-tagline-size: 2.4rem;      /* H2 tagline */
+    --intro-contact-size: 2.4rem;      /* H3 "Let's connect!" */
+    --intro-label-size: 1.4rem;        /* Icon labels on hover */
+    
+    /* Icon sizes */
+    --icon-size-resume: 40px;
+    --icon-size-linkedin: 40px;
+    --icon-size-github: 40px;
+    --icon-size-email: 40px;
+    
+    /* Spacing */
+    --intro-icons-gap: 32px;           /* Less horizontal space between icons */
+    --intro-icons-top-gap: 8px;        /* gap between "Let's connect!" and icons */
+    --intro-label-offset: 8px;
+  }
+}
+
+/* Medium desktop (1200px - 1279px) */
+@media screen and (max-width: 1279px) and (min-width: 1025px) {
+  .intro {
+    /* Text sizes */
+    --intro-hello-size: 2rem;        /* H1 "Hello!" */
+    --intro-tagline-size: 2rem;      /* H2 tagline */
+    --intro-contact-size: 2rem;      /* H3 "Let's connect!" */
+    --intro-label-size: 1.4rem;        /* Icon labels on hover */
+    
+    /* Icon sizes */
+    --icon-size-resume: 36px;
+    --icon-size-linkedin: 36px;
+    --icon-size-github: 36px;
+    --icon-size-email: 36px;
+    
+    /* Spacing */
+    --intro-icons-gap: 28px;           /* Less horizontal space between icons */
+    --intro-icons-top-gap: 8px;        /* gap between "Let's connect!" and icons */
+    --intro-label-offset: 8px;
+  }
+}
+
+/* Large tablets */
+@media screen and (max-width: 1024px) {
+  .intro {
+    /* Text sizes */
+    --intro-hello-size: 1.6rem;        /* H1 "Hello!" */
+    --intro-tagline-size: 1.6rem;      /* H2 tagline */
+    --intro-contact-size: 1.6rem;      /* H3 "Let's connect!" */
+    --intro-label-size: 1.4rem;        /* Icon labels on hover */
+    
+    /* Icon sizes */
+    --icon-size-resume: 32px;
+    --icon-size-linkedin: 32px;
+    --icon-size-github: 32px;
+    --icon-size-email: 32px;
+
+    /* Spacing */
+    --intro-icons-gap: 24px;           /* Less horizontal space between icons */
+    --intro-icons-top-gap: 8px;        /* gap between "Let's connect!" and icons */
+    --intro-label-offset: 8px;
+  }
+}
+
+/* Small tablets / iPad */
+@media screen and (max-width: 768px) {
+  .intro {
+    /* Text sizes */
+    --intro-hello-size: 1.6rem;        /* H1 "Hello!" */
+    --intro-tagline-size: 1.6rem;      /* H2 tagline */
+    --intro-contact-size: 1.6rem;      /* H3 "Let's connect!" */
+    --intro-label-size: 1.4rem;        /* Icon labels on hover */
+    
+    /* Icon sizes */
+    --icon-size-resume: 32px;
+    --icon-size-linkedin: 32px;
+    --icon-size-github: 32px;
+    --icon-size-email: 32px;
+
+    /* Spacing */
+    --intro-icons-gap: 24px;           /* Less horizontal space between icons */
+    --intro-icons-top-gap: 8px;        /* gap between "Let's connect!" and icons */
+    --intro-label-offset: 8px;
+  }
+}
+
+/* Large phones */
+@media screen and (max-width: 480px) {
+  .intro {
+    /* Text sizes */
+    --intro-hello-size: 1.6rem;        /* H1 "Hello!" */
+    --intro-tagline-size: 1.6rem;      /* H2 tagline */
+    --intro-contact-size: 1.6rem;      /* H3 "Let's connect!" */
+    --intro-label-size: 1.4rem;        /* Icon labels on hover */
+    
+    /* Icon sizes */
+    --icon-size-resume: 32px;
+    --icon-size-linkedin: 32px;
+    --icon-size-github: 32px;
+    --icon-size-email: 32px;
+
+    /* Spacing */
+    --intro-icons-gap: 24px;           /* Less horizontal space between icons */
+    --intro-icons-top-gap: 8px;        /* gap between "Let's connect!" and icons */
+    --intro-label-offset: 8px;
+  }
+}
+
+/* Small phones */
+@media screen and (max-width: 360px) {
+  .intro {
+    /* Text sizes */
+    --intro-hello-size: 1.6rem;        /* H1 "Hello!" */
+    --intro-tagline-size: 1.6rem;      /* H2 tagline */
+    --intro-contact-size: 1.6rem;      /* H3 "Let's connect!" */
+    --intro-label-size: 1.4rem;        /* Icon labels on hover */
+
+    /* Icon sizes */
+    --icon-size-resume: 32px;
+    --icon-size-linkedin: 32px;
+    --icon-size-github: 32px;
+    --icon-size-email: 32px;
+    
+    /* Spacing */
+    --intro-icons-gap: 24px;           /* Less horizontal space between icons */
+    --intro-icons-top-gap: 8px;        /* gap between "Let's connect!" and icons */
+    --intro-label-offset: 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - Other code - - - - - */
+
+/* Keep the date/time on one line across sections (desktop + mobile) */
+.education .job__time,
+.internship .job__time,
+.awards .job__time,
+.leadership .job__time {
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  hyphens: none !important;
+}

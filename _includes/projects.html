@@ -1,0 +1,25 @@
+<section class="section other-projects">
+  <div class="section__title">Projects</div>
+  <div class="section__content">
+    {% for project in site.data.projects %}
+    <div class="project">
+
+      <div class="project__image" {% if project.image_max %}style="--img-max: {{ project.image_max }}px"{% endif %}>
+        <img src="{{ project.image | relative_url }}" alt="{{ project.name | escape }}" loading="lazy">
+      </div>
+
+      <div class="project__name">
+        <span class="project__name-text">{{ project.name }}</span>
+      </div>
+      <p>{{ project.description }}</p>
+
+      <div class="project__used">
+        {% for item in project.used %}
+        <span class="project__used__item">{{ item.thing }}</span>
+        {% endfor %}
+      </div>
+      
+    </div>
+    {% endfor %}
+  </div>
+</section>

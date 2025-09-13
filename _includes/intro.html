@@ -1,0 +1,60 @@
+<header class="intro">
+  <div class="intro__row">
+    <!-- Left column: your existing text block -->
+    <div class="intro__text">
+      <h1 class="intro__hello">
+        Hello!
+      </h1>
+
+      <h2 class="intro__tagline">
+        I'm <span class="u-ld-contrast">John Ivan Diaz</span>, a Professional Machine Learning Engineer passionate in building AI models that help us make informed decisions.
+      </h2>
+
+      <div class="intro__cta">
+        <h3 class="intro__contact">Let's connect!</h3>
+
+        <div class="intro__icons">
+          {% assign wanted = "resume,linkedin,github,email" | split: "," %}
+          {% for key in wanted %}
+            {% assign matches = site.social | where: "title", key %}
+            {% assign link = matches[0] %}
+            {% if link %}
+              {% assign slug = key %}
+              {% assign label = key | capitalize %}
+              {% if key == 'github' %}{% assign label = 'GitHub' %}{% endif %}
+              {% if key == 'linkedin' %}{% assign label = 'LinkedIn' %}{% endif %}
+
+              {% capture icon_light %}/img/social/{{ slug }}-dark.png{% endcapture %}
+              {% capture icon_dark  %}/img/social/{{ slug }}-light.png{% endcapture %}
+
+              <a href="{{ link.url }}" target="_blank" rel="noopener" class="intro__icon" aria-label="{{ label }}" data-icon="{{ slug }}">
+                <img
+                  class="social-icon"
+                  alt="{{ label }}"
+                  src="{{ icon_light | relative_url }}"
+                  data-light="{{ icon_light | relative_url }}"
+                  data-dark="{{ icon_dark  | relative_url }}"
+                  onerror="this.onerror=null; this.style.visibility='hidden';"
+                >
+                <span class="label">{{ label }}</span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="intro__media">
+      <img 
+        class="intro__photo" 
+        src="{{ site.headshot-light }}" 
+        alt="Headshot of John Ivan Diaz"
+        data-light="{{ site.headshot-light }}"
+        data-dark="{{ site.headshot-dark }}"
+      />
+    </div>
+
+    
+  </div>
+</header>

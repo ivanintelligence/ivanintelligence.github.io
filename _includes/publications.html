@@ -1,0 +1,20 @@
+<section class="section publications other-projects">
+  <div class="section__title">Publications</div>
+  <div class="section__content">
+    {% for pub in site.data.publications %}
+    <div class="project">
+
+      <div class="project__image" {% if pub.image_max %}style="--img-max: {{ pub.image_max }}px"{% endif %}>
+        <img src="{{ pub.image | relative_url }}" alt="{{ pub.name | escape }}" loading="lazy">
+      </div>
+
+      <div class="project__name">
+        <span class="project__name-text">{{ pub.name }}</span>
+      </div>
+
+      <p>{{ pub.description }}</p>
+
+    </div>
+    {% endfor %}
+  </div>
+</section>

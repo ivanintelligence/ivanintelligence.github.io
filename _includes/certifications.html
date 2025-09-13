@@ -1,0 +1,26 @@
+<section class="section certifications other-projects">
+  <div class="section__title">Certifications</div>
+
+  <div class="section__content">
+    {% assign certs = site.data.certifications | default: empty %}
+    {% for cert in certs %}
+      <div class="project">
+
+        <div class="project__image" {% if cert.image_max %}style="--img-max: {{ cert.image_max }}px"{% endif %}>
+          {% assign img_is_external = cert.image contains '://' %}
+          <img
+            src="{% if img_is_external %}{{ cert.image }}{% else %}{{ cert.image | relative_url }}{% endif %}"
+            alt="{{ cert.name | escape }}"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="project__name">
+          <span class="project__name-text">{{ cert.name }}</span>
+        </div>
+
+        <p>{{ cert.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>

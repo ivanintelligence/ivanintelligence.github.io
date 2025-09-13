@@ -1,0 +1,49 @@
+<section class="section leadership experience">
+  <div class="section__title">Leadership</div>
+  <div class="section__content">
+    <div class="jobs">
+      {% assign leaderships = site.data.leadership | default: empty %}
+      {% for lead in leaderships %}
+      <div class="job">
+
+        {% if lead.image %}
+          <figure class="job__image" {% if lead.image_max %}style="--img-max: {{ lead.image_max }}px"{% endif %}>
+            {% assign img_is_external = lead.image contains '://' %}
+            <img src="{% if img_is_external %}{{ lead.image }}{% else %}{{ lead.image | relative_url }}{% endif %}"
+                 alt="{{ lead.position | escape }}" loading="lazy">
+          </figure>
+        {% endif %}
+
+        <div class="time-place">
+          <div class="job__company">
+            {{ lead.position }}
+          </div>
+          <div class="job__time">
+            {{ lead.time }}
+          </div>
+        </div>
+
+        <div class="job__position">
+          <p>{{ lead.description }}</p>
+        </div>
+
+        {% if lead.links %}
+        <div class="job__links">
+          {% for link in lead.links %}
+            {% assign l_ext = link.url contains '://' %}
+            <p class="job__link">
+              <a 
+                href="{% if l_ext %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}" 
+                {% if l_ext %}target="_blank" rel="noopener"{% endif %}
+                class="arrow-link">
+                {{ link.name }}
+              </a>
+            </p>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

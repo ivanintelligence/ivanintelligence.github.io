@@ -1,0 +1,29 @@
+<section class="section awards experience">
+  <div class="section__title">Awards</div>
+
+  <div class="section__content">
+    <div class="jobs">
+      {% assign items = site.data.awards | default: empty %}
+      {% for a in items %}
+      <div class="job award">
+        {% if a.image %}
+          <figure class="award__image" {% if a.image_max %}style="--img-max: {{ a.image_max }}px"{% endif %}>
+            {% assign img_is_external = a.image contains '://' %}
+            <img src="{% if img_is_external %}{{ a.image }}{% else %}{{ a.image | relative_url }}{% endif %}"
+                 alt="{{ a.award | escape }}" loading="lazy">
+          </figure>
+        {% endif %}
+
+        <div class="time-place">
+          <div class="job__company">{{ a.award }}</div>
+          <div class="job__time">{{ a.date }}</div>
+        </div>
+
+        {% if a.description %}
+          <p>{{ a.description }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

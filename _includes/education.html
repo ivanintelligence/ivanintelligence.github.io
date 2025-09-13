@@ -1,0 +1,27 @@
+<section class="section education experience">
+  <div class="section__title">Education</div>
+  <div class="section__content">
+    <div class="jobs">
+      {% assign edu = site.data.education | default: empty %}
+      {% for e in edu %}
+      <div class="job">
+
+        {% if e.image %}
+        <figure class="job__image" {% if e.image_max %}style="--img-max: {{ e.image_max }}px"{% endif %}>
+          {% assign img_is_external = e.image contains '://' %}
+          <img src="{% if img_is_external %}{{ e.image }}{% else %}{{ e.image | relative_url }}{% endif %}"
+               alt="{{ e.degree | escape }}" loading="lazy">
+        </figure>
+        {% endif %}
+
+        <div class="time-place">
+          <div class="job__company">{{ e.degree }}</div>
+          <div class="job__time">{{ e.time }}</div>
+        </div>
+        <div class="job__position">{{ e.school }}</div>
+        <div class="job__description">{{ e.description }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

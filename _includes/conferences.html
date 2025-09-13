@@ -1,0 +1,38 @@
+<section class="section conferences other-projects">
+  <div class="section__title">Conferences</div>
+
+  <div class="section__content">
+    {% assign confs = site.data.conferences | default: empty %}
+    {% for conf in confs %}
+      <div class="project">
+
+        <div class="project__image" {% if conf.image_max %}style="--img-max: {{ conf.image_max }}px"{% endif %}>
+          <img src="{{ conf.image | relative_url }}" alt="{{ conf.name | escape }}" loading="lazy">
+        </div>
+
+        <div class="project__name">
+          <span class="project__name-text">{{ conf.name }}</span>
+        </div>
+
+        {%- if conf.date or conf.location -%}
+          <p class="small">
+            {%- if conf.date -%}{{ conf.date }}{%- endif -%}
+            {%- if conf.date and conf.location -%} · {%- endif -%}
+            {%- if conf.location -%}{{ conf.location }}{%- endif -%}
+          </p>
+        {%- endif -%}
+
+        <p>{{ conf.description }}</p>
+
+        {%- if conf.used and conf.used.size > 0 -%}
+          <div class="project__used">
+            {% for item in conf.used %}
+              <span class="project__used__item">{{ item.thing }}</span>
+            {% endfor %}
+          </div>
+        {%- endif -%}
+
+      </div>
+    {% endfor %}
+  </div>
+</section>
