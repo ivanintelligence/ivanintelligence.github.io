@@ -2803,166 +2803,7 @@ html.is-animating .swup-transition.is-entering {
 
 
 
-/* PDF viewer styling */
-.pdf-container {
-  width: 100%;
-  max-width: var(--img-max, 800px);
-  margin: 0 auto 24px;
-  overflow: hidden;
-  border-radius: var(--img-radius, 36px);
-}
 
-.pdf-viewer {
-  border-radius: var(--img-radius, 36px);
-  background-color: #DDDDE1;
-
-}
-
-html.night .pdf-viewer {
-  background-color: #727376;
-}
-
-@media (max-width: 480px) {
-  .pdf-container {
-    border-radius: 20px;
-  }
-  .pdf-viewer {
-    border-radius: 20px;
-    height: 450px;
-  }
-}
-
-/* PDF fallback link styling */
-.pdf-fallback {
-  font-size: 0.8rem;
-  margin-top: 8px;
-  text-align: center;
-  color: #222325;
-}
-
-html.night .pdf-fallback {
-  color: #F6F5F7;
-}
-
-
-
-/* Improved PDF handling for mobile devices */
-.pdf-desktop-view {
-  display: block;
-}
-
-.pdf-mobile-view {
-  display: none;
-}
-
-/* Mobile PDF alternative */
-.pdf-preview-box {
-  position: relative;
-  background: #DDDDE1;  /* Same as desktop pdf viewer */
-  border-radius: var(--img-radius-mobile, 20px);
-  padding: 30px 20px;
-  text-align: center;
-  margin: 0 auto 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-html.night .pdf-preview-box {
-  background: #727376;  /* Same as desktop night mode */
-}
-
-.pdf-mobile-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 16px;
-}
-
-.pdf-mobile-icon svg {
-  fill: #222325;  /* Match fallback text color */
-}
-
-html.night .pdf-mobile-icon svg {
-  fill: #F6F5F7;  /* Match night mode text */
-}
-
-.pdf-mobile-title {
-  font-family: var(--sub-title-family);
-  font-size: 1.2rem;
-  margin: 0 0 8px;
-  color: #222325;  /* Match fallback text color */
-}
-
-html.night .pdf-mobile-title {
-  color: #F6F5F7;  /* Match night mode text */
-}
-
-.pdf-mobile-desc {
-  font-size: 0.8rem;  /* Match fallback font size */
-  margin: 0;
-  color: #727376;  /* Slightly muted from main text */
-}
-
-html.night .pdf-mobile-desc {
-  color: #A9A9AB;  /* Slightly muted in dark mode */
-}
-
-/* Switch at mobile breakpoint */
-@media (max-width: 768px) {
-  .pdf-desktop-view {
-    display: none;
-  }
-  
-  .pdf-mobile-view {
-    display: block;
-  }
-}
-
-
-
-/* Video container styling */
-.video-container {
-  width: 100%;
-  max-width: var(--img-max, 800px);
-  margin: 0 auto 24px;
-  overflow: hidden;
-  border-radius: var(--img-radius, 36px);
-}
-
-.video-player {
-  border-radius: var(--img-radius, 36px);
-  display: block;
-  width: 100%;
-  height: auto;
-  background-color: #000;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 480px) {
-  .video-container {
-    border-radius: var(--img-radius-mobile, 20px);
-  }
-  .video-player {
-    border-radius: var(--img-radius-mobile, 20px);
-  }
-}
-
-
-
-/* Remove gap between hero image and content (stronger override) */
-.project-detail .project-hero + .project-detail__content {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* Debug any hidden spacing (optional) */
-.project-hero {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* Target the first element inside content to remove any top margin it might have */
-.project-detail__content > *:first-child {
-  margin-top: 0 !important;
-}
 
 
 
@@ -3692,4 +3533,184 @@ html.night .intro .intro__icon .label {
   overflow-wrap: normal !important;
   word-break: keep-all !important;
   hyphens: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PDF viewer styling */
+.pdf-container {
+  width: 100%;
+  max-width: var(--img-max, 800px);
+  margin: 0 auto 24px;
+  overflow: hidden;
+  border-radius: var(--img-radius, 36px);
+}
+
+.pdf-viewer {
+  border-radius: var(--img-radius, 36px);
+  background-color: #DDDDE1;
+
+}
+
+html.night .pdf-viewer {
+  background-color: #727376;
+}
+
+@media (max-width: 480px) {
+  .pdf-container {
+    border-radius: 20px;
+  }
+  .pdf-viewer {
+    border-radius: 20px;
+    height: 450px;
+  }
+}
+
+/* PDF fallback link styling */
+.pdf-fallback {
+  font-size: 0.8rem;
+  margin-top: 8px;
+  text-align: center;
+  color: #222325;
+}
+
+html.night .pdf-fallback {
+  color: #F6F5F7;
+}
+
+
+
+/* Improved PDF handling for mobile devices */
+.pdf-desktop-view {
+  display: block;
+}
+
+.pdf-mobile-view {
+  display: none;
+}
+
+/* Mobile PDF alternative */
+.pdf-preview-box {
+  position: relative;
+  background: #DDDDE1;  /* Same as desktop pdf viewer */
+  border-radius: var(--img-radius-mobile, 20px);
+  padding: 30px 20px;
+  text-align: center;
+  margin: 0 auto 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+html.night .pdf-preview-box {
+  background: #727376;  /* Same as desktop night mode */
+}
+
+.pdf-mobile-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+}
+
+.pdf-mobile-icon svg {
+  fill: #222325;  /* Match fallback text color */
+}
+
+html.night .pdf-mobile-icon svg {
+  fill: #F6F5F7;  /* Match night mode text */
+}
+
+.pdf-mobile-title {
+  font-family: var(--sub-title-family);
+  font-size: 1.2rem;
+  margin: 0 0 8px;
+  color: #222325;  /* Match fallback text color */
+}
+
+html.night .pdf-mobile-title {
+  color: #F6F5F7;  /* Match night mode text */
+}
+
+.pdf-mobile-desc {
+  font-size: 0.8rem;  /* Match fallback font size */
+  margin: 0;
+  color: #727376;  /* Slightly muted from main text */
+}
+
+html.night .pdf-mobile-desc {
+  color: #A9A9AB;  /* Slightly muted in dark mode */
+}
+
+/* Switch at mobile breakpoint */
+@media (max-width: 768px) {
+  .pdf-desktop-view {
+    display: none;
+  }
+  
+  .pdf-mobile-view {
+    display: block;
+  }
+}
+
+
+
+/* Video container styling */
+.video-container {
+  width: 100%;
+  max-width: var(--img-max, 800px);
+  margin: 0 auto 24px;
+  overflow: hidden;
+  border-radius: var(--img-radius, 36px);
+}
+
+.video-player {
+  border-radius: var(--img-radius, 36px);
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #000;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .video-container {
+    border-radius: var(--img-radius-mobile, 20px);
+  }
+  .video-player {
+    border-radius: var(--img-radius-mobile, 20px);
+  }
+}
+
+
+
+/* Remove gap between hero image and content (stronger override) */
+.project-detail .project-hero + .project-detail__content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Debug any hidden spacing (optional) */
+.project-hero {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Target the first element inside content to remove any top margin it might have */
+.project-detail__content > *:first-child {
+  margin-top: 0 !important;
 }
