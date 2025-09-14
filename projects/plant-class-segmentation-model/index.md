@@ -17,6 +17,11 @@ Two deep learning models trained on popular segmentation architectures, YOLOv8 a
 
 <br>
 
+
+
+
+
+
 <h1>Discovery Phase</h1>
 
 <h2>Use Case Definition</h2>
@@ -29,8 +34,20 @@ Two deep learning models trained on popular segmentation architectures, YOLOv8 a
 
 <h1>Development Phase</h1>
 
-<h2>Data Pipeline Creation</h2>
-
 <h2>Model Building</h2>
 
 <h2>Model Evaluation</h2>
+
+<h3>Evaluation Metrics</h3>
+
+<h3>Evaluation Results</h3>
+
+<h3>Performance</h3>
+
+<h3>Training Speed</h3>
+
+<h3>Training Memory Consumption</h3>
+
+<h3>Strengths</h3>
+
+<h3>Weaknesses</h3>

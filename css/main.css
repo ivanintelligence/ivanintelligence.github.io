@@ -3054,6 +3054,24 @@ html.night .evaluation-table {
 
 
 
+/* Equation styling */
+.equation {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.MathJax {
+  font-size: 1.0rem !important;
+}
+
+@media (max-width: 768px) {
+  .MathJax {
+    font-size: 1.0rem !important;
+  }
+}
+
+
 
 
 

@@ -31,6 +31,36 @@ A deep learning model trained to classify CIFAR-100 images of reptiles into five
 
 <h2>Data Pipeline Creation</h2>
 
+<h3>Data Splitting</h3>
+
+<h3>Feature Encoding</h3>
+
+<h3>Normalization</h3>
+
+
+
+
 <h2>Model Building</h2>
 
+<h3>Convolution Layer</h3>
+
+
+<h3>Pooling Layer</h3>
+
+
+<h3>Fully Connected Layer</h3>
+
+<h3>Regularization</h3>
+
+<h3>Optimization</h3>
+
+
+<h3>Hyperparameter Tuning</h3>
+
+
+<h3>Augmentation</h3>
+
+
+
 <h2>Model Evaluation</h2>
+

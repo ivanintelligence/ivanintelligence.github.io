@@ -19,18 +19,22 @@ A computer vision algorithm that reconstructs a 3D model from constrained 2D ste
 
 <h1>Discovery Phase</h1>
 
-<h2>Use Case Definition</h2>
-
-<h2>Data Exploration</h2>
-
-<h2>Architecture and Algorithm Selection</h2>
 
 
 
 <h1>Development Phase</h1>
 
-<h2>Data Pipeline Creation</h2>
+<h3>Input</h3>
 
-<h2>Model Building</h2>
+<h3>Calibration Map</h3>
 
-<h2>Model Evaluation</h2>
+<h3>Depth Map Generation</h3>
+
+<h3>Point Cloud Generation</h3>
+
+<h3>Point Cloud Refinement</h3>
+
+<h3>Point Cloud Registration</h3>
+
+<h3>Point Cloud Meshing</h3>
+
