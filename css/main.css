@@ -2846,6 +2846,78 @@ html.night .pdf-fallback {
 
 
 
+/* Improved PDF handling for mobile devices */
+.pdf-desktop-view {
+  display: block;
+}
+
+.pdf-mobile-view {
+  display: none;
+}
+
+/* Mobile PDF alternative */
+.pdf-preview-box {
+  position: relative;
+  background: #DDDDE1;  /* Same as desktop pdf viewer */
+  border-radius: var(--img-radius-mobile, 20px);
+  padding: 30px 20px;
+  text-align: center;
+  margin: 0 auto 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+html.night .pdf-preview-box {
+  background: #727376;  /* Same as desktop night mode */
+}
+
+.pdf-mobile-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+}
+
+.pdf-mobile-icon svg {
+  fill: #222325;  /* Match fallback text color */
+}
+
+html.night .pdf-mobile-icon svg {
+  fill: #F6F5F7;  /* Match night mode text */
+}
+
+.pdf-mobile-title {
+  font-family: var(--sub-title-family);
+  font-size: 1.2rem;
+  margin: 0 0 8px;
+  color: #222325;  /* Match fallback text color */
+}
+
+html.night .pdf-mobile-title {
+  color: #F6F5F7;  /* Match night mode text */
+}
+
+.pdf-mobile-desc {
+  font-size: 0.8rem;  /* Match fallback font size */
+  margin: 0;
+  color: #727376;  /* Slightly muted from main text */
+}
+
+html.night .pdf-mobile-desc {
+  color: #A9A9AB;  /* Slightly muted in dark mode */
+}
+
+/* Switch at mobile breakpoint */
+@media (max-width: 768px) {
+  .pdf-desktop-view {
+    display: none;
+  }
+  
+  .pdf-mobile-view {
+    display: block;
+  }
+}
+
+
+
 /* Video container styling */
 .video-container {
   width: 100%;
@@ -2871,6 +2943,25 @@ html.night .pdf-fallback {
   .video-player {
     border-radius: var(--img-radius-mobile, 20px);
   }
+}
+
+
+
+/* Remove gap between hero image and content (stronger override) */
+.project-detail .project-hero + .project-detail__content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Debug any hidden spacing (optional) */
+.project-hero {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Target the first element inside content to remove any top margin it might have */
+.project-detail__content > *:first-child {
+  margin-top: 0 !important;
 }
 
 
@@ -3129,6 +3220,45 @@ html.night .project-detail__body figcaption {
   .project-detail__body figcaption {
     font-size: 0.85rem;      /* slightly smaller on mobile */
   }
+}
+
+
+
+/* Custom tags for subpages */
+tag {
+  display: inline-block;
+  padding: 2px 7px;
+  margin: 3px 3px 3px 0;
+  font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 3px;
+  color: var(--sub-tag-color, #2F6DE1);
+  border: 1px solid var(--sub-tag-color, #2F6DE1);
+  background: transparent;
+}
+
+html.night tag {
+  color: var(--sub-tag-color, #4B7AF7);
+  border-color: var(--sub-tag-color, #4B7AF7);
+}
+
+
+
+/* Style <title> like a proper page title */
+title {
+  display: block;
+  font-family: var(--sub-title-family, "New York", Georgia, serif);
+  font-size: var(--sub-title-size, 2.4rem);
+  font-weight: var(--sub-title-weight, 400);
+  font-style: var(--sub-title-style, normal);
+  color: var(--sub-title-color, #222325);
+  margin: 20px 0 10px;
+  line-height: 1.2;
+}
+
+html.night title {
+  color: var(--sub-title-color, #F6F5F7);
 }
 
 
