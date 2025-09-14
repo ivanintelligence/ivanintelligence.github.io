@@ -24,10 +24,6 @@ In addition, a custom loss function is used to leverage the temporal dynamics an
 
 <br>
 
-
-
-
-
 <h1>Discovery Phase</h1>
 
 <div>
@@ -47,6 +43,8 @@ This project aims to develop:
 <h1>Development Phase</h1>
 
 <h2>Data Pipeline Creation</h2>
+
+<h3>Dataset</h3>
 
 <div>
 The dataset was split into three subsets: training, validation, and test sets. Conceptually, if one were to quickly view all images of a single sequence in succession, one would see the plant gradually growing over time. Formally, for the $s^{\text{th}}$ sequence, there is a set of frames:
