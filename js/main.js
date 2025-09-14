@@ -86,7 +86,7 @@
   // -------------------------------
   function initScrollReveal() {
     if (!window.ScrollReveal) return;
-
+    
     const sr = ScrollReveal({
       reset: false,
       duration: 600,
@@ -95,18 +95,29 @@
       viewFactor: 0.3,
     });
 
-    [
-      '.background',
-      '.skills',
-      '.experience',
-      '.featured-projects',
-      '.other-projects',
-      '.certifications',
-      '.project-detail',
-      '.project-hero'
-    ].forEach(sel => {
+    // Apply standard reveal to homepage sections
+    const homeSections = ['.background', '.skills', '.experience', 
+                         '.featured-projects', '.other-projects', 
+                         '.certifications'];
+                         
+    homeSections.forEach(sel => {
       if (qs(sel)) sr.reveal(sel, { viewFactor: 0.1 });
     });
+    
+    // Apply IMMEDIATE reveal to subpage content (no scroll required)
+    if (qs('.project-detail')) {
+      sr.reveal('.project-detail', { 
+        delay: 0,
+        viewFactor: 0,
+        duration: 300
+      });
+      
+      sr.reveal('.project-hero', { 
+        delay: 0,
+        viewFactor: 0,
+        duration: 300
+      });
+    }
   }
 
   // -------------------------------
@@ -170,12 +181,11 @@
     
     // Calculate parallax on scroll
     let ticking = false;
-    let lastScrollY = 0;
     
     const updateParallax = () => {
       const scrollPosition = window.scrollY;
       const scrollRange = window.innerHeight;
-      const moveAmount = (scrollPosition / scrollRange) * 20; // Adjust 10 for effect intensity
+      const moveAmount = (scrollPosition / scrollRange) * 20; // Adjust intensity
       
       // Move the image based on scroll position
       heroImage.style.transform = `translateY(${moveAmount}%)`;
@@ -183,19 +193,16 @@
       ticking = false;
     };
     
+    // Call immediately to set initial position
+    updateParallax();
+    
     // Use requestAnimationFrame for smooth scrolling
     window.addEventListener('scroll', () => {
       if (!ticking) {
-        window.requestAnimationFrame(() => {
-          updateParallax();
-          ticking = false;
-        });
+        window.requestAnimationFrame(updateParallax);
         ticking = true;
       }
     });
-    
-    // Initialize position
-    updateParallax();
   }
 
   // -------------------------------

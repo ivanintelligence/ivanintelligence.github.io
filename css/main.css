@@ -3084,23 +3084,7 @@ html.night .evaluation-table {
 
 
 
-/* Parallax hero effect */
-.project-hero--parallax {
-  position: relative;
-  overflow: hidden;
-  /* Keep the existing height settings */
-}
 
-.project-hero--parallax img {
-  position: absolute;
-  top: -20%; /* Start image offset above container */
-  width: 100%;
-  height: 140%; /* Make image taller than container to allow movement */
-  object-fit: cover;
-  object-position: center;
-  will-change: transform; /* Hint for browser optimization */
-  transition: transform 0.05s linear; /* Smooth out small jumps */
-}
 
 
 
@@ -3824,4 +3808,38 @@ html.night .intro .intro__icon .label {
   overflow-wrap: normal !important;
   word-break: keep-all !important;
   hyphens: none !important;
+}
+
+
+
+
+
+
+/* Parallax hero effect */
+.project-hero--parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-hero--parallax img {
+  position: absolute;
+  top: -20%;
+  width: 100%;
+  height: 140%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+
+/* Force content visibility on page load */
+html, body {
+  height: auto !important;
+  min-height: 100%;
+}
+
+/* Ensure project content is always visible */
+.project-detail__content {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
