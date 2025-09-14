@@ -1,24 +1,44 @@
 <div class="pdf-container" style="{{ include.style }}">
-  <object
-    data="{{ include.url | relative_url }}"
-    type="application/pdf"
-    width="{{ include.width | default: '100%' }}"
-    height="{{ include.height | default: '600px' }}"
-    class="pdf-viewer">
-    <iframe
-      src="{{ include.url | relative_url }}"
+  <!-- Desktop: PDF viewer -->
+  <div class="pdf-desktop-view">
+    <object
+      data="{{ include.url | relative_url }}"
+      type="application/pdf"
       width="{{ include.width | default: '100%' }}"
       height="{{ include.height | default: '600px' }}"
-      class="pdf-viewer"
-      frameborder="0">
-      <p class="pdf-fallback">
-        Your browser does not support embedded PDFs. 
-        <a href="{{ include.url | relative_url }}" 
-           class="arrow-link" 
-           target="_blank">
-          View the PDF directly
-        </a>
-      </p>
-    </iframe>
-  </object>
+      class="pdf-viewer">
+      <iframe
+        src="{{ include.url | relative_url }}"
+        width="{{ include.width | default: '100%' }}"
+        height="{{ include.height | default: '600px' }}"
+        class="pdf-viewer"
+        frameborder="0">
+        <p class="pdf-fallback">
+          Your browser does not support embedded PDFs. 
+          <a href="{{ include.url | relative_url }}" 
+             class="arrow-link" 
+             target="_blank">
+            View the PDF directly
+          </a>
+        </p>
+      </iframe>
+    </object>
+  </div>
+  
+  <!-- Mobile: Thumbnail image with direct link -->
+  <div class="pdf-mobile-view">
+    <div class="pdf-preview-box">
+      <div class="pdf-mobile-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <path d="M181.9 256.1c-5.1-9.9-17.5-13.9-27.3-8.8-9.9 5.1-13.9 17.5-8.8 27.3l56.8 110.9c4.4 8.7 13.3 13.9 22.8 13.9s18.4-5.2 22.8-13.9l56.8-110.9c5.1-9.9 1.1-22.2-8.8-27.3-9.9-5.1-22.2-1.1-27.3 8.8L224 311.8l-42.1-55.7zM128 0C110.3 0 96 14.3 96 32v32H48c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48h-48V32c0-17.7-14.3-32-32-32s-32 14.3-32 32v32H160V32c0-17.7-14.3-32-32-32zm0 96h256c8.8 0 16 7.2 16 16v352c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h80z"/>
+        </svg>
+      </div>
+      <h3 class="pdf-mobile-title">{{ include.title | default: "View PDF Document" }}</h3>
+      <p class="pdf-mobile-desc">Tap to open PDF in a new tab</p>
+      <a href="{{ include.url | relative_url }}" 
+         class="pdf-mobile-link"
+         target="_blank"
+         rel="noopener"></a>
+    </div>
+  </div>
 </div>

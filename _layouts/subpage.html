@@ -26,45 +26,7 @@ layout: default
 
   <!-- Content column -->
   <div class="project-detail__content">
-
-    <h1 class="project-detail__title">{{ page.title }}</h1>
-
-    {% if page.tags %}
-      <ul class="project-detail__tags">
-        {% for t in page.tags %}
-          <li class="tag">{{ t }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-
-    {% if page.summary %}
-      <p class="project-detail__summary">{{ page.summary }}</p>
-    {% endif %}
-
-    {%- comment -%}
-      Versatile links list:
-      Use in front matter:
-      links:
-        - text: "Conference website"
-          url: "https://example.com"
-        - text: "Slides"
-          url: "/assets/slides.pdf"   # internal → same tab
-    {%- endcomment -%}
-    {% if page.links %}
-      <div class="project-detail__links">
-        {% for l in page.links %}
-          {% if l.url contains '://' %}{% assign l_ext = true %}{% else %}{% assign l_ext = false %}{% endif %}
-          <p class="project-detail__link">
-            <a
-              href="{% if l_ext %}{{ l.url }}{% else %}{{ l.url | relative_url }}{% endif %}"
-              {% if l_ext %}target="_blank" rel="noopener"{% endif %}
-              class="arrow-link"
-            >{{ l.text }}</a>
-          </p>
-        {% endfor %}
-      </div>
-    {% endif %}
-
+    <!-- No automatic title/tags/summary/links - user will add these directly in content -->
     <div class="project-detail__body">
       {{ content }}
     </div>
