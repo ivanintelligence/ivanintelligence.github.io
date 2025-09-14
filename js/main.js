@@ -129,6 +129,35 @@
   }
 
   // -------------------------------
+  // Initialize/re-initialize MathJax
+  // -------------------------------
+  function initMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      // If MathJax already loaded, process the new content
+      MathJax.typesetPromise && MathJax.typesetPromise();
+    } else if (document.querySelector('.equation') || document.body.textContent.includes('$')) {
+      // If MathJax not loaded but equations exist, load it
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+      };
+      
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.id = 'MathJax-script';
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  }
+
+  // -------------------------------
   // Swup (internal nav + restore home scroll)
   // -------------------------------
   function initSwup() {
@@ -189,6 +218,7 @@
     try { initWaveHand(); }       catch (e) { console.warn('Wave init failed', e); }
     try { initScrollReveal(); }   catch (e) { console.warn('ScrollReveal init failed', e); }
     try { initExternalLinks(); }  catch (e) { console.warn('ExternalLinks init failed', e); }
+    try { initMathJax(); }        catch (e) { console.warn('MathJax init failed', e); }
   }
 
   // -------------------------------
