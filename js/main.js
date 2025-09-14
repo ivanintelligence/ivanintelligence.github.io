@@ -158,6 +158,47 @@
   }
 
   // -------------------------------
+  // Hero Parallax Effect
+  // -------------------------------
+  function initParallax() {
+    const heroImage = qs('.project-hero img');
+    if (!heroImage) return;
+    
+    // Add parallax class to the container
+    const hero = qs('.project-hero');
+    hero.classList.add('project-hero--parallax');
+    
+    // Calculate parallax on scroll
+    let ticking = false;
+    let lastScrollY = 0;
+    
+    const updateParallax = () => {
+      const scrollPosition = window.scrollY;
+      const scrollRange = window.innerHeight;
+      const moveAmount = (scrollPosition / scrollRange) * 20; // Adjust 10 for effect intensity
+      
+      // Move the image based on scroll position
+      heroImage.style.transform = `translateY(${moveAmount}%)`;
+      
+      ticking = false;
+    };
+    
+    // Use requestAnimationFrame for smooth scrolling
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateParallax();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+    
+    // Initialize position
+    updateParallax();
+  }
+
+  // -------------------------------
   // Swup (internal nav + restore home scroll)
   // -------------------------------
   function initSwup() {
@@ -182,7 +223,7 @@
 
     // Re-init page widgets after content swap
     swup.hooks.on('content:replace', () => {
-      initWidgets();
+      initWidgets(); // This already includes initParallax
     });
 
     // On every page view (including Back), restore home scroll if saved
@@ -219,6 +260,7 @@
     try { initScrollReveal(); }   catch (e) { console.warn('ScrollReveal init failed', e); }
     try { initExternalLinks(); }  catch (e) { console.warn('ExternalLinks init failed', e); }
     try { initMathJax(); }        catch (e) { console.warn('MathJax init failed', e); }
+    try { initParallax(); }       catch (e) { console.warn('Parallax init failed', e); }
   }
 
   // -------------------------------
