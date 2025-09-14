@@ -2966,6 +2966,40 @@ html.night .pdf-mobile-desc {
 
 
 
+/* Subpage list styling */
+.project-detail__body ul,
+.project-detail__body ol {
+  margin: 0 0 20px 20px;
+  padding-left: 10px;
+  font-family: var(--sub-body-family);
+  font-size: var(--sub-body-size);
+  line-height: var(--sub-body-line);
+  font-weight: var(--sub-body-weight);
+  color: var(--sub-body-color);
+}
+
+.project-detail__body li {
+  margin-bottom: 6px;
+}
+
+/* Specific styling for bullet lists */
+.project-detail__body ul {
+  list-style: disc;
+}
+
+/* Specific styling for numbered lists */
+.project-detail__body ol {
+  list-style: decimal;
+}
+
+/* Dark mode support */
+html.night .project-detail__body ul,
+html.night .project-detail__body ol {
+  color: var(--sub-body-color);
+}
+
+
+
 
 
 

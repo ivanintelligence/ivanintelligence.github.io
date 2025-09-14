@@ -1,22 +1,36 @@
 ---
-
 layout: subpage
-
-hero: https://picsum.photos/1600/900
-title: Project
-tags: [Skill 1, Skill 2, Skill 3, Skill 4, Skill 5]
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum rutrum varius. In hac habitasse platea dictumst.
-links:
-  - text: View source code
-    url: https://github.com/ivanintelligence/reptile-classifier
-
+hero: /img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/2d-to-3d-image-reconstruction-computer-vision-algorithm.jpeg
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum rutrum varius. In hac habitasse platea dictumst. Morbi vitae tellus in nulla convallis scelerisque. Donec malesuada eros vel diam viverra, at tincidunt ante dignissim. Nam porttitor sem et purus lobortis, vel placerat sem fermentum. Fusce fermentum lectus nunc, at ornare dui molestie in. Nunc ac fringilla felis. Nunc consectetur, ex a hendrerit elementum, velit arcu tempor elit, in rutrum nisi urna sed magna. Quisque egestas, odio et scelerisque feugiat, magna odio pulvinar ex, et porttitor lacus orci et quam. Suspendisse eu arcu aliquam, sagittis diam eu, elementum tortor. Maecenas vel ornare orci. Cras feugiat ultricies cursus.
+<title>Developing Custom Computer Vision Algorithm for Reconstructing 3D Models from Constrained 2D Stereoscopic Images Using OpenCV and Open3D</title>
 
-![Confusion matrix](https://picsum.photos/1200/800)
+A computer vision algorithm that reconstructs a 3D model from constrained 2D stereoscopic images captured from the front, left, back, and right of an object. Unlike traditional photogrammetry that requires many angles, this approach is designed to address limited views. It combines standalone computer vision techniques into a unified process, leveraging OpenCV and Open3D libraries. It is useful in applications such as plant phenotyping, where capturing multiple angles may be challenging yet still sufficient for constructing 3D models for visual inspection and analysis.
 
-You can also add more links in your write-up:
-<a href="https://example.com/more-details" class="arrow-link" target="_blank" rel="noopener">
-  Read more
-</a>
+<tag>Computer Vision</tag>
+<tag>3D Reconstruction</tag>
+<tag>Point Clouds</tag>
+<tag>OpenCV</tag>
+<tag>Python</tag>
+
+<a href="https://www.johnivandiaz.com" class="arrow-link">See source code</a>
+
+<br>
+
+<h1>Discovery Phase</h1>
+
+<h2>Use Case Definition</h2>
+
+<h2>Data Exploration</h2>
+
+<h2>Architecture and Algorithm Selection</h2>
+
+
+
+<h1>Development Phase</h1>
+
+<h2>Data Pipeline Creation</h2>
+
+<h2>Model Building</h2>
+
+<h2>Model Evaluation</h2>

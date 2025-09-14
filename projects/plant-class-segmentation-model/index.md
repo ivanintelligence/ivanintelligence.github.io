@@ -1,22 +1,36 @@
 ---
-
 layout: subpage
-
-hero: https://picsum.photos/1600/900
-title: Project
-tags: [Skill 1, Skill 2, Skill 3, Skill 4, Skill 5]
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum rutrum varius. In hac habitasse platea dictumst.
-links:
-  - text: View source code
-    url: https://github.com/ivanintelligence/reptile-classifier
-    
+hero: /img/projects/plant-class-segmentation-model/plant-class-segmentation-model.jpeg
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum rutrum varius. In hac habitasse platea dictumst. Morbi vitae tellus in nulla convallis scelerisque. Donec malesuada eros vel diam viverra, at tincidunt ante dignissim. Nam porttitor sem et purus lobortis, vel placerat sem fermentum. Fusce fermentum lectus nunc, at ornare dui molestie in. Nunc ac fringilla felis. Nunc consectetur, ex a hendrerit elementum, velit arcu tempor elit, in rutrum nisi urna sed magna. Quisque egestas, odio et scelerisque feugiat, magna odio pulvinar ex, et porttitor lacus orci et quam. Suspendisse eu arcu aliquam, sagittis diam eu, elementum tortor. Maecenas vel ornare orci. Cras feugiat ultricies cursus.
+<title>Comparing YOLOv8 and Detectron2 Architectures for Plant Class Segmentation Using Transfer Learning</title>
 
-![Confusion matrix](https://picsum.photos/1200/800)
+Two deep learning models trained on popular segmentation architectures, YOLOv8 and Detectron2, for segmenting the plant class. A dataset of plant images with diverse types and backgrounds was collected, and both models were trained using identical hyperparameters, then adjusted in parallel to compare performance, training speed, and memory consumption. Quantitative metrics such as average precision, loss, training time, RAM, and disk usage were used for evaluation. Results show that YOLOv8 trains faster and maintains consistent performance, while Detectron2 achieves higher accuracy when using larger hyperparameter settings.
 
-You can also add more links in your write-up:
-<a href="https://example.com/more-details" class="arrow-link" target="_blank" rel="noopener">
-  Read more
-</a>
+<tag>Object Detection</tag>
+<tag>Transfer Learning</tag>
+<tag>TensorFlow</tag>
+<tag>Model Validation</tag>
+<tag>Hyperparameter Tuning</tag>
+
+<a href="https://www.johnivandiaz.com" class="arrow-link">See source code</a>
+
+<br>
+
+<h1>Discovery Phase</h1>
+
+<h2>Use Case Definition</h2>
+
+<h2>Data Exploration</h2>
+
+<h2>Architecture and Algorithm Selection</h2>
+
+
+
+<h1>Development Phase</h1>
+
+<h2>Data Pipeline Creation</h2>
+
+<h2>Model Building</h2>
+
+<h2>Model Evaluation</h2>
