@@ -25,7 +25,7 @@ Various technological methods exist to convert 2D images into 3D models, such as
 
 Despite the advancements in these techniques, there remains a lack of effective methodologies for reconstructing 3D models from 2D stereo images captured exclusively from the front, back, left, and right sides of an object at 90-degree horizontal rotations. This scenario differs from traditional photogrammetry, as the images are not taken from a continuous range of angles around the object, and it utilizes stereo vision.
 
-To address this gap, the proponents aim to integrate existing independent computer vision techniques into a unified process tailored to the challenges associated with these specific 2D stereo input images.
+To address this gap, this project aims to integrate existing independent computer vision techniques into a unified process tailored to the challenges associated with these specific 2D stereo input images.
 
 <h1>Development Phase</h1>
 
@@ -201,7 +201,7 @@ BPA iteratively pivots spheres of radius $r$ around edges of existing triangles,
   <figcaption>Applying smooth continuous surface to point cloud.</figcaption>
 </figure>
 
-<h3>3D Reconstruction Process</h3>
+<h3>3D Reconstruction Algorithm</h3>
 
 <figure>
   <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/full-process.jpg">

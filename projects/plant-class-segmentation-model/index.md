@@ -21,9 +21,9 @@ Two deep learning models trained on popular segmentation architectures, YOLOv8 a
 
 <h2>Use Case Definition</h2>
 
-Correct segmentation of plant objects positively affects succeeding phases, such as 3D modeling. The proponents initially used threshold-based masking to segment plant classes. However, as the plant grew and its size and appearance changed when working with multiple images, the static approach often failed, leading to incorrect segmentation when the plant fell outside the predefined thresholds.
+Correct segmentation of plant objects can be useful to other domains requiring it, such as plant phenotyping. Threshold-based masking can be used to segment plant classes. However, as plants grow size and appearance change when working with multiple images, this static approach often fails, leading to incorrect segmentation when the plant falls outside the predefined thresholds.
 
-To address this issue, the proponents investigated segmentation architectures that are solely trained for the plant class, determining strengths and weaknesses of each one that are helpful for plant segmentation tasks.
+To address this issue, this project investigated segmentation architectures that are solely trained for the plant class, determining strengths and weaknesses of each one that are helpful for plant segmentation tasks.
 
 <h2>Data Exploration</h2>
 
@@ -31,13 +31,13 @@ Images of various plant types were used to increase diversity. These images were
 
 <h2>Architecture and Algorithm Selection</h2>
 
-YOLOv8 and Detectron2 were the initial architectures chosen for comparison. YOLOv8 is the latest version in the You Only Look Once (YOLO) family, featuring a CSPDarknet backbone, a PANet neck, and an anchor-free decoupled head, while Detectron2 is a framework developed by Facebook, which uses a two-stage pipeline: a Region Proposal Network (RPN) to generate candidate object regions, followed by a stage for bounding box and mask prediction.
+YOLOv8 and Detectron2 were the architectures chosen for comparison. YOLOv8 is the latest version in the You Only Look Once (YOLO) family, featuring a CSPDarknet backbone, a PANet neck, and an anchor-free decoupled head, while Detectron2 is a framework developed by Facebook, which uses a two-stage pipeline: a Region Proposal Network (RPN) to generate candidate object regions, followed by a stage for bounding box and mask prediction.
 
 <h1>Development Phase</h1>
 
 <h2>Model Building</h2>
 
-Three sets of decreasing hyperparameter values were tested on each architecture. From Set A to Set C, the proponents decreased the epoch sizes to 100, 75, and 50; the image input sizes to 800, 750, and 640 pixels; the batch sizes to 16, 8, and 3; and the worker counts to 8, 6, and 4, respectively. The initial and final learning rates were kept constant at 0.01 and 0.001, respectively.
+Three sets of decreasing hyperparameter values were tested on each architecture. From Set A to Set C, the project decreased the epoch sizes to 100, 75, and 50; the image input sizes to 800, 750, and 640 pixels; the batch sizes to 16, 8, and 3; and the worker counts to 8, 6, and 4, respectively. The initial and final learning rates were kept constant at 0.01 and 0.001, respectively.
 
 <h2>Model Evaluation</h2>
 
@@ -52,7 +52,7 @@ Performance, training speed, and training memory consumption were compared betwe
   <figcaption>Comparison of YOLOv8 and Detectron2 architectures for plant class segmentation across varying hyperparameter values.</figcaption>
 </figure>
 
-The table shows the performance, training speed, and training memory consumption between YOLOv8 and Detectron2 architectures for plant class segmentation across varying hyperparameter values.
+The table above shows the performance, training speed, and training memory consumption between YOLOv8 and Detectron2 architectures for plant class segmentation across varying hyperparameter values.
 
 <h3>Performance</h3>
 

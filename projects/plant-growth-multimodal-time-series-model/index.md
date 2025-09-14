@@ -26,18 +26,13 @@ In addition, a custom loss function is used to leverage the temporal dynamics an
 
 <h1>Discovery Phase</h1>
 
-<div>
 Within recent deep learning advancements, a convolutional long short-term memory (ConvLSTM) architecture exists that predicts future outcomes based on historical spatiotemporal data, such as images. It extends traditional LSTMs by replacing matrix multiplications with convolution operations, effectively handling spatiotemporal sequence prediction tasks. Other studies have utilized this architecture for tasks like weather forecasting and anomaly detection. They relied on established loss functions, such as Mean Squared Error (MSE), which focuses on pixel-level accuracy. Other established loss functions, like Temporal Consistency (TC), emphasize smooth temporal progression to avoid abrupt, unnatural transitions. However, these loss functions generally address only one aspect or strength at a time.
-</div>
 
-<div>
 This project aims to develop:
-</div>
 
 <ol>
-  <li><div>A multimodal convolutional long short-term memory architecture capable of predicting future plant growth frames with respect to both past growth structures and environmental factors.</div></li>
-  
-  <li><div>An improved loss function that unifies the attributes of Mean Squared Error and Temporal Consistency losses to capture pixel-level accuracy and temporal dependencies of plant growth frames during model training.</div></li>
+  <li>A multimodal convolutional long short-term memory architecture capable of predicting future plant growth frames with respect to both past growth structures and environmental factors.</li>
+  <li>An improved loss function that unifies the attributes of Mean Squared Error and Temporal Consistency losses to capture pixel-level accuracy and temporal dependencies of plant growth frames during model training.</li>
 </ol>
 
 <h1>Development Phase</h1>
@@ -55,7 +50,7 @@ $$I_{s,t} = \{I_{s,1}, I_{s,2}, \ldots, I_{s,T_s}\}$$
 </div>
 
 <div>
-where $I_{s,t}$ is an RGB image (at original resolution) of the plant on day $t$.
+where $I_{s,t}$ is an RGB image (at original resolution) of the plant on day $t$.<br><br>
 </div>
 
 <div>
@@ -70,11 +65,11 @@ $$P_{s,t} = \left[ P_{s,t}^{(\text{temp})}, P_{s,t}^{(\text{soilmoisture})}, P_{
 By pairing each image $I_{s,t}$ with its parameters $P_{s,t}$, the model receives a multimodal representation of plant growth, capturing both the visual appearance and the underlying conditions at each time step.
 </div>
 
-<div>
-Preprocessing is done to convert the raw data, initially stored as large RGB images and unscaled parameter values, into a format suitable for efficient model training. It involves image rectification, segmentation, resize, normalization, sequence length standardization, and augmentation.
-</div>
-
 <h3>Image Rectification</h3>
+
+<div>
+Preprocessing is done to convert the raw data, initially stored as large RGB images and unscaled parameter values, into a format suitable for efficient model training. It involves image rectification, segmentation, resize, normalization, sequence length standardization, and augmentation.<br><br>
+</div>
 
 <div>
 Stereo images suffer lens distortion and misalignment between left and right views [22][23]. Objects in both images must share identical scan-lines. Let $I_{s,t} \in \mathbb{R}^{H_0 \times W_0 \times 3}$ denote the RGB image captured on day $t$ of sequence $s$. Each image $I_{s,t}$ is rectified by a calibration map:
@@ -85,7 +80,7 @@ $$\Phi = (M_x, M_y), \quad M_x, M_y \in \mathbb{R}^{H \times W}$$
 </div>
 
 <div>
-Derivation of this map is discussed in Chapter 6. Each pair $(M_x^{(i,j)}, M_y^{(i,j)})$ stores the sub-pixel source coordinates in the distorted image that should be mapped to the rectified location $(i, j)$. The rectification operator is defined as:
+Each pair $(M_x^{(i,j)}, M_y^{(i,j)})$ stores the sub-pixel source coordinates in the distorted image that should be mapped to the rectified location $(i, j)$. The rectification operator is defined as:
 </div>
 
 <div class="equation">
@@ -103,7 +98,7 @@ $$I_{s,t}^{\text{rect}} = \mathcal{R}_\Phi(I_{s,t}).$$
 <h3>Image Segmentation</h3>
 
 <div>
-The proponents isolate the plant from the background to focus the model's attention on the primary subject. To do this, a pre-trained YOLOv8 instance segmentation model is employed. Given an original image $I_{s,t}$, the segmentation model outputs a binary mask $M_{s,t}$ that highlights plant pixels only. The segmented image $\hat{I}_{s,t}$ is obtained via element-wise multiplication:
+The project isolated the plant from the background to focus the model's attention on the primary subject. To do this, a pre-trained YOLOv8 instance segmentation model is employed. Given an original image $I_{s,t}$, the segmentation model outputs a binary mask $M_{s,t}$ that highlights plant pixels only. The segmented image $\hat{I}_{s,t}$ is obtained via element-wise multiplication:
 </div>
 
 <div class="equation">
@@ -163,7 +158,7 @@ $$\{P_{s,1}^{\text{norm}}, \ldots, P_{s,T_s}^{\text{norm}}\} \rightarrow \{\unde
 <h3>Augmentation</h3>
 
 <div>
-The proponents diversified the training data by applying random transformations to the input images during training. These transformations include horizontal flips or small rotations. If $\alpha$ is the probability of applying augmentation, each image $I_{s,t}^{\text{norm}}$ becomes $I_{s,t}^{\text{aug}}$ with probability $\alpha$. Here, $\alpha = 1$ is used.
+The project diversified the training data by applying random transformations to the input images during training. These transformations include horizontal flips or small rotations. If $\alpha$ is the probability of applying augmentation, each image $I_{s,t}^{\text{norm}}$ becomes $I_{s,t}^{\text{aug}}$ with probability $\alpha$. Here, $\alpha = 1$ is used.
 </div>
 
 <h2>Model Building</h2>
@@ -195,7 +190,7 @@ In this manner of structuring data, the model learns to predict the next frame g
 <h3>Sequence Learning</h3>
 
 <div>
-To capture the temporal evolution of plant growth and the spatial structure of each frame, the proponents employ a Convolutional LSTM (ConvLSTM) architecture. It replaces the fully connected operations inside LSTM cells with convolutions that make it well-suited for spatial data. At each timestep $t$, the ConvLSTM updates its hidden and cell states $(H_t, C_t)$ based on the input $X_{s,t}^{\text{input}}$ and previous states $(H_{t-1}, C_{t-1})$:
+To capture the temporal evolution of plant growth and the spatial structure of each frame, the project employed a Convolutional LSTM (ConvLSTM) architecture. It replaces the fully connected operations inside LSTM cells with convolutions that make it well-suited for spatial data. At each timestep $t$, the ConvLSTM updates its hidden and cell states $(H_t, C_t)$ based on the input $X_{s,t}^{\text{input}}$ and previous states $(H_{t-1}, C_{t-1})$:
 </div>
 
 <div class="equation">
@@ -269,7 +264,7 @@ $$L_{\text{MSE}} = \frac{1}{N} \sum_{i=1}^{N} (x_{s,L,i} - \hat{x}_{s,L,i})^2$$
 </div>
 
 <div>
-where $N = H \times W \times 3$, and $\hat{x}_i$ and $x_i$ denote the ground-truth and predicted intensity values for pixel $i$.
+where $N = H \times W \times 3$, and $\hat{x}_i$ and $x_i$ denote the ground-truth and predicted intensity values for pixel $i$.<br><br>
 </div>
 
 <div>
@@ -281,7 +276,7 @@ $$L_{\text{TC}} = \frac{1}{N(T_S - 1)}\sum_{t=2}^{T_S}\sum_{i=1}^{N} [(x_{s,t,i}
 </div>
 
 <div>
-The proponents blend MSE and TC. By assigning weights $\alpha$ and $\beta$ to the MSE and TC terms, respectively, the unified loss seeks a balanced optimization path:
+The project blended MSE and TC. By assigning weights $\alpha$ and $\beta$ to the MSE and TC terms, respectively, the unified loss seeks a balanced optimization path:
 </div>
 
 <div class="equation">
@@ -368,7 +363,7 @@ Lastly, visual inspection assesses images based on subjective, human-based asses
 </figure>
 
 <div>
-For all three scenarios, the losses consistently decrease, as shown in Figure 5.4, which is a positive sign that the model is effectively learning to predict subsequent frames of plant growth structures. However, around 20 epochs, all models begin to converge. This suggests that the dataset, or the plant growth structures it represents, is relatively straightforward for the model to learn. Such an outcome is somewhat expected due to the segmentation process, where only the plant regions are retained and all non-plant elements are removed which reduced complexity. However, this also indicates that the dataset is limited and lacks diversity in terms of plant growth structures which is not providing more complex scenarios for the model to further improve upon.
+For all three scenarios, the losses consistently decrease, as shown in the figure above, which is a positive sign that the model is effectively learning to predict subsequent frames of plant growth structures. However, around 20 epochs, all models begin to converge. This suggests that the dataset, or the plant growth structures it represents, is relatively straightforward for the model to learn. Such an outcome is somewhat expected due to the segmentation process, where only the plant regions are retained and all non-plant elements are removed which reduced complexity. However, this also indicates that the dataset is limited and lacks diversity in terms of plant growth structures which is not providing more complex scenarios for the model to further improve upon.
 </div>
 
 <h3>Training Metric Curves</h3>
@@ -379,7 +374,7 @@ For all three scenarios, the losses consistently decrease, as shown in Figure 5.
 </figure>
 
 <div>
-Looking at MSE curves shown in Figure 5.5, both the MSE-only loss and unified loss models achieve good pixel-level accuracy by converging at around 20 epochs for both training and validation. In contrast, the TC-only loss model does not fully converge even after 100 epochs. However, throughout the epochs, the MSE metric for the TC-only model gradually decreases which indicate a steady yet slow improvement in pixel-level accuracy. It reflects the inherent nature of the TC loss, which prioritizes maintaining realistic temporal progressions of plant growth without abrupt transitions rather than directly optimizing for visual fidelity.
+Looking at MSE curves shown in the figure above, both the MSE-only loss and unified loss models achieve good pixel-level accuracy by converging at around 20 epochs for both training and validation. In contrast, the TC-only loss model does not fully converge even after 100 epochs. However, throughout the epochs, the MSE metric for the TC-only model gradually decreases which indicate a steady yet slow improvement in pixel-level accuracy. It reflects the inherent nature of the TC loss, which prioritizes maintaining realistic temporal progressions of plant growth without abrupt transitions rather than directly optimizing for visual fidelity.
 </div>
 
 <figure style="--img-max: 560px;">
@@ -439,7 +434,7 @@ The models using MSE-only loss and unified loss yield similar results that meet 
 <h3>Qualitative Testing Results</h3>
 
 <div>
-The study used dataset consisting plant growth sequences captured under consistent environmental parameter values. Consequently, it cannot evaluate scenarios where parameter values vary. During model testing, the same parameter values from the dataset are used for rendering predicted images, with an ambient temperature of 25°C, soil moisture at 50%, luminosity at 700 lux, and soil pH at 7.5. The window size for generating each predicted frame is 30, and at every future time step, the window moves forward by one stride.
+The project used dataset consisting plant growth sequences captured under consistent environmental parameter values. Consequently, it cannot evaluate scenarios where parameter values vary. During model testing, the same parameter values from the dataset are used for rendering predicted images, with an ambient temperature of 25°C, soil moisture at 50%, luminosity at 700 lux, and soil pH at 7.5. The window size for generating each predicted frame is 30, and at every future time step, the window moves forward by one stride.
 </div>
 
 <figure style="--img-max: 560px;">
@@ -448,5 +443,5 @@ The study used dataset consisting plant growth sequences captured under consiste
 </figure>
 
 <div>
-Rendering predicted images from all models, as shown in Figure 5.10, demonstrates where the unified loss function stands out. Visually, at just one time step ahead, all scenarios still represent the plant's form, although with the TC-only loss model, the plant's color appears somewhat washed out, and the background no longer remains pitch-black as in previous frames. After predicting 10 time steps ahead, the TC-only loss model's plant appearance disappears, and the background strays even further from black, although a faint contour remains that reflect the temporal progression without abrupt transitions. In the MSE-only loss model, the plant's color persists, but its form becomes increasingly blurred and distorted over extended time steps, and by the 10th predicted frame, the background is subtly turning gray. In comparison, the unified loss model retains the plant's color and a more identifiable shape over the same period, while the background remains pitch-black up to the 10th predicted image. However, it still exhibits increasing blurriness as predictions extend further into the future.
+Rendering predicted images from all models, as shown in the figure above, demonstrates where the unified loss function stands out. Visually, at just one time step ahead, all scenarios still represent the plant's form, although with the TC-only loss model, the plant's color appears somewhat washed out, and the background no longer remains pitch-black as in previous frames. After predicting 10 time steps ahead, the TC-only loss model's plant appearance disappears, and the background strays even further from black, although a faint contour remains that reflect the temporal progression without abrupt transitions. In the MSE-only loss model, the plant's color persists, but its form becomes increasingly blurred and distorted over extended time steps, and by the 10th predicted frame, the background is subtly turning gray. In comparison, the unified loss model retains the plant's color and a more identifiable shape over the same period, while the background remains pitch-black up to the 10th predicted image. However, it still exhibits increasing blurriness as predictions extend further into the future.
 </div>
