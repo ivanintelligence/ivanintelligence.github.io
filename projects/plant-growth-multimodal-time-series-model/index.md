@@ -28,16 +28,7 @@ In addition, a custom loss function is used to leverage the temporal dynamics an
 
 <h2>Use Case Definition</h2>
 
-Within recent deep learning advancements, a convolutional long short-term memory
-(ConvLSTM) architecture exists that predicts future outcomes based on historical
-spatiotemporal data, such as images. It extends traditional LSTMs by replacing matrix
-multiplications with convolution operations, effectively handling spatiotemporal sequence
-prediction tasks. Other studies have utilized this architecture for tasks like weather
-forecasting and anomaly detection. They relied on established loss functions, such
-as Mean Squared Error (MSE), which focuses on pixel-level accuracy. Other established
-loss functions, like Temporal Consistency (TC), emphasize smooth temporal progression to
-avoid abrupt, unnatural transitions. However, these loss functions generally address only
-one aspect or strength at a time.
+Within recent deep learning advancements, a convolutional long short-term memory (ConvLSTM) architecture exists that predicts future outcomes based on historical spatiotemporal data, such as images. It extends traditional LSTMs by replacing matrix multiplications with convolution operations, effectively handling spatiotemporal sequence prediction tasks. Other studies have utilized this architecture for tasks like weather forecasting and anomaly detection. They relied on established loss functions, such as Mean Squared Error (MSE), which focuses on pixel-level accuracy. Other established loss functions, like Temporal Consistency (TC), emphasize smooth temporal progression to avoid abrupt, unnatural transitions. However, these loss functions generally address only one aspect or strength at a time.
 
 As the proponents pursue this foundational study, certain gaps emerge:
 
@@ -55,6 +46,25 @@ To address these gaps, the proponents aim to develop:
 
 <h2>Data Exploration</h2>
 
+The dataset was split into three subsets: training, validation, and test sets. Conceptually, if one were to quickly view all images of a single sequence in succession, one would see the plant gradually growing over time. Formally, for the s<sup>th</sup> sequence, there is a set of frames:
+
+<div class="equation">
+$$I_{s,t} = \{I_{s,1}, I_{s,2}, \ldots, I_{s,T_s}\}$$
+</div>
+
+where $I_{s,t}$ is an RGB image (at original resolution) of the plant on day $t$.
+
+In addition to visual data, each sequence contains a CSV file holding parameters that describe environmental and growth conditions for each frame. Here parameters include ambient temperature, soil moisture, luminosity, and soil pH. Thus, for each day $t$ in sequence $s$:
+
+<div class="equation">
+$$P_{s,t} = \left[ p_{s,t}^{(\text{temp})}, p_{s,t}^{(\text{soilmoisture})}, p_{s,t}^{(\text{luminosity})}, p_{s,t}^{(\text{soilpH})} \right]$$
+</div>
+
+By pairing each image $I_{s,t}$ with its parameters $P_{s,t}$, the model receives a multimodal representation of plant growth, capturing both the visual appearance and the underlying conditions at each time step.
+
+
+
+
 
 
 
@@ -66,9 +76,8 @@ The figure below illustrates the concept of multimodal input for predicting plan
 
 <figure style="--img-max: 560px;">
   <img src="/img/projects/plant-growth-multimodal-time-series-model/multimodal-learning.jpg">
-  <figcaption>Concept of the multimodal learning for predicting plant growth.</figcaption>
+  <figcaption>Concept of the multimodal learning for predicting plant growth..</figcaption>
 </figure>
-
 
 
 

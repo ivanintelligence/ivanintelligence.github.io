@@ -3000,8 +3000,57 @@ html.night .project-detail__body ol {
 
 
 
+/* Equation styling */
+.equation {
+  margin: 20px 0;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.MathJax {
+  font-size: 1.4rem !important;
+}
 
 
+
+
+/* Scientific tables styling */
+.architecture-table, .evaluation-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+.architecture-table caption, .evaluation-table caption {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--sub-title-color);
+}
+
+.architecture-table th, .evaluation-table th,
+.architecture-table td, .evaluation-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.architecture-table th, .evaluation-table th {
+  background-color: #f2f2f2;
+  color: var(--sub-title-color);
+}
+
+html.night .architecture-table th, 
+html.night .evaluation-table th {
+  background-color: #333;
+  color: var(--sub-title-color);
+}
+
+html.night .architecture-table td, 
+html.night .evaluation-table td,
+html.night .architecture-table, 
+html.night .evaluation-table {
+  border-color: #555;
+}
 
 
 
