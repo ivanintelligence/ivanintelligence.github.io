@@ -3071,6 +3071,17 @@ html.night .evaluation-table {
   }
 }
 
+/* Make MathJax match caption font size */
+.project-detail__body figcaption .MathJax {
+  font-size: 0.8rem !important; /* Match the caption font size */
+}
+
+@media (max-width: 480px) {
+  .project-detail__body figcaption .MathJax {
+    font-size: 0.75rem !important; /* Slightly smaller on mobile */
+  }
+}
+
 
 
 
