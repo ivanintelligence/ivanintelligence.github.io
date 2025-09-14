@@ -24,6 +24,92 @@ In addition, a custom loss function is used to leverage the temporal dynamics an
 
 <br>
 
+
+
+
+
+<h1>Discovery Phase</h1>
+
+
+
+
+<h1>Development Phase</h1>
+
+
+
+<h2>Data Pipeline Creation</h2>
+
+
+<h3>Dataset</h3>
+
+
+<h3>Image Rectification</h3>
+
+
+
+
+<h3>Image Segmentation</h3>
+
+
+<h3>Resize</h3>
+
+
+<h3>Normalization</h3>
+
+<h3>Sequence Length Standardization</h3>
+
+
+<h3>Augmentation</h3>
+
+
+
+
+<h2>Model Building</h2>
+
+
+<h3>Sequence Learning</h3>
+
+<h3>Feedforward Mapping</h3>
+
+<h3>Feature Fusion</h3>
+
+<h3>RGB Mapping</h3>
+
+<h3>Deep Learning Structure</h3>
+
+<h3>Architecture Summary</h3>
+
+<h3>Loss Function</h3>
+
+
+
+
+
+
+<h2>Model Evaluation</h2>
+
+<h3>Evaluation Metrics</h3>
+
+<h3>Evaluation Flowchart</h3>
+
+<h3>Training Loss Curves</h3>
+
+<h3>Training Metric Curves</h3>
+
+<h3>Quantitative Testing Results</h3>
+
+<h3>Qualitative Testing Results</h3>
+
+
+
+
+
+
+
+
+
+
+
 <h1>Discovery Phase</h1>
 
 <h2>Use Case Definition</h2>
