@@ -1719,17 +1719,62 @@ html.night {
 @media screen and (max-width: 600px) {
   .education .time-place,
   .internship .time-place,
-  .awards .time-place {
+  .awards .time-place,
+  .leadership .time-place {
     display: block !important;
   }
   .education .job__time,
   .internship .job__time,
-  .awards .job__time {
+  .awards .job__time,
+  .leadership .job__time {
     display: block !important;
     text-align: left !important;
     margin-top: 0 !important;
     margin-left: 0 !important;
     width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Leadership: stack position and time vertically */
+  .leadership .time-place {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+    align-items: flex-start !important;
+  }
+  .leadership .job__company {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    float: none !important;
+    clear: both !important;
+    position: static !important;
+  }
+  .leadership .job__time {
+    display: block !important;
+    text-align: left !important;
+    margin-top: 0px !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    position: static !important;
+    float: none !important;
+    clear: both !important;
+    white-space: normal !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Leadership: adjust gap between time and description */
+  .leadership .job__time {
+    margin-bottom: 0px !important; /* Adjust this value for desired gap */
+  }
+  .leadership .job__position {
+    margin-top: 0 !important; /* Remove any extra gap above description */
+  }
+  .leadership .job__position p {
+    margin-top: 0 !important;
   }
 }
 
