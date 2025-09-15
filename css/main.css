@@ -2627,6 +2627,38 @@ html.night {
 
 
 
+/* 404 page typography knobs */
+html:not(.night) .not-found,
+html:not(.night) .not-found .notfound-message {
+  font-family: "New York", Georgia, "Times New Roman", serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  color: #727376 !important;
+}
+
+html.night .not-found,
+html.night .not-found .notfound-message {
+  font-family: "New York", Georgia, "Times New Roman", serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  color: #A9A9AB !important;
+}
+
+/* 404 page link styling */
+html:not(.night) .not-found a {
+  color: #2F6DE1 !important;
+  font-weight: 400 !important;
+}
+
+html.night .not-found a {
+  color: #4B7AF7 !important;
+  font-weight: 400 !important;
+}
+
+
+
 /* - - - - - - - - - - - - - - - - - - - - Sub-pages - - - - - - - - - - - - - - - - - - - - */
 
 
