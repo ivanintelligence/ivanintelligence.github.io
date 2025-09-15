@@ -28,7 +28,7 @@ layout: default
   <div class="project-detail__content">
     <!-- No automatic title/tags/summary/links - user will add these directly in content -->
     <div class="project-detail__body">
-      {{ content }}
+      {{ content | markdownify }}
     </div>
   </div>
 

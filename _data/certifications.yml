@@ -5,3 +5,11 @@
     <a href="https://www.credential-url.com" target="_blank" rel="noopener" class="arrow-link">See credential</a>
   image: https://picsum.photos/300/200
   image_max: 640
+- description: >
+    This certification demonstrates my ability to:
+    <ul>
+      <li>Define business use cases and success criteria, assess feasibility, explore and prepare datasets, and select appropriate architectures and algorithms that match the organization’s objectives.</li>
+      <li>Develop end-to-end machine learning pipelines, clean and engineer features, build models, run evaluations, iterate on improvements, and present results to stakeholders.</li>
+      <li>Deploy models to production, plan infrastructure needs, operationalize prediction services for scalability and reliability, and implement monitoring to maintain model accuracy.</li>
+      <li>Apply MLOps practices that drive collaboration with cross-functional teams and promote Responsible AI.</li>
+    </ul>

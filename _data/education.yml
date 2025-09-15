@@ -1,10 +1,10 @@
 - degree: M.Eng in Artificial Intelligence
-  time: 01/2026 – 12/2027
+  time: Expected 01/2026 – 12/2027
   image: /img/education/upd.png
   image_max: 60
   description: >
     University of the Philippines Diliman<br>
-    Admitted. Begins coursework January 2026.
+    Admitted
 
 - degree: BS in Computer Engineering
   time: 2021 – 2025
@@ -12,7 +12,7 @@
   image_max: 60
   description: >
     University of San Carlos<br>
-    <span class="u-ld-contrast">Honors: Cum Laude</span>
+    <span class="u-ld-contrast">Cum Laude Graduate</span>
 
 - degree: High School
   time: 2013 – 2017
@@ -20,4 +20,4 @@
   image_max: 60
   description: >
     Holy Spirit School of Tagbilaran<br>
-    <span class="u-ld-contrast">Honors: With High Honors</span>
+    <span class="u-ld-contrast">High Honors Graduate</span>
