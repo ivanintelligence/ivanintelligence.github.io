@@ -96,9 +96,20 @@
     });
 
     // Apply standard reveal to homepage sections
-    const homeSections = ['.background', '.skills', '.experience', 
-                         '.featured-projects', '.other-projects', 
-                         '.certifications'];
+    const homeSections = [
+      '.intro',
+      '.profile',
+      '.projects',
+      '.certifications',
+      '.professional-certificates',
+      '.skills',
+      '.internship',
+      '.education',
+      '.conferences',
+      '.publications',
+      '.awards',
+      '.leadership'
+    ];
                          
     homeSections.forEach(sel => {
       if (qs(sel)) sr.reveal(sel, { viewFactor: 0.1 });

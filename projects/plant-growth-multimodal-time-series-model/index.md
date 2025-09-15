@@ -72,7 +72,7 @@ Preprocessing is done to convert the raw data, initially stored as large RGB ima
 </div>
 
 <div>
-Stereo images suffer lens distortion and misalignment between left and right views [22][23]. Objects in both images must share identical scan-lines. Let $I_{s,t} \in \mathbb{R}^{H_0 \times W_0 \times 3}$ denote the RGB image captured on day $t$ of sequence $s$. Each image $I_{s,t}$ is rectified by a calibration map:
+Stereo images suffer lens distortion and misalignment between left and right views. Objects in both images must share identical scan-lines. Let $I_{s,t} \in \mathbb{R}^{H_0 \times W_0 \times 3}$ denote the RGB image captured on day $t$ of sequence $s$. Each image $I_{s,t}$ is rectified by a calibration map:
 </div>
 
 <div class="equation">
