@@ -1732,6 +1732,26 @@ html.night {
 
 
 
+/* Stack time/date below title and align left on small screens */
+@media screen and (max-width: 600px) {
+  .education .time-place,
+  .internship .time-place,
+  .awards .time-place {
+    display: block !important;
+  }
+  .education .job__time,
+  .internship .job__time,
+  .awards .job__time {
+    display: block !important;
+    text-align: left !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+
+
 
 
 
