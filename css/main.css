@@ -2242,7 +2242,7 @@ html:not(.night) {
 
   /* Time (e.time → .job__time) */
   --edu-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --edu-time-size: 0.8rem;
+  --edu-time-size: 1rem;
   --edu-time-weight: 400;
   --edu-time-style: normal;
   --edu-time-color: #727376;
@@ -2264,7 +2264,7 @@ html.night {
   --edu-degree-color: #F6F5F7;
 
   --edu-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --edu-time-size: 0.8rem;
+  --edu-time-size: 1rem;
   --edu-time-weight: 400;
   --edu-time-style: normal;
   --edu-time-color: #A9A9AB;
@@ -2315,7 +2315,7 @@ html:not(.night) {
 
   /* Time (lead.time → .job__time) */
   --lead-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --lead-time-size: 0.8rem;
+  --lead-time-size: 1rem;
   --lead-time-weight: 400;
   --lead-time-style: normal;
   --lead-time-color: #727376;
@@ -2342,7 +2342,7 @@ html.night {
   --lead-pos-color: #F6F5F7;
 
   --lead-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --lead-time-size: 0.8rem;
+  --lead-time-size: 1rem;
   --lead-time-weight: 400;
   --lead-time-style: normal;
   --lead-time-color: #A9A9AB;
@@ -2404,7 +2404,7 @@ html:not(.night) {
   --awards-name-color: #222325;
 
   --awards-date-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --awards-date-size: 0.8rem;
+  --awards-date-size: 1rem;
   --awards-date-weight: 400;
   --awards-date-style: normal;
   --awards-date-color: #727376;
@@ -2429,7 +2429,7 @@ html.night {
   --awards-name-color: #F6F5F7;
 
   --awards-date-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --awards-date-size: 0.8rem;
+  --awards-date-size: 1rem;
   --awards-date-weight: 400;
   --awards-date-style: normal;
   --awards-date-color: #A9A9AB;
@@ -2495,7 +2495,7 @@ html:not(.night) {
 
   /* Time (intern.time → .job__time) */
   --intern-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --intern-time-size: 0.8rem;
+  --intern-time-size: 1rem;
   --intern-time-weight: 400;
   --intern-time-style: normal;
   --intern-time-color: #727376;
@@ -2522,7 +2522,7 @@ html.night {
   --intern-pos-color: #F6F5F7;
 
   --intern-time-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --intern-time-size: 0.8rem;
+  --intern-time-size: 1rem;
   --intern-time-weight: 400;
   --intern-time-style: normal;
   --intern-time-color: #A9A9AB;
