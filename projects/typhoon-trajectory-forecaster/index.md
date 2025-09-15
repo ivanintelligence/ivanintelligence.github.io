@@ -13,7 +13,7 @@ A simple desktop application that predicts the next path of a typhoon based on o
 <tag>Software Development</tag>
 <tag>Data Preprocessing</tag>
 
-<a href="https://www.johnivandiaz.com" class="arrow-link">See source code</a>
+<a href="https://github.com/ivanintelligence/forecasting-typhoon-trajectory-using-interpolation-and-extrapolation" class="arrow-link">See source code</a>
 
 <br>
 

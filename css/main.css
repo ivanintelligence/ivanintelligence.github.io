@@ -1788,6 +1788,32 @@ html.night {
 
 
 
+/* Ensure bullets in certifications section use the same color as description */
+.certifications .project ul,
+.certifications .project ol,
+.certifications .project li {
+  color: var(--certs-desc-color) !important;
+  font-family: var(--certs-desc-family) !important;
+  font-size: var(--certs-desc-size) !important;
+  font-weight: var(--certs-desc-weight) !important;
+  font-style: var(--certs-desc-style) !important;
+}
+
+
+
+.professional-certificates .project ul,
+.professional-certificates .project ol,
+.professional-certificates .project li {
+  color: var(--pcerts-desc-color) !important;
+  font-family: var(--pcerts-desc-family) !important;
+  font-size: var(--pcerts-desc-size) !important;
+  font-weight: var(--pcerts-desc-weight) !important;
+  font-style: var(--pcerts-desc-style) !important;
+}
+
+
+
+
 
 
 
