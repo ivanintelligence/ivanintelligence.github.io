@@ -1714,6 +1714,24 @@ html.night {
 
 
 
+/* Allow arrow links to wrap and break lines on small screens */
+.arrow-link,
+.section .arrow-link,
+.project-detail .arrow-link,
+.profile .section__content .arrow-link,
+.education .job__description .arrow-link,
+.awards .job .arrow-link,
+.awards .job__description .arrow-link,
+.internship .job__position .arrow-link,
+.leadership .job__position .arrow-link {
+  display: inline !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+
+
 
 
 
