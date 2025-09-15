@@ -1752,6 +1752,42 @@ html.night {
 
 
 
+/* Responsive PDF viewer for all screen sizes */
+.pdf-container {
+  width: 100%;
+  max-width: var(--img-max, 800px);
+  margin: 0 auto 24px;
+  overflow: hidden;
+  border-radius: var(--img-radius, 36px);
+}
+
+.pdf-viewer {
+  width: 100% !important;
+  min-width: 0 !important;
+  border-radius: var(--img-radius, 36px);
+  background-color: #DDDDE1;
+  height: 600px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .pdf-viewer {
+    height: 400px !important;
+    border-radius: var(--img-radius-mobile, 20px);
+  }
+  .pdf-container {
+    border-radius: var(--img-radius-mobile, 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-viewer {
+    height: 280px !important;
+  }
+}
+
+
+
 
 
 
@@ -2885,15 +2921,6 @@ html.night .pdf-fallback {
 
 
 
-/* Improved PDF handling for mobile devices */
-.pdf-desktop-view {
-  display: block;
-}
-
-.pdf-mobile-view {
-  display: none;
-}
-
 /* Mobile PDF alternative */
 .pdf-preview-box {
   position: relative;
@@ -2942,17 +2969,6 @@ html.night .pdf-mobile-title {
 
 html.night .pdf-mobile-desc {
   color: #A9A9AB;  /* Slightly muted in dark mode */
-}
-
-/* Switch at mobile breakpoint */
-@media (max-width: 768px) {
-  .pdf-desktop-view {
-    display: none;
-  }
-  
-  .pdf-mobile-view {
-    display: block;
-  }
 }
 
 
