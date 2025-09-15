@@ -196,7 +196,7 @@
     const updateParallax = () => {
       const scrollPosition = window.scrollY;
       const scrollRange = window.innerHeight;
-      const moveAmount = (scrollPosition / scrollRange) * 15; // Adjust intensity
+      const moveAmount = (scrollPosition / scrollRange) * 32; // Adjust intensity
       
       // Move the image based on scroll position
       heroImage.style.transform = `translateY(${moveAmount}%)`;
