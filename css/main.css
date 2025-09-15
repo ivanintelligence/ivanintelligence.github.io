@@ -1740,6 +1740,7 @@ html.night {
 
 
 
+
 /* - - - - - Typography - - - - - */
 
 
@@ -3811,6 +3812,51 @@ html.night .intro .intro__icon .label {
     --intro-label-offset: 8px;
   }
 }
+
+/* Short screens (600px-700px tall - laptops, landscape tablets) */
+@media screen and (max-height: 720px) {
+  .intro {
+    /* Text sizes */
+    --intro-hello-size: 1.6rem;
+    --intro-tagline-size: 1.6rem;
+    --intro-contact-size: 1.6rem;
+    --intro-label-size: 1.4rem;
+    
+    /* Photo and icon sizes */
+    --intro-photo-size: 340px;
+    --icon-size-resume: 32px;
+    --icon-size-linkedin: 32px;
+    --icon-size-github: 32px;
+    --icon-size-email: 32px;
+
+    /* Spacing */
+    --intro-block-gap: 16px;
+    --intro-icons-gap: 24px;
+    
+    /* Layout adjustments */
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  
+  /* Ensure proper spacing between intro elements */
+  .intro .intro__text,
+  .intro .intro__row {
+    height: auto !important;
+    gap: var(--intro-block-gap) !important;
+  }
+
+  /* Ensure this variable is actually applied to the element */
+  .intro .intro__photo {
+    width: var(--intro-photo-size) !important;
+    max-width: var(--intro-photo-size) !important;
+    min-width: 0 !important; /* Allow it to go smaller if needed */
+  }
+}
+
+
+
 
 
 
