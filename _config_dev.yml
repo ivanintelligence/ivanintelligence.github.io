@@ -10,11 +10,11 @@ headshot-light: /img/headshot/headshot-light.png
 headshot-dark: /img/headshot/headshot-dark.png
 linkedin: https://www.linkedin.com/in/diazjohnivantuyor
 email: mailto:diazjohnivantuyor@gmail.com
-resume: /resume/with-photo/machine-learning-engineer/version-1/JohnIvanDiaz-Resume.pdf
+resume: /resume/JohnIvanDiaz-Resume.pdf
 
 social:
   - title: resume
-    url: /resume/with-photo/machine-learning-engineer/version-1/JohnIvanDiaz-Resume.pdf
+    url: /resume/JohnIvanDiaz-Resume.pdf
   - title: linkedin
     url: https://www.linkedin.com/in/diazjohnivantuyor
   - title: github
