@@ -10,8 +10,8 @@
   <div class="footer__links">
     {% for link in site.social %}
     {% assign key = link.title %}
-    {% capture icon_light %}/img/social/{{ key }}-dark.png{% endcapture %}
-    {% capture icon_dark  %}/img/social/{{ key }}-light.png{% endcapture %}
+    {% capture icon_light %}/img/social/{{ key }}-dark.webp{% endcapture %}
+    {% capture icon_dark  %}/img/social/{{ key }}-light.webp{% endcapture %}
     <a href="{{link.url}}" target="_blank" title="{{key}}">
       <span class="text">{{key}}</span>
       <img

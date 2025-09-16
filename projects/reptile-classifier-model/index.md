@@ -1,6 +1,6 @@
 ---
 layout: subpage
-hero: /img/projects/reptile-classifier-model/reptile-classifier-model.jpeg
+hero: /img/projects/reptile-classifier-model/reptile-classifier-model.webp
 ---
 
 <title>Identifying Reptile Types Using CIFAR-100 Dataset and Supervised Convolutional Neural Networks (CNNs)</title>
@@ -40,7 +40,7 @@ Given that image classification problems are being addressed, the project relies
 The architecture comprises several layers, each contributing cumulatively towards the goal of classifying images, as illustrated below:
 
 <figure style="--img-max: 640px;">
-  <img src="/img/projects/reptile-classifier-model/cnn.jpg">
+  <img src="/img/projects/reptile-classifier-model/cnn.webp">
   <figcaption>Disclaimer: The images shown are for illustrative purposes only and do not represent the actual data or content of the model.</figcaption>
 </figure>
 
@@ -57,7 +57,7 @@ The CIFAR-100 dataset provides a set of training and test images. Within the “
 The project further divided the data from the “Reptiles” superclass into three distinct sets: Training Set, Validation Set, and Test Set. This division serves multiple purposes:
 
 <figure style="--img-max: 400px;">
-  <img src="/img/projects/reptile-classifier-model/data-splitting.jpg">
+  <img src="/img/projects/reptile-classifier-model/data-splitting.webp">
 </figure>
 
 The Training Set is used to fit the model, allowing it to learn and recognize patterns. The Validation Set is utilized not for training but for tuning hyperparameters. It provides an unbiased evaluation of the model fit during the training phase. The Test Set offers an unbiased evaluation of the final model fit and is only employed once the model is fully trained.
@@ -73,7 +73,7 @@ The dataset encompasses five labels corresponding to the subclasses within the �
 While various feature encoding methods exist, the project has opted for Label Encoding, wherein each unique category label is assigned a distinct integer.
 
 <figure style="--img-max: 240px;">
-  <img src="/img/projects/reptile-classifier-model/feature-encoding.jpg">
+  <img src="/img/projects/reptile-classifier-model/feature-encoding.webp">
 </figure>
 
 <h3>Normalization</h3>
@@ -87,7 +87,7 @@ Working with images entails dealing with pixel values that range from 0 to 255. 
 The Convolution Layer is the foundational building block of the CNN model. It executes a mathematical operation known as convolution. This layer utilizes filters (or kernels) that move across the input image (or the output from the preceding layer), producing feature maps in the process.
 
 <figure style="--img-max: 640px;">
-  <img src="/img/projects/reptile-classifier-model/convolution-layer.jpg">
+  <img src="/img/projects/reptile-classifier-model/convolution-layer.webp">
   <figcaption>Disclaimer: The images shown are for illustrative purposes only and do not represent the actual data or content of the model.</figcaption>
 </figure>
 
@@ -98,7 +98,7 @@ In the model, 32 filters, each measuring 3x3, are utilized, and ‘same’ paddi
 Following the convolution operation, the feature map is processed through an Activation Function. This function is essential in neural networks, as it introduces non-linearity to the network’s output. The model uses the ReLU (Rectified Linear Unit) activation function due to its ability to accelerate training while still allowing the model to converge effectively. ReLU achieves this by converting all negative values in the feature map to zero while leaving positive values as is.
 
 <figure style="--img-max: 240px;">
-  <img src="/img/projects/reptile-classifier-model/activation-function.jpg">
+  <img src="/img/projects/reptile-classifier-model/activation-function.webp">
 </figure>
 
 <h3>Pooling Layer</h3>
@@ -106,14 +106,14 @@ Following the convolution operation, the feature map is processed through an Act
 Following the convolutional stages, the Pooling Layer is encountered. This layer’s main function is to diminish the spatial dimensions (width and height) of the input volume destined for subsequent convolution layers. It achieves this by summarizing the presence of features within patches of the feature map. This process aids in making the feature detection robust to changes in scale and orientation, while also lightening the computational load on the network.
 
 <figure style="--img-max: 480px;">
-  <img src="/img/projects/reptile-classifier-model/pooling-layer.jpg">
+  <img src="/img/projects/reptile-classifier-model/pooling-layer.webp">
   <figcaption>Disclaimer: The images shown are for illustrative purposes only and do not represent the actual data or content of the model.</figcaption>
 </figure>
 
 There are two primary types of Pooling: Max Pooling and Average Pooling. The model uses Max Pooling, where the maximum value from each patch of the feature map is retained, and the rest are discarded. This approach contrasts with Average Pooling, which computes the average value of each patch on a feature map.
 
 <figure style="--img-max: 480px;">
-  <img src="/img/projects/reptile-classifier-model/max-pooling.jpg">
+  <img src="/img/projects/reptile-classifier-model/max-pooling.webp">
   <figcaption>Disclaimer: The images shown are for illustrative purposes only and do not represent the actual data or content of the model.</figcaption>
 </figure>
 
@@ -128,7 +128,7 @@ As the project progresses through the model, the number of filters in the Convol
 Prior to introducing the data into the fully connected layers, it must be flattened into a singular vector. This flattening process converts the complete batch of feature maps generated by the preceding layers into one elongated vector, suitable for processing by the fully connected layers. This transformation is crucial as fully connected layers require input data in a flattened vector format, as opposed to a multidimensional array.
 
 <figure style="--img-max: 480px;">
-  <img src="/img/projects/reptile-classifier-model/fully-connected-layer.jpg">
+  <img src="/img/projects/reptile-classifier-model/fully-connected-layer.webp">
   <figcaption>Disclaimer: The images shown are for illustrative purposes only and do not represent the actual data or content of the model.</figcaption>
 </figure>
 
@@ -228,13 +228,13 @@ To visualize and better understand the model’s performance, the project plots 
 By generating line graphs for these metrics, this yields Loss Curves and Accuracy Curves, which yield valuable insights into the model’s learning behavior.
 
 <figure style="--img-max: 320px;">
-  <img src="/img/projects/reptile-classifier-model/loss-curve.jpg">
+  <img src="/img/projects/reptile-classifier-model/loss-curve.webp">
 </figure>
 
 The Loss Curve charts the changes in the loss function value throughout training. The loss function measures the discrepancy between the model’s predicted outputs and the actual target values. A descending loss curve signifies that the model is increasingly predicting more accurately over time.
 
 <figure style="--img-max: 320px;">
-  <img src="/img/projects/reptile-classifier-model/accuracy-curve.jpg">
+  <img src="/img/projects/reptile-classifier-model/accuracy-curve.webp">
 </figure>
 
 The Accuracy Curve charts the model’s prediction accuracy over time, where accuracy is defined as the ratio of correct predictions to all predictions made. An ascending accuracy curve signifies that the model is learning effectively and enhancing its predictions as training progresses.
@@ -244,28 +244,28 @@ For optimal performance, particularly regarding the model’s ability to general
 Similarly, when training and validation accuracies are nearly equivalent, it denotes that the model performs equally well on unseen data as on the training set, highlighting effective generalization. A notable gap between training accuracy and validation accuracy suggests overfitting, indicating the model’s tendency to memorize rather than learn from the training data.
 
 <figure style="--img-max: 480px;">
-  <img src="/img/projects/reptile-classifier-model/loss-1.jpg">
+  <img src="/img/projects/reptile-classifier-model/loss-1.webp">
   <figcaption>Comparison of training loss and validation loss of the model.</figcaption>
 </figure>
 
 The Training and Validation Losses showcase decreasing loss curves. This trend indicates that the model is learning to predict more accurately over time. Furthermore, the proximity of the training and validation losses, with minimal divergence, suggests that the model is effectively learning patterns that generalize beyond the training dataset, thereby indicating strong model performance.
 
 <figure style="--img-max: 480px;">
-  <img src="/img/projects/reptile-classifier-model/accuracy-1.jpg">
+  <img src="/img/projects/reptile-classifier-model/accuracy-1.webp">
   <figcaption>Comparison of training accuracy and validation accuracy of the model.</figcaption>
 </figure>
 
 The Training and Validation Accuracies reveal ascending accuracy curves. This indicates that the model is learning effectively, with its predictions becoming more accurate over time. Additionally, the closeness of the training and validation accuracies, marked by a minimal gap, suggests that the model performs equally well on unseen data as it does on the training data, indicative of good generalization.
 
 <figure style="--img-max: 480px;">
-  <img src="/img/projects/reptile-classifier-model/loss-2.jpg">
+  <img src="/img/projects/reptile-classifier-model/loss-2.webp">
   <figcaption>Comparison of training, validation, and test losses of the model, with training and validation losses captured at the final epoch.</figcaption>
 </figure>
 
 Comparing the Training, Validation, and Test Losses, as anticipated, the training loss is the lowest, reflecting the model’s direct training to minimize this value. The validation loss is marginally higher than the training loss, a typical outcome since the validation set serves to evaluate model performance on unseen data during training. The test loss registers as the highest, suggesting the model’s performance on the test set is slightly inferior compared to the training and validation sets. However, the disparities are not significant, suggesting that the model is generalizing fairly well.
 
 <figure style="--img-max: 480px;">
-  <img src="/img/projects/reptile-classifier-model/accuracy-2.jpg">
+  <img src="/img/projects/reptile-classifier-model/accuracy-2.webp">
   <figcaption>Comparison of training, validation, and test accuracies of the model, with training and validation accuracies captured at the final epoch.</figcaption>
 </figure>
 

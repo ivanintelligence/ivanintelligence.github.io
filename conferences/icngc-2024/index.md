@@ -1,6 +1,6 @@
 ---
 layout: subpage
-hero: /img/conferences/icngc-2024/icngc-2024.jpg
+hero: /img/conferences/icngc-2024/icngc-2024.webp
 ---
 
 <title>The 10th International Conference on Next Generation Computing</title>
@@ -20,7 +20,7 @@ Awarded with Best Paper Award in Oral Session, recognized among 80 international
 <br>
 
 <figure>
-  <img src="/img/conferences/icngc-2024/icngc-2024-venue.jpg">
+  <img src="/img/conferences/icngc-2024/icngc-2024-venue.webp">
 </figure>
 
 <h1>Presentation Slides</h1>
@@ -32,9 +32,9 @@ Awarded with Best Paper Award in Oral Session, recognized among 80 international
 <h1>Best Paper Award</h1>
 
 <figure>
-  <img src="/img/conferences/icngc-2024/icngc-2024-award-1.jpg">
+  <img src="/img/conferences/icngc-2024/icngc-2024-award-1.webp">
 </figure>
 
 <figure>
-  <img src="/img/conferences/icngc-2024/icngc-2024-award-2.jpg">
+  <img src="/img/conferences/icngc-2024/icngc-2024-award-2.webp">
 </figure>

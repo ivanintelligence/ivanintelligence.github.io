@@ -1,6 +1,6 @@
 ---
 layout: subpage
-hero: /img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/2d-to-3d-image-reconstruction-computer-vision-algorithm.jpeg
+hero: /img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/2d-to-3d-image-reconstruction-computer-vision-algorithm.webp
 ---
 
 <title>Developing Custom Computer Vision Algorithm for Reconstructing 3D Models from Constrained 2D Stereoscopic Images Using OpenCV and Open3D</title>
@@ -32,7 +32,7 @@ To address this gap, this project aims to integrate existing independent compute
 <h3>Input</h3>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/stereo-images.jpg">
+  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/stereo-images.webp">
   <figcaption>Four stereo pairs, each capturing 90-degree horizontal rotations around the plant.</figcaption>
 </figure>
 
@@ -97,7 +97,7 @@ where $f$ is the focal length in pixels and $B$ is the baseline. The resulting d
 </div>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/depth-map-generation.jpg">
+  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/depth-map-generation.webp">
   <figcaption>Extracting information about the plant's position along the z-axis.</figcaption>
 </figure>
 
@@ -116,7 +116,7 @@ For every valid mask pixel, 3D coordinates $(x,y,z)$ and corresponding RGB color
 </div>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/point-cloud-generation.jpg">
+  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/point-cloud-generation.webp">
   <figcaption>Building the foundational structure for 3D objects.</figcaption>
 </figure>
 
@@ -159,7 +159,7 @@ where $\gamma$ is a tunable shear parameter that straightens remaining bending b
 </div>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/point-cloud-refinement.jpg">
+  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/point-cloud-refinement.webp">
   <figcaption>Fixing warping and outlier issues in point clouds.</figcaption>
 </figure>
 
@@ -178,7 +178,7 @@ A final round of statistical and radius outlier removal is performed on $\mathca
 </div>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/point-cloud-registration.jpg">
+  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/point-cloud-registration.webp">
   <figcaption>Connecting front, back, left, and right point clouds into one.</figcaption>
 </figure>
 
@@ -197,13 +197,13 @@ BPA iteratively pivots spheres of radius $r$ around edges of existing triangles,
 </div>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/point-cloud-meshing.jpg">
+  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/point-cloud-meshing.webp">
   <figcaption>Applying smooth continuous surface to point cloud.</figcaption>
 </figure>
 
 <h3>3D Reconstruction Algorithm</h3>
 
 <figure>
-  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/full-process.jpg">
+  <img src="/img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/full-process.webp">
   <figcaption>Visual results of reconstructing stereo images into a 3D model.</figcaption>
 </figure>

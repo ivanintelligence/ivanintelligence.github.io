@@ -8,7 +8,7 @@
     - thing: Data Preparation
     - thing: Classification
     - thing: TensorFlow
-  image: /img/projects/reptile-classifier-model/reptile-classifier-model.jpeg
+  image: /img/projects/reptile-classifier-model/reptile-classifier-model.webp
   image_max: 480
 
 - name: Predicting Plant Growth Structures with Multimodal Data Using Convolutional Long Short-Term Memory (ConvLSTM)
@@ -27,7 +27,7 @@
     - thing: Backpropagation
     - thing: Neural Networks
     - thing: Model Validation
-  image: /img/projects/plant-growth-multimodal-time-series-model/plant-growth-multimodal-time-series-model.jpeg
+  image: /img/projects/plant-growth-multimodal-time-series-model/plant-growth-multimodal-time-series-model.webp
   image_max: 480
 
 - name: Comparing YOLOv8 and Detectron2 Architectures for Plant Class Segmentation Using Transfer Learning
@@ -40,7 +40,7 @@
     - thing: TensorFlow
     - thing: Model Validation
     - thing: Hyperparameter Tuning
-  image: /img/projects/plant-segmentation-model/plant-segmentation-model.jpeg
+  image: /img/projects/plant-segmentation-model/plant-segmentation-model.webp
   image_max: 480
 
 - name: Developing Custom Computer Vision Algorithm for Reconstructing 3D Models from Constrained 2D Stereoscopic Images Using OpenCV and Open3D
@@ -53,7 +53,7 @@
     - thing: Point Clouds
     - thing: OpenCV
     - thing: Python
-  image: /img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/2d-to-3d-image-reconstruction-computer-vision-algorithm.jpeg
+  image: /img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/2d-to-3d-image-reconstruction-computer-vision-algorithm.webp
   image_max: 480
 
 - name: Forecasting Typhoon Trajectory Using Interpolation and Extrapolation
@@ -66,5 +66,5 @@
     - thing: Data Visualization
     - thing: Software Development
     - thing: Data Preprocessing
-  image: /img/projects/typhoon-trajectory-forecaster/typhoon-trajectory-forecaster.jpeg
+  image: /img/projects/typhoon-trajectory-forecaster/typhoon-trajectory-forecaster.webp
   image_max: 480

@@ -1426,10 +1426,10 @@ html, body,
 
 /* Arrow asset swap (light/dark) */
 :root {
-  --arrow-img: url("../img/arrow/arrow-light.png");
+  --arrow-img: url("../img/arrow/arrow-light.webp");
 }
 html.night {
-  --arrow-img: url("../img/arrow/arrow-dark.png");
+  --arrow-img: url("../img/arrow/arrow-dark.webp");
 }
 
 /* Point all arrow UI to the new assets */
@@ -1441,8 +1441,8 @@ html.night {
 
 
 /* Arrow assets (light/dark) */
-:root { --arrow-img: url("../img/arrow/arrow-light.png"); }
-html.night { --arrow-img: url("../img/arrow/arrow-dark.png"); }
+:root { --arrow-img: url("../img/arrow/arrow-light.webp"); }
+html.night { --arrow-img: url("../img/arrow/arrow-dark.webp"); }
 
 /* Global sizing for arrow icons (used site‑wide) */
 :root{

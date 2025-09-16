@@ -1,6 +1,6 @@
 - degree: M.Eng in Artificial Intelligence
   time: Expected 01/2026 – 12/2027
-  image: /img/education/upd.png
+  image: /img/education/upd.webp
   image_max: 60
   description: >
     University of the Philippines Diliman<br>
@@ -8,7 +8,7 @@
 
 - degree: BS in Computer Engineering
   time: 2021 – 2025
-  image: /img/education/usc.png
+  image: /img/education/usc.webp
   image_max: 60
   description: >
     University of San Carlos<br>
@@ -16,7 +16,7 @@
 
 - degree: High School
   time: 2013 – 2017
-  image: /img/education/hsst.png
+  image: /img/education/hsst.webp
   image_max: 60
   description: >
     Holy Spirit School of Tagbilaran<br>

@@ -1,6 +1,6 @@
 ---
 layout: subpage
-hero: /img/projects/plant-growth-multimodal-time-series-model/plant-growth-multimodal-time-series-model.jpeg
+hero: /img/projects/plant-growth-multimodal-time-series-model/plant-growth-multimodal-time-series-model.webp
 ---
 
 <title>Predicting Plant Growth Structures with Multimodal Data Using Convolutional Long Short-Term Memory (ConvLSTM)</title>
@@ -242,14 +242,14 @@ where $\sigma$ is a sigmoid activation ensuring the predicted frame lies within 
 <h3>Deep Learning Structure</h3>
 
 <figure>
-  <img src="/img/projects/plant-growth-multimodal-time-series-model/deep-learning-structure.jpg">
+  <img src="/img/projects/plant-growth-multimodal-time-series-model/deep-learning-structure.webp">
   <figcaption>Deep learning structure. $t$ refers to time step, $temp$ refers to ambient temperature, $moist$ refers to soil moisture, $pH$ refers to pH level, $lum$ refers to luminosity.</figcaption>
 </figure>
 
 <h3>Architecture Summary</h3>
 
 <figure style="--img-max: 480px;">
-  <img src="/img/projects/plant-growth-multimodal-time-series-model/architecture-summary.jpg">
+  <img src="/img/projects/plant-growth-multimodal-time-series-model/architecture-summary.webp">
   <figcaption>Architecture summary.</figcaption>
 </figure>
 
@@ -351,14 +351,14 @@ Lastly, visual inspection assesses images based on subjective, human-based asses
 <h3>Model Training and Evaluation Flowchart</h3>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/plant-growth-multimodal-time-series-model/model-training-and-evaluation-flowchart.jpg">
+  <img src="/img/projects/plant-growth-multimodal-time-series-model/model-training-and-evaluation-flowchart.webp">
   <figcaption>Model training and evaluation flowchart.</figcaption>
 </figure>
 
 <h3>Training Loss Curves</h3>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/plant-growth-multimodal-time-series-model/loss-curve.jpg">
+  <img src="/img/projects/plant-growth-multimodal-time-series-model/loss-curve.webp">
   <figcaption>Loss curves of MSE-only loss, TC-only loss, and unified loss models.</figcaption>
 </figure>
 
@@ -369,7 +369,7 @@ For all three scenarios, the losses consistently decrease, as shown in the figur
 <h3>Training Metric Curves</h3>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/plant-growth-multimodal-time-series-model/mse-curve.jpg">
+  <img src="/img/projects/plant-growth-multimodal-time-series-model/mse-curve.webp">
   <figcaption>MSE curves of MSE-only loss, TC-only loss, and unified loss models.</figcaption>
 </figure>
 
@@ -378,7 +378,7 @@ Looking at MSE curves shown in the figure above, both the MSE-only loss and unif
 </div>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/plant-growth-multimodal-time-series-model/psnr-curve.jpg">
+  <img src="/img/projects/plant-growth-multimodal-time-series-model/psnr-curve.webp">
   <figcaption>PSNR curves of MSE-only loss, TC-only loss, and unified loss models.</figcaption>
 </figure>
 
@@ -390,7 +390,7 @@ The MSE-only loss model reaches the good benchmark of around 40 dB at approximat
 </div>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/plant-growth-multimodal-time-series-model/ssim-curve.jpg">
+  <img src="/img/projects/plant-growth-multimodal-time-series-model/ssim-curve.webp">
   <figcaption>SSIM curves of MSE-only loss, TC-only loss, and unified loss models.</figcaption>
 </figure>
 
@@ -399,7 +399,7 @@ Both the MSE-only loss and unified loss models reach a good benchmark of 0.9 or 
 </div>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/plant-growth-multimodal-time-series-model/tv-curve.jpg">
+  <img src="/img/projects/plant-growth-multimodal-time-series-model/tv-curve.webp">
   <figcaption>TV curves of MSE-only loss, TC-only loss, and unified loss models.</figcaption>
 </figure>
 
@@ -408,7 +408,7 @@ Both the MSE-only loss and unified loss models converge to approximately 100 at 
 </div>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/plant-growth-multimodal-time-series-model/tc-curve.jpg">
+  <img src="/img/projects/plant-growth-multimodal-time-series-model/tc-curve.webp">
   <figcaption>TC curves of MSE-only loss, TC-only loss, and unified loss models.</figcaption>
 </figure>
 
@@ -419,7 +419,7 @@ Meanwhile, with TC, the TC-only loss model demonstrates its strength of maintain
 <h3>Quantitative Testing Results</h3>
 
 <figure style="--img-max: 480px;">
-  <img src="/img/projects/plant-growth-multimodal-time-series-model/quantitative-evaluation-results.jpg">
+  <img src="/img/projects/plant-growth-multimodal-time-series-model/quantitative-evaluation-results.webp">
   <figcaption>Evaluation results of MSE-only loss, TC-only loss, and unified loss models.</figcaption>
 </figure>
 
@@ -438,7 +438,7 @@ The project used dataset consisting plant growth sequences captured under consis
 </div>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/projects/plant-growth-multimodal-time-series-model/qualitative-evaluation-results.jpg">
+  <img src="/img/projects/plant-growth-multimodal-time-series-model/qualitative-evaluation-results.webp">
   <figcaption>Rendering prediction images at 10 future time steps from MSE-only loss, TC-only loss, and unified loss models.</figcaption>
 </figure>
 

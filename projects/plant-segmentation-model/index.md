@@ -1,6 +1,6 @@
 ---
 layout: subpage
-hero: /img/projects/plant-segmentation-model/plant-segmentation-model.jpeg
+hero: /img/projects/plant-segmentation-model/plant-segmentation-model.webp
 ---
 
 <title>Comparing YOLOv8 and Detectron2 Architectures for Plant Class Segmentation Using Transfer Learning</title>
@@ -48,7 +48,7 @@ Performance, training speed, and training memory consumption were compared betwe
 <h3>Evaluation Results</h3>
 
 <figure style="--img-max: 480px;">
-  <img src="/img/projects/plant-segmentation-model/evaluation-results.jpg">
+  <img src="/img/projects/plant-segmentation-model/evaluation-results.webp">
   <figcaption>Comparison of YOLOv8 and Detectron2 architectures for plant class segmentation across varying hyperparameter values.</figcaption>
 </figure>
 

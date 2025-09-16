@@ -1,6 +1,6 @@
 ---
 layout: subpage
-hero: /img/conferences/urc-2025/urc-2025.jpg
+hero: /img/conferences/urc-2025/urc-2025.webp
 ---
 
 <title>The 9th University Research Conference</title>
@@ -18,15 +18,15 @@ Awarded with Best Poster Presenter Award, recognized among more than 50 poster p
 <br>
 
 <figure>
-  <img src="/img/conferences/urc-2025/urc-2025-venue.jpeg">
+  <img src="/img/conferences/urc-2025/urc-2025-venue.webp">
 </figure>
 
 <figure style="--img-max: 560px;">
-  <img src="/img/conferences/urc-2025/urc-2025-oral.jpeg">
+  <img src="/img/conferences/urc-2025/urc-2025-oral.webp">
 </figure>
 
 <figure style="--img-max: 480px;">
-  <img src="/img/conferences/urc-2025/urc-2025-poster.jpeg">
+  <img src="/img/conferences/urc-2025/urc-2025-poster.webp">
 </figure>
 
 <h1>Presentation Slides</h1>
@@ -49,9 +49,9 @@ Awarded with Best Poster Presenter Award, recognized among more than 50 poster p
 <h1>Best Presenter Award</h1>
 
 <figure style="--img-max: 480px;">
-  <img src="/img/conferences/urc-2025/urc-2025-award-1.jpeg">
+  <img src="/img/conferences/urc-2025/urc-2025-award-1.webp">
 </figure>
 
 <figure>
-  <img src="/img/conferences/urc-2025/urc-2025-award-2.jpg">
+  <img src="/img/conferences/urc-2025/urc-2025-award-2.webp">
 </figure>
