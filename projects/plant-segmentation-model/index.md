@@ -15,7 +15,7 @@ Two deep learning models trained on popular segmentation architectures, YOLOv8 a
 <tag>Model Validation</tag>
 <tag>Hyperparameter Tuning</tag>
 
-<a href="https://github.com/ivanintelligence/comparing-yolov8-and-detectron2-architectures-for-plant-class-segmentation-using-transfer-learning" class="arrow-link">See source code</a>
+<a href="https://github.com/ivanintelligence/plant-segmentation-model" class="arrow-link">See source code</a>
 
 <hr class="hr-custom">
 <br>

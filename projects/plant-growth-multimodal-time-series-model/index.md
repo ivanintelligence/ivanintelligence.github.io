@@ -22,7 +22,7 @@ In addition, a custom loss function is used to leverage the temporal dynamics an
 <tag>Neural Networks</tag>
 <tag>Model Validation</tag>
 
-<a href="https://github.com/ivanintelligence/predicting-plant-growth-structures-with-multimodal-data-using-convolutional-long-short-term-memory" class="arrow-link">See source code</a>
+<a href="https://github.com/ivanintelligence/plant-growth-multimodal-time-series-model" class="arrow-link">See source code</a>
 
 <hr class="hr-custom">
 <br>

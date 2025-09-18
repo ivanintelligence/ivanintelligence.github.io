@@ -15,7 +15,7 @@ A computer vision algorithm that reconstructs a 3D model from constrained 2D ste
 <tag>OpenCV</tag>
 <tag>Python</tag>
 
-<a href="https://github.com/ivanintelligence/developing-custom-computer-vision-algorithm-for-reconstructing-3d-models-from-constrained-2d-images" class="arrow-link">See source code</a>
+<a href="https://github.com/ivanintelligence/2d-to-3d-image-reconstruction-computer-vision-algorithm" class="arrow-link">See source code</a>
 
 <hr class="hr-custom">
 <br>

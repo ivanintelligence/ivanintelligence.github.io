@@ -15,7 +15,7 @@ A deep learning model trained to classify CIFAR-100 images of reptiles into five
 <tag>Classification</tag>
 <tag>TensorFlow</tag>
 
-<a href="https://github.com/ivanintelligence/identifying-reptile-types-using-cifar-100-dataset-and-supervised-convolutional-neural-networks" class="arrow-link">See source code</a>
+<a href="https://github.com/ivanintelligence/reptile-classifier-model" class="arrow-link">See source code</a>
 
 <hr class="hr-custom">
 <br>
