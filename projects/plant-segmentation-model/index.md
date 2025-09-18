@@ -5,6 +5,8 @@ hero: /img/projects/plant-segmentation-model/plant-segmentation-model.webp
 
 <title>Comparing YOLOv8 and Detectron2 Architectures for Plant Class Segmentation Using Transfer Learning</title>
 
+By John Ivan Diaz
+
 Two deep learning models trained on popular segmentation architectures, YOLOv8 and Detectron2, for segmenting the plant class. A dataset of plant images with diverse types and backgrounds was collected, and both models were trained using identical hyperparameters, then adjusted in parallel to compare performance, training speed, and memory consumption. Quantitative metrics such as average precision, loss, training time, RAM, and disk usage were used for evaluation. Results show that YOLOv8 trains faster and maintains consistent performance, while Detectron2 achieves higher accuracy when using larger hyperparameter settings.
 
 <tag>Object Detection</tag>
@@ -15,6 +17,7 @@ Two deep learning models trained on popular segmentation architectures, YOLOv8 a
 
 <a href="https://github.com/ivanintelligence/comparing-yolov8-and-detectron2-architectures-for-plant-class-segmentation-using-transfer-learning" class="arrow-link">See source code</a>
 
+<hr class="hr-custom">
 <br>
 
 <h1>Discovery Phase</h1>

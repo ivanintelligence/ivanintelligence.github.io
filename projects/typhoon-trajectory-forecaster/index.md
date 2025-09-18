@@ -5,6 +5,8 @@ hero: /img/projects/typhoon-trajectory-forecaster/typhoon-trajectory-forecaster.
 
 <title>Forecasting Typhoon Trajectory Using Interpolation and Extrapolation</title>
 
+By John Ivan Diaz
+
 A simple desktop application that predicts the next path of a typhoon based on observed data points of its previous trajectory. Python and PyQt were used for full-stack development. Although the forecasting is limited to historical path data and does not account for other factors influencing a typhoon’s movement, the application is primarily designed to illustrate the concepts of interpolation and extrapolation.
 
 <tag>Time Series Forecasting</tag>
@@ -15,6 +17,7 @@ A simple desktop application that predicts the next path of a typhoon based on o
 
 <a href="https://github.com/ivanintelligence/forecasting-typhoon-trajectory-using-interpolation-and-extrapolation" class="arrow-link">See source code</a>
 
+<hr class="hr-custom">
 <br>
 
 {% include video.html 

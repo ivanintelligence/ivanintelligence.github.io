@@ -5,6 +5,8 @@ hero: /img/projects/reptile-classifier-model/reptile-classifier-model.webp
 
 <title>Identifying Reptile Types Using CIFAR-100 Dataset and Supervised Convolutional Neural Networks (CNNs)</title>
 
+By John Ivan Diaz
+
 A deep learning model trained to classify CIFAR-100 images of reptiles into five categories: crocodile, dinosaur, lizard, snake, and turtle. It uses convolutional, pooling, and fully connected layers, along with techniques such as data augmentation, dropout, and early stopping. The model achieved decent accuracy despite the challenge of limited training images.
 
 <tag>Convolutional Neural Networks (CNN)</tag>
@@ -15,6 +17,7 @@ A deep learning model trained to classify CIFAR-100 images of reptiles into five
 
 <a href="https://github.com/ivanintelligence/identifying-reptile-types-using-cifar-100-dataset-and-supervised-convolutional-neural-networks" class="arrow-link">See source code</a>
 
+<hr class="hr-custom">
 <br>
 
 <h1>Discovery Phase</h1>

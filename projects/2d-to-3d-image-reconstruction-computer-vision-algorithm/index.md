@@ -5,6 +5,8 @@ hero: /img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/2d-t
 
 <title>Developing Custom Computer Vision Algorithm for Reconstructing 3D Models from Constrained 2D Stereoscopic Images Using OpenCV and Open3D</title>
 
+By John Ivan Diaz
+
 A computer vision algorithm that reconstructs a 3D model from constrained 2D stereoscopic images captured from the front, left, back, and right of an object. Unlike traditional photogrammetry that requires many angles, this approach is designed to address limited views. It combines standalone computer vision techniques into a unified process, leveraging OpenCV and Open3D libraries. It is useful in applications such as plant phenotyping, where capturing multiple angles may be challenging yet still sufficient for constructing 3D models for visual inspection and analysis.
 
 <tag>Computer Vision</tag>
@@ -15,6 +17,7 @@ A computer vision algorithm that reconstructs a 3D model from constrained 2D ste
 
 <a href="https://github.com/ivanintelligence/developing-custom-computer-vision-algorithm-for-reconstructing-3d-models-from-constrained-2d-images" class="arrow-link">See source code</a>
 
+<hr class="hr-custom">
 <br>
 
 <h1>Discovery Phase</h1>

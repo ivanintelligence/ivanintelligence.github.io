@@ -3484,6 +3484,19 @@ html.night title {
 
 
 
+/* Custom horizontal line for light and dark mode */
+.hr-custom {
+  border: none;
+  border-top: 1px solid #D7D7D9; /* Light mode color */
+  width: 100%;
+}
+
+html.night .hr-custom {
+  border-top: 1px solid #727376; /* Dark mode color */
+}
+
+
+
 /* - - - - - - - - - - - - - - - - - - - - Intro section - - - - - - - - - - - - - - - - - - - - */
 
 

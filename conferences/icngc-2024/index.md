@@ -17,6 +17,7 @@ Awarded with Best Paper Award in Oral Session, recognized among 80 international
 
 <a href="https://usc.edu.ph/computer-engineering-students-win-best-ai-for-agriculture-paper-award" class="arrow-link">See Best Paper Award university news feature</a>
 
+<hr class="hr-custom">
 <br>
 
 <figure>

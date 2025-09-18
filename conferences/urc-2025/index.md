@@ -15,6 +15,7 @@ Awarded with Best Poster Presenter Award, recognized among more than 50 poster p
 
 <a href="https://usc.edu.ph/research/urc-2025" class="arrow-link">See URC 2025 official website</a>
 
+<hr class="hr-custom">
 <br>
 
 <figure>

@@ -5,6 +5,8 @@ hero: /img/projects/plant-growth-multimodal-time-series-model/plant-growth-multi
 
 <title>Predicting Plant Growth Structures with Multimodal Data Using Convolutional Long Short-Term Memory (ConvLSTM)</title>
 
+By John Ivan Diaz
+
 A multimodal deep learning model that predicts the next frame of plant growth by understanding two input modalities: growth patterns and environmental conditions. For instance, the model changes its prediction when the user adjusts pH level. Images of growth patterns pass through convolutional long short-term memory (ConvLSTM) layers, while environmental data passes through a series of layers such as time-distributed, reshape, and lambda. This produces two tensors with aligned temporal dimensions, which are concatenated to become a combined multimodal tensor. To generate the predicted frame, a 3D Convolution layer is employed.
 
 In addition, a custom loss function is used to leverage the temporal dynamics and visual fidelity of Temporal Consistency and Mean Squared Error losses. The weighted sum of both is evaluated against each standalone loss quantitatively using metrics like Peak Signal-to-Noise Ratio (PSNR), Structural Similarity Index (SSIM), and Total Variation, and qualitatively through visual inspection. Results show that the custom loss delivers slightly better performance in preserving visual fidelity and temporal dynamics of slow-moving objects.
@@ -22,6 +24,7 @@ In addition, a custom loss function is used to leverage the temporal dynamics an
 
 <a href="https://github.com/ivanintelligence/predicting-plant-growth-structures-with-multimodal-data-using-convolutional-long-short-term-memory" class="arrow-link">See source code</a>
 
+<hr class="hr-custom">
 <br>
 
 <h1>Discovery Phase</h1>
