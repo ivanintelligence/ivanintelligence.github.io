@@ -64,6 +64,7 @@ The project uses the Sentence Transformers All-MiniLM-L6-v2 embedding model and 
     Clone the repository from my GitHub
   </li>
 </ol>
+
 <u>https://github.com/ivanintelligence/business-finder-assistant</u>
 
 <ol start="4">
