@@ -3497,6 +3497,24 @@ html.night .hr-custom {
 
 
 
+/* Light mode (already present) */
+.language-code {
+  background: #222325;
+  color: #F6F5F7;
+  font-family: Inconsolata, monospace;
+  border-radius: 8px;
+  padding: 8px;
+  display: block;
+}
+
+/* Dark mode override */
+html.night .language-code {
+  background: #F6F5F7;
+  color: #222325;
+}
+
+
+
 /* - - - - - - - - - - - - - - - - - - - - Intro section - - - - - - - - - - - - - - - - - - - - */
 
 

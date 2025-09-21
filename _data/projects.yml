@@ -1,6 +1,23 @@
+- name: Large Language Model (LLM)–Powered Business Finder Assistant Using LangChain, ChromaDB, and Retrieval-Augmented Generation (RAG)
+  description: >
+    A simple Large Language Model-powered chatbot that helps users find information about a business. It uses People Data Labs 2019 Global Company Dataset from Kaggle, the Sentence Transformers All-MiniLM-L6-v2 embedding model, and the Meta Llama 3.2 1B Instruct LLM from HuggingFace. While the chatbot is simple and retrieves only a small fraction of the dataset, its goal is to demonstrate LangChain, ChromaDB, and Retrieval-Augmented Generation (RAG) for LLM orchestration, vector storage, and retrieval.
+    <br>
+    <br>
+    <a href="/projects/business-finder-assistant" class="arrow-link">Read more</a>
+  used:
+    - thing: Large Language Models (LLMs)
+    - thing: LangChain
+    - thing: ChromaDB
+    - thing: Retrieval Augmented Generation (RAG)
+    - thing: Hugging Face
+  image: /img/projects/business-finder-assistant/business-finder-assistant.webp
+  image_max: 480
+
 - name: Identifying Reptile Types Using CIFAR-100 Dataset and Supervised Convolutional Neural Networks (CNNs)
   description: >
-    A deep learning model trained to classify CIFAR-100 images of reptiles into five categories: crocodile, dinosaur, lizard, snake, and turtle. It uses convolutional, pooling, and fully connected layers, along with techniques such as data augmentation, dropout, and early stopping. The model achieved decent accuracy despite the challenge of limited training images.<br><br>
+    A deep learning model trained to classify CIFAR-100 images of reptiles into five categories: crocodile, dinosaur, lizard, snake, and turtle. It uses convolutional, pooling, and fully connected layers, along with techniques such as data augmentation, dropout, and early stopping. The model achieved decent accuracy despite the challenge of limited training images.
+    <br>
+    <br>
     <a href="/projects/reptile-classifier-model" class="arrow-link">Read more</a>
   used:
     - thing: Convolutional Neural Networks (CNN)
@@ -10,11 +27,15 @@
     - thing: TensorFlow
   image: /img/projects/reptile-classifier-model/reptile-classifier-model.webp
   image_max: 480
-
+  
 - name: Predicting Plant Growth Structures with Multimodal Data Using Convolutional Long Short-Term Memory (ConvLSTM)
   description: >
-    A multimodal deep learning model that predicts the next frame of plant growth by understanding two input modalities: growth patterns and environmental conditions. For instance, the model changes its prediction when the user adjusts pH level. Images of growth patterns pass through convolutional long short-term memory (ConvLSTM) layers, while environmental data passes through a series of layers such as time-distributed, reshape, and lambda. This produces two tensors with aligned temporal dimensions, which are concatenated to become a combined multimodal tensor. To generate the predicted frame, a 3D Convolution layer is employed.<br><br>
-    In addition, a custom loss function is used to leverage the temporal dynamics and visual fidelity of Temporal Consistency and Mean Squared Error losses. The weighted sum of both is evaluated against each standalone loss quantitatively using metrics like Peak Signal-to-Noise Ratio (PSNR), Structural Similarity Index (SSIM), and Total Variation, and qualitatively through visual inspection. Results show that the custom loss delivers slightly better performance in preserving visual fidelity and temporal dynamics of slow-moving objects.<br><br>
+    A multimodal deep learning model that predicts the next frame of plant growth by understanding two input modalities: growth patterns and environmental conditions. For instance, the model changes its prediction when the user adjusts pH level. Images of growth patterns pass through convolutional long short-term memory (ConvLSTM) layers, while environmental data passes through a series of layers such as time-distributed, reshape, and lambda. This produces two tensors with aligned temporal dimensions, which are concatenated to become a combined multimodal tensor. To generate the predicted frame, a 3D Convolution layer is employed.
+    <br>
+    <br>
+    In addition, a custom loss function is used to leverage the temporal dynamics and visual fidelity of Temporal Consistency and Mean Squared Error losses. The weighted sum of both is evaluated against each standalone loss quantitatively using metrics like Peak Signal-to-Noise Ratio (PSNR), Structural Similarity Index (SSIM), and Total Variation, and qualitatively through visual inspection. Results show that the custom loss delivers slightly better performance in preserving visual fidelity and temporal dynamics of slow-moving objects.
+    <br>
+    <br>
     <a href="/projects/plant-growth-multimodal-time-series-model" class="arrow-link">Read more</a>
   used:
     - thing: Long Short-Term Memory (LSTM)
@@ -32,7 +53,9 @@
 
 - name: Comparing YOLOv8 and Detectron2 Architectures for Plant Class Segmentation Using Transfer Learning
   description: >
-    Two deep learning models trained on popular segmentation architectures, YOLOv8 and Detectron2, for segmenting the plant class. A dataset of plant images with diverse types and backgrounds was collected, and both models were trained using identical hyperparameters, then adjusted in parallel to compare performance, training speed, and memory consumption. Quantitative metrics such as average precision, loss, training time, RAM, and disk usage were used for evaluation. Results show that YOLOv8 trains faster and maintains consistent performance, while Detectron2 achieves higher accuracy when using larger hyperparameter settings.<br><br>
+    Two deep learning models trained on popular segmentation architectures, YOLOv8 and Detectron2, for segmenting the plant class. A dataset of plant images with diverse types and backgrounds was collected, and both models were trained using identical hyperparameters, then adjusted in parallel to compare performance, training speed, and memory consumption. Quantitative metrics such as average precision, loss, training time, RAM, and disk usage were used for evaluation. Results show that YOLOv8 trains faster and maintains consistent performance, while Detectron2 achieves higher accuracy when using larger hyperparameter settings.
+    <br>
+    <br>
     <a href="/projects/plant-segmentation-model" class="arrow-link">Read more</a>
   used:
     - thing: Object Detection
@@ -45,7 +68,9 @@
 
 - name: Developing Custom Computer Vision Algorithm for Reconstructing 3D Models from Constrained 2D Stereoscopic Images Using OpenCV and Open3D
   description: >
-    A computer vision algorithm that reconstructs a 3D model from constrained 2D stereoscopic images captured from the front, left, back, and right of an object. Unlike traditional photogrammetry that requires many angles, this approach is designed to address limited views. It combines standalone computer vision techniques into a unified process, leveraging OpenCV and Open3D libraries. It is useful in applications such as plant phenotyping, where capturing multiple angles may be challenging yet still sufficient for constructing 3D models for visual inspection and analysis.<br><br>
+    A computer vision algorithm that reconstructs a 3D model from constrained 2D stereoscopic images captured from the front, left, back, and right of an object. Unlike traditional photogrammetry that requires many angles, this approach is designed to address limited views. It combines standalone computer vision techniques into a unified process, leveraging OpenCV and Open3D libraries. It is useful in applications such as plant phenotyping, where capturing multiple angles may be challenging yet still sufficient for constructing 3D models for visual inspection and analysis.
+    <br>
+    <br>
     <a href="/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm" class="arrow-link">Read more</a>
   used:
     - thing: Computer Vision
@@ -58,7 +83,9 @@
 
 - name: Forecasting Typhoon Trajectory Using Interpolation and Extrapolation
   description: >
-    A simple desktop application that predicts the next path of a typhoon based on observed data points of its previous trajectory. Python and PyQt were used for full-stack development. Although the forecasting is limited to historical path data and does not account for other factors influencing a typhoon’s movement, the application is primarily designed to illustrate the concepts of interpolation and extrapolation.<br><br>
+    A simple desktop application that predicts the next path of a typhoon based on observed data points of its previous trajectory. Python and PyQt were used for full-stack development. Although the forecasting is limited to historical path data and does not account for other factors influencing a typhoon’s movement, the application is primarily designed to illustrate the concepts of interpolation and extrapolation.
+    <br>
+    <br>
     <a href="/projects/typhoon-trajectory-forecaster" class="arrow-link">Read more</a>
   used:
     - thing: Time Series Forecasting
