@@ -81,6 +81,7 @@ Text splitting, embedding calls, and ChromaDB integration are handled using the 
 
 <h3>Groud Truth</h3>
 
+Tencent based in Shenzhen, Guangdong, China:
 ```code
 name: Tencent  
 domain: tencent.com  
