@@ -3538,7 +3538,8 @@ html.night .hr-custom {
   border-radius: 8px;
   padding: 12px;
   display: block;
-  overflow-x: auto;
+  word-break: break-word;
+  overflow-wrap: anywhere;
   white-space: pre-wrap;
 
 }
