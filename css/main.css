@@ -3529,14 +3529,14 @@ html.night .hr-custom {
 
 /* Light mode (already present) */
 .language-code {
-  background: #222325;
-  color: #F6F5F7;
+  background: #DDDDE1;
+  color: #222325;
   font-family: "SF Mono", Inconsolata, monospace;
   font-size: 0.8em;
   font-weight: 400;
   font-style: normal;
-  border-radius: 8px;
-  padding: 12px;
+  border-radius: 12px;
+  padding: 16px;
   display: block;
   word-break: break-word;
   overflow-wrap: anywhere;
@@ -3546,8 +3546,8 @@ html.night .hr-custom {
 
 /* Dark mode override */
 html.night .language-code {
-  background: #F6F5F7;
-  color: #222325;
+  background: #727376;
+  color: #F6F5F7;
 }
 
 

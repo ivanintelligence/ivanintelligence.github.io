@@ -8,8 +8,8 @@
     - thing: Large Language Models (LLMs)
     - thing: LangChain
     - thing: ChromaDB
-    - thing: Retrieval Augmented Generation (RAG)
-    - thing: Hugging Face
+    - thing: Retrieval-Augmented Generation (RAG)
+    - thing: Generative AI
   image: /img/projects/business-finder-assistant/business-finder-assistant.webp
   image_max: 480
 
