@@ -1,16 +1,16 @@
-- name: Large Language Model (LLM)–Powered Business Finder Assistant Using LangChain, ChromaDB, and Retrieval-Augmented Generation (RAG)
+- name: Finding Company Details through Large Language Model (LLM)-Powered Assistant Using LangChain, ChromaDB, and Retrieval-Augmented Generation (RAG)
   description: >
-    A simple Large Language Model-powered chatbot that helps users find information about a business. It uses People Data Labs 2019 Global Company Dataset from Kaggle, the Sentence Transformers All-MiniLM-L6-v2 embedding model, and the Meta Llama 3.2 1B Instruct LLM from HuggingFace. While the chatbot is simple and retrieves only a small fraction of the dataset, its goal is to demonstrate LangChain, ChromaDB, and Retrieval-Augmented Generation (RAG) for LLM orchestration, vector storage, and retrieval.
+    A simple Large Language Model (LLM)-powered chatbot that helps users find information about companies. It uses the People Data Labs 2019 Global Company Dataset from Kaggle, the SentenceTransformers All-MiniLM-L6-v2 embedding model, and the Meta Llama 3.2 1B Instruct LLM from Hugging Face. While the chatbot is simple and retrieves only a small fraction of the dataset, its goal is to demonstrate LangChain, ChromaDB, and Retrieval-Augmented Generation (RAG) for LLM orchestration, vector storage, and retrieval.
     <br>
     <br>
-    <a href="/projects/business-finder-assistant" class="arrow-link">Read more</a>
+    <a href="/projects/company-finder-llm-assistant" class="arrow-link">Read more</a>
   used:
     - thing: Large Language Models (LLMs)
     - thing: LangChain
     - thing: ChromaDB
     - thing: Retrieval-Augmented Generation (RAG)
     - thing: Prompt Engineering
-  image: /img/projects/business-finder-assistant/business-finder-assistant.webp
+  image: /img/projects/company-finder-llm-assistant/company-finder-llm-assistant.webp
   image_max: 480
 
 - name: Identifying Reptile Types Using CIFAR-100 Dataset and Supervised Convolutional Neural Networks (CNNs)
