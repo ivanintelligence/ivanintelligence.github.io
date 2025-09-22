@@ -397,7 +397,7 @@
 /* === Skills: equal column widths + equal gaps === */
 .skills .skillz {
   display: grid;                          /* replace flex */
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 equal columns */
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 4 equal columns */
   gap: 32px;                               /* uniform space between columns & rows */
   align-items: start;
 }

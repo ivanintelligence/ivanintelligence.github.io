@@ -13,7 +13,7 @@ A simple Large Language Model-powered chatbot that helps users find information 
 <tag>LangChain</tag>
 <tag>ChromaDB</tag>
 <tag>Retrieval-Augmented Generation (RAG)</tag>
-<tag>Generative AI</tag>
+<tag>Prompt Engineering</tag>
 
 <a href="https://github.com/ivanintelligence/business-finder-assistant" class="arrow-link">See source code</a>
 

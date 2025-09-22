@@ -8,9 +8,16 @@ programming_languages:
 machine_learning_tools:
   - item: TensorFlow
   - item: Keras
+  - item: PyTorch
   - item: Scikit-Learn
   - item: Computer Vison
+
+generative_ai_tools:
   - item: LLM
+  - item: LangChain
+  - item: ChromaDB
+  - item: RAG
+  - item: Prompt Engineering
 
 data_management:
   - item: BigQuery
@@ -19,7 +26,7 @@ data_management:
   - item: Pub/Sub
   - item: Artifact Registry
 
-additional_technologies:
+other_technologies:
   - item: GCP
   - item: Vertex AI
   - item: Kubernetes

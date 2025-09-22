@@ -22,6 +22,16 @@
         </ul>
       </div>
 
+      <!-- Generative AI Tools -->
+      <div class="skillz__category">
+        <div class="skillz__category__label">Generative AI Tools</div>
+        <ul>
+          {% for tech in site.data.skills.generative_ai_tools %}
+          <li class="skillz__category__item">{{ tech.item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
       <!-- Data Management -->
       <div class="skillz__category">
         <div class="skillz__category__label">Data Management</div>
@@ -32,11 +42,11 @@
         </ul>
       </div>
 
-      <!-- Additional Technologies -->
+      <!-- Other Technologies -->
       <div class="skillz__category">
-        <div class="skillz__category__label">Additional Technologies</div>
+        <div class="skillz__category__label">Other Technologies</div>
         <ul>
-          {% for tech in site.data.skills.additional_technologies %}
+          {% for tech in site.data.skills.other_technologies %}
           <li class="skillz__category__item">{{ tech.item }}</li>
           {% endfor %}
         </ul>

@@ -9,7 +9,7 @@
     - thing: LangChain
     - thing: ChromaDB
     - thing: Retrieval-Augmented Generation (RAG)
-    - thing: Generative AI
+    - thing: Prompt Engineering
   image: /img/projects/business-finder-assistant/business-finder-assistant.webp
   image_max: 480
 
