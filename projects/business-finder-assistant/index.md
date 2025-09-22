@@ -55,7 +55,7 @@ The project uses the Sentence Transformers All-MiniLM-L6-v2 embedding model and 
 
 <ol start="2">
   <li>
-    Place the dataset in a folder named “data”
+    Create a folder named "data" and place the dataset in it
   </li>
 </ol>
 
@@ -99,7 +99,7 @@ pip install -r requirements.txt
 
 <ol start="7">
   <li>
-    Create .env file and place your HuggingFace Access Token
+    Create a .env file and place your HuggingFace Access Token in it
   </li>
 </ol>
 
@@ -107,7 +107,7 @@ pip install -r requirements.txt
 HUGGINGFACEHUB_API_TOKEN=hf...
 ```
 
-Note: The LLM model used is meta-llama/Llama-3.2-1B. Make sure to have access from repo authors.
+Note: The project uses meta-llama/Llama-3.2-1B. Make sure to have access from repo authors.
 
 <ol start="8">
   <li>

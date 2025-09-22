@@ -1054,6 +1054,36 @@ html.night        .other-projects .project__name-text {
 /* Utility (use on any element if needed) */
 .ny { font-family: "New York", Georgia, "Times New Roman", serif !important; }
 
+/* SF Mono font faces */
+@font-face {
+  font-family: "SF Mono";
+  src: url("../fonts/sf-mono/SF-Mono-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Mono";
+  src: url("../fonts/sf-mono/SF-Mono-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Mono";
+  src: url("../fonts/sf-mono/SF-Mono-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Mono";
+  src: url("../fonts/sf-mono/SF-Mono-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 
 
 /* Global typography spacing: keep letters natural (no compressed/divergent spacing) */
@@ -3501,16 +3531,29 @@ html.night .hr-custom {
 .language-code {
   background: #222325;
   color: #F6F5F7;
-  font-family: Inconsolata, monospace;
+  font-family: "SF Mono", Inconsolata, monospace;
+  font-size: 0.8em;
+  font-weight: 400;
+  font-style: normal;
   border-radius: 8px;
-  padding: 16px;
+  padding: 12px;
   display: block;
+  overflow-x: auto;
+  white-space: pre-wrap;
+
 }
 
 /* Dark mode override */
 html.night .language-code {
   background: #F6F5F7;
   color: #222325;
+}
+
+
+
+u, a, .break-url {
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 
