@@ -34,15 +34,16 @@ The project used the People Data Labs 2019 Global Company Dataset from Kaggle. I
 
 Sample row data:
 ```code
-name: IBM
-industry: Information Technology and Services
-locality: New York, New York, United States
-country: United States
-year founded: 1911
-size range: 10000+
-current employee size: 274047
-domain: ibm.com
-linkedin url: linkedin.com/company/ibm
+name: IBM  
+domain: ibm.com  
+year founded: 1911  
+industry: Information Technology and Services  
+size range: 10001+  
+locality: New York, New York, United States  
+country: United States  
+linkedin url: linkedin.com/company/ibm  
+current employee estimate: 274,047  
+total employee estimate: 716,906
 ```
 
 For a lightweight demonstration, the scope of this project retrieved only 100,000 rows of data.
