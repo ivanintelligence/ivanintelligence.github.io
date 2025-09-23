@@ -1,18 +1,3 @@
-- name: Finding Company Details through Large Language Model (LLM)-Powered Assistant Using LangChain, ChromaDB, and Retrieval-Augmented Generation (RAG)
-  description: >
-    A simple Large Language Model (LLM)-powered chatbot that helps users find information about companies. It uses the People Data Labs 2019 Global Company Dataset from Kaggle, the SentenceTransformers All-MiniLM-L6-v2 embedding model, and the Meta Llama 3.2 1B Instruct LLM from Hugging Face. While the chatbot is simple and retrieves only a small fraction of the dataset, its goal is to demonstrate LangChain, ChromaDB, and Retrieval-Augmented Generation (RAG) for LLM orchestration, vector storage, and retrieval.
-    <br>
-    <br>
-    <a href="/projects/company-finder-llm-assistant" class="arrow-link">Read more</a>
-  used:
-    - thing: Large Language Models (LLMs)
-    - thing: LangChain
-    - thing: ChromaDB
-    - thing: Retrieval-Augmented Generation (RAG)
-    - thing: Prompt Engineering
-  image: /img/projects/company-finder-llm-assistant/company-finder-llm-assistant.webp
-  image_max: 480
-
 - name: Identifying Reptile Types Using CIFAR-100 Dataset and Supervised Convolutional Neural Networks (CNNs)
   description: >
     A deep learning model trained to classify CIFAR-100 images of reptiles into five categories: crocodile, dinosaur, lizard, snake, and turtle. It uses convolutional, pooling, and fully connected layers, along with techniques such as data augmentation, dropout, and early stopping. The model achieved decent accuracy despite the challenge of limited training images.
@@ -79,6 +64,21 @@
     - thing: OpenCV
     - thing: Python
   image: /img/projects/2d-to-3d-image-reconstruction-computer-vision-algorithm/2d-to-3d-image-reconstruction-computer-vision-algorithm.webp
+  image_max: 480
+
+- name: Finding Company Details through Large Language Model (LLM)-Powered Assistant Using LangChain, ChromaDB, and Retrieval-Augmented Generation (RAG)
+  description: >
+    A simple Large Language Model (LLM)-powered chatbot that helps users find information about companies. It uses the People Data Labs 2019 Global Company Dataset from Kaggle, the SentenceTransformers All-MiniLM-L6-v2 embedding model, and the Meta Llama 3.2 1B Instruct LLM from Hugging Face. While the chatbot is simple and retrieves only a small fraction of the dataset, its goal is to demonstrate LangChain, ChromaDB, and Retrieval-Augmented Generation (RAG) for LLM orchestration, vector storage, and retrieval.
+    <br>
+    <br>
+    <a href="/projects/company-finder-llm-assistant" class="arrow-link">Read more</a>
+  used:
+    - thing: Large Language Models (LLMs)
+    - thing: LangChain
+    - thing: ChromaDB
+    - thing: Retrieval-Augmented Generation (RAG)
+    - thing: Prompt Engineering
+  image: /img/projects/company-finder-llm-assistant/company-finder-llm-assistant.webp
   image_max: 480
 
 - name: Forecasting Typhoon Trajectory Using Interpolation and Extrapolation
