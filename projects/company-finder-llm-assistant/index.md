@@ -171,7 +171,7 @@ Note: The project uses meta-llama/Llama-3.2-1B. Make sure to have access from re
 </ol>
 
 ```code
-python ingest_database.py
+python ingest-database.py
 ```
 
 <ol start="9">
