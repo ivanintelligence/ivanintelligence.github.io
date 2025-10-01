@@ -96,7 +96,7 @@ current employee estimate: 37,574
 total employee estimate: 42,617
 ```
 
-<br>
+<h2>Presentation of Results</h2>
 
 <h3>Guide for Local Testing</h3>
 
