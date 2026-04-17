@@ -38,7 +38,7 @@
   image: /img/experience/usc.webp
   image_max: 40
   description: >
-    <span class="u-ld-contrast">Accenture</span><br><br>
+    <span class="u-ld-contrast">University of San Carlos</span><br><br>
     <ul>
       <li>Developed a predictive model of plant growth using 2 input modalities: images and numerical data.</li>
       <li>Implemented YOLOv8 preprocessing with ConvLSTM and 3D convolution, realizing novel multimodal solution for the defined ML task.</li>
