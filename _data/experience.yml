@@ -1,3 +1,25 @@
+- position: AI Prompt Engineer
+  time: 10/2025 – Present
+  image: /img/experience/feathery.webp
+  image_max: 40
+  description: >
+    <span class="u-ld-contrast">Feathery</span><br><br>
+    <ul>
+      <li>Leverage large language models through fine-tuning and prompt engineering, extracting data points from insurance policies and automating client onboarding for financial services.</li>
+    </ul>
+
+- position: AI Developer
+  time: 09/2025 – 10/2025
+  image: /img/experience/highpointinsight.webp
+  image_max: 40
+  description: >
+    <span class="u-ld-contrast">High Point Insight</span><br><br>
+    <ul>
+      <li>Developed a computer vision pipeline to realistically place ornaments on human teeth through instance segmentation, computational alignment, and image blending, achieving high-quality ornament placement and realism.</li>
+      <li>Improved pipeline efficiency through iterative experimentation and identification of high-performance components, reducing processing time from 20 seconds to 5 seconds and improving speed by 300%.</li>
+      <li>Containerized the system using Docker, enabling reproducible execution.</li>
+    </ul>
+
 - position: Software Engineering Intern
   time: 01/2025 – 05/2025
   image: /img/experience/accenture.webp
