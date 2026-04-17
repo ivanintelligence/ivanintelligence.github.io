@@ -1,9 +1,8 @@
-<!-- Internship (optional image support) -->
 <section class="section internship experience">
-    <div class="section__title">Internship</div>
+    <div class="section__title">Experience</div>
     <div class="section__content">
       <div class="jobs">
-        {% assign internships = site.data.internship | default: empty %}
+        {% assign internships = site.data.experience | default: empty %}
         {% for intern in internships %}
         <div class="job">
 
