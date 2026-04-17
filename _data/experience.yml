@@ -32,3 +32,20 @@
       <li>Monitored automation using Control-M and flagged system failures in real time, accelerating team response and reducing resolution delays.</li>
       <li>Communicated system performance accurately, reinforcing fairness and guaranteeing dependable client transactions.</li>
     </ul>
+
+- position: AI Researcher
+  time: 01/2024 – 12/2024
+  image: /img/experience/usc.webp
+  image_max: 40
+  description: >
+    <span class="u-ld-contrast">Accenture</span><br><br>
+    <ul>
+      <li>Developed a predictive model of plant growth using 2 input modalities: images and numerical data.</li>
+      <li>Implemented YOLOv8 preprocessing with ConvLSTM and 3D convolution, realizing novel multimodal solution for the defined ML task.</li>
+      <li>Engineered custom loss function blending Mean Squared Error and Temporal Consistency, achieving higher accuracy than standalone losses.</li>
+      <li>Developed a novel algorithm that reconstructs constrained images to 3D models using OpenCV and Open3D, offering alternative solution to photogrammetry requiring multiple views.</li>
+      <li>Merged monocular depth estimations on stereo images, improving depth quality compared to standalone monocular estimation.</li>
+      <li>Integrated deep learning and computer vision, yielding 3D models from predicted images.</li>
+      <li>Reported scope and generalizability constraints, employing Responsible AI.</li>
+      <li>Presented work at international conferences, winning Best Paper and Best Presenter awards among 50+ presenters.</li>
+    </ul>
