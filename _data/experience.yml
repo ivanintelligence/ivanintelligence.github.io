@@ -5,7 +5,6 @@
   description: >
     <span class="u-ld-contrast">Feathery, Inc.</span><br><br>
     <ul>
-      <li>Leverage large language models through fine-tuning and prompt engineering, extracting data points from insurance policies and automating client onboarding for financial services.</li>
       <li>Developed high quality LLM inputs for financial document extraction using JSON field mappings and few-shot examples, converting unstructured content into structured data.</li>
       <li>Improved LLM extraction quality through iterative input refinement, source-document validation, edge-case testing, and JavaScript logic rules, driving outputs toward 100% accuracy.</li>
       <li>Structured extraction configurations with field-level queries, return criteria, and saved variables, routing financial data into review, automation, and product workflows.</li>
