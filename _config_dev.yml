@@ -1,7 +1,7 @@
 # Site settings
 name: John Ivan Diaz
 title: John Ivan Diaz
-description: Artificial Intelligence / Machine Learning (AI/ML) Engineer
+description: Computer Engineer / AI Engineer
 url: https://ivanintelligence.github.io
 baseurl: ''
 
@@ -10,11 +10,11 @@ headshot-light: /img/headshot/headshot-light.webp
 headshot-dark: /img/headshot/headshot-dark.webp
 linkedin: https://www.linkedin.com/in/diazjohnivantuyor
 email: mailto:diazjohnivantuyor@gmail.com
-resume: /resume/JohnIvanDiaz-Resume.pdf
+# resume: /resume/JohnIvanDiaz-Resume.pdf
 
 social:
-  - title: resume
-    url: /resume/JohnIvanDiaz-Resume.pdf
+  # - title: resume
+    # url: /resume/JohnIvanDiaz-Resume.pdf
   - title: linkedin
     url: https://www.linkedin.com/in/diazjohnivantuyor
   - title: github
