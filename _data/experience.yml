@@ -1,29 +1,32 @@
 - position: AI Specialist
-  time: 10/2025 – Present
+  time: 10/2025 - Present
   #image: /img/experience/feathery.webp
   image_max: 40
   description: >
     <span class="u-ld-contrast">Feathery, Inc.</span><br><br>
     <ul>
-      <li>Developed high quality LLM inputs for financial document extraction using JSON field mappings and few-shot examples, converting unstructured content into structured data.</li>
-      <li>Improved LLM extraction quality through iterative input refinement, source-document validation, edge-case testing, and JavaScript logic rules, driving outputs toward 100% accuracy.</li>
-      <li>Structured extraction configurations with field-level queries, return criteria, and saved variables, routing financial data into review, automation, and product workflows.</li>
+      <li>Engineered AI document workflows for Feathery's financial-services platform, automating extraction of insurance and wealth-management data into structured outputs with >95% validated accuracy across a wide range of client-defined schemas.</li>
+      <li>Built ground-truth evaluation datasets from >1,000 test documents and optimized AI prompts through error analysis, raising extraction accuracy from <60% to >95%, with select workflows reaching 100%.</li>
+      <li>Developed JavaScript logic rules and multi-stage AI workflows for conditional processing, data transformation, chained extraction, and context-aware reasoning.</li>
+      <li>Improved AI reliability by detecting hallucinations and extraction failures, verifying source traceability, and communicating model limitations to AI Engineers.</li>
+      <li>Collaborated with Solutions Engineers and AI Engineers to solve complex document-extraction requirements, bridging client needs and technical implementation.</li>
+      <li>Validated AI-extracted data before downstream use in forms, integrations, and client systems, preserving data integrity for >10 leading U.S. insurance and wealth-management firms.</li>
     </ul>
 
-- position: AI Freelance Developer
-  time: 09/2025 – 10/2025
+#- position: AI Developer
+  #time: 09/2025 - 10/2025
   #image: /img/experience/highpointinsight.webp
-  image_max: 40
-  description: >
-    <span class="u-ld-contrast">High Point Insight International, Inc.</span><br><br>
-    <ul>
-      <li>Developed a computer vision pipeline to realistically place ornaments on human teeth through instance segmentation, computational alignment, and image blending, achieving high-quality ornament placement and realism.</li>
-      <li>Improved pipeline efficiency through iterative experimentation and identification of high-performance components, reducing processing time from 20 seconds to 5 seconds and improving speed by 300%.</li>
-      <li>Containerized the system using Docker, enabling reproducible execution.</li>
-    </ul>
+  #image_max: 40
+  #description: >
+    #<span class="u-ld-contrast">High Point Insight International, Inc.</span><br><br>
+    #<ul>
+      #<li>Developed a computer vision pipeline to realistically place ornaments on human teeth through instance segmentation, computational alignment, and image blending, achieving high-quality ornament placement and realism.</li>
+      #<li>Improved pipeline efficiency through iterative experimentation and identification of high-performance components, reducing processing time from 20 seconds to 5 seconds and improving speed by 300%.</li>
+      #<li>Containerized the system using Docker, enabling reproducible execution.</li>
+    #</ul>
 
 - position: Software Engineering Intern
-  time: 01/2025 – 05/2025
+  time: 01/2025 - 05/2025
   #image: /img/experience/accenture.webp
   image_max: 40
   description: >
@@ -36,7 +39,7 @@
     </ul>
 
 - position: AI Student Researcher
-  time: 01/2024 – 12/2024
+  time: 01/2024 - 12/2024
   #image: /img/experience/usc.webp
   image_max: 40
   description: >
