@@ -83,7 +83,7 @@
 
 - name: Forecasting Typhoon Trajectory Using Interpolation and Extrapolation
   description: >
-    A simple desktop application that predicts the next path of a typhoon based on observed data points of its previous trajectory. Python and PyQt were used for full-stack development. Although the forecasting is limited to historical path data and does not account for other factors influencing a typhoon’s movement, the application is primarily designed to illustrate the concepts of interpolation and extrapolation.
+    A simple desktop application that predicts the next path of a typhoon based on observed data points of its previous trajectory. Built in Python with PyQt for the GUI. Although the forecasting is limited to historical path data and does not account for other factors influencing a typhoon's movement, the application is primarily designed to illustrate the concepts of interpolation and extrapolation.
     <br>
     <br>
     <a href="/projects/typhoon-trajectory-forecaster" class="arrow-link">Read more</a>
