@@ -5,11 +5,11 @@
   description: >
     <span class="u-ld-contrast">Feathery, Inc.</span><br><br>
     <ul>
-      <li>Engineered AI document workflows for Feathery's financial-services platform, automating extraction of insurance and wealth-management data into structured outputs with >95% validated accuracy across a wide range of client-defined schemas.</li>
-      <li>Built ground-truth evaluation datasets from >1,000 test documents and optimized AI prompts through error analysis, raising extraction accuracy from <60% to >95%, with select workflows reaching 100%.</li>
-      <li>Developed JavaScript logic rules and multi-stage AI workflows for conditional processing, data transformation, chained extraction, and context-aware reasoning.</li>
-      <li>Improved AI reliability by detecting hallucinations and extraction failures, verifying source traceability, and communicating model limitations to AI Engineers.</li>
-      <li>Collaborated with Solutions Engineers and AI Engineers to solve complex document-extraction requirements, bridging client needs and technical implementation.</li>
+      <li>Engineered AI document workflows for Feathery’s financial-services platform, automating insurance and wealth-management data extraction at >95% validated accuracy across varied client schemas.</li>
+      <li>Built ground-truth datasets from >1,000 test documents and optimized prompts through error analysis, improving accuracy from <60% to >95%, with select workflows reaching 100%.</li>
+      <li>Coded JavaScript logic rules and multi-stage AI workflows for conditional processing, data transformation, chained extraction, and context-aware reasoning.</li>
+      <li>Improved AI reliability by detecting hallucinations and extraction failures, verifying source traceability, and reporting model limitations to AI Engineers.</li>
+      <li>Collaborated with Solutions Engineers and AI Engineers to solve document-extraction challenges, bridging client needs and technical implementation.</li>
       <li>Validated AI-extracted data before downstream use in forms, integrations, and client systems, preserving data integrity for >10 leading U.S. insurance and wealth-management firms.</li>
     </ul>
 
